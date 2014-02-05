@@ -1,0 +1,59 @@
+# Site configuration
+
+title: "Blogs and sites powered by flat files"
+description: "Spress is a blog-aware application that transform your plain text files in static sites."
+logo: 
+
+url: "http://spress.yosymfony.com" # Without end slash
+
+# Data about Spress release
+release:
+   version: "1.0.0"
+   github_url: https://github.com/yosymfony/Spress/
+   url_package: https://github.com/yosymfony/Spress/releases/download/v1.0.0/spress.zip
+
+author:
+    name: Victor Puertas
+    
+    # Social networks
+    twitter: spress_cms
+    github: https://github.com/yosymfony/Spress
+    bitbucket:
+    facebook:
+    linkedin:
+    gplus:
+    youtube:
+
+# Facebook Open Graph
+open_graph:
+    locale: en_US
+
+# Page menus
+top_menu:
+    - { name: Home, url: /, site_url: true }
+    - { name: Download, url: /download, site_url: true }
+    - { name: Docs, url: /docs, site_url: true }
+    - { name: Add-ons, icon: fa-cogs, url: /add-ons, site_url: true}
+    - { name: About, url: /about, site_url: true }
+    
+bottom_menu:
+    - { name: Example, url: https://github.com/yosymfony/Spress-theme-spresso }
+    - { name: License: MIT, url: /about/license, site_url: true }
+    - { name: About, url: /about, site_url: true }
+    - { name: Yo! Symfony, url: http://yosymfony.com, siteUrl: true }
+
+# Google Analytics
+google_analytics:
+    domain: yosymfony.com
+    id: 'UA-47797401-1'
+
+# Site validation
+google_verify:
+bing_verify:
+
+# Posts pagination
+paginate: 0
+paginate_path: 'blog/page:num'
+
+
+exclude: [README.md,"theme/", build.xml, composer.json, composer.lock, "assets/css/bootstrap-theme.css", "assets/css/bootstrap.css"]

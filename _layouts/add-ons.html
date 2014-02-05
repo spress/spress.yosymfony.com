@@ -1,0 +1,23 @@
+---
+layout: default
+---
+{% block content %}
+    <header class="spressin add-ons">
+      <!-- Spressin -->
+      <div class="vert-text spressin-layer">
+        <h1>[s]press add-ons</h1>
+        <p><span class="lead">plugins and themes</span></p>
+        
+        <span class="spressin-author pull-right">
+            <i class="fa fa-camera"></i> by
+            <a href="http://www.flickr.com/photos/ewan_traveler/6918360384/" target="blank">
+                Ewan Traveler
+            </a>
+        </span>
+      </div>
+      <!-- /Spressin -->
+    </header>
+    {% block pageContent %}
+        {{ page.content }}
+    {% endblock %}
+{% endblock %}

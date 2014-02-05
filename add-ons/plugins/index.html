@@ -1,0 +1,21 @@
+---
+layout: add-ons
+title: 'Add-ons plugins'
+---
+<section>
+    <div class="container">
+        <h2>Plugins</h2>
+        
+        <div class="row br-top-2x">
+            {% for plugin in site.data.addonsPlugins %}
+                <div class="col-md-4">
+                    {% include 'item-galery.html' with plugin only %}
+                </div>
+                {% else %}
+                <div class="col-md-6">
+                    <h4>No plugins available.</h4>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>

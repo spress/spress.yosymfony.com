@@ -1,0 +1,19 @@
+---
+layout: default
+---
+{% block content %}
+<div class="container container-small">
+    <div class="page-header h-shadow">
+        <h1>
+            {{ page.header.title }}
+            {% if page.header.sub | length > 0 %}
+            <small>{{ page.header.sub }}</small>
+            {% endif %}
+        </h1>
+    </div>
+    
+    {% block pageContent %}
+    {{ page.content }}
+    {% endblock %}
+</div>
+{% endblock %}

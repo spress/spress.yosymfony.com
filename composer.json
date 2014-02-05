@@ -1,0 +1,11 @@
+{
+    "name": "yosymfony/spress-yosymfony-com",
+    "description": "The Spress web site",
+    "license": "MIT",
+    "require": {
+        "yosymfony/spress-plugin-dataloader": "1.0.*@dev"
+    },
+    "config": {
+        "vendor-dir": "_plugins/vendors"
+    }
+}

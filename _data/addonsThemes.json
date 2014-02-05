@@ -1,0 +1,13 @@
+[
+    {
+        "name": "Spresso",
+        "author": "Yo! Symfony",
+        "pay_with_tweet": false,
+        "is_theme": true,
+        "url_thumbnail": "/assets/img/thumbs/spresso-theme.png",
+        "support_movile": true, 
+        "url_info": "https://github.com/yosymfony/Spress-theme-spresso/",
+        "url_author": "http://yosymfony.com/",
+        "description": "Spresso is the basic theme of Spress."
+    }
+]

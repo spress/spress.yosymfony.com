@@ -1,0 +1,10 @@
+[
+    {
+        "name": "Data loader",
+        "author": "Yo! Symfony",
+        "is_theme": false,
+        "url_info": "https://github.com/yosymfony/spress-plugin-dataloader",
+        "url_author": "http://yosymfony.com",
+        "description": "Load JSON data located at _data folder in your site."
+    }
+]

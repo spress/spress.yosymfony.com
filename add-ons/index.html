@@ -1,0 +1,77 @@
+---
+layout: add-ons
+title: Add-ons
+---
+<section>
+
+        {% if site.data.addonsThemes | length > 0 %}
+        <!-- Featured themes -->
+        <div class="container">
+        
+            <h2><span class="label label-default">featured</span> Themes</h2>
+            
+            <div class="row br-top-2x">
+                {% for theme in site.data.addonsThemes | slice(0, 3) %}
+                <div class=" col-md-4">
+                    {% include 'item-galery.html' with theme only %}
+                </div>
+                {% endfor %}
+            </div>
+            
+            {% if site.data.addonsThemes | length > 3 %}
+            <div class="row br-top-2x">
+                {% for theme in site.data.addonsThemes | slice(3, 3) %}
+                <div class=" col-md-4">
+                    {% include 'item-galery.html' with theme only %}
+                </div>
+                {% endfor %}
+            </div>
+            {% endif %}
+            
+            {% if site.data.addonsThemes | length > 6 %}
+            <p class="text-right">
+                <a href="/add-ons/themes/">
+                    More themes
+                    <i class="fa fa-arrow-circle-o-right"></i>
+                </a>
+            </p>
+            {% endif %}
+        </div>
+        <!-- /Featured themes -->
+        {% endif %}
+    
+    {% if site.data.addonsPlugins | length > 0 %}
+        <!-- Featured plugins -->
+        <div class="container">
+        <h2><span class="label label-default">featured</span> Plugins</h2>
+        
+        <div class="row br-top-2x">
+            {% for plugin in site.data.addonsPlugins | slice(0, 3) %}
+            <div class=" col-md-4">
+                {% include 'item-galery.html' with plugin only %}
+            </div>
+            {% endfor %}
+        </div>
+        
+        {% if site.data.addonsPlugins | length > 3 %}
+        <div class="row br-top-2x">
+            {% for plugin in site.data.addonsPlugins | slice(3, 3) %}
+            <div class=" col-md-4">
+                {% include 'item-galery.html' with plugin only %}
+            </div>
+            {% endfor %}
+        </div>
+        {% endif %}
+        
+        {% if site.data.addonsPlugins | length > 6 %}
+        <p class="text-right">
+            <a href="/add-ons/plugins/">
+                More plugins
+                <i class="fa fa-arrow-circle-o-right"></i>
+            </a>
+        </p>
+        {% endif %}
+    </div>
+    <!-- /Featured plugins -->
+    {% endif %}
+</section>

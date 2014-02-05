@@ -1,0 +1,31 @@
+<!DOCTYPE HTML>
+<html lang="en">
+    <head>
+        {% include 'head.html' %}
+    </head>
+    <body>
+        {% include 'nav.html' %}
+        
+        {% block content %}
+            {{ page.content }}
+        {% endblock %}
+            
+        <footer id="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        {% include 'menu.html' with { menu: site.bottom_menu } %}
+                    </div>
+                    <div class="col-md-6 text-right">
+                        {% include 'social-network.html' %}
+                    </div>
+                </div>
+                <p class="text-center">
+                    &copy; {{ 'now' | date('Y') }} Spress.
+                    <span class="label label-default">Proudly powered by [s]press</span>
+                </p>
+            </div>
+            {% include 'javascript.html' %}
+        </footer>
+    </body>
+</html>

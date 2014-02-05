@@ -1,0 +1,21 @@
+---
+layout: add-ons
+title: 'Add-ons themes'
+---
+<section>
+    <div class="container">
+        <h2>Themes</h2>
+        
+        <div class="row br-top-2x">
+            {% for theme in site.data.addonsThemes %}
+                <div class=" col-md-4">
+                    {% include 'item-galery.html' with theme only %}
+                </div>
+                {% else %}
+                <div class="col-md-6">
+                    <h4>No themes available.</h4>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>

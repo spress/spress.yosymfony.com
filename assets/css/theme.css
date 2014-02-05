@@ -1,0 +1,309 @@
+html,
+body {
+    font-family: 'Open Sans', sans-serif;
+    background-color: #f9f9f9;
+    height: 100%;
+    width: 100%;
+    padding-top: 25px;
+}
+
+/* Headers */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    line-height: 1.1;
+    color: #555;
+}
+
+h1,
+.h1 {
+    font-weight: 700;
+}
+
+h4,
+h5,
+h6 {
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+/* /Headers */
+
+/* Structure */
+.br-top {
+    margin-top: 10px;
+}
+
+.br-top-2x {
+    margin-top: 20px;
+}
+/* /Structure */
+
+/* Images */
+.img-thumbnail {
+    -webkit-transition: inherit;
+    transition: inherit;
+}
+/* /Images */
+
+/* Texts */
+.h-shadow {
+    text-shadow: #fff 0px 1px 0px;
+}
+
+.vert-text {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+}
+
+.vert-text h1 {
+    padding: 0;
+    margin: 0;
+    font-weight: 700;
+}
+
+.color-black {
+    color: #19242f;
+}
+
+.color-gray {
+    color: #d7dadb;
+}
+
+.color-red {
+    color: #ff4043;
+}
+
+.color-blue {
+    color: #428bca;
+}
+
+.color-white {
+    coor: #f9f9f9;
+}
+/* /Texts */
+
+/* Containers */
+@media (min-width: 768px) {
+    .container-small {
+        max-width: 950px;
+    }
+}
+/* /Containers */
+
+/* Navbar */
+
+@media (min-width: 768px) {
+    .navbar {
+        border-radius: 0px;
+    }
+}
+.navbar-inverse .navbar-brand {
+  color: #eee;
+}
+
+.navbar-inverse .navbar-nav > li > a {
+    color: #ff4043;
+}
+
+/* /Navbar */
+
+
+/* Jumbotron */
+
+.jumbotron {
+    background-color: #19242f;
+    color: #d7dadb;
+}
+
+.jumbotron h1,
+.jumbotron .h1 {
+    line-height: 1;
+    color: #ff4043;
+}
+
+@media screen and (min-width: 768px) {
+    .jumbotron h1,
+    .jumbotron .h1 {
+        font-size: 45px;
+    }
+}
+
+/* /Jumbotron */
+
+/* Spressin */
+.spressin {
+    display: table;
+    height: 400px;
+    width: 100%;
+    position: relative;
+    background: #19242f url(../img/spressin.jpg) no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    font-size: 21px;
+    color: #d7dadb;
+}
+
+.spressin.add-ons {
+    background: #f9f9f9 url(../img/spressin-addons.jpg) no-repeat center center;
+    background-size: cover;
+    height: 120px;
+}
+
+.spressin h1,
+.spressin .h1 {
+    color: #fff;
+    text-shadow: #fff 5px 5px 0px rgba(0, 0, 0, 0.5);
+}
+@media (min-width: 768px) {
+    .spressin .lead {
+        font-size: 41px;
+        color: #fff;
+    }
+}
+.spressin-layer {
+    background-color: rgba(1, 1, 1, 0.2);
+}
+
+@media screen and (min-width: 768px) {
+    .spressin h1,
+    .spressin .h1 {
+        font-size: 45px;
+    }
+}
+
+.spressin p {
+    line-height: 1.4;
+}
+
+.spressin-author {
+    font-size: 10px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+.spressin-author a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.spressin-author a:hover,
+.spressin-author a:focus {
+    color: #fff;
+}
+
+/* /Spressin */
+
+/* Approach */
+
+.approach {
+    background: #b73234;
+    padding: 30px 50px;
+    color: #fff;
+}
+
+.approach h3 {
+    color: #ff7173;
+}
+
+.approach a {
+    color: #f0c8c6;
+    text-decoration: none;
+}
+
+.approach a:hover,
+.approach a:focus {
+    color: #fff;
+}
+
+/* /Approach */
+
+/* Join-us */
+
+.join-us {
+    padding: 20px 40px;
+}
+
+.join-us h3 {
+    color: #ff7173;
+}
+
+/* /Join-us */
+
+/* Footer */
+
+#footer {
+    margin-top: 20px;
+    border-top: 1px solid #dfdfdf;
+    padding:10px 0;
+}
+
+#footer a {
+    color:  rgba(0, 0, 0, 0.6);
+    text-decoration: none;
+}
+
+/* /Footer */
+
+/* Panels */
+.panel-red {
+    border-color: #ff4043;
+}
+
+.panel-red > .panel-heading {
+    color: #ffffff;
+    background-color: #ff4a43;
+    border-color: #fff;
+}
+
+.panel-red > .panel-heading h3 {
+    color: #fff;
+}
+
+.panel-red > .panel-heading + .panel-collapse .panel-body {
+    border-top-color: #ff4043;
+}
+
+.panel-red > .panel-footer + .panel-collapse .panel-body {
+    border-bottom-color: #ff4043;
+}
+/* /Panels */
+
+/* Galery */
+.galery-item {
+    position: relative;
+}
+.galery-item-featured {
+    position: absolute;
+    top: 15px;
+    right: 80px;
+    font-size: 18px;
+}
+.galery-item-featured > span {
+    margin-left: 3px;
+}
+.meta-description {
+    padding-right: 10%;
+    margin-top: 5px;
+}
+a.meta-name {
+    color: #242628;
+    font-weight: bold;
+}
+a.meta-author {
+    color: #999;
+}
+/* /Galery */
