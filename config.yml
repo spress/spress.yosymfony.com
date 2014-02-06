@@ -4,7 +4,7 @@ title: "Blogs and sites powered by flat files"
 description: "Spress is a blog-aware application that transform your plain text files in static sites."
 logo: 
 
-url: "http://spress.yosymfony.com" # Without end slash
+url: "" # Without end slash
 
 # Data about Spress release
 release:
