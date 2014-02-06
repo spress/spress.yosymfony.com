@@ -6,6 +6,13 @@ title: Changelog
 
 More information about the [releases](https://github.com/yosymfony/Spress/releases).
 
+## v1.0.0
+Date: 2014-02-05
+
+* Added template manager to the API plugins for rendering Twig templates (accessible from spress.start event).
+* Improved the class loader of the site plugins.
+* Fixed documentation
+
 ## v1.0.0-rc.3
 Date: 2014-01-12
 
