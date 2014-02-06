@@ -51,7 +51,7 @@ $ cd /your-site-dir
 $ spress site:build
 
 $ cd /yout-site-dir/_site
-$ php -s localhost:8080
+$ php -S localhost:8080
 
 # Browse to localhost:8080
 ```
