@@ -1,6 +1,7 @@
 ---
 layout: blog/post
 title: Spress 1.0.0 arrived
+categories: [releases]
 ---
 After 3 RC releases, the first stable version arrived. With this release you can
 extend Spress with plugins and create themes that can be published at the
