@@ -1,0 +1,22 @@
+---
+layout: blog/default
+---
+{% set isPostLayout = true %}
+
+{% block content %}
+    {% include 'blog/post.html' with { 'post': page } %}
+{% endblock %}
+
+{% block javascript %}
+    {% if (page.comments is defined and page.comments) or (page.comments is not defined and site.comments.enabled) %}
+        <script type="text/javascript">
+            var disqus_shortname = '{{ site.comments.disqus_shortname }}';
+            
+            (function() {
+                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        </script>
+    {% endif %}
+{% endblock %}

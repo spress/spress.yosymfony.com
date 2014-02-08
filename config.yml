@@ -2,7 +2,7 @@
 
 title: "Blogs and sites powered by flat files"
 description: "Spress is a blog-aware application that transform your plain text files in static sites."
-logo: 
+logo: spress-logo.png
 
 url: "" # Without end slash
 
@@ -14,6 +14,7 @@ release:
 
 author:
     name: Victor Puertas
+    url: http://twitter.com/victorpuertas
     
     # Social networks
     twitter: spress_cms
@@ -34,6 +35,7 @@ top_menu:
     - { name: Download, url: /download, site_url: true }
     - { name: Docs, url: /docs, site_url: true }
     - { name: Add-ons, icon: fa-cogs, url: /add-ons, site_url: true}
+    - { name: Blog, url: /blog, site_url: true }
     - { name: About, url: /about, site_url: true }
     
 bottom_menu:
@@ -52,7 +54,7 @@ google_verify:
 bing_verify:
 
 # Posts pagination
-paginate: 0
+paginate: 5
 paginate_path: 'blog/page:num'
 
 
