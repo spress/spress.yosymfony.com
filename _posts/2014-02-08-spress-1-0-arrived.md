@@ -1,9 +1,10 @@
 ---
 layout: blog/post
 title: Spress 1.0.0 arrived
+description: The first stable version of Spress is here: welcome to 1.0.0.
 categories: [releases]
 ---
-After 3 RC releases, the first stable version arrived. With this release you can
+After 3 *releases candidate*, the first stable version arrived. With this release you can
 extend Spress with plugins and create themes that can be published at the
 [add-ons](<{{ site.url }}/add-ons>) page (you only need to send a tweet to 
 [@spress_cms][url_spress_cms] or [@yosymfony][url_yosymfony]).

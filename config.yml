@@ -44,6 +44,11 @@ bottom_menu:
     - { name: About, url: /about, site_url: true }
     - { name: Yo! Symfony, url: http://yosymfony.com, siteUrl: true }
 
+# Comments in posts
+comments:
+    enabled: true
+    disqus_shortname: yosymfony
+
 # Google Analytics
 google_analytics:
     domain: yosymfony.com
