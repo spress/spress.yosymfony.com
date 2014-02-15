@@ -307,3 +307,9 @@ a.meta-author {
     color: #999;
 }
 /* /Galery */
+
+/* Miscellaneous */
+.no-display {
+    display: none;
+}
+/* /Miscellaneous */

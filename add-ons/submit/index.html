@@ -1,0 +1,136 @@
+---
+layout: add-ons
+title: Submit a new add-ons
+prettify: true
+form:
+    enable: true
+    selector: '#add-on-form'
+    on_submit:
+        show_selector: '#add-on-thank'
+        hide_selector: '#add-on-form'
+---
+<section>
+    <!-- Submit add-ons -->
+    <div class="br-top-2x container">
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3">
+                <form id="add-on-form" enctype="multipart/form-data" action="#" method="post" class="form-horizontal">
+                    <fieldset>
+                        <!-- Form Name -->
+                        <legend>Submit a new add-on</legend>
+                        
+                        <!-- Text input-->
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="name">Add-on name:</label>  
+                            <div class="col-md-5">
+                                <input id="name" name="name" type="text" placeholder="Spresso" class="form-control input-md" required="">
+                            </div>
+                        </div>
+                        
+                        <!-- Text input-->
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="description">Add-on description:</label>  
+                            <div class="col-md-5">
+                                <input id="description" name="description" type="text" placeholder="Brief description" class="form-control input-md" required="">
+                            </div>
+                        </div>
+                        
+                        <!-- Select Basic -->
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="type">Add-on type</label>
+                            <div class="col-md-5">
+                                <select id="type" name="type" class="form-control">
+                                    <option value="theme">Theme</option>
+                                    <option value="plugin">Plugin</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <!-- Multiple Radios (inline) -->
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="responsive">Responsive theme?</label>
+                            <div class="col-md-4"> 
+                                <label class="radio-inline" for="responsive-0">
+                                    <input type="radio" name="responsive" id="responsive-0" value="yes" checked="checked">
+                                        Yes
+                                </label> 
+                                <label class="radio-inline" for="responsive-1">
+                                    <input type="radio" name="responsive" id="responsive-1" value="no">
+                                        No
+                                </label>
+                                <span class="help-block">If it is a plugin, skip this.</span> 
+                            </div>
+                        </div>
+                        
+                        <!-- Text input-->
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="url">Add-on URL:</label>  
+                            <div class="col-md-5">
+                                <input id="url" name="url" type="url" placeholder="http://" class="form-control input-md" required="">
+                            </div>
+                        </div>
+                        
+                        <!-- Text input-->
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="price">Price</label>  
+                            <div class="col-md-5">
+                                <input id="price" name="price" type="number" min="0" step="any" placeholder="If it is free skip this" class="form-control input-md">
+                                <span class="help-block">In EUR.</span>  
+                            </div>
+                        </div>
+                        
+                        <!-- File Button --> 
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="preview">Image preview</label>
+                            <div class="col-md-4">
+                                <input id="preview" name="preview" class="input-file" type="file">
+                            </div>
+                        </div>
+                        
+                        <!-- Text input-->
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="dev-name">Developer name:</label>  
+                            <div class="col-md-5">
+                                <input id="dev-name" name="dev-name" type="text" placeholder="Your name" class="form-control input-md" required="">
+                            </div>
+                        </div>
+                        
+                        <!-- Text input-->
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="dev-email">Developer Email</label>  
+                            <div class="col-md-5">
+                                <input id="dev-email" name="dev-email" type="email" placeholder="your@email" class="form-control input-md" required="">
+                            </div>
+                        </div>
+                        
+                        <!-- Text input-->
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="dev-url">Developer URL:</label>  
+                            <div class="col-md-5">
+                                <input id="dev-url" name="dev-url" type="url" placeholder="http://" class="form-control input-md" required="">
+                            </div>
+                        </div>
+                        
+                        <!-- Button -->
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="ok"></label>
+                            <div class="col-md-4">
+                                <button id="send" name="send" class="btn btn-danger">Send</button>
+                            </div>
+                        </div>
+                    
+                    </fieldset>
+                </form>
+
+            </div>
+        </div>
+    </div>
+    
+    <div id="add-on-thank" class="br-top-2x container no-display">
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3">
+                <h2>Thank you for make a Spress add-on ;)</h2>
+            </div>
+        </div>
+    </div>
+</section>

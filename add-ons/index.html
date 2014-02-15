@@ -4,7 +4,19 @@ title: Add-ons
 description: Plugins and themes can extend Spress to do almost anything you can imagine.
 ---
 <section>
-        {% if site.data.addonsThemes | length > 0 %}
+    <!-- Submit add-ons -->
+    <div class="br-top-2x container">
+        <div class="row">
+            <div class="text-right">
+                <p class="lead">
+                    Do You have a new plugin or theme?
+                    <a href="{{ site.url }}/add-ons/submit">Share it</a> with Spress community.
+                </p>
+            </div>
+        </div>
+    </div>
+    <!-- /Submit add-ons -->
+    {% if site.data.addonsThemes | length > 0 %}
         <!-- Featured themes -->
         <div class="container">
         
@@ -38,7 +50,7 @@ description: Plugins and themes can extend Spress to do almost anything you can 
             {% endif %}
         </div>
         <!-- /Featured themes -->
-        {% endif %}
+    {% endif %}
     
     {% if site.data.addonsPlugins | length > 0 %}
         <!-- Featured plugins -->

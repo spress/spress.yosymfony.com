@@ -1,6 +1,28 @@
 <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 <script src="/assets/js/bootstrap.min.js"></script>
 <script src="//imsky.github.io/holder/holder.js"></script>
+{% if page.form.enable %}
+    <script>
+        $(document).ready(function() { 
+            $('{{ page.form.selector }}').submit(function(){
+                $.ajax({
+                    dataType: 'jsonp',
+                    url: "{{ site.forms.addons.action_url }}",
+                    data: $('{{ page.form.selector }}').serialize() 
+                }).done(function() {
+                    {% if page.form.on_submit.show_selector %}
+                        $('{{ page.form.on_submit.show_selector }}').show();
+                    {% endif %}
+                    {% if page.form.on_submit.hide_selector %}
+                        $('{{ page.form.on_submit.hide_selector }}').hide();
+                    {% endif %}
+                });
+                
+                return false;
+            });
+        });
+    </script>
+{% endif %}
 {% if page.prettify == true %}
     <script src="http://yandex.st/highlightjs/7.5/highlight.min.js"></script>
     <script>hljs.initHighlightingOnLoad();</script>
