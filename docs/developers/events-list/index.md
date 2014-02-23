@@ -205,7 +205,7 @@ $subscriber->addEventListener('spress.before_convert',
         $v = $event->getFrontmatter();
         
         // Set the Front-matter of the page:
-        $event->setFrontmatter(['title'] => 'My posts');
+        $event->setFrontmatter(['title' => 'My posts']);
     });
 ```
 
