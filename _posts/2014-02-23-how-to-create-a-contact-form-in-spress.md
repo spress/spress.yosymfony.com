@@ -1,6 +1,6 @@
 ---
 layout: blog/post
-title: How to create a contact form in Spress
+title: How to create a contact form in Spress?
 description: We explain to you how to integrate a contact form in your static site
 categories: [resources]
 tags: [form]
