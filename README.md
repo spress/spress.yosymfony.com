@@ -8,6 +8,9 @@ $ git clone https://github.com/yosymfony/Spress.yosymfony.com.git
 
 $ cd Spress.yosymfony.com/
 
+# Get plugins
+$ php composer.phar update
+
 # Build with Spress
 $ spress site:build
 
