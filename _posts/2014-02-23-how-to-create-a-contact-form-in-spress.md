@@ -5,9 +5,9 @@ description: We explain to you how to integrate a contact form in your static si
 categories: [resources]
 tags: [form]
 ---
-It's probably that soon or later you need integrate a contact
+It's probably that soon or later you need to integrate a contact
 form in your site. To do it, you can use [Get simple form](http://getsimpleform.com/)
-service that allow you setup forms with any kind of data. To use this service only
+service that allows you setup forms with any kind of data. To use this service only
 requires a token that you will receive by email.
 
 ```
@@ -27,5 +27,5 @@ requires a token that you will receive by email.
 </form>
 ```
 
-The above code, show us how to setup a form. The hidden field **redirect_to** allow us
+The above code shows us how to setup a form. The hidden field **redirect_to** allows us
 set a redirect URL for when the form is submitted. For each form submitted you receive a email.
