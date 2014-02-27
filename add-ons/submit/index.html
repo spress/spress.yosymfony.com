@@ -1,21 +1,20 @@
 ---
 layout: add-ons
 title: Submit a new add-ons
-prettify: true
-form:
-    enable: true
-    selector: '#add-on-form'
-    on_submit:
-        show_selector: '#add-on-thank'
-        hide_selector: '#add-on-form'
 ---
 <section>
     <!-- Submit add-ons -->
     <div class="br-top-2x container">
         <div class="row">
             <div class="col-md-6 col-md-offset-3">
-                <form id="add-on-form" enctype="multipart/form-data" action="#" method="post" class="form-horizontal">
+                <form id="add-on-form" 
+                    enctype="multipart/form-data" 
+                    action="{{ site.forms.addons.action_url }}" 
+                    method="post" 
+                    class="form-horizontal">
                     <fieldset>
+                        <input type='hidden' name='redirect_to' value='{{ site.forms.addons.redirect_to }}' />
+                        
                         <!-- Form Name -->
                         <legend>Submit a new add-on</legend>
                         
@@ -122,14 +121,6 @@ form:
                     </fieldset>
                 </form>
 
-            </div>
-        </div>
-    </div>
-    
-    <div id="add-on-thank" class="br-top-2x container no-display">
-        <div class="row">
-            <div class="col-md-6 col-md-offset-3">
-                <h2>Thank you for make a Spress add-on ;)</h2>
             </div>
         </div>
     </div>

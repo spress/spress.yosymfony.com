@@ -52,7 +52,8 @@ comments:
 # Forms
 forms:
     addons:
-        action_url: http://getsimpleform.com/messages/ajax?form_api_token=3065aa656aabf5ed1c2a9230594ce9f7
+        action_url: http://getsimpleform.com/messages/?form_api_token=3065aa656aabf5ed1c2a9230594ce9f7
+        redirect_to: http://spress.yosymfony.com/add-ons/submit/thank-you/
 
 # Google Analytics
 google_analytics:
