@@ -74,6 +74,30 @@ namespace. All events inherits from
             </td>
         </tr>
         <tr>
+            <td>
+                spress.before_render_pagination
+                <span class="label label-success">New in 1.0.1</span>
+            </td>
+            <td markdown="1">[`RenderEvent`](#renderevent)</td>
+            <td markdown="1">
+                The spress.before_render_pagination is thrown before render the content of
+                each pagination of posts.
+                **This event require to enable pagination of posts**.
+            </td>
+        </tr>
+        <tr>
+            <td>
+                spress.after_render_pagination
+                <span class="label label-success">New in 1.0.1</span>
+            </td>
+            <td markdown="1">[`RenderEvent`](#renderevent)</td>
+            <td markdown="1">
+                The spress.after_render_pagination is thrown after render the content of
+                each pagination of posts.
+                **This event require to enable pagination of posts**.
+            </td>
+        </tr>
+        <tr>
             <td>spress.finish</td>
             <td markdown="1">[`FinishEvent`](#finishevent)</td>
             <td markdown="1">
@@ -127,6 +151,18 @@ $subscriber->addEventListener('spress.start',
 
 Twig can be exteded with functions, filters and tests.
 [See extending Twig](/docs/developers/extending-twig/).
+
+{% verbatim %}
+```
+$subscriber->addEventListener('spress.start', 
+    function(EnviromentEvent $event)
+    {
+        // Template manager to render Twig templates from a string:
+        $tm = $event->getTemplateManager();
+        $renderHtml = $tm->render('<p>{{ name }}</p>', ['name' => 'Spress']);
+    });
+```
+{% endverbatim %}
 
 #### Informations about paths
 
@@ -229,6 +265,9 @@ $subscriber->addEventListener('spress.before_convert',
     });
 ```
 {% endverbatim %}
+
+In the case of *spress.before_render_pagination* and *spress.after_render_pagination* events
+the RenderEvent argument point to pagination template page.
 
 ## FinishEvent {#finishevent}
 
