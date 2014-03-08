@@ -8,9 +8,9 @@ url: "http://spress.yosymfony.com" # Without end slash
 
 # Data about Spress release
 release:
-   version: "1.0.0"
+   version: "1.0.1"
    github_url: https://github.com/yosymfony/Spress/
-   url_package: https://github.com/yosymfony/Spress/releases/download/v1.0.0/spress.zip
+   url_package: https://github.com/yosymfony/Spress/releases/download/v1.0.1/spress.zip
 
 author:
     name: Victor Puertas

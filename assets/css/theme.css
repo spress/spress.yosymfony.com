@@ -308,6 +308,12 @@ a.meta-author {
 }
 /* /Galery */
 
+/* Pages */
+#changelog li{
+    margin-bottom: 4px;
+}
+/* /Pages */
+
 /* Miscellaneous */
 .no-display {
     display: none;

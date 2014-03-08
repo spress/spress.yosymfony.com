@@ -6,7 +6,7 @@ layout: page-header
     <div class="col-md-3">
         {% include 'sidebar-about.html' %}
     </div>
-    <div class="col-md-9">
+    <div {% if page.id_content %} id="{{ page.id_content }}" {% endif %} class="col-md-9">
         {{ page.content }}
     </div>
 </div>
