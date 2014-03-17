@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "5b6328aed21fb7d51afa61e69d9fa632",
+    "hash": "340e6a287d3fba2b3ec15e23cf8710ab",
     "packages": [
         {
             "name": "symfony/yaml",
@@ -158,6 +158,56 @@
                 "spress"
             ],
             "time": "2014-01-11 19:34:18"
+        },
+        {
+            "name": "yosymfony/spress-plugin-more-tag",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/yosymfony/Spress-plugin-more-tag.git",
+                "reference": "088b0632e5f23cb58f99f3bdc5a8e2db6307a7b0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/yosymfony/Spress-plugin-more-tag/zipball/088b0632e5f23cb58f99f3bdc5a8e2db6307a7b0",
+                "reference": "088b0632e5f23cb58f99f3bdc5a8e2db6307a7b0",
+                "shasum": ""
+            },
+            "require": {
+                "yosymfony/spress-installer": "~1.0"
+            },
+            "type": "spress-plugin",
+            "extra": {
+                "spress_name": "Spress-plugin-more-tag",
+                "spress_class": "SpressPlugins\\SpressMoreTag\\SpressMoreTag",
+                "branch-alias": {
+                    "dev-master": "1.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "SpressPlugins\\SpressMoreTag\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Victor Puertas",
+                    "email": "vpgugr@gmail.com",
+                    "homepage": "http://yosymfony.com"
+                }
+            ],
+            "description": "More tag for post in Spress sites",
+            "keywords": [
+                "excerpt",
+                "markdown",
+                "plugin",
+                "spress"
+            ],
+            "time": "2014-03-17 19:23:13"
         }
     ],
     "packages-dev": [
@@ -168,7 +218,8 @@
     ],
     "minimum-stability": "stable",
     "stability-flags": {
-        "yosymfony/spress-plugin-dataloader": 20
+        "yosymfony/spress-plugin-dataloader": 20,
+        "yosymfony/spress-plugin-more-tag": 20
     },
     "platform": [
 
