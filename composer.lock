@@ -3,11 +3,11 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "d83b0477e41f58f9de9c70b9a6d8772d",
+    "hash": "5b6328aed21fb7d51afa61e69d9fa632",
     "packages": [
         {
             "name": "symfony/yaml",
-            "version": "2.4.x-dev",
+            "version": "v2.4.2",
             "target-dir": "Symfony/Component/Yaml",
             "source": {
                 "type": "git",
@@ -41,7 +41,9 @@
             "authors": [
                 {
                     "name": "Fabien Potencier",
-                    "email": "fabien@symfony.com"
+                    "email": "fabien@symfony.com",
+                    "homepage": "http://fabien.potencier.org",
+                    "role": "Lead Developer"
                 },
                 {
                     "name": "Symfony Community",
@@ -54,16 +56,16 @@
         },
         {
             "name": "yosymfony/spress-installer",
-            "version": "dev-master",
+            "version": "v1.0.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/yosymfony/Spress-installer.git",
-                "reference": "0e5107f481018e5d333ee304b42ca8132b04cfdb"
+                "reference": "0bfa7c860d1b8ff924661ae17b59c09c1d3e3322"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yosymfony/Spress-installer/zipball/0e5107f481018e5d333ee304b42ca8132b04cfdb",
-                "reference": "0e5107f481018e5d333ee304b42ca8132b04cfdb",
+                "url": "https://api.github.com/repos/yosymfony/Spress-installer/zipball/0bfa7c860d1b8ff924661ae17b59c09c1d3e3322",
+                "reference": "0bfa7c860d1b8ff924661ae17b59c09c1d3e3322",
                 "shasum": ""
             },
             "require": {
@@ -106,7 +108,7 @@
                 "spress",
                 "themes"
             ],
-            "time": "2014-01-11 21:09:37"
+            "time": "2014-02-18 19:41:15"
         },
         {
             "name": "yosymfony/spress-plugin-dataloader",
@@ -164,7 +166,7 @@
     "aliases": [
 
     ],
-    "minimum-stability": "dev",
+    "minimum-stability": "stable",
     "stability-flags": {
         "yosymfony/spress-plugin-dataloader": 20
     },
