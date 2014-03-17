@@ -3,7 +3,8 @@
     "description": "The Spress web site",
     "license": "MIT",
     "require": {
-        "yosymfony/spress-plugin-dataloader": "1.0.*@dev"
+        "yosymfony/spress-plugin-dataloader": "~1.0-dev",
+        "yosymfony/spress-plugin-more-tag": "~1.0-dev"
     },
     "config": {
         "vendor-dir": "_plugins/vendors"
