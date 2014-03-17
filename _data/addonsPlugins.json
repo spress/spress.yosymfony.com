@@ -1,5 +1,13 @@
 [
     {
+        "name": "More tag",
+        "author": "Yo! Symfony",
+        "is_theme": false,
+        "url_info": "https://github.com/yosymfony/Spress-plugin-more-tag",
+        "url_author": "http://yosymfony.com",
+        "description": "You can use More Tag plugin to get a excerpt of your blog entries."
+    },
+    {
         "name": "Data loader",
         "author": "Yo! Symfony",
         "is_theme": false,
