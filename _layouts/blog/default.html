@@ -29,7 +29,15 @@
                     </a>
                 </p>
                 <p class="text-center">
-                    &copy; {{ 'now' | date('Y') }} {{ site.author.name }}.
+                    &copy;
+                    {{ 'now' | date('Y') }}
+                    {% if site.copyright_url %}
+                        <a href="{{ site.copyright_url }}">
+                            {{ site.copyright_name | default(site.author.name) }}
+                        </a>
+                    {% else %}
+                        {{ site.copyright_name | default(site.author.name) }}
+                    {% endif %}.
                     Powered by <a href="http://spress.yosymfony.com">Spress</a>.
                 </p>
             </div>

@@ -7,7 +7,7 @@ id_content: changelog
 
 More information about the [releases](https://github.com/yosymfony/Spress/releases).
 
-## v1.0.1
+## v1.0.1 {#1-0-1}
 Date: 2014-03-08
 
 * <span class="label label-success">New</span> events related with pagination phase (issue [#3](https://github.com/yosymfony/Spress/issues/3)): **spress.before_render_pagination** and **spress.after_render_pagination**.
