@@ -13,6 +13,8 @@ the control of what happen both before and after of render each
 pagination template. The events receive an [RenderEvent](<{{ site.url }}/docs/developers/events-list/#renderevent>)
 object as an argument each. An example of how to iterate over the posts of the current page:
 
+--more Read more--
+
 ```
 public function onBeforeRenderPagination(RenderEvent $event)
 {

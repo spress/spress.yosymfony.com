@@ -10,7 +10,13 @@
         {% for post in site.posts | slice(0, site.max_item, true) %}
             <item>
                 <title>{{ post.title }}</title>
-                <description><![CDATA[{{ post.content }}]]></description>
+                {% if site.posts_excerpts[post.id].value %}
+                    <description><![CDATA[{{ site.posts_excerpts[post.id].value }}
+                        <a href="{{ site.url }}{{ post.url }}">Read more</a>]]>
+                    </description>
+                {% else %}
+                    <description><![CDATA[{{ post.content }}]]></description>
+                {% endif %}
                 <link>{{ site.url }}{{ post.url }}</link>
                 <pubDate>{{ post.date | date("D, d M Y H:i:s O") }}</pubDate>
                 <guid>{{ site.url }}{{ post.url }}</guid>

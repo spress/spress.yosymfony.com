@@ -4,8 +4,12 @@
             <a href="{{ site.url }}{{ post.url }}">{{ post.title }}</a>
         </h1>
     </header>
-    
-    {{ post.content }}
+    {% if post.excerpt %}
+        {{ post.excerpt }}
+        <a href="{{ site.url }}{{ post.url }}">{{ post.excerpt_label }}</a>
+    {% else %}
+        {{ post.content }}
+    {% endif %}
     
     {% if isPostLayout %}
     <footer>    

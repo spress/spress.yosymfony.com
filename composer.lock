@@ -165,12 +165,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/yosymfony/Spress-plugin-more-tag.git",
-                "reference": "088b0632e5f23cb58f99f3bdc5a8e2db6307a7b0"
+                "reference": "11449c3ce17188881e319cee8d7095fe9aa94ece"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yosymfony/Spress-plugin-more-tag/zipball/088b0632e5f23cb58f99f3bdc5a8e2db6307a7b0",
-                "reference": "088b0632e5f23cb58f99f3bdc5a8e2db6307a7b0",
+                "url": "https://api.github.com/repos/yosymfony/Spress-plugin-more-tag/zipball/11449c3ce17188881e319cee8d7095fe9aa94ece",
+                "reference": "11449c3ce17188881e319cee8d7095fe9aa94ece",
                 "shasum": ""
             },
             "require": {
@@ -207,7 +207,7 @@
                 "plugin",
                 "spress"
             ],
-            "time": "2014-03-17 19:23:13"
+            "time": "2014-03-30 11:46:52"
         }
     ],
     "packages-dev": [
