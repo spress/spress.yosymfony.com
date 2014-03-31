@@ -1,6 +1,7 @@
 ---
 layout: page-dev
-title: Extending Twig
+title: Developers &#8250; Extending Twig
+description: How to extend Twig in Spress
 header: { title: Developers, sub: Extending Twig }
 prettify: true
 ---

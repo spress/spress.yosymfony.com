@@ -1,6 +1,7 @@
 ---
 layout: page-dev
-title: Converters
+title: Developers &#8250; Converters
+description: How to extend Spress with a new converter
 header: { title: Developers, sub: Converters }
 prettify: true
 ---
