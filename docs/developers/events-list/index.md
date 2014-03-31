@@ -32,18 +32,30 @@ namespace. All events inherits from
             <td>spress.before_convert</td>
             <td markdown="1">[`ConvertEvent`](#convertevent)</td>
             <td>
-                The spress.before_convert is thrown before convert the content
-                of each page.
+                <p>
+                    The spress.before_convert is thrown before convert the content
+                    of each page.
+                </p>
+                <p markdown="1">
+                    `getContent()` method return the original content in
+                    source format.
+                </p>
             </td>
         </tr>
         <tr>
             <td>spress.after_convert</td>
             <td markdown="1">[`ConvertEvent`](#convertevent)</td>
-            <td markdown="1">
-                The spress.after_convert is thrown after convert the content of
-                each page.
-                **If the content don't have Front-matter this event never be
-                dispatcher**.
+            <td>
+                <p markdown="1">
+                    The spress.after_convert is thrown after convert the content of
+                    each page.
+                    **If the content don't have Front-matter this event never be
+                    dispatcher**.
+                </p>
+                <p markdown="1">
+                    `getContent()` method return the content transformed by
+                    converter. In this step Twig tags are not resolved.
+                </p>
             </td>
         </tr>
         <tr>
@@ -56,21 +68,37 @@ namespace. All events inherits from
         <tr>
             <td>spress.before_render</td>
             <td markdown="1">[`RenderEvent`](#renderevent)</td>
-            <td markdown="1">
-                The spress.before_render is thrown before render the content of
-                each page.
-                **If the content don't have Front-matter this event never be
-                dispatcher**.
+            <td>
+                <p markdown="1">
+                    The spress.before_render is thrown before render the content of
+                    each page.
+                    **If the content don't have Front-matter this event never be
+                    dispatcher**.
+                </p>
+                <p markdown="1">
+                    `getContent()` method return the content transformed by
+                    converter. In this step Twig tags are not resolved.
+                </p>
             </td>
         </tr>
         <tr>
             <td>spress.after_render</td>
             <td markdown="1">[`RenderEvent`](#renderevent)</td>
-            <td markdown="1">
-                The spress.after_render is thrown after render the content of
-                each page.
-                **If the content don't have Front-matter this event never be
-                dispatcher**.
+            <td>
+                <p markdown="1">
+                    The spress.after_render is thrown after render the content of
+                    each page.
+                    **If the content don't have Front-matter this event never be
+                    dispatcher**.
+                </p>
+                <p markdown="1">
+                    `getContent()` method return the full content rendered
+                    (layout included).
+                </p>
+                <p markdown="1">
+                    If you need to access to the content rendered without layout
+                    you can to use `page.content` from the payload.
+                </p>
             </td>
         </tr>
         <tr>
@@ -79,10 +107,16 @@ namespace. All events inherits from
                 <span class="label label-success">New in 1.0.1</span>
             </td>
             <td markdown="1">[`RenderEvent`](#renderevent)</td>
-            <td markdown="1">
-                The spress.before_render_pagination is thrown before render the content of
-                each pagination of posts.
-                **This event require to enable pagination of posts**.
+            <td>
+                <p markdown="1">
+                    The spress.before_render_pagination is thrown before render the content of
+                    each pagination of posts.
+                    **This event require to enable pagination of posts**.
+                </p>
+                <p markdown="1">
+                    `getContent()` method return the content of pagination template.
+                    In this step Twig tags are not resolved.
+                </p>
             </td>
         </tr>
         <tr>
@@ -91,10 +125,20 @@ namespace. All events inherits from
                 <span class="label label-success">New in 1.0.1</span>
             </td>
             <td markdown="1">[`RenderEvent`](#renderevent)</td>
-            <td markdown="1">
-                The spress.after_render_pagination is thrown after render the content of
-                each pagination of posts.
-                **This event require to enable pagination of posts**.
+            <td>
+                <p markdown="1">
+                    The spress.after_render_pagination is thrown after render the content of
+                    each pagination of posts.
+                    **This event require to enable pagination of posts**.
+                </p>
+                <p markdown="1">
+                    `getContent()` method return the full content rendered
+                    (layout included).
+                </p>
+                <p markdown="1">
+                    If you need to access to the pagination template content rendered
+                    without layout you can to use `page.content` from the payload.
+                </p>
             </td>
         </tr>
         <tr>
