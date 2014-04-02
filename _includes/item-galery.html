@@ -21,16 +21,11 @@
             {% endif %}
         </div>
         
-        
-            {% if url_thumbnail %}
-                <img class="img-thumbnail" src="{{ url_thumbnail }}"/>
-            {% else %}
-                {% if is_theme %}
-                    <img class="img-thumbnail" data-src="holder.js/300x210/text:Theme"/>
-                {% else %}
-                    <img class="img-thumbnail" src="{{ sit.url }}/assets/img/thumbs/plugin.png"/>
-                {% endif %}
-            {% endif %}
+        {% if url_thumbnail %}
+            <img class="img-thumbnail" src="{{ url_thumbnail }}"/>
+        {% else %}
+            <img class="img-thumbnail" src="{{ sit.url }}/assets/img/thumbs/plugin.png"/>
+        {% endif %}
     </a>
     <div>
         <a class="meta-name" href="{{ url_info }}">{{ name }}</a> by
