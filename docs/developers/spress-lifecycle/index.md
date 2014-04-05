@@ -7,7 +7,7 @@ prettify: true
 ---
 This article describes how to Spress perform a site:
 
-1. Reads the site configuration `config.yml`.
+1. Reads the site configuration file: `config.yml`.
 2. Cleans the site folder.
 3. Loads plugins and for each call to `initialize` method.
 4. Dispatches `spress.start` event.
