@@ -99,7 +99,7 @@ Example of access in Twig: `{{ "{{ site.posts }}" }}`.
     </tbody>
 </table>
 
-## Page variables
+## Page variables {#page-variables}
 
 Example of access in Twig: `{{ "{{ page.title }}" }}`.
 
