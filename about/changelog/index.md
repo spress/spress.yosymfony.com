@@ -7,6 +7,12 @@ id_content: changelog
 
 More information about the [releases](https://github.com/yosymfony/Spress/releases).
 
+## v1.0.3 {#1-0-3}
+Date: 2014-05-22
+
+* <span class="label label-default">Fixed</span> bug [#7](https://github.com/yosymfony/Spress/issues/7): Error with Site Build.
+* <span class="label label-primary">Improved</span> Tested on PHP 5.6 (Travis CI).
+
 ## v1.0.2 {#1-0-2}
 Date: 2014-03-30
 
