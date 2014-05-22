@@ -147,7 +147,7 @@ $ cd /your-site-dir
 $ spress site:build
 
 # Using timezone:
-$ spress site:build -s /your-site-dir --tiemzone="Europe/Madrid"
+$ spress site:build -s /your-site-dir --timezone="Europe/Madrid"
 
 # Plugins disabled:
 $ spress site:build --safe
