@@ -1,5 +1,13 @@
 [
     {
+        "name": "Google Analytics",
+        "author": "enzo - Eduardo Garcia",
+        "is_theme": false,
+        "url_info": "https://github.com/enzolutions/Spress-plugin-google-analytics",
+        "url_author": "http://enzolutions.com",
+        "description": "Enable add Google Analytics Tracker in your site."
+    },
+    {
         "name": "More tag",
         "author": "Yo! Symfony",
         "is_theme": false,
