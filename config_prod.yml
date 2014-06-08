@@ -1,0 +1,8 @@
+# Site configuration of production environment
+
+url: "http://spress.yosymfony.com" # Without end slash
+
+# Google Analytics
+google_analytics:
+    domain: yosymfony.com
+    id: 'UA-47797401-1'

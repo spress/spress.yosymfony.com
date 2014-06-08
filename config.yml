@@ -6,7 +6,7 @@ logo: spress-logo.png
 copyright_name: Yo! Symfony
 copyright_url: http://yosymfony.com
 
-url: "http://spress.yosymfony.com" # Without end slash
+url: "" # Without end slash
 
 # Data about Spress release
 release:
@@ -59,8 +59,8 @@ forms:
 
 # Google Analytics
 google_analytics:
-    domain: yosymfony.com
-    id: 'UA-47797401-1'
+    domain: 
+    id: 
 
 # Site validation
 google_verify:
