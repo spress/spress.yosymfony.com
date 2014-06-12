@@ -131,7 +131,7 @@ E.g `$ spress site:new /your-site-dir`
 ### site:build {#site-build-command}
 Build your site in your configured destination, typically `_site`. 
 
-`site:build [-s|--source[="./"]] [--timezone[="..."]] [--drafts] [--safe]`
+`site:build [-s|--source="./"] [--timezone="..."] [--drafts] [--safe]`
 
 * `--timezone` Set the timezone. E.g: "Europe/Madrid".
 [More timezones](http://www.php.net/manual/en/timezones.php).
