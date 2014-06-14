@@ -296,7 +296,7 @@ This event extend from [`ContentEvent`](#contentevent).
 
 {% verbatim %}
 ```
-$subscriber->addEventListener('spress.before_convert', 
+$subscriber->addEventListener('spress.before_render', 
     function(RenderEvent $event)
     {
         // Get Twig template rendered:
