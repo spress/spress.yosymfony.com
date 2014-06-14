@@ -1,12 +1,12 @@
 ---
 layout: blog/post
 title: New in Spress 1.1: Environment configurations
-description: How to load configurations for differences environments?
+description: How to load configurations for different environments?
 categories: [news]
 tags: ['1.1', 'configuration','environment']
 ---
 The development of Spress 1.1.0 continues with new features like support to load configurations for
-differences environments. This is **useful for to write configuration options for development 
+different environments. This is **useful for to write configuration options for development 
 and production environments**. Each Spress site has a `config.yml` file (mandatory) with the options
 for the default environment (dev). If you want set options for production environment you can
 to create a `config_prod.yml` file with the options that will be overrided in `config.yml`.
