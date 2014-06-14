@@ -1,6 +1,7 @@
 ---
 layout: page-doc
 title: Variables
+description: "Standard variables of Spress"
 header: { title: Variables }
 prettify: true
 ---
@@ -58,12 +59,16 @@ Example of access in Twig: `{{ "{{ site.posts }}" }}`.
         <tr>
             <td>posts</td>
             <td>array</td>
-            <td>List of post in reverse chronological.</td>
+            <td markdown="1">
+                List of post in reverse chronological. Each element of this list is type [page](#page-variables).
+            </td>
         </tr>
         <tr>
             <td>pages</td>
             <td>array</td>
-            <td>List of pages.</td>
+            <td markdown="1">
+                List of pages. Each element of this list is type [page](#page-variables).
+            </td>
         </tr>
         <tr>
             <td>time</td>
@@ -76,7 +81,7 @@ Example of access in Twig: `{{ "{{ site.posts }}" }}`.
             <td markdown="1">
                 List of posts group by categories.
                 E.g: `site.cagetories.news` get all posts with `news`
-                category.
+                category. Each element of this list is type [page](#page-variables).
             </td>
         </tr>
         <tr>
@@ -85,7 +90,7 @@ Example of access in Twig: `{{ "{{ site.posts }}" }}`.
             <td markdown="1">
                 List of posts group by tags.
                 E.g: `site.tags.car` get all posts with `car`
-                tag.
+                tag. Each element of this list is type [page](#page-variables).
             </td>
         </tr>
         <tr>
