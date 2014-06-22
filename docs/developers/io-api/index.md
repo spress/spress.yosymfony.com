@@ -5,7 +5,7 @@ description: "With the IO API your plugins can to interact with the user to show
 header: { title: Developers, sub: IO API }
 prettify: true
 ---
-The IO API <sup><span class="label label-success">New in 1.1.0</span></sup> enable your plugins
+The IO API <sup><span class="label label-success">New in 1.1.0</span></sup> enables your plugins
 to interact with the user to show messages or to make questions:
 
 * Write messages.
