@@ -14,6 +14,9 @@ $ php composer.phar update
 # Build with Spress
 $ spress site:build
 
+# or with production environment options:
+$ spress site:build --env=prod
+
 $ cd _site/
 
 php -S localhost:8080
