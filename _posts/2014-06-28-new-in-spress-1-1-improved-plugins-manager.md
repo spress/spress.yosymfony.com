@@ -1,7 +1,7 @@
 ---
 layout: blog/post
 title: New in Spress 1.1: Plugins manager improved
-description: Plugins for Spress (static site generator)
+description: The plugins manager has been improved for Spress 1.1.0
 categories: [news]
 tags: ['1.1', 'plugins']
 ---
