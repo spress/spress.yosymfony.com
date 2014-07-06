@@ -89,7 +89,7 @@ class CustomConverter implements ConverterInterface
 }
 ```
 
-## Register a converer
+## Register a converter
 
 To register a converter see 
 [EnviromentEvent class](/docs/developers/events-list/#add-new-converter) from
