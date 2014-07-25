@@ -11,8 +11,8 @@ url: "" # Without end slash
 # Data about Spress release
 release:
    version: "1.0.3"
-   github_url: https://github.com/yosymfony/Spress/
-   url_package: https://github.com/yosymfony/Spress/releases/download/v1.0.3/spress.zip
+   github_url: https://github.com/spress/Spress/
+   url_package: https://github.com/spress/Spress/releases/download/v1.0.3/spress.zip
 
 author:
     name: Victor Puertas
@@ -20,7 +20,7 @@ author:
     
     # Social networks
     twitter: spress_cms
-    github: https://github.com/yosymfony/Spress
+    github: https://github.com/spress
     bitbucket:
     facebook:
     linkedin:
