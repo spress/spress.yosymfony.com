@@ -12,7 +12,7 @@ This guie will cover topics like create a site, write a post or create a theme.
 * Linux, Unix or Mac OS X.
 
 ###Installation
-Install Spress from ZIP or Deb package file and Github repository.
+Install Spress from Github repository, Packagist or ZIP file.
 
 ####From ZIP file (*nix and Mac OS X)
 [Download](/download) the zip file and uncompress in `/your-spress-installation-dir`.
@@ -29,8 +29,16 @@ $ ln -s /your-spress-installation-dir/bin/spress /usr/local/bin/spress
 
 ####From Github
 
+Install composer in your project:
+
 ```
-$ git clone https://github.com/yosymfony/Spress.git
+curl -s https://getcomposer.org/installer | php
+```
+
+Clone repository:
+
+```
+$ git clone https://github.com/spress/Spress.git
 $ cd /your-spress-repository-dir
 
 # Get vendors:
@@ -38,6 +46,19 @@ $ php composer.phar install
 
 # Ready!!
 ```
+
+The `spress` executable is located at `/your-spress-repository-dir/bin`.
+
+####Composer global installation
+
+You need to install Composer as before explained. 
+
+```
+php composer.phar global require spress/Spress:1.*
+```
+
+Next you have ready the `spress` command in your console. More information about
+[Composer global installation](https://getcomposer.org/doc/03-cli.md#global).
 
 ###Starting
 You need create a site and build it. With Spress executable, you can create a 
