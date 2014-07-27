@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="Spress" default="build">
+    <property name="dir.deploy" value="../Spress.yosymfony.com-rhcloud/php" />
+    
+    <target name="build">
+        <exec passthru="true" checkreturn="true" command="spress site:build"/>
+    </target>
+    
+    <target name="deploy" depends="build-prod, clean-dir-deploy">
+        <copy todir="${dir.deploy}" >
+            <fileset defaultexcludes="false" expandsymboliclinks="true" dir="./_site">
+                <include name="**" />
+            </fileset>
+        </copy>
+    </target>
+    
+    <target name="build-prod">
+        <exec passthru="true" checkreturn="true" command="spress site:build --env=prod"/>
+    </target>
+    
+    <target name="clean-dir-deploy">
+        <delete dir="${dir.deploy}"/>
+    </target>
+</project>
