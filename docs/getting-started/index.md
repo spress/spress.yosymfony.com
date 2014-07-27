@@ -37,7 +37,7 @@ $ php composer.phar install
 
 The `spress` executable is located at `/your-spress-repository-dir/bin`.
 
-####From Composer global installation
+####Global installation with Composer
 
 You need to install Composer as before explained. 
 
