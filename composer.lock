@@ -8,17 +8,17 @@
     "packages": [
         {
             "name": "symfony/yaml",
-            "version": "v2.4.6",
+            "version": "v2.4.8",
             "target-dir": "Symfony/Component/Yaml",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/Yaml.git",
-                "reference": "fd22bb88c3a6f73c898b39bec185a9e211b06265"
+                "reference": "e63eb0f9edbf4c48c425604a05fd4b04c8a7629a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/Yaml/zipball/fd22bb88c3a6f73c898b39bec185a9e211b06265",
-                "reference": "fd22bb88c3a6f73c898b39bec185a9e211b06265",
+                "url": "https://api.github.com/repos/symfony/Yaml/zipball/e63eb0f9edbf4c48c425604a05fd4b04c8a7629a",
+                "reference": "e63eb0f9edbf4c48c425604a05fd4b04c8a7629a",
                 "shasum": ""
             },
             "require": {
@@ -53,7 +53,7 @@
             ],
             "description": "Symfony Yaml Component",
             "homepage": "http://symfony.com",
-            "time": "2014-05-12 09:27:48"
+            "time": "2014-07-09 09:04:55"
         },
         {
             "name": "yosymfony/spress-installer",
