@@ -1,6 +1,7 @@
 ---
 layout: page-doc
 title: Docs
+description: "Getting started with Spress: setup and creates the first site"
 header: { title: Docs, sub: Welcome }
 prettify: true
 ---
@@ -14,22 +15,9 @@ This guie will cover topics like create a site, write a post or create a theme.
 ###Installation
 Install Spress from Github repository, Packagist or ZIP file.
 
-####From ZIP file (*nix and Mac OS X)
-[Download](/download) the zip file and uncompress in `/your-spress-installation-dir`.
-Spress excutable are located in `bin/spress`. If you want use the executable 
-globally, you can create a symbolic link:
-
-```
-
-$ cd /your-spress-installation-dir
-$ ln -s /your-spress-installation-dir/bin/spress /usr/local/bin/spress
-```
-
-**If the above fail due to permissions, run the second command with *sudo*.**
-
 ####From Github
 
-Install composer in your project:
+Install Composer in your system:
 
 ```
 curl -s https://getcomposer.org/installer | php
@@ -49,7 +37,7 @@ $ php composer.phar install
 
 The `spress` executable is located at `/your-spress-repository-dir/bin`.
 
-####Composer global installation
+####From Composer global installation
 
 You need to install Composer as before explained. 
 
@@ -59,6 +47,18 @@ php composer.phar global require spress/Spress:1.*
 
 Next you have ready the `spress` command in your console. More information about
 [Composer global installation](https://getcomposer.org/doc/03-cli.md#global).
+
+####From ZIP file (*nix and Mac OS X)
+[Download](/download) the zip file and uncompress in `/your-spress-installation-dir`.
+Spress excutable are located in `bin/spress`. If you want use the executable 
+globally, you can create a symbolic link:
+
+```
+$ cd /your-spress-installation-dir
+$ ln -s /your-spress-installation-dir/bin/spress /usr/local/bin/spress
+```
+
+**If the above fail due to permissions, run the second command with *sudo*.**
 
 ###Starting
 You need create a site and build it. With Spress executable, you can create a 
