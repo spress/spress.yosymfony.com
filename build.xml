@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project name="Spress" default="build">
     <property name="dir.deploy" value="../Spress.yosymfony.com-rhcloud/php" />
+    <property name="cmd.spress" value="spress" />
+    <property name="cmd.deploy" value="git push origin master" />
     
     <target name="build">
-        <exec passthru="true" checkreturn="true" command="spress site:build"/>
+        <exec passthru="true" checkreturn="true" command="${cmd.spress} site:build"/>
     </target>
     
     <target name="deploy" depends="build-prod, clean-dir-deploy">
@@ -12,10 +14,11 @@
                 <include name="**" />
             </fileset>
         </copy>
+        <exec passthru="true" checkreturn="true" command="${cmd.deploy}" dir="${dir.deploy}"/>
     </target>
     
     <target name="build-prod">
-        <exec passthru="true" checkreturn="true" command="spress site:build --env=prod"/>
+        <exec passthru="true" checkreturn="true" command="${cmd.spress} site:build --env=prod"/>
     </target>
     
     <target name="clean-dir-deploy">
