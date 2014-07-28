@@ -2,7 +2,7 @@
 <project name="Spress" default="build">
     <property name="dir.deploy" value="../Spress.yosymfony.com-rhcloud/php" />
     <property name="cmd.spress" value="spress" />
-    <property name="cmd.deploy" value="git push origin master" />
+    <property name="cmd.git" value="git" />
     
     <target name="build">
         <exec passthru="true" checkreturn="true" command="${cmd.spress} site:build"/>
@@ -14,7 +14,8 @@
                 <include name="**" />
             </fileset>
         </copy>
-        <exec passthru="true" checkreturn="true" command="${cmd.deploy}" dir="${dir.deploy}"/>
+        <exec passthru="true" checkreturn="true" command="${cmd.git} commit -am'New deploy'" dir="${dir.deploy}"/>
+        <exec passthru="true" checkreturn="true" command="${cmd.git} push origin master" dir="${dir.deploy}"/>
     </target>
     
     <target name="build-prod">
