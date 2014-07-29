@@ -8,12 +8,17 @@
         <exec passthru="true" checkreturn="true" command="${cmd.spress} site:build"/>
     </target>
     
-    <target name="deploy" depends="build-prod, clean-dir-deploy">
+    <target name="deploy" depends="build-prod, clean-dir-deploy, copy-deploy-dir, deploy-git"/>
+    
+    <target name="copy-deploy-dir">
         <copy todir="${dir.deploy}" >
             <fileset defaultexcludes="false" expandsymboliclinks="true" dir="./_site">
                 <include name="**" />
             </fileset>
         </copy>
+    </target>
+    
+    <target name="deploy-git">
         <exec passthru="true" checkreturn="true" command="${cmd.git} commit -am'New deploy'" dir="${dir.deploy}"/>
         <exec passthru="true" checkreturn="true" command="${cmd.git} push origin master" dir="${dir.deploy}"/>
     </target>
