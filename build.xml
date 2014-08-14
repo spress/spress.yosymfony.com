@@ -19,6 +19,7 @@
     </target>
     
     <target name="deploy-git">
+        <exec passthru="true" checkreturn="true" command="${cmd.git} add -A" dir="${dir.deploy}"/>
         <exec passthru="true" checkreturn="true" command="${cmd.git} commit -am'New deploy'" dir="${dir.deploy}"/>
         <exec passthru="true" checkreturn="true" command="${cmd.git} push origin master" dir="${dir.deploy}"/>
     </target>
