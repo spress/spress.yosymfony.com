@@ -131,10 +131,11 @@ E.g `$ spress site:new /your-site-dir`
 ### site:build {#site-build-command}
 Build your site in your configured destination, typically `_site`. 
 
-`site:build [-s|--source="./"] [--timezone="..."] [--drafts] [--safe]`
+`site:build [-s|--source="./"] [--timezone="..."] [--env="dev"] [--drafts] [--safe]`
 
 * `--timezone` Set the timezone. E.g: "Europe/Madrid".
 [More timezones](http://www.php.net/manual/en/timezones.php).
+* `--env` Set the environment name <sup><span class="label label-success">New in 1.1.0</span></sup> [More information](/docs/configuration/#environment).
 * `--drafts` Include the draft post in the transformation.
 * `--safe` Disable all plugins.
 
@@ -148,6 +149,9 @@ $ spress site:build
 
 # Using timezone:
 $ spress site:build -s /your-site-dir --timezone="Europe/Madrid"
+
+# Using production environment:
+$ spress site:build --env=prod
 
 # Plugins disabled:
 $ spress site:build --safe
