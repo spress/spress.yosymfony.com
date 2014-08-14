@@ -1,6 +1,7 @@
 ---
 layout: page-doc
-title: Variables
+title: Configuration of a Spress site
+description: Each Spress site have a configuration file with information for generating the site
 header: { title: Configuration }
 prettify: true
 ---
@@ -25,7 +26,27 @@ of Spress and create new variables that will be accessible in your template with
   </div>
 </div>
 
+## Environment configuration: development and production {#environment}
+
+The environment configuration <sup><span class="label label-success">New in 1.1.0</span></sup>
+is useful for writing configuration options for development and production environments. Each 
+Spress site has a `config.yml` file (mandatory) with the options for the default environment (dev).
+If you want set options for production environment you can to create a `config_prod.yml` file with
+the options that will be overrided in `config.yml`. The command line option `--env="dev"` let you
+to enable the environment.
+
+The pattern for environment configuration file is `config_{environment-name}.yml`.
+
+An example for production environment:
+
+```
+$ spress site:build --env=prod
+```
+
+More information and example available at this [blog post](/news/2014/06/12/new-in-spress-1-1-environment-configurations/).
+
 ## Default configuration
+
 Spress runs with the default configuration:
 
 ```
