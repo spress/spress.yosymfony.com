@@ -1,14 +1,14 @@
 ---
 layout: blog/post
 title: A static site generator in your PHP projects
-description: Spress-core package lets you using Spress in your PHP projects
+description: Spress-core package lets you use a static site generator in your PHP projects
 categories: [news]
 tags: ['spress-core']
 ---
 The last days I have been working on splitting Spress into [Spress Core](https://github.com/spress/Spress-core) and its ecosystem 
 (console commands and others) as I was described in [issue #13](https://github.com/spress/Spress/issues/13).
-Now you can to include Spress Core in your PHP projects and to generate static content. This feature would be
-useful for generating HTML content of a web project that has both dynamic and static responses.
+Now you can include Spress Core in your PHP projects. This feature would be
+useful for generating HTML content of a web project that have both dynamic and static responses.
 
 ## How to use?
 
@@ -40,7 +40,7 @@ class MyClass
 }
 ```
 
-The `/path-to-your-spress-site/` is a folder with a [Spress structure](http://devi-vm.local:8080/docs/how-is-work/).
+The `/path-to-your-spress-site/` is a folder with a [Spress structure](/docs/how-is-work/).
 You can see an [example of a Spress site](https://github.com/yosymfony/Spress-example).
 
 ## Set the environment information
