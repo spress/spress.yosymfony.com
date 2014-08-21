@@ -42,7 +42,7 @@ The `spress` executable is located at `/your-spress-repository-dir/bin`.
 You need to install Composer as before explained. 
 
 ```
-php composer.phar global require yosymfony/spress:1.*
+php composer.phar global require yosymfony/spress:1.*@dev
 ```
 
 Next you have ready the `spress` command in your console. More information about
