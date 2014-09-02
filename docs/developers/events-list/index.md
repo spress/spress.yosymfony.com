@@ -21,7 +21,7 @@ namespace. All events inherits from
     <tbody>
         <tr>
             <td>spress.start</td>
-            <td markdown="1">[`EnviromentEvent`](#enviromentevent)</td>
+            <td markdown="1">[`EnvironmentEvent`](#environmentevent)</td>
             <td>
                 The spress.start is thrown when start to generate a project. With this
                 event you can modify the configuration repository, add converters or 
@@ -167,7 +167,7 @@ ConfigRepository have a access array interface.
 
 ```
 $subscriber->addEventListener('spress.start', 
-    function(EnviromentEvent $event)
+    function(EnvironmentEvent $event)
     {
         $repository = $event->getConfigRepository();
         
