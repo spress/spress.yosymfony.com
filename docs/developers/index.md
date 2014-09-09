@@ -80,14 +80,14 @@ namespace SpressPlugins\YourPlugin;
 
 use Yosymfony\Spress\Plugin\Plugin;
 use Yosymfony\Spress\Plugin\EventSubscriber;
-use Yosymfony\Spress\Plugin\Event\EnviromentEvent;
+use Yosymfony\Spress\Plugin\Event\EnvironmentEvent;
 
 class YourPlugin extends Plugin
 {
     public function initialize(EventSubscriber $subscriber)
     {
         $subscriber->addEventListener('spress.start', 
-            function(EnviromentEvent $event)
+            function(EnvironmentEvent $event)
             {
                 // Event's code
             });
@@ -134,7 +134,7 @@ namespace SpressPlugins\YourPlugin;
 
 use Yosymfony\Spress\Plugin\Plugin;
 use Yosymfony\Spress\Plugin\EventSubscriber;
-use Yosymfony\Spress\Plugin\Event\EnviromentEvent;
+use Yosymfony\Spress\Plugin\Event\EnvironmentEvent;
 
 class YourPlugin extends Plugin
 {
@@ -143,7 +143,7 @@ class YourPlugin extends Plugin
         $subscriber->addEventListener('spress.start', 'onStart');
     }
     
-    public function onStart(EnviromentEvent $event)
+    public function onStart(EnvironmentEvent $event)
     {
         // Code for handle event.
     }
