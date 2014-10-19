@@ -12,7 +12,6 @@ To enable this server you can use `--server` option with `spress site:build` com
 The other feature included in this version is a resource watcher for watching for
 changes and to regenerate your site automatically. To enable this feature you can
 use `--watch` option with `spress site:build` command. Each option can be used individually.
-This video show us how to work this new options:
 
 ```
 $ spress site:build --server --watch
@@ -26,7 +25,7 @@ host: 'localhost'
 port: 4000
 ```
 
-**When you are using `--server` option, the value of `url` key will be empty string**.
+This video show us how to work this new options:
 
 <iframe width="640" height="360" src="//www.youtube.com/embed/-cRgJEH7ZDc?rel=0" frameborder="0" allowfullscreen></iframe>
 
