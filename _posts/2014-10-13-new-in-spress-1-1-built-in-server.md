@@ -17,6 +17,17 @@ This video show us how to work this new options:
 ```
 $ spress site:build --server --watch
 ```
+By defacult the built-in server is listening `0.0.0.0:4000` accepting connections from any adress
+by port 4000. If you want change this values you can add this lines to `config.yml` of your site
+with your values:
+
+```
+host: 'localhost'
+port: 4000
+```
+
+**When you are using `--server` option, the value of `url` key will be empty string**.
+
 <iframe width="640" height="360" src="//www.youtube.com/embed/-cRgJEH7ZDc?rel=0" frameborder="0" allowfullscreen></iframe>
 
 Additionally, Spress 1.1.0 beta1 will be ready this week!.
