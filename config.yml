@@ -6,8 +6,6 @@ logo: spress-logo.png
 copyright_name: Yo! Symfony
 copyright_url: http://yosymfony.com
 
-url: "" # Without end slash
-
 # Data about Spress release
 release:
    version: "1.0.3"
