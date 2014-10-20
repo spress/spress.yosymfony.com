@@ -136,7 +136,7 @@ Build your site in your configured destination, typically `_site`.
 * `--timezone` Set the timezone. E.g: "Europe/Madrid".
 [More timezones](http://www.php.net/manual/en/timezones.php).
 * `--env` Set the environment name <sup><span class="label label-success">New in 1.1.0</span></sup> [More information](/docs/configuration/#environment).
-* `--server`The built-in server will run. <sup><span class="label label-success">New in 1.1.0</span></sup>
+* `--server`The built-in server <sup><span class="label label-success">New in 1.1.0</span></sup> will run by default at `http://localhost:4000`.
 * `--watch` Watch for changes and regenerate your site automatically. <sup><span class="label label-success">New in 1.1.0</span></sup>
 * `--drafts` Include the draft post in the transformation.
 * `--safe` Disable all plugins.
@@ -153,7 +153,7 @@ $ spress site:build
 $ cd /your-site-dir
 $ spress site:build --server --watch  # Go to http://localhost:4000
 
-# Only watch for changes an generate your site automatically
+# Only watch for changes an generate your site automatically into ./_site
 $ cd /your-site-dir
 $ spress site:build --watch
 
