@@ -7,6 +7,25 @@ id_content: changelog
 
 More information about the [releases](https://github.com/yosymfony/Spress/releases).
 
+## V1.1.0-beta.1 {#1-1-0-beta-1}
+Date: 2014-10-19
+
+* <span class="label label-success">New</span> [IO API](/news/2014/05/11/new-in-spress-1-1-io-api/) useful for interacting with the users.
+* <span class="label label-success">New</span> Proposal [#9](https://github.com/spress/Spress/issues/9): Support for environment configuration files. New key `env` for `config.yml`.
+* <span class="label label-success">New</span> PR [#12](https://github.com/spress/Spress/issues/12): Added ability to use multiple extensions on layouts.
+* <span class="label label-success">New</span> Proposal [#15](https://github.com/spress/Spress/issues/15): Built-in server and watch for changes.
+* <span class="label label-default">Fixed</span> Issue [#10](https://github.com/spress/Spress/issues/10): Classname with typo: EnviromentEvent. This class was replaced by EnvironmentEvent.
+* <span class="label label-default">Fixed</span> PR [#14](https://github.com/spress/Spress/issues/14): Changed Frontmatter regex pattern to allow for CRLF line endings.
+* <span class="label label-primary">Improved</span> Proposal [#13](https://github.com/spress/Spress/issues/13): Split Spress into Spress Core and its ecosystem.
+* <span class="label label-primary">Improved</span> Replaces all uses of deprecated method mergeWith from ConfigServiceProvider by union method.
+* <span class="label label-primary">Improved</span> Proposal [#11](https://github.com/spress/Spress/issues/11): Improve the plugins manager for writing plugins more easily.
+* <span class="label label-primary">Improved</span> Decoupled options for Plugin Manager.
+* <span class="label label-primary">Improved</span> PSR-4 for classloader.
+* <span class="label label-primary">Improved</span> Symfony components >= 2.4 and < 3 in `composer.json`.
+* <span class="label label-primary">Improved</span> The default value for `url` key at global configuration is empty-string.
+* <span class="label label-primary">Improved</span> Documentation fixes.
+* <span class="label label-danger">Deprecated</span> The configuration options: `baseurl` and `relative_permalinks` has been declared  deprecated.
+
 ## v1.0.3 {#1-0-3}
 Date: 2014-05-22
 
