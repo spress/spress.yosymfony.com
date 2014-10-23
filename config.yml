@@ -12,10 +12,14 @@ release:
    github_url: https://github.com/spress/Spress/
    url_package: https://github.com/spress/Spress/releases/download/v1.0.3/spress.zip
 
+pre_release:
+   version: "Spress 1.1.0 beta 1"
+   url: "/releases/2014/10/19/spress-1-1-0-beta-1/"
+
 author:
     name: Victor Puertas
     url: http://twitter.com/victorpuertas
-    
+
     # Social networks
     twitter: spress_cms
     github: https://github.com/spress
@@ -37,7 +41,7 @@ top_menu:
     - { name: Add-ons, icon: fa-cogs, url: /add-ons, site_url: true}
     - { name: Blog, url: /blog, site_url: true }
     - { name: About, url: /about, site_url: true }
-    
+
 bottom_menu:
     - { name: Example, url: https://github.com/yosymfony/Spress-theme-spresso }
     - { name: License: MIT, url: /about/license, site_url: true }

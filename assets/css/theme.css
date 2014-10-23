@@ -119,6 +119,24 @@ h6 {
 
 /* /Navbar */
 
+/* Alerts */
+
+.alert-flash {
+  color: #ff4043;
+  background-color: #eff0f1;
+  border-color: #dfdfdf;
+}
+
+.alert-flash hr {
+  border-top-color: #dfdfdf;
+}
+
+.alert-flash .alert-link {
+  color: #c33637;
+}
+
+/* /Alerts */
+
 
 /* Jumbotron */
 
@@ -309,7 +327,7 @@ a.meta-author {
 /* /Galery */
 
 /* Pages */
-#changelog li{
+#changelog li {
     margin-bottom: 4px;
 }
 /* /Pages */
@@ -317,5 +335,10 @@ a.meta-author {
 /* Miscellaneous */
 .no-display {
     display: none;
+}
+
+.no-border {
+    border: none;
+    border-radius: 0;
 }
 /* /Miscellaneous */

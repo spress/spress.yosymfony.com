@@ -1,0 +1,8 @@
+{% if site.pre_release.version | length > 0 %}
+<div class="alert alert-flash no-border">
+    <p class="bg-primary text-center">
+        <strong>{{ site.pre_release.version }}</strong> has been <a class="alert-link" href="{{ site.pre_release.url }}">released</a>.
+        Help us to try.
+    </p>
+</div>
+{% endif %}
