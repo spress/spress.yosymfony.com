@@ -1,17 +1,6 @@
 <div class="galery-item">
     <a href="{{ url_info }}">
         <div class="galery-item-featured">
-        
-            {% if is_theme %}
-            <span class="label label-default">
-                <i title="Desktop support" class="fa fa-desktop"></i>
-                
-                {% if support_movile %}
-                <i title="Movile support" class="fa fa-mobile"></i>
-                {% endif %}
-            </span>
-            {% endif %}
-            
             {% if price %}
             <span class="label label-warning">{{ price }}</span>
             {% endif %}
@@ -28,8 +17,20 @@
         {% endif %}
     </a>
     <div>
+        {% if is_theme %}
+            <i title="Desktop support" class="fa fa-desktop"></i>
+            
+            {% if support_movile %}
+            <i title="Movile support" class="fa fa-mobile"></i>
+            {% endif %}
+        {% endif %}
         <a class="meta-name" href="{{ url_info }}">{{ name }}</a> by
         <a class="meta-author" href="{{ url_author }}" rel="nofollow">{{ author }}</a>
+        <p>
+            {% for tag in tags %}
+                <span class="label label-danger">{{ tag }}</span>
+            {% endfor %}
+        </p>
         <p class="meta-description">
             {{ description }}
         </p>

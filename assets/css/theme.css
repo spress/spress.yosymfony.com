@@ -137,6 +137,18 @@ h6 {
 
 /* /Alerts */
 
+/* Label */
+
+.label-danger {
+  background-color: #c33637;
+}
+
+.label-danger[href]:hover,
+.label-danger[href]:focus {
+  background-color: #dfdfdf;
+}
+
+/* /Label */
 
 /* Jumbotron */
 
