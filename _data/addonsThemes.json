@@ -8,6 +8,7 @@
         "support_movile": true, 
         "url_info": "https://github.com/yosymfony/Spress-theme-spresso/",
         "url_author": "http://yosymfony.com/",
-        "description": "Spresso is the basic theme of Spress."
+        "description": "Spresso is the basic theme of Spress.",
+        "tags": ["bootstrap", "simple", "elegant"]
     }
 ]
