@@ -5,7 +5,8 @@
         "is_theme": false,
         "url_info": "https://github.com/enzolutions/Spress-plugin-google-analytics",
         "url_author": "http://enzolutions.com",
-        "description": "Enable add Google Analytics Tracker in your site."
+        "description": "Enable add Google Analytics Tracker in your site.",
+        "tags": ["google", "analytics", "stats"]
     },
     {
         "name": "More tag",
@@ -13,7 +14,8 @@
         "is_theme": false,
         "url_info": "https://github.com/yosymfony/Spress-plugin-more-tag",
         "url_author": "http://yosymfony.com",
-        "description": "You can use More Tag plugin to get a excerpt of your blog entries."
+        "description": "You can use More Tag plugin to get a excerpt of your blog entries.",
+        "tags": ["excerpt", "more"]
     },
     {
         "name": "Data loader",
@@ -21,6 +23,7 @@
         "is_theme": false,
         "url_info": "https://github.com/yosymfony/spress-plugin-dataloader",
         "url_author": "http://yosymfony.com",
-        "description": "Load JSON data located at _data folder in your site."
+        "description": "Load JSON data located at _data folder in your site.",
+        "tags": ["json", "data", "loader"]
     }
 ]
