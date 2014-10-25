@@ -1,5 +1,7 @@
 # Site configuration
 
+debug: true
+
 title: "Blogs and sites powered by flat files"
 description: "Spress is a blog-aware application that transform your plain text files in static sites."
 logo: spress-logo.png
