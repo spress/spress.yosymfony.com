@@ -50,6 +50,10 @@ More information and example available at this [blog post](/news/2014/06/12/new-
 Spress runs with the default configuration:
 
 ```
+debug: false
+
+# Locations
+
 source: .
 destination: ./_site
 posts: ./_posts
@@ -57,24 +61,34 @@ includes: ./_includes
 layouts: ./_layouts
 plugins: ./_plugins
 include: [.htaccess]
-exclude: []
+
+# Reading
+
+env: 'dev'
+exclude: [composer.json]
 markdown_ext: [markdown,mkd,mkdn,md]
 processable_ext: [html,htm,xml,js,css]
+layout_ext: [html.twig,twig,html]
 permalink: pretty
 relative_permalinks: true
 drafts: false
-timezone: null
 
+# Outputting
+
+url: ''                                 # e.g: http://mydomain.local:4000
 paginate: 0
 paginate_path: 'page:num'
 limit_posts: 0
-
+timezone: null                          # e.g. Europe/Madrid
 safe: false
 
+# Serving
 host: '0.0.0.0'
 port: 4000
+
+# Deprecated:
+
 baseurl: '/'
-url: 'http://localhost:4000'
 ```
 
 <table class="table">
