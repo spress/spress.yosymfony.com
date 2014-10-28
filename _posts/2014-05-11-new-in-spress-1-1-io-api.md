@@ -60,6 +60,6 @@ Before make a question to user is recommendable to know if the interface is inte
 * **askAndHideAnswer**: Ask a question and hide the answer. This method is useful to require password.
 * **askHiddenResponseAndValidate**: This method is like before but using a *callback* function to validate the response.
 
-If you want know more about IO API, check the [Spress IO interface at Github](https://github.com/yosymfony/Spress/blob/master/src/Yosymfony/Spress/IO/IOInterface.php).
+If you want know more about IO API, check the [Spress IO interface at Github](https://github.com/spress/Spress/blob/master/src/Yosymfony/Spress/Core/IO/IOInterface.php).
 
 The next improvement for Spress 1.1 is related with configuration files and the possibility of to define multiple enviroments.
