@@ -7,6 +7,15 @@ id_content: changelog
 
 More information about the [releases](https://github.com/yosymfony/Spress/releases).
 
+## V1.1.0-beta.2 {#1-1-0-beta-2}
+Date: 2014-11-21
+
+* <span class="label label-success">New</span> Issue [#17](https://github.com/spress/Spress/issues/17): 
+[Twig debug mode](/news/2014/10/28/new-in-spress-1-1-debug-mode/) through configuration.
+* <span class="label label-success">New</span> Two new scaffolding commands: `new:post` and `new:plugin`.
+* <span class="label label-success">New</span> Proposal [#22](https://github.com/spress/Spress/issues/22): Namespace "new" in commands for creating stuff.
+* <span class="label label-danger">Deprecated</span> The command `site:new` has been declared deprecated and replaced by `new:site`.
+
 ## V1.1.0-beta.1 {#1-1-0-beta-1}
 Date: 2014-10-19
 
