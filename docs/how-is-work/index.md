@@ -117,16 +117,20 @@ Hello. This is a post.
 </div>
 
 ## Spress commands
-### site:new {#site-new-command}
-Create a new site.
 
-`site:new [path[="./"]] [template[="blank"]] [--force] [--all]`
+### new:site {#site-new-command}
+
+Create a new site. Since Spress 1.1.0 `site:new` command has been declared as deprecated and replaced by `new:site`.
+
+`new:site [path[="./"]] [template[="blank"]] [--force] [--all]`
 
 * `template` Set the template for the site. Spresso is a built-in theme.
 * `--force` Force to use the path even though exists and it's not empty.
 * `--all` In blank template, creates the complete scaffold.
 
-E.g `$ spress site:new /your-site-dir`
+E.g `$ spress new:site /your-site-dir spresso`
+
+The prior example creates a new site using [Spresso theme](https://github.com/yosymfony/Spress-theme-spresso/).
 
 ### site:build {#site-build-command}
 Build your site in your configured destination, typically `_site`. 
