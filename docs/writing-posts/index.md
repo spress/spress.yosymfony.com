@@ -4,9 +4,27 @@ title: Writing posts
 header: { title: Writing posts   }
 prettify: true
 ---
-Write a post is straightforward and without database. You only need create a 
-text file in `_posts` folder of your site and write it using 
-[Markdown](http://daringfireball.net/projects/markdown/syntax) syntax.
+Posts are plain texts files using [Markdown](http://daringfireball.net/projects/markdown/syntax)
+syntax stored at `_posts` folder. It’s easy to manually create posts
+but Spress provides a `new:post` command: <sup><span class="label label-success">New in 1.1.0</span></sup>
+
+```
+$ spress new:post
+```
+
+By default, the command interacts with the user to tweak the generation.
+The complete syntax of the command is:
+
+```
+new:post [--title="..."] [--layout="default"] [--date="..."] [--tags="..."] [--categories="..."]
+```
+
+Any passed option will be used as a default value for the interaction.
+
+*`--tags`: Tags list separed by white spaces.
+*`--categories`: Categories list separed by white spaces.
+
+An example of a post using `default` layout:
 
 ```
 ---
@@ -30,10 +48,10 @@ draft: true
 The draft posts don't be included by defatult in the result site. If you want
 draft posts included, use the flag `--drafts` with `site:build` command.
 
-## Creating a post file
+## Creating a post file manually
 
-Your posts files are located in `_posts` folder. A file post have a special
-name format: `year-month-day-title.md` (.md is the file extension). 
+Your posts files are located in `_posts` folder. A post file have a special
+name format: `year-month-day-title.md` (`.md` is the file extension). 
 
 * **year**: Four-digit number.
 * **month**: Two-digit number.
@@ -62,8 +80,10 @@ Example of valid posts files:
 </div>
 
 ### Categories from the directory structure
+
 The categories of a post can be set from the Front-matter or deducted from the
-directory structure.
+directory structure. At the below example, `2013-11-01-what-is-new.md` will have 
+**news** category assigned because the post is stored at `news` folder:
 
 ```
 _posts
@@ -71,4 +91,23 @@ _posts
 | |- news
 | | |- 2013-11-01-what-is-new.md
 ```
-`2013-11-01-what-is-new.md` have a **news** category.
+### Creating categories from the Front-matter
+
+Instead of placing posts inside of folders you can specify your categories using
+`categories` variable in the Front-matter:
+
+```
+---
+categories: [news, releases]
+---
+```
+
+### Tags
+
+Multiple tags can be added to a post using `tags` variable in the Front-matter:
+
+```
+---
+tags: [tech, twitter]
+---
+```
