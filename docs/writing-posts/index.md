@@ -21,8 +21,8 @@ new:post [--title="..."] [--layout="default"] [--date="..."] [--tags="..."] [--c
 
 Any passed option will be used as a default value for the interaction.
 
-*`--tags`: Tags list separed by white spaces.
-*`--categories`: Categories list separed by white spaces.
+* `--tags`: Tags list separed by white spaces.
+* `--categories`: Categories list separed by white spaces.
 
 An example of a post using `default` layout:
 
