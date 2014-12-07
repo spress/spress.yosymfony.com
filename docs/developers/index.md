@@ -6,16 +6,36 @@ header: { title: Developers, sub: Create a plugin }
 prettify: true
 ---
 Spress can be extended by plugins located in `_plugins` folder. Spress uses a 
-event mechanic to dispatch events and the plugins can add event listener.
-It's recommended create each plugin in a separate folder and to use 
-[Composer](http://getcomposer.org/) to create the automatic class-loader file. With 
+events mechanic to dispatch events and the plugins can add event listener.
+It’s easy to manually create plugins
+but Spress provides a `new:plugin` command: <sup><span class="label label-success">New in 1.1.0</span></sup>
+
+```
+$ spress new:plugin
+```
+
+By default, the command interacts with the developer to tweak the generation.
+The complete syntax of the command is:
+
+```
+new:plugin [--name="..."] [--author="..."] [--email="..."] [--description="..."] [--license="MIT"]
+```
+
+* `--name`: The name of the plugins should follow the pattern `vendor-namse/plugin-name`.
+* `--author`: The author of the plugin.
+* `--email`: The Email of the author.
+* `--description`: The description of your plugin.
+* `--license`: The license under you publish your plugin. MIT by default.
+
+## Create a plugins manually
+
+It's recommended create each plugin in a separate folder and with a `composer.json` file. With 
 Composer, you can create reusable plugins that can be available to somebody
-using [Packagist.org](https://packagist.org/) and [Github](https://github.com/).
+using [packagist.org](https://packagist.org/) and [Github](https://github.com/).
 
 You can see a plugins [example](https://github.com/yosymfony/spress-plugin-dataloader).
 
-
-## Plugins skeleton
+### Plugins skeleton
 
 This is the typical structure of a plugin:
 
@@ -23,10 +43,15 @@ This is the typical structure of a plugin:
 _plugins/
 |- YourPluginName/
 |  |- composer.json
-|  |- YourPlugin.php
+|  |- YourPluginName.php
 ```
 
+#### Plugin PHP file
+
+In your new plugin PHP file you need to create class with the same name as the file.
+
 #### composer.json
+
 The `composer.json` contains information about your plugin like name,
 entry-point class or other libraries required by it.
 
@@ -66,14 +91,11 @@ search the class in the plugin.
 Go to your site folder and run `composer update` command.
 
 #### The plugin
+
 A plugin extends from `Plugin` class and should implement `initialize` method
 to add event listener. `initialize` will be invoqued at the beginning of the 
 plugin live cycle. You can use it like a plugin constructor to initialize internal
 variables.
-
-We recommend using *namespaces* for to organize the code. With the Composer class-loader
-you don't need to write include statements.
-
 
 ```
 namespace SpressPlugins\YourPlugin;
