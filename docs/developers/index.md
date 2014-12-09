@@ -21,7 +21,7 @@ The complete syntax of the command is:
 new:plugin [--name="..."] [--author="..."] [--email="..."] [--description="..."] [--license="MIT"]
 ```
 
-* `--name`: The name of the plugins should follow the pattern `vendor-namse/plugin-name`.
+* `--name`: The name of the plugins should follow the pattern `vendor-name/plugin-name`.
 * `--author`: The author of the plugin.
 * `--email`: The Email of the author.
 * `--description`: The description of your plugin.
@@ -29,11 +29,12 @@ new:plugin [--name="..."] [--author="..."] [--email="..."] [--description="..."]
 
 ## Create a plugins manually
 
-It's recommended create each plugin in a separate folder and with a `composer.json` file. With 
+We recommended to use `new:plugin` command but if you want... It's recommended
+create each plugin in a separate folder and with a `composer.json` file. With 
 Composer, you can create reusable plugins that can be available to somebody
 using [packagist.org](https://packagist.org/) and [Github](https://github.com/).
 
-You can see a plugins [example](https://github.com/yosymfony/spress-plugin-dataloader).
+You can see a plugin [example](https://github.com/yosymfony/spress-plugin-dataloader).
 
 ### Plugins skeleton
 
@@ -48,7 +49,7 @@ _plugins/
 
 #### Plugin PHP file
 
-In your new plugin PHP file you need to create class with the same name as the file.
+In your new plugin PHP file you need to create class with the same name as the file and without namespace.
 
 #### composer.json
 
@@ -57,20 +58,14 @@ entry-point class or other libraries required by it.
 
 ```
 {
-    "name": "yosymfony/spress-plugin-dataloader",
+    "name": "vendor/your-plugin-name",
     "type": "spress-plugin",
     "license": "MIT",
     "require": {
         "yosymfony/spress-installer": "~1.0"
     },
     "extra": {
-        "spress_name": "Your-plugin-name",
-        "spress_class": "SpressPlugins\\YourPlugin\\YourPlugin",
-    },
-    "autoload": {
-        "psr-4": {
-            "SpressPlugins\\YourPlugin\\": ""
-        }
+        "spress_name": "YourPluginName"
     }
 }
 ```
@@ -82,9 +77,6 @@ An overview of what is the mean the main options:
 a public plugin then you must add the `spress-installer` to the required list**.
 * **extra**: Extra information to Composer about the plugin is mandatory.
 * * **spress_name**: The name of the plugin. This value determines the name of the folder when it will be installed.
-* * **spress_class**: The complete namespace to the entry-point class.
-* **autoload**: This is how to the [class-loader](http://getcomposer.org/doc/01-basic-usage.md#autoloading)
-search the class in the plugin.
 
 **Get your plugin requirements and generate class-loader**
 
@@ -98,13 +90,11 @@ plugin live cycle. You can use it like a plugin constructor to initialize intern
 variables.
 
 ```
-namespace SpressPlugins\YourPlugin;
-
 use Yosymfony\Spress\Plugin\Plugin;
 use Yosymfony\Spress\Plugin\EventSubscriber;
 use Yosymfony\Spress\Plugin\Event\EnvironmentEvent;
 
-class YourPlugin extends Plugin
+class YourPluginName extends Plugin
 {
     public function initialize(EventSubscriber $subscriber)
     {
@@ -152,13 +142,11 @@ The `addEventListener($eventName, $listener)` method add a new listener to a eve
 You can use class methods instead of closure function:
 
 ```
-namespace SpressPlugins\YourPlugin;
-
 use Yosymfony\Spress\Plugin\Plugin;
 use Yosymfony\Spress\Plugin\EventSubscriber;
 use Yosymfony\Spress\Plugin\Event\EnvironmentEvent;
 
-class YourPlugin extends Plugin
+class YourPluginName extends Plugin
 {
     public function initialize(EventSubscriber $subscriber)
     {
