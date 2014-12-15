@@ -161,7 +161,7 @@ Twig.
 #### Get the configuration
 
 Alter the configuration require get the configuration repository.
-[ConfigRepository](https://github.com/yosymfony/ConfigServiceProvider#repository) 
+[ConfigRepository](https://github.com/yosymfony/Config-loader#repository) 
 contain both site configuration and global configuration merged. 
 ConfigRepository have a access array interface.
 
@@ -185,7 +185,7 @@ Converter can to extend Spress to support new type of content.
 
 ```
 $subscriber->addEventListener('spress.start', 
-    function(EnviromentEvent $event)
+    function(EnvironmentEvent $event)
     {
         $repository = $event->addConverter(new MyConverter());
     });
@@ -200,7 +200,7 @@ Twig can be exteded with functions, filters and tests.
 {% verbatim %}
 ```
 $subscriber->addEventListener('spress.start', 
-    function(EnviromentEvent $event)
+    function(EnvironmentEvent $event)
     {
         // Template manager to render Twig templates from a string:
         $tm = $event->getTemplateManager();
@@ -213,7 +213,7 @@ $subscriber->addEventListener('spress.start',
 
 ```
 $subscriber->addEventListener('spress.start', 
-    function(EnviromentEvent $event)
+    function(EnvironmentEvent $event)
     {
         // Get the absolute paths of the site (string):
         $v = $event->getSourceDir();
