@@ -153,7 +153,7 @@ namespace. All events inherits from
     </tbody>
 </table>
 
-## EnviromentEvent {#enviromentevent}
+## EnvironmentEvent {#environmentevent}
 
 This class let you get the configuration repository, add converters and extend
 Twig.
