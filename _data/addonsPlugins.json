@@ -1,5 +1,14 @@
 [
     {
+        "name": "Metadata of a Github repository",
+        "author": "Yo! Symfony",
+        "is_theme": false,
+        "url_info": "https://github.com/spress/Github-metadata-plugin",
+        "url_author": "http://yosymfony.com",
+        "description": "Plugin for getting metadata of a Github repository",
+        "tags": ["github", "repository", "metadata"]
+    },
+    {
         "name": "Google Analytics",
         "author": "enzo - Eduardo Garcia",
         "is_theme": false,
