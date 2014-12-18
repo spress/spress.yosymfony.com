@@ -5,7 +5,7 @@
         "is_theme": false,
         "url_info": "https://github.com/spress/Github-metadata-plugin",
         "url_author": "http://yosymfony.com",
-        "description": "Plugin for getting metadata of a Github repository",
+        "description": "Plugin for getting metadata of a Github repository.",
         "tags": ["github", "repository", "metadata"]
     },
     {
