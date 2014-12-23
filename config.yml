@@ -16,7 +16,7 @@ release:
 
 pre_release:
    version: "Spress 1.1.0 rc"
-   url: "/releases/2014/11/21/spress-1-1-0-beta-2-is-out/"
+   url: "/releases/2014/12/23/spress-1-1-0-rc-available/"
 
 author:
     name: Victor Puertas
