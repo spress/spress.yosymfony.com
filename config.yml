@@ -15,7 +15,7 @@ release:
    url_package: https://github.com/spress/Spress/releases/download/v1.0.3/spress.zip
 
 pre_release:
-   version: "Spress 1.1.0 beta 2"
+   version: "Spress 1.1.0 rc"
    url: "/releases/2014/11/21/spress-1-1-0-beta-2-is-out/"
 
 author:
@@ -74,5 +74,7 @@ bing_verify:
 paginate: 5
 paginate_path: 'blog/page:num'
 
+# Github metadata plugin:
+repository: spress/Spress
 
 exclude: [README.md,"theme/", build.xml, composer.json, composer.lock, "assets/css/bootstrap-theme.css", "assets/css/bootstrap.css"]

@@ -26,3 +26,25 @@ let you write a site in a few minutes.
 
 Spress is [open source](<{{ site.author.github }}>) and is powered by it. Spress using great components like
 [Silex](http://silex.sensiolabs.org/), or [Twig](http://twig.sensiolabs.org/) and at last but not least PHP.
+
+### Meet the contributors
+
+<div class="row">
+	<div class="col-md-6">
+		<ul class="list-group">
+		{% for contributor in site.github.contributors %}
+			<li class="list-group-item">
+				<div class="row">
+					<div class="col-md-2">
+						<img src="{{contributor.avatar_url}}" width="50" alt="{{contributor.login}}">
+					</div>
+					<div class="col-md-8">
+						<p><a href="{{contributor.html_url}}">{{ contributor.login }}</a></p>
+						<p>Contributions: {{ contributor.contributions }}</p>
+					</div>
+				</div>
+			</li>
+		{% endfor %}
+		</ul>
+	</div>
+</div>
