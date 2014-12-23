@@ -7,6 +7,17 @@ id_content: changelog
 
 More information about the [releases](https://github.com/yosymfony/Spress/releases).
 
+## V1.1.0-rc {#1-1-0-rc-1}
+Date: 2014-12-21
+
+* <span class="label label-success">New</span> variable: `server_watch_ext` at global configuration.
+* <span class="label label-default">Fixed</span> Default value for layout at new:post command assigned to null.
+* <span class="label label-default">Fixed</span> Fixed questions for tags and categories in new:post command.
+* <span class="label label-default">Fixed</span> Fixed new:post help message.
+* <span class="label label-default">Fixed</span> Added validators for command options.
+* <span class="label label-primary">Improved</span> Performance of combination --server and --watch options improved.
+* <span class="label label-primary">Improved</span> Deleted unused variables.
+
 ## V1.1.0-beta.2 {#1-1-0-beta-2}
 Date: 2014-11-21
 
