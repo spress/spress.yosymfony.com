@@ -1,5 +1,18 @@
 [
     {
+        "name": "Directive from HTML5 UP",
+        "author": "Spress add-ons",
+        "pay_with_tweet": false,
+        "is_theme": true,
+        "url_thumbnail": "/assets/img/thumbs/directive-theme.png",
+        "support_movile": true, 
+        "url_info": "https://github.com/spress-add-ons/Directive-theme",
+        "url_author": "http://yosymfony.com/",
+        "url_demo": "http://spress-add-ons.github.io/directive/",
+        "description": "A responsive HTML5 + CSS3 template designed by HTML5 UP.",
+        "tags": ["html5", "css3", "responsive"]
+    },
+    {
         "name": "Spresso",
         "author": "Yo! Symfony",
         "pay_with_tweet": false,
@@ -8,6 +21,7 @@
         "support_movile": true, 
         "url_info": "https://github.com/yosymfony/Spress-theme-spresso/",
         "url_author": "http://yosymfony.com/",
+        "url_demo": "http://yosymfony.github.io/Spress-example/",
         "description": "Spresso is the basic theme of Spress.",
         "tags": ["bootstrap", "simple", "elegant"]
     }
