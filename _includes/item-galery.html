@@ -33,6 +33,10 @@
         </p>
         <p class="meta-description">
             {{ description }}
+            
+            {% if url_demo %}
+                <a href="{{ url_demo }}">Live demo</a>.
+            {% endif %}
         </p>
     </div>
 </div>
