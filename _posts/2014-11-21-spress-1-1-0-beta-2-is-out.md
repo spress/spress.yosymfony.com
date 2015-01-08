@@ -29,7 +29,7 @@ Example:
 $>spress new:post
 ```
 
---more Rear more--
+--more Read more--
 
 ### new:plugin
 
