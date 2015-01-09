@@ -13,6 +13,7 @@ release:
    version: "1.1.0"
    github_url: https://github.com/spress/Spress/
    url_package: https://github.com/spress/Spress/releases/download/v1.1.0/spress.zip
+   url_phar: https://github.com/spress/Spress/releases/download/v1.1.0/spress.phar
 
 pre_release:
    version:
