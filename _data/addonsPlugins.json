@@ -2,7 +2,6 @@
     {
         "name": "Metadata of a Github repository",
         "author": "Yo! Symfony",
-        "is_theme": false,
         "url_info": "https://github.com/spress/Github-metadata-plugin",
         "url_author": "http://yosymfony.com",
         "description": "Plugin for getting metadata of a Github repository.",
@@ -11,7 +10,6 @@
     {
         "name": "Google Analytics",
         "author": "enzo - Eduardo Garcia",
-        "is_theme": false,
         "url_info": "https://github.com/enzolutions/Spress-plugin-google-analytics",
         "url_author": "http://enzolutions.com",
         "description": "Enable add Google Analytics Tracker in your site.",
@@ -20,7 +18,6 @@
     {
         "name": "More tag",
         "author": "Yo! Symfony",
-        "is_theme": false,
         "url_info": "https://github.com/yosymfony/Spress-plugin-more-tag",
         "url_author": "http://yosymfony.com",
         "description": "You can use More Tag plugin to get a excerpt of your blog entries.",
@@ -29,7 +26,6 @@
     {
         "name": "Data loader",
         "author": "Yo! Symfony",
-        "is_theme": false,
         "url_info": "https://github.com/yosymfony/spress-plugin-dataloader",
         "url_author": "http://yosymfony.com",
         "description": "Load JSON data located at _data folder in your site.",
