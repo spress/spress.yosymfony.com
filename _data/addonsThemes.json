@@ -1,9 +1,20 @@
 [
     {
+        "name": "Tinto",
+        "author": "enzo - Eduardo Garcia",
+        "pay_with_tweet": false,
+        "url_thumbnail": "/assets/img/thumbs/tinto-theme.png",
+        "support_mobile": true, 
+        "url_info": "https://github.com/enzolutions/spress-tinto-theme/",
+        "url_author": "http://enzolutions.com",
+        "url_demo": "http://enzolutions.com",
+        "description": "Tinto is a two column responsive theme inspired by Minimal Mistakes.",
+        "tags": ["html5", "css3", "responsive", "menu"]
+    },
+    {
         "name": "About Me",
         "author": "Spress add-ons",
         "pay_with_tweet": false,
-        "is_theme": true,
         "url_thumbnail": "/assets/img/thumbs/about-me-theme.png",
         "support_mobile": true, 
         "url_info": "https://github.com/spress-add-ons/About-me-theme",
@@ -16,7 +27,6 @@
         "name": "Directive from HTML5 UP",
         "author": "Spress add-ons",
         "pay_with_tweet": false,
-        "is_theme": true,
         "url_thumbnail": "/assets/img/thumbs/directive-theme.png",
         "support_mobile": true, 
         "url_info": "https://github.com/spress-add-ons/Directive-theme",
@@ -29,7 +39,6 @@
         "name": "Spresso",
         "author": "Yo! Symfony",
         "pay_with_tweet": false,
-        "is_theme": true,
         "url_thumbnail": "/assets/img/thumbs/spresso-theme.png",
         "support_mobile": true, 
         "url_info": "https://github.com/yosymfony/Spress-theme-spresso/",
