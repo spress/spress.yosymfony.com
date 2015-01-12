@@ -1,6 +1,6 @@
 ---
 layout: page-doc
-title: Getting started with Spress
+title: Get started with Spress
 description: "Getting started with Spress: setup and creates the first site"
 header: { title: Docs, sub: Welcome }
 prettify: true
@@ -8,7 +8,9 @@ prettify: true
 This guie will cover topics like create a site, write a post or create a theme.
 
 ### Requirement
+
 * PHP 5.4 or great.
+* [Composer](https://getcomposer.org/).
 
 ### Installation
 The best way to get Spress is to download the PHAR file:

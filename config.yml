@@ -40,6 +40,7 @@ open_graph:
 top_menu:
     - { name: Home, url: /, site_url: true }
     - { name: Download, url: /download, site_url: true }
+    - { name: Get started, url: /docs/getting-started/, site_url: true }
     - { name: Docs, url: /docs, site_url: true }
     - { name: Add-ons, icon: fa-cogs, url: /add-ons, site_url: true}
     - { name: Blog, url: /blog, site_url: true }
