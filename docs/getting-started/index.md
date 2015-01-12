@@ -1,6 +1,6 @@
 ---
 layout: page-doc
-title: Get started with Spress
+title: Getting started with Spress
 description: "Getting started with Spress: setup and creates the first site"
 header: { title: Docs, sub: Welcome }
 prettify: true
