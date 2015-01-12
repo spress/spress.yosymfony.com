@@ -25,7 +25,7 @@ let you write a site in a few minutes.
 ### Spress is powered by open source
 
 Spress is [open source](<{{ site.author.github }}>) and is powered by it. Spress using great components like
-[Silex](http://silex.sensiolabs.org/), or [Twig](http://twig.sensiolabs.org/) and at last but not least PHP.
+[Symfony](http://symfony.com/), or [Twig](http://twig.sensiolabs.org/) and at last but not least PHP.
 
 ### Meet the contributors
 
