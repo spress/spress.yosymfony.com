@@ -10,7 +10,7 @@ about Twig, see the [Twig web page](http://twig.sensiolabs.org).
 
 ## Create a site blank
 
-With the `spress site:new` [command](/docs/how-is-work/#site-new-command) you
+With the `spress new:site` [command](/docs/how-is-work/#site-new-command) you
 can create a blank site with the below structure:
 
 ```
@@ -113,13 +113,13 @@ More information about
 
 ## Plugins installation
 
-You can to use plugins in your site. For to do it, create go to your site folder
+You can use [plugins](/add-ons) in your site. For to do it, go to your site folder
 and create `composer.json` file and add the following content:
 
 ```
 {
     "require": {
-        "yosymfony/spress-plugin-dataloader": "*"
+        "spress/github-metadata-plugin": "~1.0-dev"
     },
     "config": {
         "vendor-dir": "_plugins/vendors"
@@ -128,17 +128,17 @@ and create `composer.json` file and add the following content:
 ```
 
 Next, you run `composer update` command and then you can use the plugin in your site.
-The plugins are availables in `_plugins` forlder.
+The plugins are availables in `_plugins` folder.
 
 In the previous example, you declare that need the latest version of a plugin called 
-`yosymfony/spress-plugin-dataloader`.
+`spress/github-metadata-plugin`.
 
 ## Create a redistributable theme
 
 You can create a redistributable public theme. Somebody can get your theme with 
 manually download (a theme is a Spress site) or using 
 [Composer](http://getcomposer.org/) tool to install the template in Spress and 
-create sites with `spress site:new` [command](/docs/how-is-work/#site-new-command).
+create sites with `spress new:site` [command](/docs/how-is-work/#site-new-command).
 
 For create a distribuible package with Composer, you shuld create a repository
 in Github or similar and to register it in [Packagist](https://packagist.org/about) repository.
