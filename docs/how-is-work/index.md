@@ -121,7 +121,24 @@ Hello. This is a post.
 
 ### new:site {#site-new-command}
 
-Create a new site. **Since Spress 1.1.0 `site:new` command has been declared as deprecated and replaced by `new:site`**.
+Create a new site. 
+
+<div class="panel panel-default">
+  <div class="panel-body">
+    <div class="row">
+        <div class="col-md-1">
+            <i class="fa fa-bookmark-o fa-3x"></i>
+        </div>
+        <div class="col-md-11">
+            <p markdown="1">
+               **Since Spress 1.1.0** `site:new` command has been
+               declared as deprecated and replaced by `new:site`.
+               The old command will be deleted in version 2.0.0.
+            </p>
+        </div>
+    </div>
+  </div>
+</div>
 
 `new:site [path[="./"]] [template[="blank"]] [--force] [--all]`
 
