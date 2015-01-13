@@ -1,6 +1,7 @@
 ---
 layout: page-doc
 title: How is work?
+description: How an static site generator work
 header: { title: How is work? }
 prettify: true
 ---
@@ -120,7 +121,7 @@ Hello. This is a post.
 
 ### new:site {#site-new-command}
 
-Create a new site. Since Spress 1.1.0 `site:new` command has been declared as deprecated and replaced by `new:site`.
+Create a new site. **Since Spress 1.1.0 `site:new` command has been declared as deprecated and replaced by `new:site`**.
 
 `new:site [path[="./"]] [template[="blank"]] [--force] [--all]`
 

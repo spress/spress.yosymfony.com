@@ -4,7 +4,7 @@ title: Themes
 header: { title: Themes }
 prettify: true
 ---
-Spress uses the power of Twig for render your templates. You can reusable parts
+**Themes are simply sites**. Spress uses the power of Twig for render templates. You can reusable parts
 of your HTML and write your templates with a easy languaje. For more information
 about Twig, see the [Twig web page](http://twig.sensiolabs.org).
 
@@ -102,10 +102,12 @@ _include
 To include a reusable part use `include` Twig statement:
 
 {% verbatim %}
-```
-{% include 'nav.html' %}
-{% include 'widget/email.html' %}
-```
+<pre>
+    <code class="twig">
+        {% include 'nav.html' %}
+        {% include 'widget/email.html' %}
+    </code>
+</pre>
 {% endverbatim %}
 
 More information about 
@@ -116,18 +118,20 @@ More information about
 You can use [plugins](/add-ons) in your site. For to do it, go to your site folder
 and create `composer.json` file and add the following content:
 
-```
-{
-    "require": {
-        "spress/github-metadata-plugin": "~1.0-dev"
-    },
-    "config": {
-        "vendor-dir": "_plugins/vendors"
-    }
-}
-```
+<pre>
+    <code class="json">
+        {
+            "require": {
+                "spress/github-metadata-plugin": "~1.0-dev"
+            },
+            "config": {
+                "vendor-dir": "_plugins/vendors"
+            }
+        }
+    </code>
+</pre>
 
-Next, you run `composer update` command and then you can use the plugin in your site.
+Next, run `composer update` command and then you can use the plugin in your site.
 The plugins are availables in `_plugins` folder.
 
 In the previous example, you declare that need the latest version of a plugin called 
@@ -135,13 +139,59 @@ In the previous example, you declare that need the latest version of a plugin ca
 
 ## Create a redistributable theme
 
-You can create a redistributable public theme. Somebody can get your theme with 
-manually download (a theme is a Spress site) or using 
-[Composer](http://getcomposer.org/) tool to install the template in Spress and 
-create sites with `spress new:site` [command](/docs/how-is-work/#site-new-command).
+Your own themes can be downloaded by other users and be using for building their web pages
+or as base for new themes. A theme can be installed downloading manually, using GIT for
+getting the repository or install globally with Composer.
 
 For create a distribuible package with Composer, you shuld create a repository
 in Github or similar and to register it in [Packagist](https://packagist.org/about) repository.
 
 Example of a [theme](https://github.com/yosymfony/Spress-theme-spresso). 
 You can see it in [action](http://yosymfony.github.io/Spress-example/).
+
+## How to install a new theme?
+
+Several ways to do it.
+
+### Download a copy
+
+* Get a copy of the latest release.
+* Uncompress it.
+* Go to theme folder
+* `spress site:build --server --watch`
+
+### With Git
+
+* Fork the repository
+* Clone it: `https://github.com/YOUR-USER/THEME-REPOSITORY.git`
+* Go to `THEME-REPOSITORY` folder
+* `spress site:build --server --watch`
+
+### Globally
+
+**This options is not available using `spress.phar`**
+
+Go to your Spress installation folder i.e ~/Spress and add the following depencency
+to your `composer.json` file
+
+<pre>
+    <code class="json">
+        "require": {
+            "spress-add-ons/about-me-theme": "1.0.*@dev"
+        }
+    </code>
+</pre>
+
+and then run the following command to install the dependency.
+
+```
+$ composer update
+```
+
+Next create your new site:
+
+```
+$ spress new:site /your-site-dir about-me
+$ cd /your-site-dir
+$ spress site:build --server --watch
+```
