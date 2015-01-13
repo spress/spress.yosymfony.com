@@ -1,6 +1,7 @@
 ---
 layout: page-doc
 title: Themes
+description: Create themes for Spress
 header: { title: Themes }
 prettify: true
 ---
@@ -169,7 +170,7 @@ Several ways to do it.
 
 ### Globally
 
-**This options is not available using `spress.phar`**
+**This option is not available using `spress.phar`**
 
 Go to your Spress installation folder i.e ~/Spress and add the following depencency
 to your `composer.json` file
