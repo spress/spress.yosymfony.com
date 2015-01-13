@@ -31,10 +31,10 @@ new:plugin [--name="..."] [--author="..."] [--email="..."] [--description="..."]
 
 We recommended to use `new:plugin` command but if you want... It's recommended
 create each plugin in a separate folder and with a `composer.json` file. With 
-Composer, you can create reusable plugins that can be available to somebody
+Composer, you can create reusable plugins available to others
 using [packagist.org](https://packagist.org/) and [Github](https://github.com/).
 
-You can see a plugin [example](https://github.com/yosymfony/spress-plugin-dataloader).
+You can see a [example](https://github.com/spress/Github-metadata-plugin) of a plugin.
 
 ### Plugins skeleton
 
