@@ -92,7 +92,7 @@ class CustomConverter implements ConverterInterface
 ## Register a converter
 
 To register a converter see 
-[EnviromentEvent class](/docs/developers/events-list/#add-new-converter) from
+[EnvironmentEvent class](/docs/developers/events-list/#add-new-converter) from
 `spress.start` event.
 
 [ConverterInterface]: https://github.com/yosymfony/Spress/blob/master/src/Yosymfony/Spress/ContentManager/ConverterInterface.php
