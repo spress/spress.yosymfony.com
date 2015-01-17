@@ -4,7 +4,7 @@ title: "The new executable phar file"
 categories: [news]
 tags: [phar,php]
 ---
-<img src="{{site.url}}/assets/img/lego.jpg">
+<img class="img-responsive" src="{{site.url}}/assets/img/lego.jpg">
 
 Photo by [Pascal](https://flic.kr/p/8cNqid).
 
