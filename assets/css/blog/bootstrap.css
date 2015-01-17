@@ -3436,6 +3436,12 @@ input[type="button"].btn-block {
   z-index: 990;
 }
 
+.center-block {
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+}
+
 .pull-right > .dropdown-menu {
   right: 0;
   left: auto;
