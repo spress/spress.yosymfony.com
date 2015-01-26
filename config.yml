@@ -47,7 +47,7 @@ top_menu:
     - { name: About, url: /about, site_url: true }
 
 bottom_menu:
-    - { name: Example, url: https://github.com/yosymfony/Spress-theme-spresso }
+    - { name: Support, url: https://gitter.im/spress/Spress }
     - { name: License: MIT, url: /about/license, site_url: true }
     - { name: About, url: /about, site_url: true }
     - { name: Yo! Symfony, url: http://yosymfony.com, siteUrl: true }
