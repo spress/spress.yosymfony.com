@@ -1,5 +1,17 @@
 [
     {
+        "name": "Clean blog",
+        "author": "Spress add-ons",
+        "pay_with_tweet": false,
+        "url_thumbnail": "/assets/img/thumbs/clean-blog-theme.png",
+        "support_mobile": true, 
+        "url_info": "https://github.com/spress-add-ons/Clean-blog-theme",
+        "url_author": "http://yosymfony.com/",
+        "url_demo": "http://spress-add-ons.github.io/clean-blog/",
+        "description": "An elegant bootstrap blog theme.",
+        "tags": ["bootstrap", "startbootstrap", "css3", "responsive", "blog"]
+    },
+    {
         "name": "Tinto",
         "author": "enzo - Eduardo Garcia",
         "pay_with_tweet": false,
