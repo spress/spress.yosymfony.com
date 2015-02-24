@@ -16,7 +16,7 @@ This guie will cover topics like create a site, write a post or create a theme.
 The best way to get Spress is to download the PHAR file:
 
 ```
-$ curl -OS {{ site.release.url_phar }}
+$ curl -LOS {{ site.release.url_phar }}
 $ chmod +x spress.phar
 ```
 
