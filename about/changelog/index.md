@@ -7,6 +7,12 @@ id_content: changelog
 
 More information about the [releases](https://github.com/yosymfony/Spress/releases).
 
+# V1.1.1 {#1-1-1}
+Date: 2015-02-25
+
+* <span class="label label-primary">Improved</span> [Spresso theme](https://github.com/yosymfony/Spress-theme-spresso/releases/tag/v1.1.1) updated to 1.1.1.
+* <span class="label label-primary">Improved</span> Dependencies have been updated.
+
 ## V1.1.0 {#1-1-0}
 Date: 2015-01-08
 

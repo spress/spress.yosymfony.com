@@ -10,10 +10,10 @@ copyright_url: http://yosymfony.com
 
 # Data about Spress release
 release:
-   version: "1.1.0"
+   version: "1.1.1"
    github_url: https://github.com/spress/Spress/
-   url_package: https://github.com/spress/Spress/releases/download/v1.1.0/spress.zip
-   url_phar: https://github.com/spress/Spress/releases/download/v1.1.0/spress.phar
+   url_package: https://github.com/spress/Spress/releases/download/v1.1.1/spress.zip
+   url_phar: https://github.com/spress/Spress/releases/download/v1.1.1/spress.phar
 
 pre_release:
    version:
