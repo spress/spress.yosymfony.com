@@ -19,10 +19,11 @@ key features:
 
 --more Read more--
 
-## How to migrate a Spress 1.x site to 2.x?
+## Migrating from Spress 1.x to 2.x?
 
-This major version comes with a new site structure where configuration data and the output folder are located at
-the first level. The main content is placed at `src` with a folder for `includes`, `layouts`, `plugins` and `content`.
+There are a few incompatibilities and new features that should be considered. Spress 2 comes with a new site structure where 
+configuration data and the output folder are located at the first level. The main content is placed at `src` with a folder for 
+`includes`, `layouts`, `plugins` and `content`.
 
 Folder mapping: (see [Spresso theme](https://github.com/yosymfony/Spress-theme-spresso/tree/2.0) for more details)
 
