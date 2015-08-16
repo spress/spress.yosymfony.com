@@ -1,5 +1,5 @@
 ---
-layout: page-doc
+layout: page-doc-2.0
 title: Getting started with Spress
 description: "Getting started with Spress: setup and creates the first site"
 header: { title: Docs, sub: Welcome }
@@ -9,7 +9,7 @@ This guie will cover topics like create a site, write a post or create a theme.
 
 ### Requirement
 
-* PHP 5.4 or great.
+* PHP 5.5 or great.
 * [Composer](https://getcomposer.org/).
 
 ### Installation

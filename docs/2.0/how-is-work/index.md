@@ -1,5 +1,5 @@
 ---
-layout: page-doc
+layout: page-doc-2.0
 title: How is work?
 description: How an static site generator work
 header: { title: How is work? }
@@ -7,7 +7,7 @@ prettify: true
 ---
 Spress is a static site generator, an application that take your site and 
 transform to final HTML ready to deploy in your hosting. By default, your
-content is generated in `_site` directory. You can create content using HTML or 
+content is generated in `build` directory. You can create content using HTML or 
 Markdown syntax. Additionaly with [converters](/docs/developers/converters) you 
 can add new type of content.
 
@@ -16,21 +16,22 @@ This is the typical structure. The only mandatory file is `config.yml`.
 
 ```
 .
+|- build
+|- src
+|- |- includes
+|- |- layouts
+|- |- content
+|- |- |- posts
+|- |- |- |- 20150816-my-post.md
+|- |- |- index.html
+|- |- |- ...
 |- config.yml
-|- _includes/
-|- _layouts/
-|  |- default.html
-|  |- post.html
-|- _posts/
-|  |- 2013-12-23-example-post.md
-|- _plugins/
-|- _site/
-|- index.html
+|- composer.json
 ```
 * **config.yml**: Store the configuration data. You can change the behaviour of 
 Spress or create custom variables.
-* **_includes**: There is a partials that can be used in the layouts, pages and posts.
-* **_layouts**: The layout files organize your content. In your post or page, 
+* **src/includes**: There is a partials that can be used in the layouts, pages and posts.
+* **src/layouts**: The layout files organize your content. In your post or page, 
 you can choose the layout in the [Front-matter](/docs/front-matter):
 
 ```
@@ -38,7 +39,7 @@ you can choose the layout in the [Front-matter](/docs/front-matter):
 layout: post
 ---
 ```
-* **_posts**: Store the blog posts files (if you want create a blog). The files
+* **src/content/posts**: Store the blog posts files (if you want create a blog). The files
 have a special name format: `year-month-day-title.md`. In the Front-matter you 
 can change this properties:
 
@@ -49,8 +50,8 @@ title: "Hello world"
 date: "2013-01-01"
 ---
 ```
-* **_plugins**: Extends the functionality of Spress. See [developers docs](/docs/developers).
-* **_site**: This is where the generated site will be placed.
+* **src/plugins**: Extends the functionality of Spress. See [developers docs](/docs/developers).
+* **build**: This is where the generated site will be placed.
 
 The directories that start with underscore are considered special directories and
 they not will be copied to generated site.
@@ -123,23 +124,6 @@ Hello. This is a post.
 
 Create a new site. 
 
-<div class="panel panel-default">
-  <div class="panel-body">
-    <div class="row">
-        <div class="col-md-1">
-            <i class="fa fa-bookmark-o fa-3x"></i>
-        </div>
-        <div class="col-md-11">
-            <p markdown="1">
-               **Since Spress 1.1.0** `site:new` command has been
-               declared as deprecated and replaced by `new:site`.
-               The old command will be deleted in version 2.0.0.
-            </p>
-        </div>
-    </div>
-  </div>
-</div>
-
 `new:site [path[="./"]] [template[="blank"]] [--force] [--all]`
 
 * `template` Set the template for the site. Spresso is a built-in theme.
@@ -157,9 +141,9 @@ Build your site in your configured destination, typically `_site`.
 
 * `--timezone` Set the timezone. E.g: "Europe/Madrid".
 [More timezones](http://www.php.net/manual/en/timezones.php).
-* `--env` Set the environment name <sup><span class="label label-success">New in 1.1.0</span></sup> [More information](/docs/configuration/#environment).
-* `--server`The built-in server <sup><span class="label label-success">New in 1.1.0</span></sup> will run by default at `http://localhost:4000`.
-* `--watch` Watch for changes and regenerate your site automatically. <sup><span class="label label-success">New in 1.1.0</span></sup>
+* `--env` Set the environment name [More information](/docs/configuration/#environment).
+* `--server`The built-in server will run by default at `http://localhost:4000`.
+* `--watch` Watch for changes and regenerate your site automatically.
 * `--drafts` Include the draft post in the transformation.
 * `--safe` Disable all plugins.
 
