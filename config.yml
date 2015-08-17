@@ -18,6 +18,7 @@ release:
 pre_release:
    version: "2.0.0-alpha"
    url: /releases/2015/08/12/spress-2-0-0-alpha-is-out/
+   url_phar: https://github.com/spress/Spress/releases/download/v2.0.0-alpha/spress.phar
 
 author:
     name: Victor Puertas

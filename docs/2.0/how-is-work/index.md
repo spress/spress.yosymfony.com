@@ -7,8 +7,8 @@ prettify: true
 ---
 Spress is a static site generator, an application that take your site and 
 transform to final HTML ready to deploy in your hosting. By default, your
-content is generated in `build` directory. You can create content using HTML or 
-Markdown syntax. Additionaly with [converters](/docs/developers/converters) you 
+content is generated at `build` folder. You can create content using HTML or 
+Markdown syntax. Additionaly with [converters](/docs/2.0/developers/converters) you 
 can add new type of content.
 
 ## Site structure
@@ -22,7 +22,7 @@ This is the typical structure. The only mandatory file is `config.yml`.
 |- |- layouts
 |- |- content
 |- |- |- posts
-|- |- |- |- 20150816-my-post.md
+|- |- |- |- 2015-08-16-my-post.md
 |- |- |- index.html
 |- |- |- ...
 |- config.yml
@@ -32,16 +32,17 @@ This is the typical structure. The only mandatory file is `config.yml`.
 Spress or create custom variables.
 * **src/includes**: There is a partials that can be used in the layouts, pages and posts.
 * **src/layouts**: The layout files organize your content. In your post or page, 
-you can choose the layout in the [Front-matter](/docs/front-matter):
+you can choose the layout in the [Front-matter](/docs/2.0/front-matter):
 
 ```
 ---
 layout: post
 ---
 ```
-* **src/content/posts**: Store the blog posts files (if you want create a blog). The files
-have a special name format: `year-month-day-title.md`. In the Front-matter you 
-can change this properties:
+* **src/content**: Store the content of your site.
+* **src/content/posts**: Store the blog posts files. Files located at this folder
+are under `posts` collection  and they have a special name format: `year-month-day-title.md`.
+The Front-matter of each file let you change this properties:
 
 ```
 ---
@@ -50,11 +51,8 @@ title: "Hello world"
 date: "2013-01-01"
 ---
 ```
-* **src/plugins**: Extends the functionality of Spress. See [developers docs](/docs/developers).
+* **src/plugins**: Extends the functionality of Spress. See [developers docs](/docs/2.0/developers).
 * **build**: This is where the generated site will be placed.
-
-The directories that start with underscore are considered special directories and
-they not will be copied to generated site.
 
 ## Page example
 Below a example of a simple HTML page:
@@ -173,53 +171,3 @@ $ spress site:build --env=prod
 $ spress site:build --safe
 ```
 
-#### The output command:
-
-```
-Starting...
-Total posts: 0
-Processed posts: 0
-Drafts post: 0
-Total pages: 17
-Processed pages: 10
-Other resources: 5
-```
-
-<table class="table">
-    <thead>
-        <tr>
-            <th class="col-sm-3">Name</th>
-            <th>Description</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>Total posts</td>
-            <td>Number of posts found at posts directory.</td>
-        </tr>
-        <tr>
-            <td>Processed posts</td>
-            <td>Number of posts with Front-matter.</td>
-        </tr>
-        <tr>
-            <td>Total pages</td>
-            <td markdown="1">
-                Number of pages found at your site.
-                **What's considered a page?** 
-                Any file with extension registered in `processable_ext` key at the
-                configuration file or registered by a converters.
-            </td>
-        </tr>
-        <tr>
-            <td>Processed pages</td>
-            <td>Number of pages with Front-matter.</td>
-        </tr>
-        <tr>
-            <td>Others resources</td>
-            <td>
-                Others files not procesable that will be verbatim copied
-                to the generated site.
-            </td>
-        </tr>
-    </tbody>
-</table>
