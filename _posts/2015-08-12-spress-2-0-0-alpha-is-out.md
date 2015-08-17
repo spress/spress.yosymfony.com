@@ -55,7 +55,7 @@ List of deleted events:
 
 Plugins and themes of [add-ons](/add-ons/) will be migrated progressively.
 
-## How to get Spress this version?
+## How to get this version?
 
 ```
 $ curl -LOS https://github.com/spress/Spress/releases/download/v2.0.0-alpha/spress.phar
