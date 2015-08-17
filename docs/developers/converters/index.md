@@ -6,7 +6,7 @@ header: { title: Developers, sub: Converters }
 prettify: true
 ---
 Converter can to extend Spress to support new type of content. A converter should
-implement [`Yosymfony\Spress\ContentManager\ConverterInterface`][ConverterInterface]:
+implement [`Yosymfony\Spress\Core\ContentManager\ConverterInterface`][ConverterInterface]:
 
 ## Converter example
 
@@ -95,4 +95,4 @@ To register a converter see
 [EnvironmentEvent class](/docs/developers/events-list/#add-new-converter) from
 `spress.start` event.
 
-[ConverterInterface]: https://github.com/yosymfony/Spress/blob/master/src/Yosymfony/Spress/ContentManager/ConverterInterface.php
+[ConverterInterface]: https://github.com/spress/Spress/blob/1.1/src/Yosymfony/Spress/Core/ContentManager/ConverterInterface.php
