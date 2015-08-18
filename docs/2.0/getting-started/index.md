@@ -1,13 +1,13 @@
 ---
 layout: page-doc-2.0
 title: Getting started with Spress
-description: "Getting started with Spress: setup and creates the first site"
+description: "Getting started with Spress: setup and create the first site"
 header: { title: Docs, sub: Welcome }
 prettify: true
 ---
-This guie will cover topics like create a site, write a post or create a theme.
+This guide will cover topics like create a site, write a post or create a theme.
 
-### Requirement
+### Requirements
 
 * PHP 5.5 or great.
 * [Composer](https://getcomposer.org/).
@@ -34,14 +34,14 @@ site blank or using a base theme and next build your site.
 **Quick-start**:
 
 ```
-$ spress site:new /your-site-dir spresso
+$ spress new:site /your-site-dir spresso
 $ cd /your-site-dir
 $ spress site:build --server --watch
 
 # Browse to localhost:4000
 ```
 
-With `site:new` command you create a new site using Spresso theme. Next,
+With `new:site` command you create a new site using Spresso theme. Next,
 you can build your site with `site:build` command. You'll get the result at 
 `build` folder.
 
