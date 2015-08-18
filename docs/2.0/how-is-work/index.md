@@ -81,7 +81,7 @@ that can be accessible to you using Twig syntax:
         </div>
         <div class="col-md-11">
             <p markdown="1">
-                Spress uses [Twig](http://twig.sensiolabs.org/) as template
+                Spress uses [Twig](http://twig.sensiolabs.org/) as default template
                 engine. See its documentations for get more powerful
                 templates.
             </p>
@@ -130,10 +130,10 @@ Create a new site.
 
 E.g `$ spress new:site /your-site-dir spresso`
 
-The prior example creates a new site using [Spresso theme](https://github.com/yosymfony/Spress-theme-spresso/).
+The prior example creates a new site using [Spresso theme](https://github.com/yosymfony/Spress-theme-spresso/tree/2.0).
 
 ### site:build {#site-build-command}
-Build your site in your configured destination, typically `_site`. 
+Build your site in your `build` folder. 
 
 `site:build [-s|--source="./"] [--timezone="..."] [--env="dev"] [--server] [--watch] [--drafts] [--safe]`
 
@@ -170,4 +170,3 @@ $ spress site:build --env=prod
 # Plugins disabled:
 $ spress site:build --safe
 ```
-
