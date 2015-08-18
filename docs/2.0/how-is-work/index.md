@@ -133,6 +133,7 @@ E.g `$ spress new:site /your-site-dir spresso`
 The prior example creates a new site using [Spresso theme](https://github.com/yosymfony/Spress-theme-spresso/tree/2.0).
 
 ### site:build {#site-build-command}
+
 Build your site in your `build` folder. 
 
 `site:build [-s|--source="./"] [--timezone="..."] [--env="dev"] [--server] [--watch] [--drafts] [--safe]`

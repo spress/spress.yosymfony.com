@@ -1,5 +1,5 @@
 ---
-layout: page-doc
+layout: page-doc-2.0
 title: Configuration of a Spress site
 description: Each Spress site have a configuration file with information for generating the site
 header: { title: Configuration }
@@ -8,7 +8,7 @@ prettify: true
 Your site have a `config.yml` file that let you change the default configuration
 of Spress and create new variables that will be accessible in your template with
 `{{ "{{ site.your_variable }}" }}`. Some global variables like `timezone` or 
-`safe` can be specified in the [command line options or flags](/docs/how-is-work/#site-build-command).
+`safe` can be specified in the [command line options or flags](/docs/2.0/how-is-work/#site-build-command).
 
 <div class="panel panel-default">
   <div class="panel-body">
@@ -28,14 +28,13 @@ of Spress and create new variables that will be accessible in your template with
 
 ## Environment configuration: development and production {#environment}
 
-The environment configuration <sup><span class="label label-success">New in 1.1.0</span></sup>
-is useful for writing configuration options for development and production environments. Each 
-Spress site has a `config.yml` file (mandatory) with the options for the default environment (dev).
-If you want set options for production environment you can to create a `config_prod.yml` file with
-the options that will be overrided in `config.yml`. The command line option `--env="dev"` let you
-to enable the environment.
+The environment configuration is useful for writing configuration options for development and 
+production environments. Each Spress site has a `config.yml` file (mandatory) with the options
+for the default environment (dev). If you want set options for production environment you can
+to create a `config_prod.yml` file with the options that will be overrided in `config.yml`.
+The command line option `--env="prod"` let you to enable the environment.
 
-The pattern for environment configuration file is `config_{environment-name}.yml`.
+The pattern for environment configuration filename is `config_{environment-name}.yml`.
 
 An example for production environment:
 
@@ -52,43 +51,32 @@ Spress runs with the default configuration:
 ```
 debug: false
 
-# Locations
-
-source: .
-destination: ./_site
-posts: ./_posts
-includes: ./_includes
-layouts: ./_layouts
-plugins: ./_plugins
-include: [.htaccess]
-
 # Reading
-
 env: 'dev'
-exclude: [composer.json]
-markdown_ext: [markdown,mkd,mkdn,md]
-processable_ext: [html,htm,xml,js,css]
-layout_ext: [html.twig,twig,html]
-permalink: pretty
-relative_permalinks: true
 drafts: false
+markdown_ext: ['markdown', 'mkd', 'mkdn', 'md']
+text_extensions: [ 'htm', 'html', 'html.twig', 'twig,html', 'js', 'less', 'markdown', 'md', 'mkd', 'mkdn', 'coffee', 'css', 'erb', 'haml', 'handlebars', 'hb', 'ms', 'mustache', 'php', 'rb', 'sass', 'scss', 'slim', 'txt', 'xhtml', 'xml' ]
+attribute_syntax: 'yaml'
 
 # Outputting
-
-url: ''                                 # e.g: http://mydomain.local:4000
-paginate: 0
-paginate_path: 'page:num'
-limit_posts: 0
-timezone: null                          # e.g. Europe/Madrid
+include: ['.htaccess']
+exclude: []
+timezone: 'UTC'                          # e.g. Europe/Madrid
 safe: false
+permalink: 'pretty'
+preserve_path_title: false
+layout_ext: ['html.twig', 'twig', 'html']
+url: ''                                  # e.g: http://your-domain.local:4000
+
+# Collections
+collections:
+  posts:
+    output: true
 
 # Serving
 host: '0.0.0.0'
 port: 4000
-
-# Deprecated:
-
-baseurl: '/'
+server_watch_ext: ['html', 'htm', 'xml']
 ```
 
 <table class="table">
@@ -101,14 +89,49 @@ baseurl: '/'
     </thead>
     <tbody>
         <tr>
-            <td>include</td>
+            <td>attribute_syntax</td>
+            <td>string</td>
+            <td markdown="1">
+                Format for declaration of attributes at metadata file or [Front-matter](/docs/2.0/front-matter/).
+                Values: "yaml" or "json".
+            </td>
+        </tr>
+        <tr>
+            <td>collections</td>
             <td>array</td>
-            <td>Force to include files or directories.</td>
+            <td>Defines the collections for the content.</td>
+        </tr>
+        <tr>
+            <td>debug</td>
+            <td>boolean</td>
+            <td>Enables debug mode.</td>
+        </tr>
+        <tr>
+            <td>drafts</td>
+            <td>boolean</td>
+            <td>Include drafts in the generated site.</td>
+        </tr>
+        <tr>
+            <td>env</td>
+            <td>string</td>
+            <td>The name of environment.</td>
         </tr>
         <tr>
             <td>exclude</td>
             <td>array</td>
             <td>Force to exclude files or directories.</td>
+        </tr>
+        <tr>
+            <td>include</td>
+            <td>array</td>
+            <td>Force to include files or directories.</td>
+        </tr>
+        <tr>
+            <td>host</td>
+            <td>string</td>
+            <td markdown="1">
+                Listen at the given hostname. Used with `site:new --server` command.
+            </td>
         </tr>
         <tr>
             <td>markdown_ext</td>
@@ -119,19 +142,44 @@ baseurl: '/'
             </td>
         </tr>
         <tr>
-            <td>processable_ext</td>
+            <td>layout_ext</td>
             <td>array</td>
-            <td>File extension that will be considered like processable.</td>
+            <td>
+                File extensions that will be considered as layout items.
+            </td>
         </tr>
         <tr>
-            <td>drafts</td>
+            <td>permalink</td>
+            <td>string</td>
+            <td markdown="1">
+                The style of the [permalinks](/docs/2.0/permalinks/).
+            </td>
+        </tr>
+        <tr>
+            <td>port</td>
+            <td>integer</td>
+            <td markdown="1">
+                Listen on the given port. Used with `site:new --server` command.
+            </td>
+        </tr>
+        <tr>
+            <td>preserve_path_title</td>
             <td>boolean</td>
-            <td>Include drafts in the generated site.</td>
+            <td markdown="1">
+                Sets `true` in case of you want to preserve the title extracted
+                from the filename path over the title attribute.
+                See [issue #47](https://github.com/spress/Spress/issues/47).
+            </td>
         </tr>
         <tr>
             <td>safe</span></td>
             <td>boolean</span></td>
             <td>Disable site plugins.</td>
+        </tr>
+        <tr>
+            <td>text_extensions</td>
+            <td>array</td>
+            <td>File extensions that will be considered as not binary files.</td>
         </tr>
         <tr>
             <td>timezone</td>
@@ -141,10 +189,10 @@ baseurl: '/'
                 [more timezones in PHP](http://www.php.net/manual/en/timezones.php).
             </td>
         </tr>
+        <tr>
+            <td>url</td>
+            <td>string</td>
+            <td>URL base of your site.</td>
+        </tr>
     </tbody>
 </table>
-
-### Processable extensions
-Processable extension indicates the cadidate files that may be processed.  
-The final value is the union between `processable_ext` key and the extension 
-registered by converters.
