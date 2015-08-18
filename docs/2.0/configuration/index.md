@@ -130,7 +130,7 @@ server_watch_ext: ['html', 'htm', 'xml']
             <td>host</td>
             <td>string</td>
             <td markdown="1">
-                Listen at the given hostname. Used with `site:new --server` command.
+                Listen at the given hostname. Used with `site:build --server` command.
             </td>
         </tr>
         <tr>
@@ -159,7 +159,7 @@ server_watch_ext: ['html', 'htm', 'xml']
             <td>port</td>
             <td>integer</td>
             <td markdown="1">
-                Listen on the given port. Used with `site:new --server` command.
+                Listen on the given port. Used with `site:build --server` command.
             </td>
         </tr>
         <tr>
