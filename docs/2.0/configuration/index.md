@@ -149,6 +149,14 @@ server_watch_ext: ['html', 'htm', 'xml']
             </td>
         </tr>
         <tr>
+            <td>parsedown_activated</td>
+            <td>boolean</td>
+            <td markdown="1">
+                Activates [Parsedown](http://parsedown.org/) as default Markdown converter instead of
+                [Michel Fortin](https://michelf.ca/projects/php-markdown/) converter.
+            </td>
+        </tr>
+        <tr>
             <td>permalink</td>
             <td>string</td>
             <td markdown="1">
