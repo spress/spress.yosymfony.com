@@ -5,13 +5,13 @@ description: How to extend Spress with a new converter
 header: { title: Developers, sub: Converters }
 prettify: true
 ---
-Converter can to extend Spress to support new type of content. A converter should
+Converter can extend Spress to support new type of content. A converter should
 implement [`Yosymfony\Spress\Core\ContentManager\ConverterInterface`][ConverterInterface]:
 
-## Converter example
+## Converter example {#converter-example}
 
-This converter turn to uppercase all content of your 
-pages and only work with files with extension is `.up` like `myPage.up` or
+This converter turns to uppercase all content of your 
+pages and works only for files with extension is `.up` like `myPage.up` or
 `2014-01-02-my-post.up`.
 
 ```
@@ -32,7 +32,7 @@ class CustomConverter implements ConverterInterface
     
     /**
      * Get the converter priority.
-     * Value between 0 to 10 with great is more priority.
+     * Value between 0 to 10 - greater means higher priority.
      * The converters built-in with Spress have low priority.
      * 
      * @return int
@@ -54,7 +54,7 @@ class CustomConverter implements ConverterInterface
     }
     
     /**
-     * If file's extension is support by converter
+     * If file's extension is supported by converter
      * 
      * @param string $extension Extension without dot
      * 
@@ -78,7 +78,7 @@ class CustomConverter implements ConverterInterface
     }
     
     /**
-     * The extension of filename result (without dot). E.g: html.
+     * The extension of result filename (without dot). E.g: html.
      * 
      * @return string
      */
@@ -89,7 +89,7 @@ class CustomConverter implements ConverterInterface
 }
 ```
 
-## Register a converter
+## Register a converter {#register-converter}
 
 To register a converter see 
 [EnvironmentEvent class](/docs/developers/events-list/#add-new-converter) from

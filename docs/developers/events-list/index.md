@@ -5,7 +5,7 @@ header: { title: Developers, sub: Events list }
 description: Events list of Spress livecycle
 prettify: true
 ---
-List of Spress events. All argument are located at `Yosymfony\Spress\Plugin\Event`
+List of Spress events. All arguments are located at `Yosymfony\Spress\Plugin\Event`
 namespace. All events inherits from 
 [Symfony\Component\EventDispatcher\Event][Symfony dispatch event].
 [Symfony dispatch event]: http://symfony.com/doc/current/components/event_dispatcher/introduction.html#creating-and-dispatching-an-event
@@ -23,9 +23,9 @@ namespace. All events inherits from
             <td>spress.start</td>
             <td markdown="1">[`EnvironmentEvent`](#environmentevent)</td>
             <td>
-                The spress.start is thrown when start to generate a project. With this
+                The spress.start is thrown when project generation begins. With this
                 event you can modify the configuration repository, add converters or 
-                extends Twig. When this event is thrown, the configuration site
+                extend Twig. When this event is thrown, the site configuration 
                 was loaded.
             </td>
         </tr>
@@ -34,11 +34,11 @@ namespace. All events inherits from
             <td markdown="1">[`ConvertEvent`](#convertevent)</td>
             <td>
                 <p>
-                    The spress.before_convert is thrown before convert the content
+                    The spress.before_convert is thrown before converting the content
                     of each page.
                 </p>
                 <p markdown="1">
-                    `getContent()` method return the original content in
+                    `getContent()` method returns the original content in
                     source format.
                 </p>
             </td>
@@ -48,13 +48,13 @@ namespace. All events inherits from
             <td markdown="1">[`ConvertEvent`](#convertevent)</td>
             <td>
                 <p markdown="1">
-                    The spress.after_convert is thrown after convert the content of
+                    The spress.after_convert is thrown after converting the content of
                     each page.
-                    **If the content don't have Front-matter this event never be
-                    dispatcher**.
+                    **If the content doesn't have Front-matter, this event will never be
+                    dispatched**.
                 </p>
                 <p markdown="1">
-                    `getContent()` method return the content transformed by
+                    `getContent()` method returns the content transformed by
                     converter. In this step Twig tags are not resolved.
                 </p>
             </td>
@@ -63,7 +63,7 @@ namespace. All events inherits from
             <td>spress.after_convert_posts</td>
             <td markdown="1">[`AfterConvertPostsEvent`](#afterconvertpostsevent)</td>
             <td>
-                The spress.after_convert_posts is thrown after convert all posts.
+                The spress.after_convert_posts is thrown after converting all posts.
             </td>
         </tr>
         <tr>
@@ -71,13 +71,13 @@ namespace. All events inherits from
             <td markdown="1">[`RenderEvent`](#renderevent)</td>
             <td>
                 <p markdown="1">
-                    The spress.before_render is thrown before render the content of
+                    The spress.before_render is thrown before rendering the content of
                     each page.
-                    **If the content don't have Front-matter this event never be
-                    dispatcher**.
+                    **If the content doesn't have Front-matter this event will never be
+                    dispatched**.
                 </p>
                 <p markdown="1">
-                    `getContent()` method return the content transformed by
+                    `getContent()` method returns the content transformed by
                     converter. In this step Twig tags are not resolved.
                 </p>
             </td>
@@ -87,17 +87,17 @@ namespace. All events inherits from
             <td markdown="1">[`RenderEvent`](#renderevent)</td>
             <td>
                 <p markdown="1">
-                    The spress.after_render is thrown after render the content of
+                    The spress.after_render is thrown after rendering the content of
                     each page.
-                    **If the content don't have Front-matter this event never be
-                    dispatcher**.
+                    **If the content doesn't have Front-matter this event will never be
+                    dispatched**.
                 </p>
                 <p markdown="1">
-                    `getContent()` method return the full content rendered
+                    `getContent()` method return the fully rendered content 
                     (layout included).
                 </p>
                 <p markdown="1">
-                    If you need to access to the content rendered without layout
+                    If you need to access to the rendered content without layout
                     you can to use `page.content` from the payload.
                 </p>
             </td>
@@ -110,12 +110,12 @@ namespace. All events inherits from
             <td markdown="1">[`RenderEvent`](#renderevent)</td>
             <td>
                 <p markdown="1">
-                    The spress.before_render_pagination is thrown before render the content of
-                    each pagination of posts.
-                    **This event require to enable pagination of posts**.
+                    The spress.before_render_pagination is thrown before rendering the content of
+                    each page of post pagination.
+                    **This event won't fire unless you enable pagination of posts**.
                 </p>
                 <p markdown="1">
-                    `getContent()` method return the content of pagination template.
+                    `getContent()` method returns the content of pagination template.
                     In this step Twig tags are not resolved.
                 </p>
             </td>
@@ -128,12 +128,12 @@ namespace. All events inherits from
             <td markdown="1">[`RenderEvent`](#renderevent)</td>
             <td>
                 <p markdown="1">
-                    The spress.after_render_pagination is thrown after render the content of
+                    The spress.after_render_pagination is thrown after rendering the content of
                     each pagination of posts.
-                    **This event require to enable pagination of posts**.
+                    **This event won't fire unless you enable pagination of posts**.
                 </p>
                 <p markdown="1">
-                    `getContent()` method return the full content rendered
+                    `getContent()` method returns the full content rendered
                     (layout included).
                 </p>
                 <p markdown="1">
@@ -146,7 +146,7 @@ namespace. All events inherits from
             <td>spress.finish</td>
             <td markdown="1">[`FinishEvent`](#finishevent)</td>
             <td markdown="1">
-                The spress.finish is thrown when the site was generated. All files 
+                The spress.finish is thrown after the site was generated. All files 
                 are saved in `_site` folder.
             </td>
         </tr>
@@ -155,15 +155,15 @@ namespace. All events inherits from
 
 ## EnvironmentEvent {#environmentevent}
 
-This class let you get the configuration repository, add converters and extend
+This class lets you get the configuration repository, add converters and extend
 Twig.
 
-#### Get the configuration
+#### Get the configuration {#get-configuration}
 
-Alter the configuration require get the configuration repository.
+You have to load configuration repository to be able to alter the configuration.
 [ConfigRepository](https://github.com/yosymfony/Config-loader#repository) 
-contain both site configuration and global configuration merged. 
-ConfigRepository have a access array interface.
+contains both site configuration and global configuration merged. 
+ConfigRepository have an array access interface.
 
 ```
 $subscriber->addEventListener('spress.start', 
@@ -181,7 +181,7 @@ $subscriber->addEventListener('spress.start',
 
 #### Add new converter {#add-new-converter}
 
-Converter can to extend Spress to support new type of content.
+Converter can extend Spress to support new type of content.
 
 ```
 $subscriber->addEventListener('spress.start', 
@@ -192,9 +192,9 @@ $subscriber->addEventListener('spress.start',
 ```
 [How to create a Converter?](/docs/developers/converters/).
 
-#### Extending Twig
+#### Extending Twig {#extending-twig}
 
-Twig can be exteded with functions, filters and tests.
+Twig can be extened with functions, filters and tests.
 [See extending Twig](/docs/developers/extending-twig/).
 
 {% verbatim %}
@@ -209,7 +209,7 @@ $subscriber->addEventListener('spress.start',
 ```
 {% endverbatim %}
 
-#### Informations about paths
+#### Information about paths {#path-info}
 
 ```
 $subscriber->addEventListener('spress.start', 
@@ -218,23 +218,23 @@ $subscriber->addEventListener('spress.start',
         // Get the absolute paths of the site (string):
         $v = $event->getSourceDir();
         
-        // Get the absolute paths of posts folder (string):
+        // Get the absolute path of posts folder (string):
         $v = $event->getPostsDir();
         
-        // Get the absolute paths of generated site folder (string):
+        // Get the absolute path of generated site folder (string):
         $v = $event->getDestinationDir();
         
-        // Get the absolute paths of includes folder (string):
+        // Get the absolute path of includes folder (string):
         $v = $event->getIncludesDir();
         
-        // Get the absolute paths of layouts folder (string):
+        // Get the absolute path of layouts folder (string):
         $v = $event->getLayoutsDir();
     });
 ```
 
 ## ContentEvent {#contentevent}
 
-Some Spress events inherit from ContentEvent. This is a event base for events 
+Some Spress events inherits from ContentEvent. This is an base event for events 
 related with the content.
 
 ```
@@ -244,7 +244,7 @@ $subscriber->addEventListener('spress.before_convert',
         // Get the identifier of the page (string):
         $v = $event->getId();
         
-        // The page is a posts? (boolean):
+        // The page is a post? (boolean):
         $v = $event->isPost();
         
         // Get the content without Front-matter (string):
@@ -260,23 +260,23 @@ $subscriber->addEventListener('spress.before_convert',
 
 ## AfterConvertPostsEvent {#afterconvertpostsevent}
 
-Information about posts converted like categories and tags.
+Information about converted posts - like categories and tags.
 
 ```
 $subscriber->addEventListener('spress.after_convert_posts', 
     function(AfterConvertPostsEvent $event)
     {
-        // Get the categories list of all posts (array):
+        // Get the category list of all posts (array):
         $v = $event->getCategories();
         
-        // Get the tags list of all posts (array):
+        // Get the tag list of all posts (array):
         $event->getTags();
     });
 ```
 
 ## ConvertEvent {#convertevent}
 
-This event extend from [`ContentEvent`](#contentevent).
+This event extends [`ContentEvent`](#contentevent).
 
 ```
 $subscriber->addEventListener('spress.before_convert', 
@@ -292,14 +292,14 @@ $subscriber->addEventListener('spress.before_convert',
 
 ## RenderEvent {#renderevent}
 
-This event extend from [`ContentEvent`](#contentevent).
+This event extends [`ContentEvent`](#contentevent).
 
 {% verbatim %}
 ```
 $subscriber->addEventListener('spress.before_render', 
     function(RenderEvent $event)
     {
-        // Get Twig template rendered:
+        // Get rendered Twig template:
         $rendered = $event->render('Hi {{ name }}', ['name' => 'Victor']);
         
         // Get the data model used in templates (array):
@@ -312,11 +312,11 @@ $subscriber->addEventListener('spress.before_render',
 {% endverbatim %}
 
 In the case of *spress.before_render_pagination* and *spress.after_render_pagination* events
-the RenderEvent argument point to pagination template page.
+the RenderEvent argument points to pagination template page.
 
 ## FinishEvent {#finishevent}
 
-Information about the site processed.
+Information about the processed site.
 
 ```
 $subscriber->addEventListener('spress.finish', 
@@ -328,7 +328,7 @@ $subscriber->addEventListener('spress.finish',
     });
 ```
 
-The array with results contain the next information:
+The array with results contains the following information:
 
 <table class="table">
     <thead>
@@ -378,7 +378,7 @@ The array with results contain the next information:
             <td>other_resources</td>
             <td>int</td>
             <td>
-                Others files not procesable that will be copied verbatim to the
+                Others files not processable that will be copied verbatim to the
                 generated site.
             </td>
         </tr>
