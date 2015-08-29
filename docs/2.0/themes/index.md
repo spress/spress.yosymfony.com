@@ -151,7 +151,7 @@ site `composer.json` and run `composer update` afterwards:
 Plugin will be available in `_plugins` folder.
 
 
-## Create a redistributable theme {#creating-redistributable-themes}
+## Create a redistributable theme {#redistributable-themes}
 
 Your own themes can be downloaded by other users and used for building their web pages
 or as base for new themes. A theme can be installed by downloading it manually, 
