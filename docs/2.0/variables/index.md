@@ -19,25 +19,25 @@ to these variables.
     </thead>
     <tbody>
         <tr>
-            <td><a href="#site-variables">site</a></td>
+            <td markdown="1">[site](#site-variables)</td>
             <td markdown="1">
                 Site data with configuration variables from global and  
                 `config.yml` from your site.
             </td>
         </tr>
         <tr>
-            <td><a href="#page-variables">page</a></td>
+            <td markdown="1">[page](#page-variables)</td>
             <td>Page specific data with Front-matter variables.</td>
         </tr>
         <tr>
-            <td><a href="#paginator-variables">paginator</a></td>
+            <td markdown="1">[paginator](#paginator-variables)</td>
             <td>
                 If pagination is available, contains information about pagination
                 data.
             </td>
         </tr>
         <tr>
-            <td><a href="#spress-variables">spress</a></td>
+            <td markdown="1">[spress](#spress-variables)</td>
             <td>Data about application.</td>
         </tr>
     </tbody>

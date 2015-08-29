@@ -1,5 +1,5 @@
 ---
-layout: page-doc
+layout: page-doc-2.0
 title: Writing posts
 description: How to write a post for Spress
 header: { title: Writing posts }

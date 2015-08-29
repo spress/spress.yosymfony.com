@@ -5,14 +5,19 @@ description: "Getting started with Spress: setup and create the first site"
 header: { title: Docs, sub: Welcome }
 prettify: true
 ---
-This guide will cover topics like create a site, write a post or create a theme.
+This guide will cover topics like: 
 
-### Requirements
+* creating a site
+* writing posts 
+* creating a theme
 
-* PHP 5.5 or great.
-* [Composer](https://getcomposer.org/).
+### Requirements {#requirements}
 
-### Installation
+* PHP 5.5 or greater
+* [Composer](https://getcomposer.org/)
+
+### Installation {#installation}
+
 The best way to get Spress is to download the PHAR file:
 
 ```
@@ -26,10 +31,14 @@ if you want use the executable globally, move it to `/usr/local/bin/`:
 $ sudo mv spress.phar /usr/local/bin/spress
 ```
 
-### Starting
+### Quick start
 
-You need create a site and build it. With Spress executable, you can create a 
-site blank or using a base theme and next build your site. 
+Lets create a sample site and build it. With Spress executable, you have two options:
+
+1. you can scaffold a blank site
+2. you can use a base theme
+
+Lets create our site using [Spresso](https://github.com/yosymfony/Spress-theme-spresso/tree/2.0) theme:
 
 **Quick-start**:
 
@@ -41,14 +50,14 @@ $ spress site:build --server --watch
 # Browse to localhost:4000
 ```
 
-With `new:site` command you create a new site using Spresso theme. Next,
+With `new:site` command Spress creates a new site using Spresso theme. Next,
 you can build your site with `site:build` command. You'll get the result at 
 `build` folder.
 
-The `--server` option launches a *built-in* server which lets you see your site from `localhost:4000`.
+The `--server` option launches a *built-in* server which lets you see your site at `http://localhost:4000`.
 `--watch` option tells Spress to watch your files for changes.
 
-### Themes
+### Themes {#themes}
 
-Spresso is the theme base of Spress. See the [Add-ons](/add-ons) page for getting more themes and plugins.
+Spresso is the theme base of Spress. See the [Add-ons](/add-ons) page for more themes and plugins.
 

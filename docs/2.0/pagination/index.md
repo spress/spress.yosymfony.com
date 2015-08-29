@@ -1,10 +1,10 @@
 ---
-layout: page-doc
+layout: page-doc-2.0
 title: Pagination
 header: { title: Pagination }
 prettify: true
 ---
-The posts can be organized in pages and will be access
+Posts can be organized in pages and will be accessible
 with URLs like `http://yourdomain.com/blog/page2/`. Each page will display a set
 of posts.
 
@@ -24,8 +24,8 @@ paginate_path: 'blog/page:num'
 ```
 
 The above code will generate each page with a URL like `http://yourdomain/blog/page2/`. 
-The `:num` placeholder will be replaced with the number of page starting with 2. 
-To access to page one, use `http://yourdomain.com/blog/`.
+The `:num` placeholder will be replaced with page number starting with 2. 
+To access first page, use `http://yourdomain.com/blog/`.
 
 Files generated:
 
@@ -60,14 +60,14 @@ Files generated:
         </div>
         <div class="col-md-11">
             <p markdown="1">
-                Pagination only work with posts.
+                For the moment pagination works only with posts.
             </p>
         </div>
     </div>
   </div>
 </div>
 
-## Page template
+## Page template {#page-template}
 Determine the content of each pagination page. This file should be located at 
 the root of `paginate_path` and its filename should be `index.html`.
 
@@ -124,4 +124,4 @@ layout: default
 {% endif %}
 ```
 {% endverbatim %}
-More about [paginator variables](/docs/variables/#paginator-variables).
+More info about [paginator variables](/docs/variables/#paginator-variables).

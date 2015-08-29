@@ -1,5 +1,5 @@
 ---
-layout: page-doc
+layout: page-doc-2.0
 title: Themes
 description: Create themes for Spress
 header: { title: Themes }
