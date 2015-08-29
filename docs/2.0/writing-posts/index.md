@@ -5,9 +5,9 @@ description: How to write a post for Spress
 header: { title: Writing posts }
 prettify: true
 ---
-Posts are plain texts files using [Markdown](http://daringfireball.net/projects/markdown/syntax)
-syntax stored at `_posts` folder. It’s easy to manually create posts
-but Spress provides a `new:post` command: <sup><span class="label label-success">New in 1.1.0</span></sup>
+Posts are plain text files written using [Markdown](http://daringfireball.net/projects/markdown/syntax)
+syntax stored at `./src/content/posts` folder. It’s easy to manually create posts
+but Spress provides a `new:post` command:
 
 ```
 $ spress new:post
@@ -31,7 +31,7 @@ An example of a post using `default` layout:
 ---
 layout: default
 ---
-This is a post. You can mixing text and HTML like this:
+This is a post. You can mix text and HTML like this:
 <a href="{{ "{{ site.url }}" }}"/about/>About me</a>.
 
 Uses variables in Markdown link:
@@ -46,12 +46,16 @@ draft: true
 ---
 ```
 
-The draft posts don't be included by defatult in the result site. If you want
-draft posts included, use the flag `--drafts` with `site:build` command.
+The draft posts won't be included by defatult in the generated site. If you want 
+to include draft posts, use the flag `--drafts` with `site:build` command.
+
+```
+spress site:build --drafts
+```
 
 ## Creating a post file manually
 
-Your posts files are located in `_posts` folder. A post file have a special
+Your post files are located in `./src/content/posts` folder. A post file have a special
 name format: `year-month-day-title.md` (`.md` is the file extension). 
 
 * **year**: Four-digit number.
@@ -82,8 +86,8 @@ Example of valid posts files:
 
 ### Categories from the directory structure
 
-The categories of a post can be set from the Front-matter or deducted from the
-directory structure. At the below example, `2013-11-01-what-is-new.md` will have 
+The categories of a post can be set in the Front-matter or deducted from the
+directory structure. In the following example, `2013-11-01-what-is-new.md` will have 
 **news** category assigned because the post is stored at `news` folder:
 
 ```
@@ -92,9 +96,10 @@ _posts
 | |- news
 | | |- 2013-11-01-what-is-new.md
 ```
-### Creating categories from the Front-matter
 
-Instead of placing posts inside of folders you can specify your categories using
+### Assigning categories in the Front-matter
+
+Instead of placing posts inside folders you can specify your categories using
 `categories` variable in the Front-matter:
 
 ```
