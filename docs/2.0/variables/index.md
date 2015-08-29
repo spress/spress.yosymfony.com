@@ -1,5 +1,5 @@
 ---
-layout: page-doc
+layout: page-doc-2.0
 title: Variables
 description: "Standard variables of Spress"
 header: { title: Variables }
@@ -19,25 +19,25 @@ to these variables.
     </thead>
     <tbody>
         <tr>
-            <td>[site](#site-variables)</td>
+            <td><a href="#site-variables">site</a></td>
             <td markdown="1">
                 Site data with configuration variables from global and  
                 `config.yml` from your site.
             </td>
         </tr>
         <tr>
-            <td>[page](#page-variables)</td>
+            <td><a href="#page-variables">page</a></td>
             <td>Page specific data with Front-matter variables.</td>
         </tr>
         <tr>
-            <td>[paginator](#paginator-variables)</td>
+            <td><a href="#paginator-variables">paginator</a></td>
             <td>
                 If pagination is available, contains information about pagination
                 data.
             </td>
         </tr>
         <tr>
-            <td>[spress](#spress-variables)</td>
+            <td><a href="#spress-variables">spress</a></td>
             <td>Data about application.</td>
         </tr>
     </tbody>
