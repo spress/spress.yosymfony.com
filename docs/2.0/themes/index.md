@@ -1,51 +1,58 @@
 ---
-layout: page-doc
+layout: page-doc-2.0
 title: Themes
 description: Create themes for Spress
 header: { title: Themes }
 prettify: true
 ---
-**Themes are simply sites**. Spress uses the power of Twig for render templates. You can reusable parts
-of your HTML and write your templates with a easy languaje. For more information
+**Themes are simply sites**. Spress uses the power of Twig to render templates. You can reuse parts
+of your HTML and create templates with a easy language. For more information
 about Twig, see the [Twig web page](http://twig.sensiolabs.org).
 
-## Create a site blank
+## Create a blank site {#blank-site}
 
-With the `spress new:site` [command](/docs/how-is-work/#site-new-command) you
-can create a blank site with the below structure:
-
-```
-.
-|- composer.json
-|- config.yml
-|- index.html
-|- _layouts/
-|- _posts/
-```
-
-The command have a extra `--all` option to create a complete scaffolding of the
-site:
+Using `spress new:site` [command](/docs/2.0/how-is-work/#site-new-command) you
+can create a blank site with the following structure:
 
 ```
 .
-|- composer.json
-|- config.yml
-|- _includes/
-|- index.html
-|- _layouts/
-|- _posts/
-|- _plugins/
+├── build
+├── composer.json
+├── config.yml
+└── src
+    ├── content
+    │   ├── index.html
+    │   └── posts
+    └── layouts
 ```
 
-## Hierachical layouts
+The [new:site command](/docs/2.0/how-is-work/#site-new-command) have an extra 
+`--all` option to create a complete scaffolding of the site:
 
-Your layouts can inherit from other layouts. Layouts are located at `_layout`
+```
+.
+├── build
+├── composer.json
+├── config.yml
+└── src
+    ├── content
+    │   ├── index.html
+    │   └── posts
+    ├── includes
+    ├── layouts
+    └── plugins
+```
+
+## Hierachical layouts {#layouts-inheritance}
+
+Your layouts can inherit from other layouts. Layouts are located at `./src/layouts`
 folder.
 
 ```
-_layout/
-|- default.html
-|- post.html
+└── layouts
+    ├── default.html
+    ├── page.html
+    └── post.html
 ```
 
 The `default.html` may hold the general HTML definitions like *html* and *head* 
@@ -72,7 +79,7 @@ tags:
 ```
 {% endverbatim %}
 
-The `post.html` can to inheritance from `default.html`:
+The `post.html` can inherit from `default.html`:
 
 {% verbatim %}
 ```
@@ -89,15 +96,19 @@ layout: default
 ```
 {% endverbatim %}
 
-## Reusable content
+## Reusable content {#reusable-content}
 
-The reusable parts are located at `_includes` folder.
+Reusable layout parts are located at `./src/includes` folder.
 
 ```
-_include
-|- nav.html
-|- widget
-|  |- email.html
+├── includes
+│   ├── head.html
+│   ├── menu.html
+│   ├── nav.html
+│   ├── paginator.html
+│   ├── post.html
+│   ├── posts-list.html
+│   └── social-network.html
 ```
 
 To include a reusable part use `include` Twig statement:
@@ -112,12 +123,17 @@ To include a reusable part use `include` Twig statement:
 {% endverbatim %}
 
 More information about 
-[include statement of Twig](http://twig.sensiolabs.org/doc/tags/include.html).
+[Twig include statement](http://twig.sensiolabs.org/doc/tags/include.html).
 
-## Plugins installation
+## Plugin installation {#plugin-installation}
 
-You can use [plugins](/add-ons) in your site. For to do it, go to your site folder
-and create `composer.json` file and add the following content:
+You can use [plugins](/add-ons) on your site. To do it, you have to create 
+`composer.json` file in your site folder and add the require statement
+with the name of the plugin:
+ 
+We will use plugin called `spress/github-metadata-plugin` as an example.
+To add it to your site, you simply have to add following changes in your
+site `composer.json` and run `composer update` afterwards:
 
 <pre>
     <code class="json">
@@ -132,43 +148,40 @@ and create `composer.json` file and add the following content:
     </code>
 </pre>
 
-Next, run `composer update` command and then you can use the plugin in your site.
-The plugins are availables in `_plugins` folder.
+Plugin will be available in `_plugins` folder.
 
-In the previous example, you declare that need the latest version of a plugin called 
-`spress/github-metadata-plugin`.
 
-## Create a redistributable theme
+## Create a redistributable theme {#redistributable-themes}
 
-Your own themes can be downloaded by other users and be using for building their web pages
-or as base for new themes. A theme can be installed downloading manually, using GIT for
-getting the repository or install globally with Composer.
+Your own themes can be downloaded by other users and used for building their web pages
+or as base for new themes. A theme can be installed by downloading it manually, 
+using GIT for getting the repository or installed globally with Composer.
 
-For create a distribuible package with Composer, you shuld create a repository
-in Github or similar and to register it in [Packagist](https://packagist.org/about) repository.
+To create a distributable package with Composer, you should create a repository
+on Github or similar site and register it in [Packagist](https://packagist.org/about) repository.
 
-Example of a [theme](https://github.com/yosymfony/Spress-theme-spresso). 
+Example of a [theme](github.com/yosymfony/Spress-theme-spresso/tree/2.0). 
 You can see it in [action](http://yosymfony.github.io/Spress-example/).
 
-## How to install a new theme?
+## How to install a new theme? {#installing-new-theme}
 
-Several ways to do it.
+There are several ways to do it.
 
-### Download a copy
+### Download a copy {#install-theme-download}
 
 * Get a copy of the latest release.
 * Uncompress it.
 * Go to theme folder
-* `spress site:build --server --watch`
+* Run `spress site:build --server --watch`
 
-### With Git
+### With Git {#install-theme-git}
 
-* Fork the repository
-* Clone it: `https://github.com/YOUR-USER/THEME-REPOSITORY.git`
-* Go to `THEME-REPOSITORY` folder
-* `spress site:build --server --watch`
+* Fork theme repository (so you will be able to modify it later on)
+* Clone it: `git clone https://github.com/YOUR-USER/THEME-REPOSITORY.git folder-name-for-cloned-theme`
+* Go to `folder-name-for-cloned-theme` folder
+* Run `spress site:build --server --watch`
 
-### Globally
+### Globally {#install-theme-global}
 
 **This option is not available using `spress.phar`**
 

@@ -1,37 +1,37 @@
 ---
 layout: page-doc-2.0
-title: How is work?
-description: How an static site generator work
-header: { title: How is work? }
+title: How it works?
+description: How a static site generator works
+header: { title: How it works? }
 prettify: true
 ---
-Spress is a static site generator, an application that take your site and 
-transform to final HTML ready to deploy in your hosting. By default, your
+Spress is a static site generator - an application that takes your site and 
+transforms it to final HTML ready to deploy on your hosting. By default, your
 content is generated at `build` folder. You can create content using HTML or 
-Markdown syntax. Additionaly with [converters](/docs/2.0/developers/converters) you 
-can add new type of content.
+Markdown syntax. Additionally with [converters](/docs/2.0/developers/converters) you 
+can add new types of content.
 
-## Site structure
+## Site structure {#site-structure}
 This is the typical structure. The only mandatory file is `config.yml`.
 
 ```
 .
-|- build
-|- src
-|- |- includes
-|- |- layouts
-|- |- content
-|- |- |- posts
-|- |- |- |- 2015-08-16-my-post.md
-|- |- |- index.html
-|- |- |- ...
-|- config.yml
-|- composer.json
+├── build
+├── src
+│   ├── includes
+│   └── layouts
+│   ├── content
+│   │   ├── posts
+│   │   │   ├── 2015-08-16-my-post.md
+│   │   ├── index.html
+│   │   ├── ...
+├── composer.json
+└── config.yml
 ```
-* **config.yml**: Store the configuration data. You can change the behaviour of 
+* **config.yml**: Stores the configuration data. You can change the behaviour of 
 Spress or create custom variables.
-* **src/includes**: There is a partials that can be used in the layouts, pages and posts.
-* **src/layouts**: The layout files organize your content. In your post or page, 
+* **src/includes**: Stores partials that can be used in the layouts, pages and posts.
+* **src/layouts**: Stores layout files used to organize your content. In your post or page, 
 you can choose the layout in the [Front-matter](/docs/2.0/front-matter):
 
 ```
@@ -39,10 +39,10 @@ you can choose the layout in the [Front-matter](/docs/2.0/front-matter):
 layout: post
 ---
 ```
-* **src/content**: Store the content of your site.
+* **src/content**: Stores the content of your site.
 * **src/content/posts**: Store the blog posts files. Files located at this folder
 are under `posts` collection  and they have a special name format: `year-month-day-title.md`.
-The Front-matter of each file let you change this properties:
+The Front-matter of each file let you change these properties:
 
 ```
 ---
@@ -54,8 +54,9 @@ date: "2013-01-01"
 * **src/plugins**: Extends the functionality of Spress. See [developers docs](/docs/2.0/developers).
 * **build**: This is where the generated site will be placed.
 
-## Page example
-Below a example of a simple HTML page:
+## Page example {#page-example}
+
+Below is an example of a simple HTML page:
 
 ```
 ---
@@ -70,7 +71,7 @@ email: "john@example.com"
 ```
 The block delimited by triple-dashed lines is the Front-matter and uses 
 [YAML](http://yaml.org) syntax. Inside it you can create a custom variables
-that can be accessible to you using Twig syntax: 
+that are available in page content with Twig syntax: 
 `{{ "{{ page.your-variable-name }}" }}`.
 
 <div class="panel panel-default">
@@ -82,7 +83,7 @@ that can be accessible to you using Twig syntax:
         <div class="col-md-11">
             <p markdown="1">
                 Spress uses [Twig](http://twig.sensiolabs.org/) as default template
-                engine. See its documentations for get more powerful
+                engine. See its documentations to get more powerful
                 templates.
             </p>
         </div>
@@ -116,7 +117,7 @@ Hello. This is a post.
   </div>
 </div>
 
-## Spress commands
+## Spress commands {#spress-commands}
 
 ### new:site {#site-new-command}
 
@@ -125,7 +126,7 @@ Create a new site.
 `new:site [path[="./"]] [template[="blank"]] [--force] [--all]`
 
 * `template` Set the template for the site. Spresso is a built-in theme.
-* `--force` Force to use the path even though exists and it's not empty.
+* `--force` Force to use the path even though it exists and it's not empty.
 * `--all` In blank template, creates the complete scaffold.
 
 E.g `$ spress new:site /your-site-dir spresso`
@@ -140,34 +141,34 @@ Build your site in your `build` folder.
 
 * `--timezone` Set the timezone. E.g: "Europe/Madrid".
 [More timezones](http://www.php.net/manual/en/timezones.php).
-* `--env` Set the environment name [More information](/docs/configuration/#environment).
-* `--server`The built-in server will run by default at `http://localhost:4000`.
+* `--env` Set the environment name [More information](/docs/2.0/configuration/#environment).
+* `--server` The built-in server will run by default at `http://localhost:4000`.
 * `--watch` Watch for changes and regenerate your site automatically.
 * `--drafts` Include the draft post in the transformation.
 * `--safe` Disable all plugins.
 
 ```
-# Build source path:
+# Build site with source path defined:
 $ spress site:build -s /your-site-dir
 
-# Build default dir:
+# Build site with default dir:
 $ cd /your-site-dir
 $ spress site:build
 
-# Built-in server and watch for changes
+# Build site and run built-in server and watch for file changes
 $ cd /your-site-dir
 $ spress site:build --server --watch  # Go to http://localhost:4000
 
-# Only watch for changes an generate your site automatically into ./_site
+# Build site and watch for changes (regenerated automatically into ./_site)
 $ cd /your-site-dir
 $ spress site:build --watch
 
-# Using timezone:
+# Build site using specific timezone:
 $ spress site:build -s /your-site-dir --timezone="Europe/Madrid"
 
-# Using production environment:
+# Build site using production environment:
 $ spress site:build --env=prod
 
-# Plugins disabled:
+# Build site with plugins disabled:
 $ spress site:build --safe
 ```

@@ -1,21 +1,21 @@
 ---
-layout: page-doc
+layout: page-doc-2.0
 title: Deployment methods
 description: How to deploy a Spress site to your web host
 header: { title: Deployment methods }
 prettify: true
 ---
-There is several ways to deploy a site to your web host:
+There are several ways to deploy a site to your web host:
 
-* [FTP](/docs/deployment-methods/#ftp).
-* [rsync](/docs/deployment-methods/#rsync).
-* [Github Pages](/docs/deployment-methods/#github-pages).
-* [Openshift](/docs/deployment-methods/#openshift).
+* [FTP](#ftp)
+* [rsync](#rsync)
+* [Github Pages](#github-pages)
+* [Openshift](#openshift)
 
 ### FTP {#ftp}
 
-Tradicional web hosting providers let you upload files to their servers using FTP protocol.
-Once you have generated your site at `_site` folder running `spress site:build` command you
+Traditional web hosting providers lets you upload files to their servers using FTP protocol.
+Once you've generated your site at `./build` folder running `spress site:build` command you
 can upload the content of that folder to your hosting provider using a FTP application like
 [Cyberduck](https://cyberduck.io/) available for Mac OS and Windows. For *nix case, you can
 use [Duck CLI](https://duck.sh/).
@@ -23,7 +23,7 @@ use [Duck CLI](https://duck.sh/).
 ### rsync {#rsync}
 
 **rsync** is a widely-used utility to keep copies of a file on two computer systems the same.
-Once you have generated your site at `_site` folder, run the follow command for synchronizing
+Once you have generated your site at `./build` folder, run the following command to synchronize
 your generated site with the `httpdocs` folder at your web host:
 
 ```
@@ -39,5 +39,5 @@ for more information about how to publish a site.
 ### Openshift {#openshift}
 
 [OpenShift](https://www.openshift.com/) is a cloud computing platform as a service from Red Hat.
-We have ready a [Cartridge for running a static site or blog](https://github.com/spress/Openshift-spress-cartridge)
+We have prepared a [Cartridge for running a static site or blog](https://github.com/spress/Openshift-spress-cartridge)
 in your OpenShift Gear. More information about how to use the [Spress Cartridge](/news/2015/01/17/spress-cartridge-for-openshift/).

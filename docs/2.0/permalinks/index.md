@@ -1,5 +1,5 @@
 ---
-layout: page-doc
+layout: page-doc-2.0
 title: Permalinks
 header: { title: Permalinks }
 prettify: true
@@ -15,7 +15,7 @@ permalink: "/:year/:title"
 
 The default value of `permalink` is `pretty`.
 
-### Template variables:
+### Template variables {#template-variables}
 
 <table class="table">
     <thead>
@@ -70,10 +70,10 @@ The default value of `permalink` is `pretty`.
     </tbody>
 </table>
 
-### Predefined templates
+### Predefined permalink templates {#predefined-templates}
 
-Spress have a predefined templates. If you want to configure it in your site 
-simply use its name:
+Spress have a few predefined permalink templates. If you want to configure it 
+on your site simply use its name:
 
 <table class="table">
     <thead>

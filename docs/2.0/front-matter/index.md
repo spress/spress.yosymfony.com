@@ -1,26 +1,27 @@
 ---
-layout: page-doc
+layout: page-doc-2.0
 title: Front-matter
 header: { title: Front-matter }
 prettify: true
 ---
-Front-matter block let you specify certain attributes of the page 
+Front-matter block lets you specify certain attributes of the page 
 and define new variables that will be available in the content. 
+
 **The Front-matter must be the first thing in the file**.
 
 ```
 ---
 layout: default
-title: "Hello world" # Replace the post's title from the file.
+title: "Hello world" # Replace the posts title from the file.
 my_name: "Victor"
 ---
-This is a post.
+This is a post body.
 ```
 
 The Front-matter uses [YAML](http://yaml.org) syntax. Your new variables will
 be accessible for Twig: `My name is {{ "{{ page.my_name }}" }}`. 
 
-Only the proccessable files with Front-matter block will be treat as special file.
+Only the proccessable files with Front-matter block will be treated as special file.
 A empty Front-matter is valid:
 
 ```
@@ -29,8 +30,8 @@ A empty Front-matter is valid:
 This is a post.
 ```
 
-## Special variables
-### Page or post
+## Special variables {#special-variables}
+### Page or post {#pagepost-variables}
 <table class="table">
     <thead>
         <tr>
@@ -44,14 +45,14 @@ This is a post.
             <td>layout</td>
             <td>string</td>
             <td markdown="1">
-                Set the name of the layout file without extension. The layouts
-                are located in `_layout` directory.
+                Set the name of the layout file without extension. Layout files
+                are located in `./src/layouts` directory.
             </td>
         </tr>
     </tbody>
 </table>
 
-### Posts
+### Posts {#post-variables}
 <table class="table">
     <thead>
         <tr>
@@ -64,7 +65,7 @@ This is a post.
         <tr>
             <td>title</td>
             <td>string</td>
-            <td>Override title from the name of the post.</td>
+            <td>Override title from the name of the post file.</td>
         </tr>
         <tr>
             <td>categories</td>
@@ -85,7 +86,7 @@ This is a post.
             <td>date</td>
             <td>string</td>
             <td>
-                Override the date from the name of the post. Useful if you want
+                Override the date from the name of the post file. Useful if you want
                 to alter the sorting of posts.
             </td>
         </tr>

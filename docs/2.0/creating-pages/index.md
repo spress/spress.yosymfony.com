@@ -1,10 +1,10 @@
 ---
-layout: page-doc
+layout: page-doc-2.0
 title: Creating pages
 header: { title: Creating pages   }
 prettify: true
 ---
-With the below example, you can see various type of pages:
+Below, you can see various types of pages:
 
 ```
 .
@@ -17,10 +17,15 @@ With the below example, you can see various type of pages:
 |- my-news.html    # http://yoursite.com/my-news.html
 ```
 
-The `index.html` file in your site root, by convection, is your homepage unless
-your server was configured to look other default filename.
+The `index.html` file in your site root, by convention, is your home page, unless
+your server was configured to look for other default file (this is a web server configuration,
+not Spress config variable).
 
-Pages with [friendly-URL](http://en.wikipedia.org/wiki/Clean_URL) (clean URL) 
-can be created with a directory name that represent your frienly-URL and create 
-a `index.html` page inside with the content. `docs-site` and `about` are 
-examples of this type of URLs.
+Pages with [friendly-URLs](http://en.wikipedia.org/wiki/Clean_URL) (clean URL) 
+can be created by following a following pattern:
+
+1. create a directory with a name that represents your friendly-URL
+2. add `index.html` file inside with the page content
+
+In the above example `docs-site` and `about` are following this pattern
+to get this type of URLs.

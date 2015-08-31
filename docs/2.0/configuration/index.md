@@ -5,10 +5,10 @@ description: Each Spress site have a configuration file with information for gen
 header: { title: Configuration }
 prettify: true
 ---
-Your site have a `config.yml` file that let you change the default configuration
+Your site have a `config.yml` file that lets you change the default configuration
 of Spress and create new variables that will be accessible in your template with
 `{{ "{{ site.your_variable }}" }}`. Some global variables like `timezone` or 
-`safe` can be specified in the [command line options or flags](/docs/2.0/how-is-work/#site-build-command).
+`safe` can be specified in the [command line options or flags](/docs/2.0/how-it-works/#site-build-command).
 
 <div class="panel panel-default">
   <div class="panel-body">
@@ -18,8 +18,8 @@ of Spress and create new variables that will be accessible in your template with
         </div>
         <div class="col-md-11">
             <p markdown="1">
-                The configuration is [YAML](http://yaml.org) file. Do not uses
-                tabs.
+                The configuration is using [YAML](http://yaml.org) formatted file. Do not use
+                tabs!
             </p>
         </div>
     </div>
@@ -30,21 +30,21 @@ of Spress and create new variables that will be accessible in your template with
 
 The environment configuration is useful for writing configuration options for development and 
 production environments. Each Spress site has a `config.yml` file (mandatory) with the options
-for the default environment (dev). If you want set options for production environment you can
-to create a `config_prod.yml` file with the options that will be overrided in `config.yml`.
-The command line option `--env="prod"` let you to enable the environment.
+for the default environment (dev). If you want to set options for production environment you 
+can create a `config_prod.yml` file with the options that will override values from `config.yml`.
+The command line option `--env="prod"` lets you enable specific (prod) environment.
 
 The pattern for environment configuration filename is `config_{environment-name}.yml`.
 
-An example for production environment:
+An example for "prod" (production) environment:
 
 ```
 $ spress site:build --env=prod
 ```
 
-More information and example available at this [blog post](/news/2014/06/12/new-in-spress-1-1-environment-configurations/).
+More information and examples available at this [blog post](/news/2014/06/12/new-in-spress-1-1-environment-configurations/).
 
-## Default configuration
+## Default configuration {#deafult-configuration}
 
 Spress runs with the default configuration:
 
@@ -140,15 +140,15 @@ server_watch_ext: ['html', 'htm', 'xml']
             <td>markdown_ext</td>
             <td>array</td>
             <td>
-                For Markdown converter, this is a file extension that
-                will be considered as Markdown file.
+                For Markdown converter, this is a list of file extensions that
+                will be considered as Markdown files.
             </td>
         </tr>
         <tr>
             <td>layout_ext</td>
             <td>array</td>
             <td>
-                File extensions that will be considered as layout items.
+                File extensions that will be considered as layout templates.
             </td>
         </tr>
         <tr>
@@ -156,7 +156,8 @@ server_watch_ext: ['html', 'htm', 'xml']
             <td>boolean</td>
             <td markdown="1">
                 Activates [Parsedown](http://parsedown.org/) as default Markdown converter instead of
-                [Michel Fortin](https://michelf.ca/projects/php-markdown/) converter.
+                [Michel Fortin](https://michelf.ca/projects/php-markdown/) converter - Parsedown is
+                3-4 times faster than Markdown.
             </td>
         </tr>
         <tr>
@@ -177,8 +178,8 @@ server_watch_ext: ['html', 'htm', 'xml']
             <td>preserve_path_title</td>
             <td>boolean</td>
             <td markdown="1">
-                Sets `true` in case of you want to preserve the title extracted
-                from the filename path over the title attribute.
+                Set to `true` in case of you want to preserve the title extracted
+                from the filename path over the Frontmatter title attribute.
                 See [issue #47](https://github.com/spress/Spress/issues/47).
             </td>
         </tr>
@@ -201,9 +202,14 @@ server_watch_ext: ['html', 'htm', 'xml']
             </td>
         </tr>
         <tr>
+            <td>server_watch_ext</td>
+            <td>array</td>
+            <td>URL base of your site.</td>
+        </tr>
+        <tr>
             <td>url</td>
             <td>string</td>
-            <td>URL base of your site.</td>
+            <td>Array of file extensions that will trigger auto-regeneration or request(?).</td>
         </tr>
     </tbody>
 </table>
