@@ -11,7 +11,7 @@ about Twig, see the [Twig web page](http://twig.sensiolabs.org).
 
 ## Create a blank site {#blank-site}
 
-Using `spress new:site` [command](/docs/2.0/how-is-work/#site-new-command) you
+Using `spress new:site` [command](/docs/2.0/how-it-work/#site-new-command) you
 can create a blank site with the following structure:
 
 ```

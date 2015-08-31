@@ -1,8 +1,8 @@
 ---
 layout: page-doc
-title: How is work?
+title: How it work?
 description: How an static site generator work
-header: { title: How is work? }
+header: { title: How it work? }
 prettify: true
 ---
 Spress is a static site generator, an application that take your site and 

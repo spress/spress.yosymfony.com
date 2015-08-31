@@ -40,7 +40,7 @@ class MyClass
 }
 ```
 
-The `/path-to-your-spress-site/` is a folder with a [Spress structure](/docs/how-is-work/).
+The `/path-to-your-spress-site/` is a folder with a [Spress structure](/docs/how-it-work/).
 You can see an [example of a Spress site](https://github.com/yosymfony/Spress-example).
 
 ## Set the environment information

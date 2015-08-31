@@ -8,7 +8,7 @@ prettify: true
 Your site have a `config.yml` file that let you change the default configuration
 of Spress and create new variables that will be accessible in your template with
 `{{ "{{ site.your_variable }}" }}`. Some global variables like `timezone` or 
-`safe` can be specified in the [command line options or flags](/docs/how-is-work/#site-build-command).
+`safe` can be specified in the [command line options or flags](/docs/how-it-work/#site-build-command).
 
 <div class="panel panel-default">
   <div class="panel-body">

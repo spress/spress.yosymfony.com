@@ -204,12 +204,12 @@ server_watch_ext: ['html', 'htm', 'xml']
         <tr>
             <td>server_watch_ext</td>
             <td>array</td>
-            <td>URL base of your site.</td>
+            <td>Array of file extensions that will trigger auto-regeneration or request.</td>
         </tr>
         <tr>
             <td>url</td>
             <td>string</td>
-            <td>Array of file extensions that will trigger auto-regeneration or request(?).</td>
+            <td>URL base of your site.</td>
         </tr>
     </tbody>
 </table>
