@@ -11,7 +11,7 @@ implement [`Yosymfony\Spress\Core\ContentManager\ConverterInterface`][ConverterI
 ## Converter example {#converter-example}
 
 This converter turns to uppercase all content of your 
-pages and works only for files with extension is `.up` like `myPage.up` or
+pages and works only for files with `.up` extension like `myPage.up` or
 `2014-01-02-my-post.up`.
 
 ```
