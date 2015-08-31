@@ -103,46 +103,6 @@ namespace. All events inherits from
             </td>
         </tr>
         <tr>
-            <td>
-                spress.before_render_pagination
-                <span class="label label-success">New in 1.0.1</span>
-            </td>
-            <td markdown="1">[`RenderEvent`](#renderevent)</td>
-            <td>
-                <p markdown="1">
-                    The spress.before_render_pagination is thrown before render the content of
-                    each pagination of posts.
-                    **This event require to enable pagination of posts**.
-                </p>
-                <p markdown="1">
-                    `getContent()` method return the content of pagination template.
-                    In this step Twig tags are not resolved.
-                </p>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                spress.after_render_pagination
-                <span class="label label-success">New in 1.0.1</span>
-            </td>
-            <td markdown="1">[`RenderEvent`](#renderevent)</td>
-            <td>
-                <p markdown="1">
-                    The spress.after_render_pagination is thrown after render the content of
-                    each pagination of posts.
-                    **This event require to enable pagination of posts**.
-                </p>
-                <p markdown="1">
-                    `getContent()` method return the full content rendered
-                    (layout included).
-                </p>
-                <p markdown="1">
-                    If you need to access to the pagination template content rendered
-                    without layout you can to use `page.content` from the payload.
-                </p>
-            </td>
-        </tr>
-        <tr>
             <td>spress.finish</td>
             <td markdown="1">[`FinishEvent`](#finishevent)</td>
             <td markdown="1">
