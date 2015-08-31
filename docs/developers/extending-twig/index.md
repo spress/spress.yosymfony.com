@@ -6,29 +6,29 @@ header: { title: Developers, sub: Extending Twig }
 prettify: true
 ---
 
-The `spress.start` event enable to extend [Twig](http://twig.sensiolabs.org/)
-with new functions, tags and test.
+The `spress.start` event enables you to extend [Twig](http://twig.sensiolabs.org/)
+with new functions, tags and tests.
 
-## Add a filter
+## Add a filter {#add-filter}
 
 ```
 $subscriber->addEventListener('spress.start', 
     function(EnviromentEvent $event)
     {
         $event->addTwigFilter('dummy', function($string){
-            return $string . ' (is dymmy) ';
+            return $string . ' (is dummy) ';
         });
     });
 ```
 
-**How to use?**:
+**Usage in template**:
 {% verbatim %}
 ```
 {{ 'The text' | dummy }}
 ```
 {% endverbatim %}
 
-## Add a function
+## Add a function {#add-function}
 
 ```
 $subscriber->addEventListener('spress.start', 
@@ -40,14 +40,14 @@ $subscriber->addEventListener('spress.start',
     });
 ```
 
-**How to use?**:
+**Usage in template**:
 {% verbatim %}
 ```
 {{ superf('the text') }}
 ```
 {% endverbatim %}
 
-## Add a test
+## Add a test {#add-test}
 
 ```
 $subscriber->addEventListener('spress.start', 
@@ -59,7 +59,7 @@ $subscriber->addEventListener('spress.start',
     });
 ```
 
-**How to use?**:
+**Usage in template**:
 {% verbatim %}
 ```
 {% if my_value is red %}
