@@ -7,8 +7,7 @@ prettify: true
 ---
 Spress can be extended by plugins located in `_plugins` folder. Spress uses a 
 events mechanic to dispatch events and the plugins can add event listener.
-It’s easy to manually create plugins
-but Spress provides a `new:plugin` command: <sup><span class="label label-success">New in 1.1.0</span></sup>
+It’s easy to manually create plugins but Spress provides a `new:plugin` generator command:
 
 ```
 $ spress new:plugin
