@@ -1,5 +1,5 @@
 ---
-layout: page-dev
+layout: page-dev-2.0
 title: Developers &#8250; Extending Twig
 description: How to extend Twig in Spress
 header: { title: Developers, sub: Extending Twig }

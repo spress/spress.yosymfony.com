@@ -1,5 +1,5 @@
 ---
-layout: page-dev
+layout: page-dev-2.0
 title: Developers &#8250; Events list
 header: { title: Developers, sub: Events list }
 description: Events list of Spress livecycle
