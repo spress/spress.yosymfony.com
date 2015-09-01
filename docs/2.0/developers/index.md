@@ -97,19 +97,24 @@ Go to your site folder and run `composer update` command.
 
 #### The plugin {#plugin}
 
-Your plugin class have to extend Spress `CommandPlugin` class and should implement `initialize` method 
-to add event listener. `initialize` will be invoked at the beginning of the 
+Your plugin class have to implement Spress `PluginInterface` interface. 
+Required methods are:
+
+* `initialize` method where you add your events to event listener. 
+* `getMetas` method storing plugin metadata
+
+`initialize` will be invoked at the beginning of the 
 plugin life cycle. You can use it like a plugin constructor to initialize internal 
 variables.
 
 Below example uses closure to process event, but you can also use [class methods](#class-methods) for your logic.
 
 ```
-use Yosymfony\Spress\Plugin\CommandPlugin;
+use Yosymfony\Spress\Core\Plugin\PluginInterface;
 use Yosymfony\Spress\Core\Plugin\EventSubscriber;
 use Yosymfony\Spress\Core\Plugin\Event\EnvironmentEvent;
 
-class YourPluginName extends CommandPlugin
+class YourPluginName implements PluginInterface
 {
     public function initialize(EventSubscriber $subscriber)
     {
@@ -118,6 +123,11 @@ class YourPluginName extends CommandPlugin
             {
                 // Event's code
             });
+    }
+    
+    public function getMetas()
+    {
+        return [ "name" => "YourPluginName", ];
     }
 }
 ```
@@ -157,11 +167,11 @@ The `addEventListener($eventName, $listener)` method adds a new listener to a ev
 You can use class methods instead of closure function:
 
 ```
-use Yosymfony\Spress\Plugin\CommandPlugin;
+use Yosymfony\Spress\Core\Plugin\PluginInterface;
 use Yosymfony\Spress\Core\Plugin\EventSubscriber;
 use Yosymfony\Spress\Core\Plugin\Event\EnvironmentEvent;
 
-class YourPluginName extends CommandPlugin
+class YourPluginName implements PluginInterface
 {
     public function initialize(EventSubscriber $subscriber)
     {
@@ -171,6 +181,11 @@ class YourPluginName extends CommandPlugin
     public function onStart(EnvironmentEvent $event)
     {
         // Code for handle event.
-    }
+    }    
+    
+    public function getMetas()
+     {
+         return [ "name" => "YourPluginName", ];
+     }
 }
 ```
