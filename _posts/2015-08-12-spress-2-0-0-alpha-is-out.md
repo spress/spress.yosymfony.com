@@ -27,13 +27,13 @@ configuration data and the output folder are located at the first level. The mai
 
 Folder mapping: (see [Spresso theme](https://github.com/yosymfony/Spress-theme-spresso/tree/2.0) for more details)
 
-Spress 1.x  | Spress 2.x
-------------|--------------
-content     | `src/content`
-`_layouts`  | `src/layouts`
-`_includes` | `src/includes`
-`_site`     | `build`
-`config.yml`| `config.yml`
+Spress 1.x                    | Spress 2.x
+------------------------------|--------------
+content (index.html, rss.xml) | `src/content`
+`_layouts`                    | `src/layouts`
+`_includes`                   | `src/includes`
+`_site`                       | `build`
+`config.yml`                  | `config.yml`
 
 
 Plugin system has been reviewed with four new events and five deleted.
