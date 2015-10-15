@@ -7,6 +7,43 @@ id_content: changelog
 
 More information about the [releases](https://github.com/yosymfony/Spress/releases).
 
+# 2.0.0-beta {#2-0-0-beta}
+Date: 2015-1015
+
+* <span class="label label-success">New</span> Added a new converter for Markdown: ParsedownConverter. This converter is based on [Parsedown by Emanuil Rusev](http://parsedown.org/). Deals with issue [#40](https://github.com/spress/Spress/issues/40).
+* <span class="label label-success">New</span> Added command plugins: a new kind of plugins witch provides subcommand for `spress` executable. See [#56](https://github.com/spress/Spress/issues/56).
+* <span class="label label-success">New</span> Added `self-update` command with an alias `selfupdate` for keeping Spress up to date. See [#60](https://github.com/spress/Spress/issues/60).
+* <span class="label label-success">New</span> Taxonomy generator for grouping content around a set of terms. See [#57](https://github.com/spress/Spress/issues/57).
+* <span class="label label-success">New</span> Modified RenderizerInterface for throwing a `Yosymfony\Spress\Core\ContentManager\Renderizer\Exception\RenderException` if an error occurred during redering the content. Method affected: `renderBlocks` and `renderPage`.
+* <span class="label label-success">New</span> Added a new special attributte `avoid_renderizer` for avoiding the renderizer phase over an item.
+* <span class="label label-primary">Improved</span> Additional autoload only be processed if exists a `composer.json` file in the root of the site folder.
+* <span class="label label-default">Fixed</span> The separator for tags and categories of `new:post` command has been changed from space to comma. See issue [#51](https://github.com/spress/Spress/issues/51).
+* <span class="label label-default">Fixed</span> New template for spress plugin scaffold (`new:plugin` command) - fixed for 2.0 release. See issue [#55](https://github.com/spress/Spress/issues/55).
+* <span class="label label-default">Fixed</span> The `setUp` method of `FilesystemDataWriter removes the whole content of the output dir but VCS files. This means that `site:build` command doesn't remove the VCS files.
+* <span class="label label-danger">Deleted</span> Deleted the `site:new` alias for command `new:site`.
+
+# 2.0.0-alpha {#2-0-0-alpha}
+Date: 2015-08-12
+
+* <span class="label label-success">New</span> Data-sources: (issue [#46](https://github.com/spress/Spress/issues/46)) data sources can load site data from certain locations like filesystem or database.
+* <span class="label label-success">New</span> Site structure (issue [#41](https://github.com/spress/Spress/issues/41)).
+* <span class="label label-success">New</span> Data-writer (issue [#44](https://github.com/spress/Spress/issues/44)): The DataWriter's responsibility is to persist the content of the items.
+* <span class="label label-success">New</span> Collections (issue [#43](https://github.com/spress/Spress/issues/43)): collections allow you to define a new type of document like page or post.
+* <span class="label label-success">New</span> Generators (issue [#45](https://github.com/spress/Spress/issues/45)): Generators are used for generating new items of content.
+* <span class="label label-success">New</span> These events `spress.before_convert`, `spress.after_convert` receive a ContentEvent as an argument.
+* <span class="label label-success">New</span> Renderizer (issue [#48](https://github.com/spress/Spress/issues/48)): Renderizer are responsible for formatting content.
+* <span class="label label-success">New</span> List of new events: `spress.before_render_blocks`, `spress.after_render_blocks`, `spress.before_render_page`, `spress.after_render_page`. See [#49](https://github.com/spress/Spress/issues/49).
+* <span class="label label-success">New</span> Established PHP 5.5 as minimum version (see [#42](https://github.com/spress/Spress/issues/42)).
+* <span class="label label-success">New</span> List of new configuration attributes: `text_extensions`, `attribute_syntax`, `preserve_path_title`, `collections`, `data_sources`.
+* <span class="label label-primary">Improved</span> Updated Symfony componentes to 2.7.
+* <span class="label label-primary">Improved</span> Updated Markdown parser (michelf/php-markdown) from Michel Fortin.
+* <span class="label label-primary">Improved</span> Updated built-in theme Spresso to 2.0.
+* <span class="label label-danger">Deleted</span> Methods `initialize` and `getSupportExtension` of ConverterInterface have been deleted.
+* <span class="label label-danger">Deleted</span> TemplateManager class of plugin API.
+* <span class="label label-danger">Deleted</span> EnviromentEvent class.
+* <span class="label label-danger">Deleted</span> List of deleted events: `spress.after_convert_posts`, `spress.before_render_pagination`, `spress.after_render_pagination `, `spress.before_render`, `spress.after_render`. See [#49](https://github.com/spress/Spress/issues/49).
+* <span class="label label-danger">Deleted</span> List of configuration attributes (config.yml) deleted because they have been marked as deprecated: `baseurl`, `paginate`, `paginate_path`, `limit_posts`, `processable_ext`, `destination`, `posts`, `includes`, `layouts`, `plugins`.
+
 # V1.1.1 {#1-1-1}
 Date: 2015-02-25
 
@@ -96,7 +133,7 @@ Date: 2014-02-05
 ## v1.0.0-rc.3
 Date: 2014-01-12
 
-* <span class="label label-success">New</span> Support to composer for spress site plugins.
+* <span class="label label-success">New</span> Support to [Composer](https://getcomposer.org/) for spress site plugins.
 * <span class="label label-success">New</span> Install themes with Composer.
 * <span class="label label-success">New</span> Generate composer.json in a blank site.
 * <span class="label label-primary">Improved</span> the search of folders that starting with underscore.
