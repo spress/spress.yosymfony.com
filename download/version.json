@@ -1,7 +1,7 @@
 [
   {
-    "url": "https://github.com/spress/Spress/releases/download/2.0.0-beta/spress.phar",
+    "url": "https://github.com/spress/Spress/releases/download/v2.0.0-beta/spress.phar",
     "version": "2.0.0-beta",
-    "changelog_url": ""
+    "changelog_url": "http://spress.yosymfony.com/about/changelog/"
   }
 ]
