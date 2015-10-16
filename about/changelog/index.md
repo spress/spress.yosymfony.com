@@ -8,7 +8,7 @@ id_content: changelog
 More information about the [releases](https://github.com/yosymfony/Spress/releases).
 
 # 2.0.0-beta {#2-0-0-beta}
-Date: 2015-1015
+Date: 2015-10-15
 
 * <span class="label label-success">New</span> Added a new converter for Markdown: ParsedownConverter. This converter is based on [Parsedown by Emanuil Rusev](http://parsedown.org/). Deals with issue [#40](https://github.com/spress/Spress/issues/40).
 * <span class="label label-success">New</span> Added command plugins: a new kind of plugins witch provides subcommand for `spress` executable. See [#56](https://github.com/spress/Spress/issues/56).
