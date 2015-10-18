@@ -5,7 +5,7 @@ description: "Spress 2.0.0-beta a development preview relase with several new fe
 categories: [releases]
 tags: [2.0.0]
 ---
-Today is a great day because [Spress 2.0.0-beta](/about/changelog/) is here. In this release we have included
+Today is a great day because [Spress 2.0.0-beta](/about/changelog/#2-0-0-beta) is here. In this release we have included
 new features such as command plugins (a new kind o plugin), a new Markdown converter based on 
 [Parsedown](http://parsedown.org/) a parser 2-3 times faster than
 [Michel Fortin's parser](https://michelf.ca/projects/php-markdown/) implementation or the the expected
