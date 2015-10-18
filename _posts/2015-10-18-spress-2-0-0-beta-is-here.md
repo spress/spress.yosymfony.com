@@ -1,6 +1,7 @@
 ---
 layout: blog/post
 title: "Spress 2.0.0-beta is here"
+description: "Spress 2.0.0-beta a development preview relase with several new features like taxonomy generator or command plugins"
 categories: [releases]
 tags: [2.0.0]
 ---
@@ -34,7 +35,7 @@ $ spress new:plugin
 
 ### self-update command
 
-Keeping Spress up to date is straightforward as of this release. Then to update to the next
+Keeping Spress up to date is straightforward as of this release. To update to the next
 Spress 2.0.0-rc just type `spress self-update` or `spress selfupdate`
 
 ### Taxonomy generator
@@ -51,6 +52,6 @@ $ curl -LOS https://github.com/spress/Spress/releases/download/v2.0.0-beta/spres
 ```
 
 Next release will be the *release candidate*. If you notice any problems, please open a
-[issue](https://github.com/spress/Spress/issues) on Github.
+[issue](https://github.com/spress/Spress/issues) on Github or join us on [Gitter](https://gitter.im/spress/Spress).
 
 Enjoy it!

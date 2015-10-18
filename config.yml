@@ -17,7 +17,7 @@ release:
 
 pre_release:
    version: "2.0.0-beta"
-   url: /releases/2015/10/16/spress-2-0-0-beta-is-here/
+   url: /releases/2015/10/18/spress-2-0-0-beta-is-here/
    url_phar: https://github.com/spress/Spress/releases/download/v2.0.0-beta/spress.phar
 
 author:
