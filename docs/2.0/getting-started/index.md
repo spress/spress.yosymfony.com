@@ -7,14 +7,14 @@ prettify: true
 ---
 This guide will cover topics like: 
 
-* creating a site
-* writing posts 
-* creating a theme
+* creating a site.
+* writing posts and pages.
+* creating a theme.
 
 ### Requirements {#requirements}
 
-* PHP 5.5 or greater
-* [Composer](https://getcomposer.org/)
+* PHP 5.5 or greater.
+* [Composer](https://getcomposer.org/).
 
 ### Installation {#installation}
 
