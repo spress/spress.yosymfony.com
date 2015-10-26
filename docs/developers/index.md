@@ -6,7 +6,7 @@ header: { title: Developers, sub: Create a plugin }
 prettify: true
 ---
 Spress can be extended by plugins located in `_plugins` folder. Spress uses a 
-events mechanic to dispatch events and the plugins can add event listener.
+events mechanic to dispatch events and the plugins can add event listeners.
 It’s easy to manually create plugins
 but Spress provides a `new:plugin` generator command: <sup><span class="label label-success">New in 1.1.0</span></sup>
 
@@ -51,7 +51,7 @@ _plugins/
 
 #### Plugin PHP file {#plugin-phpfile}
 
-In your new plugin PHP file you need to create class with the same name as the file and without namespace.
+In your new plugin PHP file you need to create class with the same name as the file.
 
 #### composer.json {#composer-json}
 
