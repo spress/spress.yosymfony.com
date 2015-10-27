@@ -1,5 +1,5 @@
 ---
-layout: page-dev
+layout: page-dev-2.0
 title: Developers &#8250; Lifecycle
 description: How to Spress performs a site 
 header: { title: Developers, sub: Lifecycle }
