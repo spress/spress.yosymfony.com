@@ -1,5 +1,5 @@
 ---
-layout: page-dev
+layout: page-dev-2.0
 title: Developers &#8250; IO API
 description: "With the IO API your plugins can to interact with the user to show messages or to make questions"
 header: { title: Developers, sub: IO API }

@@ -1,5 +1,5 @@
 ---
-layout: page-dev
+layout: page-dev-2.0
 title: Developers &#8250; Create a plugin
 description: Getting started with Spress plugins
 header: { title: Developers, sub: Create a plugin }

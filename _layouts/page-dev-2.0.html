@@ -1,0 +1,13 @@
+---
+layout: page-header
+---
+{% block pageContent %}    
+    <div class="row">
+        <div class="col-md-3">
+            {% include 'sidebar-dev-2.0.html' %}
+        </div>
+        <div class="col-md-9">
+            {{ page.content }}
+        </div>
+    </div>
+{% endblock %}

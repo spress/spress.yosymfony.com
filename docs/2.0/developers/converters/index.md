@@ -1,5 +1,5 @@
 ---
-layout: page-dev
+layout: page-dev-2.0
 title: Developers &#8250; Converters
 description: How to extend Spress to support a new markup language
 header: { title: Developers, sub: Converters }
