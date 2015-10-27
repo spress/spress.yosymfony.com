@@ -1,5 +1,5 @@
 ---
-layout: page-dev
+layout: page-dev-2.0
 title: Developers &#8250; Events list
 header: { title: Developers, sub: Events list }
 description: Events list of Spress livecycle
@@ -146,7 +146,7 @@ This class lets you:
 
 #### Modifying condiguration values
 
-If you want to alter site's configuration you neew to get the configuration values
+If you want to alter site's configuration you need to get the configuration values
 using `getConfigValues` method (returns an array). The method `setConfigValues`
 lets you save your changes:
 
