@@ -150,13 +150,69 @@ If you want to alter site's configuration you neew to get the configuration valu
 using `getConfigValues` method (returns an array). The method `setConfigValues`
 lets you save your changes:
 
-<script src="https://gist.github.com/yosymfony/253512c1446696375d06.js"></script>
+```
+<?php
+
+use Yosymfony\Spress\Core\Plugin\PluginInterface;
+use Yosymfony\Spress\Core\Plugin\EventSubscriber;
+use Yosymfony\Spress\Core\Plugin\Event\EnvironmentEvent;
+
+class TestPlugin implements PluginInterface
+{
+    public function getMetas()
+    {
+        return [
+            'name' => 'Test plugin',
+        ];
+    }
+
+    public function initialize(EventSubscriber $subscriber)
+    {
+        $subscriber->addEventListener('spress.start', 'onStart');
+    }
+
+    public function onStart(EnvironmentEvent $event)
+    {
+        // Configuration values at config.yml file:
+        $configValues = $event->getConfigValues();
+        $configValues['url'] = 'http://your-domain.local:4000';
+        
+        $event->setConfigValues($configValues);
+    }
+}
+```
 
 #### Adds new converter {#adds-new-converter}
 
 Converter can extend Spress to support a new markup language.
 
-<script src="https://gist.github.com/yosymfony/b8dad1fd5563bb99da3f.js"></script>
+```
+<?php
+
+use Yosymfony\Spress\Core\Plugin\PluginInterface;
+use Yosymfony\Spress\Core\Plugin\EventSubscriber;
+use Yosymfony\Spress\Core\Plugin\Event\EnvironmentEvent;
+
+class TestPlugin implements PluginInterface
+{
+    public function getMetas()
+    {
+        return [
+            'name' => 'Test plugin',
+        ];
+    }
+
+    public function initialize(EventSubscriber $subscriber)
+    {
+        $subscriber->addEventListener('spress.start', 'onStart');
+    }
+
+    public function onStart(EnvironmentEvent $event)
+    {
+         $repository = $event->addConverter(new MyConverter());
+    }
+}
+```
 
 More details about [how to create a Converter](/docs/2.0/developers/converters/).
 

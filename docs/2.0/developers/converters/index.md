@@ -19,4 +19,68 @@ This converter turn to uppercase all content of your
 pages and only work with files which extension is `.up` like `myPage.up` or
 `2014-01-02-my-post.up`:
 
-<script src="https://gist.github.com/yosymfony/d838bae6f251b4ed604c.js"></script>
+```
+<?php
+
+namespace Yosymfony\Spress\Converter;
+
+use Yosymfony\Spress\Core\ContentManager\Converter\ConverterInterface;
+
+class UpperConverter implements ConverterInterface
+{
+    private $supportedExtension;
+
+    /**
+     * Constructor.
+     */
+    public function __construct()
+    {
+        $this->supportedExtension = ['up'];
+    }
+
+    /**
+     * Get the converter priority.
+     * 
+     * @return int Value between 0 to 10. Greater means higher priority.
+     *             Built-in converters have low priority.
+     */
+    public function getPriority()
+    {
+        return 1;
+    }
+
+    /**
+     * If file's extension is support by converter.
+     *
+     * @param string $extension Extension without dot.
+     *
+     * @return bool
+     */
+    public function matches($extension)
+    {
+        return in_array($extension, $this->supportedExtension);
+    }
+
+    /**
+     * Convert the input data.
+     *
+     * @param string $input The raw content without Front-matter.
+     *
+     * @return string
+     */
+    public function convert($input)
+    {
+        return strtoupper($input);
+    }
+
+    /**
+     * The extension of filename result (without dot). E.g: html.
+     *
+     * @return string
+     */
+    public function getOutExtension($extension)
+    {
+        return 'html';
+    }
+}
+```
