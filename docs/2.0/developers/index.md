@@ -20,14 +20,21 @@ to tweak the generation.
 The complete syntax of the command is:
 
 ```
-new:plugin [--name="..."] [--author="..."] [--email="..."] [--description="..."] [--license="MIT"]
+new:plugin  [--name="..."] [--command-name="..."] [--command-description="..."]
+            [--command-help="..."] [--author="..."] [--email="..."]
+            [--description="..."] [--license="MIT"]
 ```
 
 * `--name`: The name of the plugin should follow the pattern `vendor-name/plugin-name`.
+* `--command-name`: In case of you want to create a [command plugin](#command-plugin) this is the name of the command.
+* `--command-description`: The description of command in case of command plugin.
+* `--command-help`: The description of command in case of command plugin.
 * `--author`: The author of the plugin.
 * `--email`: The Email of the author.
 * `--description`: The description of your plugin.
 * `--license`: The license under you publish your plugin. MIT by default.
+
+Notes that if you want to create a command plugin, `--command-name` is mandatory.
 
 ## Create a plugin manually {#manual-plugins}
 
@@ -75,10 +82,7 @@ entry-point class or other libraries required by it.
         }
     ],
     "require": {
-        "yosymfony/spress-installer": "~1.0"
-    },
-    "extra": {
-        "spress_name": "YourPluginName"
+        "yosymfony/spress-installer": "~2.0"
     }
 }
 ```
@@ -89,23 +93,23 @@ An overview of what main options mean:
 * **require**: List of other packages required by the plugin. **If you want to make
 a public plugin then you must add the `spress-installer` to the required list**.
 * **extra**: Extra information for Composer about the plugin is mandatory.
-* * **spress_name**: The name of the plugin. This value determines the name of the folder where it will be installed.
 
 **Get your plugin requirements and generate class-loader**
 
 Go to your site folder and run `composer update` command.
 
-#### The plugin {#plugin}
+## The plugin {#plugin}
 
 Your plugin class have to implement Spress `PluginInterface` interface. 
 Required methods are:
 
 * `initialize` method where you add your events to event listener. 
-* `getMetas` method storing plugin metadata
+* `getMetas` method returns an array with the plugins's metadata.
 
-`initialize` will be invoked at the beginning of the 
-plugin life cycle. You can use it like a plugin constructor to initialize internal 
-variables.
+### initialize method {#initialize-method}
+
+This method will be invoked at the beginning of the plugin's life cycle.
+You can use it like a plugin constructor to initialize internal variables.
 
 Below example uses closure to process event, but you can also use [class methods](#class-methods) for your logic.
 
@@ -132,7 +136,7 @@ class YourPluginName implements PluginInterface
 }
 ```
 
-The `addEventListener($eventName, $listener)` method adds a new listener to a event:
+The `addEventListener($eventName, $listener)` method adds a new listener to an event:
 
 <table class="table">
     <thead>
@@ -162,9 +166,54 @@ The `addEventListener($eventName, $listener)` method adds a new listener to a ev
     </tbody>
 </table>
 
-## Class methods to handle events {#class-methods}
+### getMetas method {#getMetas method}
 
-You can use class methods instead of closure function:
+This method returns an array with the plugins's metadata. List of the standard metas:
+
+<table class="table">
+    <thead>
+        <tr>
+            <th class="col-sm-2">Name</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>name</td>
+            <td>string</td>
+            <td>
+                The name of the plugin.
+            </td>
+        </tr>
+        <tr>
+            <td>description</td>
+            <td>string</td>
+            <td>
+                A brief description of the plugin.
+            </td>
+        </tr>
+        <tr>
+            <td>author</td>
+            <td>string</td>
+            <td>
+                The author of the plugin.
+            </td>
+        </tr>
+        <tr>
+            <td>license</td>
+            <td>string</td>
+            <td markdown="1">
+                The license of the plugin. The recommended notation for the most common licenses are
+                listed at [SPDX Open Source License Registry](https://spdx.org/licenses/).
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+### Class methods to handle events {#class-methods}
+
+You can use class methods instead of closure function (recommended way):
 
 ```
 use Yosymfony\Spress\Core\Plugin\PluginInterface;
@@ -188,4 +237,78 @@ class YourPluginName implements PluginInterface
          return [ "name" => "YourPluginName", ];
      }
 }
+```
+## Command plugin {#command-plugin}
+
+AS of version 2.0.0 Spress can be extended with command plugins, a new kind of plugins which
+provide subcommands for spress executable (`.phar` file).
+For example command plugins are usefull for writing subcommands for handling i18n concerns.
+A command plugin should implement
+[`CommandPluginInterface`](https://github.com/spress/Spress/blob/master/src/Plugin/CommandPluginInterface.php).
+
+<img src="{{ site.url }}/assets/img/spress-command-plugin-scaffolding.png" class="img-responsive" alt="Responsive image">
+
+### Example
+
+Below example is a command plugin created with `spress new:plugin`:
+
+```
+<?php
+
+use Yosymfony\Spress\Core\IO\IOInterface;
+use Yosymfony\Spress\Plugin\CommandDefinition;
+use Yosymfony\Spress\Plugin\CommandPlugin;
+
+class Yosymfonytestplugin extends CommandPlugin
+{
+    /**
+     * Gets the command's definition.
+     *
+     * @return \Yosymfony\Spress\Plugin\CommandDefinition Definition of the command.
+     */
+    public function getCommandDefinition()
+    {
+        $definition = new CommandDefinition('test:hello');
+        $definition->setDescription('Say hello');
+        $definition->setHelp('');
+
+        return $definition;
+    }
+
+    /**
+     * Executes the current command.
+     *
+     * @param \Yosymfony\Spress\Core\IO\IOInterface $io Input/output interface.
+     * @param array $arguments Arguments passed to the command.
+     * @param array $options Options passed to the command.
+     *
+     * @return null|int null or 0 if everything went fine, or an error code.
+     */
+    public function executeCommand(IOInterface $io, array $arguments, array $options)
+    {
+        $io->write("Hello!");
+    }
+
+    /**
+     * Gets the metas of a plugin.
+     * 
+     * Standard metas:
+     *   - name: (string) The name of plugin.
+     *   - description: (string) A short description of the plugin.
+     *   - author: (string) The author of the plugin.
+     *   - license: (string) The license of the plugin.
+     * 
+     * @return array
+     */
+    public function getMetas()
+    {
+        return [
+            'name' => 'yosymfony/test-plugin',
+            'description' => '',
+            'author' => 'Yo! Symfony',
+            'license' => 'MIT',
+        ];
+    }
+}
+
 ```
