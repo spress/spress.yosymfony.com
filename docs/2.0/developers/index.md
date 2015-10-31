@@ -246,8 +246,6 @@ For example command plugins are usefull for writing subcommands for handling i18
 A command plugin should implement
 [`CommandPluginInterface`](https://github.com/spress/Spress/blob/master/src/Plugin/CommandPluginInterface.php).
 
-<img src="{{ site.url }}/assets/img/spress-command-plugin-scaffolding.png" class="img-responsive" alt="Responsive image">
-
 ### Example
 
 Below example is a command plugin created with `spress new:plugin`:
