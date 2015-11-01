@@ -5,10 +5,10 @@ description: Getting started with Spress plugins
 header: { title: Developers, sub: Create a plugin }
 prettify: true
 ---
-Spress can be extended by plugins located in `./src/plugins` folder. Spress uses a 
-events mechanic to dispatch events and the plugins can add event listeners.
-It’s easy to manually create plugins
-but Spress provides a `new:plugin` generator command:
+Spress can be extended by plugins located in `./src/plugins` folder.
+As of version 2.0.0 Spress can be extended with [command plugin](#command-plugin).
+Spress uses a events mechanic to dispatch events and plugins can add event listeners.
+It’s easy to manually create plugins but Spress provides a `new:plugin` generator command:
 
 ```
 $ spress new:plugin
@@ -31,16 +31,16 @@ new:plugin  [--name="..."] [--command-name="..."] [--command-description="..."]
 * `--command-help`: The description of command in case of command plugin.
 * `--author`: The author of the plugin.
 * `--email`: The Email of the author.
-* `--description`: The description of your plugin.
-* `--license`: The license under you publish your plugin. MIT by default.
+* `--description`: The description of the plugin.
+* `--license`: The license of the plugin. MIT by default.
 
-Notes that if you want to create a command plugin, `--command-name` is mandatory.
+Note that if you want to create a [command plugin](#command-plugin), `--command-name` is mandatory.
 
 ## Create a plugin manually {#manual-plugins}
 
 We recommend to use `new:plugin` command but if you want... you can do it by hand. 
 It's recommended to create each plugin in a separate folder and with a 
-`composer.json` file. With Composer, you can create reusable plugins available to 
+`composer.json` file. With [Composer](https://getcomposer.org), you can create reusable plugins available to 
 others using [packagist.org](https://packagist.org/) and [Github](https://github.com/).
 
 Here you can see an [example](https://github.com/spress/Github-metadata-plugin) of a plugin.
@@ -61,12 +61,12 @@ This is the typical structure of a plugin:
 
 #### Plugin PHP file {#plugin-phpfile}
 
-In your new plugin PHP file you need to create class with the same name as the file.
+In your new plugin PHP file you need to create a **class with the same name** as the file.
 
 #### composer.json {#composer-json}
 
 The `composer.json` file contains information about your plugin like name, 
-entry-point class or other libraries required by it.
+entry-point class or other libraries required by this one.
 
 ```
 {
@@ -92,7 +92,6 @@ An overview of what main options mean:
 * **type**: This is the package type. For Spress plugins must be set to `spress-plugin`.
 * **require**: List of other packages required by the plugin. **If you want to make
 a public plugin then you must add the `spress-installer` to the required list**.
-* **extra**: Extra information for Composer about the plugin is mandatory.
 
 **Get your plugin requirements and generate class-loader**
 
@@ -100,7 +99,7 @@ Go to your site folder and run `composer update` command.
 
 ## The plugin {#plugin}
 
-Your plugin class have to implement Spress `PluginInterface` interface. 
+A plugin class must implement `PluginInterface`. 
 Required methods are:
 
 * `initialize` method where you add your events to event listener. 
@@ -240,15 +239,17 @@ class YourPluginName implements PluginInterface
 ```
 ## Command plugin {#command-plugin}
 
-AS of version 2.0.0 Spress can be extended with command plugins, a new kind of plugins which
-provide subcommands for spress executable (`.phar` file).
+Command plugins are a new kind of plugin which provide subcommands for spress executable (`.phar` file).
 For example command plugins are usefull for writing subcommands for handling i18n concerns.
-A command plugin should implement
+A command plugin must implement
 [`CommandPluginInterface`](https://github.com/spress/Spress/blob/master/src/Plugin/CommandPluginInterface.php).
+
+Note that `CommanPluginInterface` is **not part of Spress core** only available using CLI interface.
 
 ### Example
 
-Below example is a command plugin created with `spress new:plugin`:
+Below example is a command plugin created with `spress new:plugin` to provides `test:hello` subcommand.
+This one only print a hello message.
 
 ```
 <?php
@@ -289,12 +290,6 @@ class Yosymfonytestplugin extends CommandPlugin
 
     /**
      * Gets the metas of a plugin.
-     * 
-     * Standard metas:
-     *   - name: (string) The name of plugin.
-     *   - description: (string) A short description of the plugin.
-     *   - author: (string) The author of the plugin.
-     *   - license: (string) The license of the plugin.
      * 
      * @return array
      */
