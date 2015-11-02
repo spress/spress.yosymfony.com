@@ -30,41 +30,39 @@ namespace. All events inherits from
                     <li>modify the configuration values.</li>
                     <li>add data sources.</li>
                     <li>change the data writer.</li>
-                    <li>add converters.</li>
+                    <li markdown="1">add [converters](/docs/2.0/developers/converters).</li>
                     <li>extend Twig (default renderizer).</li>
-                    <li>get an access to IO API.</li>
+                    <li markdown="1">get an access to [IO API](/docs/2.0/developers/io-api).</li>
                 </ul>
 
-                When this event is thrown, the configuration of site was loaded.
+                When this event is thrown, the site configuration was loaded.
             </td>
         </tr>
         <tr>
             <td>spress.before_convert</td>
-            <td markdown="1">[`ConvertEvent`](#convertevent)</td>
+            <td markdown="1">[`ContentEvent`](#contentevent)</td>
             <td>
                 <p>
                     The spress.before_convert is thrown before convert the content
                     of each page.
                 </p>
                 <p markdown="1">
-                    `getContent()` method return the original content in
+                    `getContent()` method returns the original content in
                     source format.
                 </p>
             </td>
         </tr>
         <tr>
             <td>spress.after_convert</td>
-            <td markdown="1">[`ConvertEvent`](#convertevent)</td>
+            <td markdown="1">[`ContentEvent`](#contentevent)</td>
             <td>
                 <p markdown="1">
                     The spress.after_convert is thrown after convert the content of
                     each page.
-                    **If the content don't have Front-matter this event never be
-                    dispatcher**.
                 </p>
                 <p markdown="1">
-                    `getContent()` method return the content transformed by
-                    converter. In this step Twig tags are not resolved.
+                    `getContent()` method returns the content transformed by
+                    converter. In this step renderizer tags, like Twig tags, are not resolved.
                 </p>
             </td>
         </tr>
@@ -92,6 +90,9 @@ namespace. All events inherits from
                     The spress.after_render_blocks is thrown after render content
                     without layouts.
                 </p>
+                <p markdown="1">
+                    `getContent()` method returns the content renderized without layouts applied.
+                </p>
             </td>
         </tr>
         <tr>
@@ -117,6 +118,9 @@ namespace. All events inherits from
                 <p markdown="1">
                     The spress.after_render_page is thrown after render content
                     with layouts.
+                </p>
+                <p markdown="1">
+                    `getContent()` method returns the content renderized with layouts applied.
                 </p>
             </td>
         </tr>
@@ -144,7 +148,7 @@ This class lets you:
     <li>get an access to IO API.</li>
 </ul>
 
-#### Modifying condiguration values
+#### Modifying configuration values
 
 If you want to alter site's configuration you need to get the configuration values
 using `getConfigValues` method (returns an array). The method `setConfigValues`
@@ -182,7 +186,7 @@ class TestPlugin implements PluginInterface
 }
 ```
 
-#### Adds new converter {#adds-new-converter}
+#### Adds a new converter {#adds-new-converter}
 
 Converter can extend Spress to support a new markup language.
 
@@ -216,85 +220,28 @@ class TestPlugin implements PluginInterface
 
 More details about [how to create a Converter](/docs/2.0/developers/converters/).
 
-#### Extending Twig {#extending-twig}
-
-Twig can be extened with functions, filters and tests.
-[See extending Twig](/docs/2.0/developers/extending-twig/).
-
-{% verbatim %}
-```
-$subscriber->addEventListener('spress.start', 
-    function(EnvironmentEvent $event)
-    {
-        // Template manager to render Twig templates from a string:
-        $tm = $event->getTemplateManager();
-        $renderHtml = $tm->render('<p>{{ name }}</p>', ['name' => 'Spress']);
-    });
-```
-{% endverbatim %}
-
-#### Informations about paths {#path-info}
-
-```
-$subscriber->addEventListener('spress.start', 
-    function(EnvironmentEvent $event)
-    {
-        // Get the absolute path of the site (string):
-        $v = $event->getSourceDir();
-        
-        // Get the absolute path of posts folder (string):
-        $v = $event->getPostsDir();
-        
-        // Get the absolute path of generated site folder (string):
-        $v = $event->getDestinationDir();
-        
-        // Get the absolute path of includes folder (string):
-        $v = $event->getIncludesDir();
-        
-        // Get the absolute path of layouts folder (string):
-        $v = $event->getLayoutsDir();
-    });
-```
-
 ## ContentEvent {#contentevent}
 
-Some Spress events inherit from ContentEvent. This is a event base for events 
-related with the content.
+This is a event base for content-related events.
 
 ```
 $subscriber->addEventListener('spress.before_convert', 
-    function(ConvertEvent $event)
+    function(ContentEvent $event)
     {
-        // Get the identifier of the page (string):
+        // Gets the identifier of the item (string):
         $v = $event->getId();
         
-        // The page is a posts? (boolean):
-        $v = $event->isPost();
-        
-        // Get the content without Front-matter (string):
+        // Gets the content without Front-matter (string):
         $v = $event->getContent();
         
-        // Set the content of the page:
+        // Sets the content of the item:
         $event->setContent('New content');
         
-        // Get source relative path to the site, filename included (string):
-        $v = $event->getRelativePath();
-    });
-```
+        // Gets the attributes of the item (array):
+        $v = $event->getAttributes();
 
-## ConvertEvent {#convertevent}
-
-This event extends from [`ContentEvent`](#contentevent).
-
-```
-$subscriber->addEventListener('spress.before_convert', 
-    function(ConvertEvent $event)
-    {
-        // Get the Front-matter of the page (array):
-        $v = $event->getFrontmatter();
-        
-        // Set the Front-matter of the page:
-        $event->setFrontmatter(['title' => 'My posts']);
+        // Sets the attributes of the item (array):
+        $event->setAttributes([`author_name` => 'Victor']);
     });
 ```
 
@@ -307,93 +254,27 @@ This event extends from [`ContentEvent`](#contentevent).
 $subscriber->addEventListener('spress.before_render_blocks', 
     function(RenderEvent $event)
     {
-        // Get Twig template rendered:
-        $rendered = $event->render('Hi {{ name }}', ['name' => 'Victor']);
-        
-        // Get the data model used in templates (array):
-        $v = $event->getPayload();
-        
-        // Set a new data model available in templates:
-        $event->setPayload(['name' => 'Victor']);
+        // Gets the relative URL (string):
+        $url = $event->getRelativeUrl();
+
+        // Changes the URL (string):
+        $event->setRelativeUrl('/about/me/index.html');
     });
 ```
 {% endverbatim %}
 
-### BeforeRenderBlocks {#before-render-blocks}
-
-### AfterRenderBlocks {#after-render-blocks}
-
-### BeforeRenderPage {#before-render-page}
-
-### AfterRenderPage {#after-render-page}
-
 ## FinishEvent {#finishevent}
 
-Information about the site processed.
+Information about the site performed.
 
 ```
 $subscriber->addEventListener('spress.finish', 
     function(FinishEvent $event)
     {
-        // Get the results (array):
-        $v = $event->getResult();
-        $posts = $v['total_post'];
+        // Gets the items (array)
+        $items = $event->getItems();
+
+        // (array)
+        $siteAttributes = $event->getSiteAttributes();
     });
 ```
-
-The array with results contains following information:
-
-<table class="table">
-    <thead>
-        <tr>
-            <th class="col-sm-2">Key</th>
-            <th>Type</th>
-            <th>Value</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>total_post</td>
-            <td>int</td>
-            <td>
-                Number of posts found at posts directory.
-            </td>
-        </tr>
-        <tr>
-            <td>processed_post</td>
-            <td>int</td>
-            <td>
-                Number of posts with Front-matter.
-            </td>
-        </tr>
-        <tr>
-            <td>drafts_post</td>
-            <td>int</td>
-            <td>
-                Number of draft posts.
-            </td>
-        </tr>
-        <tr>
-            <td>total_pages</td>
-            <td>int</td>
-            <td>
-                Number of pages found in your site.
-            </td>
-        </tr>
-        <tr>
-            <td>processed_pages</td>
-            <td>int</td>
-            <td>
-                Number of pages with Front-matter.
-            </td>
-        </tr>
-        <tr>
-            <td>other_resources</td>
-            <td>int</td>
-            <td>
-                Others files not processable that will be copied verbatim to the 
-                generated site.
-            </td>
-        </tr>
-    </tbody>
-</table>
