@@ -2,7 +2,7 @@
 layout: page-dev-2.0
 title: Developers &#8250; Create a plugin
 description: Getting started with Spress plugins
-header: { title: Developers, sub: Create a plugin }
+header: { title: Create a plugin, sub: Developers }
 prettify: true
 ---
 Spress can be extended by plugins located in `./src/plugins` folder.
@@ -252,8 +252,6 @@ Below example is a command plugin created with `spress new:plugin` to provides `
 This one only print a hello message.
 
 ```
-<?php
-
 use Yosymfony\Spress\Core\IO\IOInterface;
 use Yosymfony\Spress\Plugin\CommandDefinition;
 use Yosymfony\Spress\Plugin\CommandPlugin;
@@ -303,5 +301,4 @@ class Yosymfonytestplugin extends CommandPlugin
         ];
     }
 }
-
 ```
