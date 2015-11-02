@@ -1,7 +1,9 @@
 ---
 layout: page-dev-2.0
 title: Developers &#8250; Events list
-header: { title: Developers, sub: Events list }
+header: 
+  title: Events list
+  sub: Developers
 description: Events list of Spress livecycle
 prettify: true
 ---
@@ -9,7 +11,6 @@ List of Spress events. Even's arguments are located at `Yosymfony\Spress\Core\Pl
 namespace. All events inherits from 
 [Symfony\Component\EventDispatcher\Event][Symfony dispatch event].
 [Symfony dispatch event]: http://symfony.com/doc/current/components/event_dispatcher/introduction.html#creating-and-dispatching-an-event
-
 <table class="table">
     <thead>
         <tr>
@@ -27,11 +28,11 @@ namespace. All events inherits from
                 event you can:
 
                 <ul>
-                    <li>modify the configuration values.</li>
-                    <li>add data sources.</li>
-                    <li>change the data writer.</li>
-                    <li markdown="1">add [converters](/docs/2.0/developers/converters).</li>
-                    <li>extend Twig (default renderizer).</li>
+                    <li markdown="1">[modify the configuration values](#modifying-configuration).</li>
+                    <li markdown="1">managing [data sources](#managing-data-sources).</li>
+                    <li markdown="1">change the [data writer](#changing-data-writer).</li>
+                    <li markdown="1">add [converters](#adds-new-converter).</li>
+                    <li markdown="1">change the renderizer.</li>
                     <li markdown="1">get an access to [IO API](/docs/2.0/developers/io-api).</li>
                 </ul>
 
@@ -139,24 +140,20 @@ namespace. All events inherits from
 
 This class lets you:
 
-<ul>
-    <li>modify the configuration values.</li>
-    <li>add data sources.</li>
-    <li>change the data writer.</li>
-    <li>add converters.</li>
-    <li>extend Twig (default renderizer).</li>
-    <li>get an access to IO API.</li>
-</ul>
+* modify the configuration values.</li>
+* add data sources.
+* change the data writer.
+* add a converters.
+* change the renderizer.
+* get an access to IO API.
 
-#### Modifying configuration values
+#### Modifying configuration values {#modifying-configuration}
 
 If you want to alter site's configuration you need to get the configuration values
 using `getConfigValues` method (returns an array). The method `setConfigValues`
 lets you save your changes:
 
 ```
-<?php
-
 use Yosymfony\Spress\Core\Plugin\PluginInterface;
 use Yosymfony\Spress\Core\Plugin\EventSubscriber;
 use Yosymfony\Spress\Core\Plugin\Event\EnvironmentEvent;
@@ -186,13 +183,85 @@ class TestPlugin implements PluginInterface
 }
 ```
 
+#### Managing data sources {#managing-data-sources}
+
+Each site has one or more *data sources*. Data sources can load data (items, layouts and includes) from
+certain locations like filesystem or database. Additionally data sources lets you create dynamic content
+using an special data source called [MemoryDataSource](/docs/2.0/developers/data-sources/#memoryDataSource).
+
+The below example show you how to add a new data source. The first argument of `addDataSource` method is 
+the name for the new data source:
+
+```
+use Yosymfony\Spress\Core\Plugin\PluginInterface;
+use Yosymfony\Spress\Core\Plugin\EventSubscriber;
+use Yosymfony\Spress\Core\Plugin\Event\EnvironmentEvent;
+
+class TestPlugin implements PluginInterface
+{
+    public function getMetas()
+    {
+        return [
+            'name' => 'Test plugin',
+        ];
+    }
+
+    public function initialize(EventSubscriber $subscriber)
+    {
+        $subscriber->addEventListener('spress.start', 'onStart');
+    }
+
+    public function onStart(EnvironmentEvent $event)
+    {
+         $dsm = $event->getDataSourceManager();
+         $dsm->addDataSource('my-custom-data-source', new MyDataSource());
+    }
+}
+```
+
+`DataSourceManager` has methods to add, edit and delete data sources.
+More details about [how to manage data sources](/docs/2.0/developers/data-sources/).
+
+#### Changing the data writer {#changing-data-writer}
+
+The data writer is responsible for provinding the persistence layer to items. By defatult
+Spress uses a filesystem data writer implementation but is easy to create a custom
+data writer for persisting items in a data base for example.
+
+```
+use Yosymfony\Spress\Core\Plugin\PluginInterface;
+use Yosymfony\Spress\Core\Plugin\EventSubscriber;
+use Yosymfony\Spress\Core\Plugin\Event\EnvironmentEvent;
+
+class TestPlugin implements PluginInterface
+{
+    public function getMetas()
+    {
+        return [
+            'name' => 'Test plugin',
+        ];
+    }
+
+    public function initialize(EventSubscriber $subscriber)
+    {
+        $subscriber->addEventListener('spress.start', 'onStart');
+    }
+
+    public function onStart(EnvironmentEvent $event)
+    {
+        $event->setDataWriter(new MyDataWriter());
+    }
+}
+```
+To get the current instance of the data writer invokes the method `$event->getDataWriter()`.
+
+More details about [data writer](/docs/2.0/developers/data-writer/).
+
 #### Adds a new converter {#adds-new-converter}
 
 Converter can extend Spress to support a new markup language.
 
 ```
-<?php
-
 use Yosymfony\Spress\Core\Plugin\PluginInterface;
 use Yosymfony\Spress\Core\Plugin\EventSubscriber;
 use Yosymfony\Spress\Core\Plugin\Event\EnvironmentEvent;
