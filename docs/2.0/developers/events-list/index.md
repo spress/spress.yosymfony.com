@@ -99,7 +99,7 @@ namespace. All events inherits from
         <tr>
             <td>
                 spress.before_render_page
-                <span class="label label-success">New in 2.0.0</span>
+                <span class="label label-success">Spress >= 2.0.0</span>
             </td>
             <td markdown="1">[`RenderEvent`](#renderevent)</td>
             <td>
@@ -112,7 +112,7 @@ namespace. All events inherits from
         <tr>
             <td>
                 spress.after_render_page
-                <span class="label label-success">New in 2.0.0</span>
+                <span class="label label-success">Spress >= 2.0.0</span>
             </td>
             <td markdown="1">[`RenderEvent`](#renderevent)</td>
             <td>

@@ -7,6 +7,8 @@ header:
   sub: Developers
 prettify: true
 ---
+<span class="label label-success">Spress >= 2.0</span>
+
 Data sources can load data from certain locations like filesystem or database.
 Every data source must extends `AbstractDataSource`. Data loaded from data sources are
 called items. There is three type of them: content, layout and include.
@@ -16,7 +18,8 @@ Items must implements [`ItemInterface`](https://github.com/spress/Spress/blob/ma
 
 Items are the basic building blocks and consist of content and metadata attributes.
 Each item has an identifier and a set of attributes (metadatas). Attributes consist of
-*key-value* pairs located at the [front-matter](/docs/2.0/front-matter/) or in a separeted
+*key-value* array. [`FilesystemDataSource`](https://github.com/spress/Spress/blob/master/src/Core/DataSource/Filesystem/FilesystemDataSource.php) implementation is able
+to load attributes located at the [front-matter](/docs/2.0/front-matter/) or in a separeted
 metadata file which are stored in [YAML format](https://en.wikipedia.org/wiki/YAML).
 
 ### How to create an item?
@@ -27,7 +30,8 @@ use Yosymfony\Spress\Core\DataSource\Item;
 $item = new Item('Test of content', 'myPage.md', ['title' => 'My page']);
 ```
 
-`Item` is an implementation of `ItemInterface`.
+`Item` is an implementation of `ItemInterface`. First argument is the content, second is the identifier
+and last one are the attributes.
 
 To get and set attributes uses `getAttributes` and `setAttributes` methods:
 
@@ -41,8 +45,6 @@ $attributes['parmalink'] = '/my-page'
 
 $item->setAttributes($attributes);
 ```
-
-First argument is the content, second is the identifier and last one are the attributes.
 
 ### Setting the path
 

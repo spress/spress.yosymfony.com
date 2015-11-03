@@ -29,7 +29,7 @@ class SpressIOExample extends Plugin
     
     public function onStart($event)
     {
-        $this->io = $event->getIO();    // <------- IO API instance
+        $this->io = $event->getIO();
         
         if($this->io->isInteractive())
         {
@@ -66,5 +66,5 @@ Before asking a question to user is recommended to know **if the interface is in
 If you are using a *callback* function for validating an answer the validator receives the data to validate. 
 It must return the validated data when the data is valid and throw an exception otherwise.
 
-More information about IO API: [Spress IO interface at Github](https://github.com/yosymfony/Spress/blob/master/src/Yosymfony/Spress/IO/IOInterface.php).
+More information about IO API: [Spress IO interface at Github](https://github.com/spress/Spress/blob/1.1/src/Yosymfony/Spress/Core/IO/IOInterface.php).
 

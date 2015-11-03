@@ -7,36 +7,61 @@ header:
   sub: Developers
 prettify: true
 ---
-The responsibility of *data writer* is to persist the content of the items in filesystem, memory, database or another storage system. Spress comes with `FilesystemDataWriter` out of the box. A data writer must implement [`DataWriterInterface`](https://github.com/spress/Spress/blob/master/src/Core/DataWriter/DataWriterInterface.php):
+<span class="label label-success">Spress >= 2.0</span>
+
+The responsibility of *data writer* is to persist the content of the items in filesystem, memory, database or another storage system. Spress comes with `FilesystemDataWriter` for persising items to filesystem. A data writer must implement [`DataWriterInterface`](https://github.com/spress/Spress/blob/master/src/Core/DataWriter/DataWriterInterface.php):
+
+To change the current data writer see [EnvironmentEvent class](/docs/2.0/developers/events-list/#changing-data-writer)
+at `spress.start` event.
+
+## Data writer example
+
+`ArrayDataWriter` is a simple implementation for writing items in an array:
 
 ```
-namespace Yosymfony\Spress\Core\DataWriter;
+use Yosymfony\Spress\Core\DataSource\ItemInterface;
 
-interface DataWriterInterface
+class ArrayDataWriter implements DataWriterInterface
 {
+    protected $items = [];
+
     /**
      * Prepare the place to store.
      * e.g: clean up the output folder.
      */
-    public function setUp();
+    public function setUp()
+    {
+        $this->items = [];
+    }
 
     /**
      * Write a item.
      *
      * @param \Yosymfony\Spress\Core\DataSource\ItemInterface $item
      */
-    public function write(ItemInterface $item);
+    public function write(ItemInterface $item)
+    {
+        $this->items[$item->getId()] = $item;
+    }
 
     /**
-     * Brings down the connections to the data.
+     * Gets the items.
+     * This is not a member of DataWriterInterface.
+     *
+     * @return array
      */
-    public function tearDown();
+    public function getItems()
+    {
+        return $this->items;
+    }
+
+    /**
+     * Where you clean up the objects.
+     * e.g: brings down the connections to the data.
+     */
+    public function tearDown()
+    {
+        // do not nothing in this case
+    }
 }
 ```
-
-## Extends Spress with a custom data writer
-
-Extends Spress with a DataWriter from a plugin is straightforward:
-
-* Suscribes to `spress.start` events and gets the EnvironmentEvent object that received as an argument.
-* Sets a custom DataWriter: `$environment->setDataWriter($myDataWriter);`

@@ -5,13 +5,17 @@ description: "With the IO API your plugins can to interact with the user to show
 header: { title: Developers, sub: IO API }
 prettify: true
 ---
-The IO API <sup><span class="label label-success">New in 1.1.0</span></sup> enables your plugins
-to interact with the user to show messages or to make questions:
+<span class="label label-success">Spress >= 1.1</span>
+
+The IO API enables your plugins to interact with the user to show messages or to make questions:
 
 * Write messages.
 * Ask.
 * Ask confirmation (for yes/no questions).
 * Ask and hide answer (useful for get password answer).
+
+IO API implements [IOInterface](https://github.com/spress/Spress/blob/master/src/Core/IO/IOInterface.php) defined
+at Spress Core.
 
 ## How to use?
 
@@ -29,7 +33,7 @@ class SpressIOExample extends Plugin
     
     public function onStart($event)
     {
-        $this->io = $event->getIO();    // <------- IO API instance
+        $this->io = $event->getIO();
         
         if($this->io->isInteractive())
         {
@@ -63,8 +67,5 @@ Before make a question to user is recommendable to know **if the interface is in
 * **isVerbose**: Is this output verbose? `$io->isVerbose()`.
 * **isDebug**: Is the output in debug verbosity?: `$io->isDebug()`.
 
-If you are using a *callback* function for validating a answer the validator receives the data to validate. 
+If you are using a *callback* function for validating an answer the validator receives the data to validate. 
 It must return the validated data when the data is valid and throw an exception otherwise.
-
-More information abaut IO API: [Spress IO interface at Github](https://github.com/yosymfony/Spress/blob/master/src/Yosymfony/Spress/IO/IOInterface.php).
-
