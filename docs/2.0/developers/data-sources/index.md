@@ -46,23 +46,57 @@ $attributes['parmalink'] = '/my-page'
 $item->setAttributes($attributes);
 ```
 
-### Setting the path
+### Setting the paths
 
-The item's path defines the relative route of the item in the site.
+Item's paths are organized around *snapshots* that define a path at a specific point
+of compilation a site. An item without `relative` path snapshot will be compiled but not
+stored by the [data writer](/docs/2.0/developers/data-writer).
+
+Predefined snapshots:
+
+* **relative**:  defines the relative route of the item in the site. This is an important snapshot because it will be used as the basis for generating the permalink.
+* **permalink**: generated automatically by *permalink generator*. Constains the relative URL.
+* **source**: in case of binary content, contains the real path to the item. This improve the performance because the file will be copied instead of dumping the content from memory.
+* **last**: the most recent path snapshot.
+
+```
+use Yosymfony\Spress\Core\DataSource\Item;
+
+$item = new Item('Test of content', 'about.md', []);
+$item->setPath('help/about.md', 'relative');
+```
+
+First argument of `setPath` method is the path and the second is the snapshot's name.
+
+Predefined snapshots are defined as constants:
+
+* `ItemInterface::SNAPSHOT_PATH_RELATIVE`
+* `ItemInterface::SNAPSHOT_PATH_PERMALINK`
+* `ItemInterface::SNAPSHOT_PATH_LAST`
+* `ItemInterface::SNAPSHOT_PATH_SOURCE`
 
 ### Binary content
 
 If the extension of the item is included in the site configuration’s `text_extension` attribute, it is considered to be
 textual. Otherwise it will be considered as binary. More details about [text_extension value](/docs/2.0/configuration/#deafult-configuration).
 
+```
+use Yosymfony\Spress\Core\DataSource\Item;
+
+$item = new Item('', 'assets/img/header.png', [], true);
+$item->setPath('assets/img/header.png', 'relative');
+$item->setPath('assets/img/header.png', 'source');
+```
+
+The last one argument of the constructor indicates that content is binary.
 
 ### Type of items
 
 There is three type of item:
 
-* **content**: `ItemInterface::TYPE_ITEM` (default) regular content like post or pages.
-* **layout**: `ItemInterface::TYPE_LAYOUT` indicates how to organize the content.
-* **include**: `ItemInterface::TYPE_INCLUDE` reusable content.
+* **content**: (default) regular content like post or pages.
+* **layout**: indicates how to organize the content.
+* **include**: reusable content.
 
 The Item's constructor accept a fifth argument for the type:
 
@@ -74,7 +108,16 @@ $layoutItem = new Item('{{ page.content }}', 'page.html', [], false, ItemInterfa
 ```
 {% endverbatim %}
 
-### Snapshots of content and paths
+Item types are defined as constants:
+
+* `ItemInterface::TYPE_ITEM`
+* `ItemInterface::TYPE_LAYOUT`
+* `ItemInterface::TYPE_INCLUDE`
+
+
+### Content snapshots
+
+A snapshot is the compiled content at a specific point during the compilation process.
 
 ## Predefined data sources
 
