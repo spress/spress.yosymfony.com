@@ -9,7 +9,14 @@ prettify: true
 ---
 <span class="label label-success">Spress >= 2.0</span>
 
-The responsibility of *data writer* is to persist the content of the items in filesystem, memory, database or another storage system. Spress comes with `FilesystemDataWriter` for persising items to filesystem. A data writer must implement [`DataWriterInterface`](https://github.com/spress/Spress/blob/master/src/Core/DataWriter/DataWriterInterface.php):
+The responsibility of *data writer* is to persist the content of the items in filesystem, memory, database or another storage system.
+
+## FilesystemDataWriter {#FilesystemDataWriter}
+
+[`FilesystemDataWriter`](https://github.com/spress/Spress/blob/master/src/Core/DataWriter/FilesystemDataWriter.php)
+is the default data writer and its responsability is to persist items to filesystem.
+A data writer must implement 
+[`DataWriterInterface`](https://github.com/spress/Spress/blob/master/src/Core/DataWriter/DataWriterInterface.php).
 
 To change the current data writer see [EnvironmentEvent class](/docs/2.0/developers/events-list/#changing-data-writer)
 at `spress.start` event.

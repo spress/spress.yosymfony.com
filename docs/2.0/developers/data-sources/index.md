@@ -64,9 +64,12 @@ use Yosymfony\Spress\Core\DataSource\Item;
 
 $item = new Item('Test of content', 'about.md', []);
 $item->setPath('help/about.md', 'relative');
+$item->getPath('relative');
 ```
 
-First argument of `setPath` method is the path and the second is the snapshot's name.
+First argument of `setPath` method is the path and the second argument is the snapshot's name.
+`getPath` method recovers the path of associated to a snapshot. If you call to `getPath` method
+without arguments you will get the `last` snapshot.
 
 Predefined snapshots are defined as constants:
 
@@ -85,10 +88,25 @@ use Yosymfony\Spress\Core\DataSource\Item;
 
 $item = new Item('', 'assets/img/header.png', [], true);
 $item->setPath('assets/img/header.png', 'relative');
-$item->setPath('assets/img/header.png', 'source');
+$item->setPath('assets/img/header.png', 'source');  
 ```
 
-The last one argument of the constructor indicates that content is binary.
+The last one argument of the constructor indicates that content is binary. At the prior example, the items
+has defined `relative` and `source` snapshots. This mean that [`FilesystemDataWriter`](/docs/2.0/developers/data-writer/#FilesystemDataWriter)
+will copied from `source` path to `relative` path at `./build` folder.
+
+#### Binary items without `relative` path snapshot
+
+```
+use Yosymfony\Spress\Core\DataSource\Item;
+
+$binaryContent = $assetsManager->getImage('logo');
+
+$item = new Item($binaryContent, 'assets/img/header.png', [], true);
+$item->setPath('assets/img/header.png', 'relative');
+```
+In this case, [`FilesystemDataWriter`](/docs/2.0/developers/data-writer/#FilesystemDataWriter)
+will dump the content from memory to the file at the moment of storing the item.
 
 ### Type of items
 
