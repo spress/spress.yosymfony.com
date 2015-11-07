@@ -139,7 +139,7 @@ A snapshot is the compiled content at a specific point during the compilation pr
 
 ## Predefined data sources
 
-### FilesystemDataSource {#filesystemDataSource}
+### FilesystemDataSource {#FilesystemDataSource}
 
 Spress comes with [`FilesystemDataSource`](https://github.com/spress/Spress/blob/master/src/Core/DataSource/Filesystem/FilesystemDataSource.php) to load your site.
 Data sources are defined at `data_source` option at site configuration file:
@@ -157,5 +157,51 @@ data_sources:
 ```
 This is the **default configuration** and is not necessary to modify your `config.yml` file at your site.
 
+### MemoryDataSource {#MemoryDataSource}
 
-### MemoryDataSource {#memoryDataSource}
+[`MemoryDataSource`](https://github.com/spress/Spress/blob/master/src/Core/DataSource/Memory/MemoryDataSource.php)
+is useful for generating dynamic content.
+At the below example the permalink of the item will be `/welcome` and its path `/welcome/index.html`
+in the compiled site:
+
+```
+class TestPlugin implements PluginInterface
+{
+    public function getMetas()
+    {
+        return [
+            'name' => 'Test plugin',
+        ];
+    }
+
+    public function initialize(EventSubscriber $subscriber)
+    {
+        $subscriber->addEventListener('spress.start', 'onStart');
+    }
+
+    public function onStart(EnvironmentEvent $event)
+    {
+        $dsm = $event->getDataSourceManager();
+
+        $item = new Item('# Welcome!', 'welcome.md');
+        $item->setPath('welcome.md', Item::SNAPSHOT_PATH_RELATIVE);
+
+        $memoryDataSource = new MemoryDataSource();
+        $memoryDataSource->addItem($item);
+
+        $dsm->setDataSource('memory-plugin', $memoryDataSource);
+    }
+}
+```
+
+To adds a new layout or include item uses `addLayout` and `addInclude` methods:
+
+{% verbatim %}
+```
+$include = new Item('<div>{{ page.content }}<div>');
+
+$memoryDataSource = new MemoryDataSource();
+$memoryDataSource->addInclude($item);
+
+```
+{% endverbatim %}
