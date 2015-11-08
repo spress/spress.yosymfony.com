@@ -1,10 +1,15 @@
 ---
 layout: page-dev
-title: Developers &#8250; Create a plugin
+title: Developers &#8250; Creating a plugin
 description: Getting started with Spress plugins
-header: { title: Developers, sub: Create a plugin }
+header: { title: Developers, sub: Creating a plugin }
 prettify: true
 ---
+<div class="alert alert-danger" role="alert">
+    <strong><a href="/docs/2.0/developers/">Developer docs for Spress 2.0</a></strong>
+    is out. Help us to find errors/typos or missing topics.
+</div>
+
 Spress can be extended by plugins located in `_plugins` folder. Spress uses a 
 events mechanic to dispatch events and the plugins can add event listeners.
 It’s easy to manually create plugins
