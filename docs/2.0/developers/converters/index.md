@@ -2,7 +2,9 @@
 layout: page-dev-2.0
 title: Developers &#8250; Converters
 description: How to extend Spress to support a new markup language
-header: { title: Developers, sub: Converters }
+header: 
+  title: Converters
+  sub: Developers
 prettify: true
 ---
 Converters can extend Spress to support a new markup language. Spress comes with 

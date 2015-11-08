@@ -136,6 +136,42 @@ Item types are defined as constants:
 ### Content snapshots
 
 A snapshot is the compiled content at a specific point during the compilation process.
+Following, a list of predefined content snapshots, mostly of they are generated automatically:
+
+* **raw**: the content right before actual compilation is started.
+* **after_convert**: the content right after converter was applied.
+* **after_render_blocks**: the content right after rederizer was applied **without layouts**.
+* **after_render_page**: the content right after rederizer was applied **with layouts**.
+* **last**: the most recent compiled content.
+
+Predefined snapshots are defined as constants:
+
+* `ItemInterface::SNAPSHOT_RAW
+* `ItemInterface::SNAPSHOT_LAST`
+* `ItemInterface::SNAPSHOT_AFTER_CONVERT`
+* `ItemInterface::SNAPSHOT_AFTER_RENDER_BLOCKS`
+* `ItemInterface::SNAPSHOT_AFTER_PAGE`
+
+Usually, binary items don't have content snapshots.
+
+The below example show you how to get the content:
+
+```
+use Yosymfony\Spress\Core\DataSource\Item;
+
+$item = new Item('The content', 'index.html');
+
+$a = $item->getContent();
+$b = $item->getContent('last');
+$c = $item->getContent('raw');
+
+$item->setContent('New content', 'custom-snapshot');
+```
+
+In this case, `$a = $b = $c`. When you create a new item initial content is available at `raw` and `last`
+snapshots. By default `getContent` method returns the `last` snapshot.
+
+To set content uses `setContent` method. The first argument is the content and the last one is the snapshot name.
 
 ## Predefined data sources
 
@@ -162,7 +198,7 @@ This is the **default configuration** and is not necessary to modify your `confi
 [`MemoryDataSource`](https://github.com/spress/Spress/blob/master/src/Core/DataSource/Memory/MemoryDataSource.php)
 is useful for generating dynamic content.
 At the below example the permalink of the item will be `/welcome` and its path `/welcome/index.html`
-in the compiled site:
+at the compiled site:
 
 ```
 class TestPlugin implements PluginInterface

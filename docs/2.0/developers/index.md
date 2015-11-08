@@ -2,7 +2,9 @@
 layout: page-dev-2.0
 title: Developers &#8250; Create a plugin
 description: Getting started with Spress plugins
-header: { title: Create a plugin, sub: Developers }
+header: 
+  title: Creating a plugin
+  sub: Developers
 prettify: true
 ---
 Spress can be extended by plugins located in `./src/plugins` folder.
