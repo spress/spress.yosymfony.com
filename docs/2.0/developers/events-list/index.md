@@ -185,7 +185,7 @@ class TestPlugin implements PluginInterface
 
 #### Managing data sources {#managing-data-sources}
 
-Each site has one or more *data sources*. Data sources can load data (items, layouts and includes) from
+Each site would have one or more *data sources*. Data sources can load data (items, layouts and includes) from
 certain locations like filesystem or database. Additionally data sources lets you create dynamic content
 using an special data source called [MemoryDataSource](/docs/2.0/developers/data-sources/#memoryDataSource).
 
@@ -289,9 +289,41 @@ class TestPlugin implements PluginInterface
 
 More details about [how to create a Converter](/docs/2.0/developers/converters/).
 
+#### Managing generators {#managing-generators}
+
+Each site would have one or more [generators](/docs/2.0/developers/generators).
+
+```
+use Yosymfony\Spress\Core\Plugin\PluginInterface;
+use Yosymfony\Spress\Core\Plugin\EventSubscriber;
+use Yosymfony\Spress\Core\Plugin\Event\EnvironmentEvent;
+
+class TestPlugin implements PluginInterface
+{
+    public function getMetas()
+    {
+        return [
+            'name' => 'Test plugin',
+        ];
+    }
+
+    public function initialize(EventSubscriber $subscriber)
+    {
+        $subscriber->addEventListener('spress.start', 'onStart');
+    }
+
+    public function onStart(EnvironmentEvent $event)
+    {
+         $generatorManager = $event->getGeneratorManager();
+         $generatorManager->addGenerator('myGenerator', new MyGenerator());
+    }
+}
+```
+
 ## ContentEvent {#contentevent}
 
-This is a event base for content-related events.
+This is a event base for content-related events. Generators can be used to create
+a tag or category index page dynamically.
 
 ```
 $subscriber->addEventListener('spress.before_convert', 

@@ -12,6 +12,8 @@ two Markdown converters: `ParsedownConverter` an implementation based on [Parsed
 and another implementation called `MichelfMarkdownConverter` based on a [parser from Michel Fortin](https://github.com/michelf/php-markdown). Both are implemented using this method. A converter should implement
 [`ConverterInterface`](https://github.com/spress/Spress/blob/master/src/Core/ContentManager/Converter/ConverterInterface.php).
 
+Note that `ParsedownConverter` is not part of Spress core and only is available on CLI interface.
+
 To register a new converter see [EnvironmentEvent class](/docs/2.0/developers/events-list/#adds-new-converter)
 at `spress.start` event.
 
