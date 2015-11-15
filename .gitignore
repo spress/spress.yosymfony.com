@@ -1,4 +1,3 @@
-_site/
-_plugins/
+build/
+src/plugins/
 composer.lock
-.DS_Store
