@@ -12,28 +12,6 @@ tag or category index page dynamically**. A good example of that is [`Pagination
 whose responsibility is to generate multiple pages around a set of items like posts or any other collection.
 A Generator must implement [`GeneratorInterface`](https://github.com/spress/Spress/blob/master/src/Core/ContentManager/Generator/GeneratorInterface.php).
 
-## Generator example
-
-```
-class generatorExample implements GeneratorInterface
-{
-    
-    /**
-     * Generate items.
-     *
-     * @param Yosymfony\Spress\Core\DataSource\ItemInterface $templateItem 
-     * @param array                                          $collecions
-     *
-     * @return Yosymfony\Spress\Core\DataSource\ItemInterface[]
-     */
-    public function generateItems(ItemInterface $templateItem, array $collections)
-    {
-        $result = [];
-        
-        return $result;
-    }
-}
-```
 ## Predefined generators
 
 [`PaginationGenerator`](https://github.com/spress/Spress/blob/master/src/Core/ContentManager/Generator/Pagination/PaginationGenerator.php) and 

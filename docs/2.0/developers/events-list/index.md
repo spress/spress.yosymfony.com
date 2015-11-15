@@ -32,6 +32,7 @@ namespace. All events inherits from
                     <li markdown="1">managing [data sources](#managing-data-sources).</li>
                     <li markdown="1">change the [data writer](#changing-data-writer).</li>
                     <li markdown="1">add [converters](#adds-new-converter).</li>
+                    <li markdown="1">managing [generators](#managing-generators).</li>
                     <li markdown="1">change the renderizer.</li>
                     <li markdown="1">get an access to [IO API](/docs/2.0/developers/io-api).</li>
                 </ul>
@@ -292,6 +293,7 @@ More details about [how to create a Converter](/docs/2.0/developers/converters/)
 #### Managing generators {#managing-generators}
 
 Each site would have one or more [generators](/docs/2.0/developers/generators).
+Generators are used for generating new items of content.
 
 ```
 use Yosymfony\Spress\Core\Plugin\PluginInterface;
@@ -319,6 +321,7 @@ class TestPlugin implements PluginInterface
     }
 }
 ```
+More details about how to create a [generators](/docs/2.0/developers/generators).
 
 ## ContentEvent {#contentevent}
 
