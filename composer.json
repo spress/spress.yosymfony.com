@@ -6,8 +6,5 @@
         "yosymfony/spress-plugin-dataloader": "~1.0-dev",
         "yosymfony/spress-plugin-more-tag": "~1.0-dev",
         "spress/github-metadata-plugin": "~1.0-dev"
-    },
-    "config": {
-        "vendor-dir": "_plugins/vendors"
     }
 }
