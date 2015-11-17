@@ -1,7 +1,11 @@
 ---
 layout: page-doc-2.0
 title: Front-matter
-header: { title: Front-matter }
+header:
+  title: Front-matter
+menu:
+  id: doc 2.0
+  title: Front-matter
 prettify: true
 ---
 Front-matter block lets you specify certain attributes of the page 

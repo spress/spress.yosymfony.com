@@ -2,7 +2,11 @@
 layout: page-doc-2.0
 title: Configuration of a Spress site
 description: Each Spress site have a configuration file with information for generating the site
-header: { title: Configuration }
+header:
+  title: Configuration
+menu:
+  id: doc 2.0
+  title: Configuration
 prettify: true
 ---
 Your site have a `config.yml` file that lets you change the default configuration

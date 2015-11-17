@@ -1,8 +1,16 @@
 ---
 layout: page-about
-header: { title: Change log, sub: Release history }
 title: Changelog
-id_content: changelog 
+description: The Spress changelog
+header: 
+  title: Change log
+  sub: Release history
+menu:
+  id: about
+  title: Changelog
+  order: 2
+
+id_content: changelog
 ---
 
 More information about the [releases](https://github.com/yosymfony/Spress/releases).

@@ -2,7 +2,12 @@
 layout: page-dev-2.0
 title: Developers &#8250; Lifecycle
 description: How to Spress performs a site 
-header: { title: Lifecycle, sub: Developers }
+header:
+  title: Lifecycle
+  sub: Developers
+menu:
+  id: dev 2.0
+  title: Lifecycle
 prettify: true
 ---
 This article describes how to Spress perform a site:

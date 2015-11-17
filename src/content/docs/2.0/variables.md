@@ -2,7 +2,11 @@
 layout: page-doc-2.0
 title: Variables
 description: "Standard variables of Spress"
-header: { title: Variables }
+header:
+  title: Variables
+menu:
+  id: doc 2.0
+  title: Variables
 prettify: true
 ---
 Any processable file with [Front-matter](/docs/front-matter) will have access

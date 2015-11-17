@@ -2,7 +2,11 @@
 layout: page-doc-2.0
 title: Writing posts
 description: How to write a post for Spress
-header: { title: Writing posts }
+header:
+  title: Writing posts
+menu:
+  id: doc 2.0
+  title: Writing posts
 prettify: true
 ---
 Posts are plain text files written using [Markdown](http://daringfireball.net/projects/markdown/syntax)

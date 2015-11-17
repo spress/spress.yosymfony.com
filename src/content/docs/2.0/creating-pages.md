@@ -1,7 +1,11 @@
 ---
 layout: page-doc-2.0
 title: Creating pages
-header: { title: Creating pages   }
+header:
+  title: Creating pages
+menu:
+  id: doc 2.0
+  title: Creating pages
 prettify: true
 ---
 Below, you can see various types of pages:

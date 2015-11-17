@@ -2,7 +2,11 @@
 layout: page-doc-2.0
 title: Getting started with Spress
 description: "Getting started with Spress: setup and create the first site"
-header: { title: Docs, sub: Welcome }
+header:
+  title: Getting started
+menu:
+  id: doc 2.0
+  title: Getting started
 prettify: true
 ---
 This guide will cover topics like: 

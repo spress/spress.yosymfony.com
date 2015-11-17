@@ -5,6 +5,9 @@ description: Data writer to persist the content of the items
 header: 
   title: Data writer
   sub: Developers
+menu:
+  id: dev 2.0
+  title: Data writer
 prettify: true
 ---
 <span class="label label-success">Spress >= 2.0</span>

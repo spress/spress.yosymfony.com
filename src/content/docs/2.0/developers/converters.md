@@ -5,6 +5,9 @@ description: How to extend Spress to support a new markup language
 header: 
   title: Converters
   sub: Developers
+menu:
+  id: dev 2.0
+  title: Converters
 prettify: true
 ---
 Converters can extend Spress to support a new markup language. Spress comes with 

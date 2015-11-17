@@ -5,6 +5,9 @@ description: Renderizer are responsible for formatting items in Spress
 header: 
   title: Renderizer
   sub: Developers
+menu:
+  id: dev 2.0
+  title: Renderizer
 prettify: true
 ---
 Renderizer is responsible for formatting items. This can be considered as a template engine.

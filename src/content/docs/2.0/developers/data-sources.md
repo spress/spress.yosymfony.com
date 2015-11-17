@@ -5,6 +5,9 @@ description:  Data sources can load data fromcertain locations like filesystem o
 header: 
   title: Data sources
   sub: Developers
+menu:
+  id: dev 2.0
+  title: Data sources
 prettify: true
 ---
 <span class="label label-success">Spress >= 2.0</span>

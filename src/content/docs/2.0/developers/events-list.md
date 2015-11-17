@@ -1,10 +1,13 @@
 ---
 layout: page-dev-2.0
 title: Developers &#8250; Events list
+description: Events list of Spress livecycle
 header: 
   title: Events list
   sub: Developers
-description: Events list of Spress livecycle
+menu:
+  id: dev 2.0
+  title: Events lists
 prettify: true
 ---
 List of Spress events. Even's arguments are located at `Yosymfony\Spress\Core\Plugin\Event`

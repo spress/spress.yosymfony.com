@@ -1,0 +1,7 @@
+<div class="list-group">
+    {% for item in site.page_menus[id] %}
+        <a href="{{ item.url }}" class="list-group-item {% if page.id == item.id %}active{% endif %}">
+            {{ item.title }}
+        </a>
+    {% endfor %}
+</div>

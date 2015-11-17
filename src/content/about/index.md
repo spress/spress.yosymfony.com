@@ -1,7 +1,14 @@
 ---
 layout: page-about
 title: A PHP Static site generator
-header: { title: About, sub: Spress  }
+description: About of Spress
+header:
+  title: About
+  sub: Spress
+menu:
+  id: about
+  title: About
+  order: 1
 ---
 <p class="lead">Spress is a blog-aware application that transform your plain 
 text files in static sites.</p>

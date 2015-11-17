@@ -4,7 +4,7 @@ layout: page-header
 {% block pageContent %}
 <div class="row">
     <div class="col-md-3">
-        {% include 'sidebar-doc-2.0.html' %}
+        {% include 'page-menu.html' with { 'id': 'doc 2.0' }%}
     </div>
     <div class="col-md-9">
         {{ page.content }}

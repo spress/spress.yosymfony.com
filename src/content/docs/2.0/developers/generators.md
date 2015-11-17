@@ -5,6 +5,9 @@ description: Generators for creating new content
 header: 
   title: Generators
   sub: Developers
+menu:
+  id: dev 2.0
+  title: Generators
 prettify: true
 ---
 Generators are used for generating new items of content. **Generators can be used to create a

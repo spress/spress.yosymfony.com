@@ -2,7 +2,11 @@
 layout: page-doc-2.0
 title: Deployment methods
 description: How to deploy a Spress site to your web host
-header: { title: Deployment methods }
+header:
+  title: Deployment methods
+menu:
+  id: doc 2.0
+  title: Deployment methods
 prettify: true
 ---
 There are several ways to deploy a site to your web host:

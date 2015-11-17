@@ -1,7 +1,11 @@
 ---
 layout: page-doc-2.0
 title: Pagination
-header: { title: Pagination }
+header:
+  title: Pagination
+menu:
+  id: doc 2.0
+  title: Pagination
 prettify: true
 ---
 Posts can be organized in pages and will be accessible
