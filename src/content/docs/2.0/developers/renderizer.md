@@ -8,6 +8,7 @@ header:
 menu:
   id: dev 2.0
   title: Renderizer
+  order: 7
 prettify: true
 ---
 Renderizer is responsible for formatting items. This can be considered as a template engine.

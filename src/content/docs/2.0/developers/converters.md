@@ -8,6 +8,7 @@ header:
 menu:
   id: dev 2.0
   title: Converters
+  order: 5
 prettify: true
 ---
 Converters can extend Spress to support a new markup language. Spress comes with 

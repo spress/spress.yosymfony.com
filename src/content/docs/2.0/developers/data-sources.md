@@ -8,6 +8,7 @@ header:
 menu:
   id: dev 2.0
   title: Data sources
+  order: 4
 prettify: true
 ---
 <span class="label label-success">Spress >= 2.0</span>

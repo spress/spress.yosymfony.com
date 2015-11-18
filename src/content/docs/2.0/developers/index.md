@@ -8,6 +8,7 @@ header:
 menu:
   id: dev 2.0
   title: Creating a plugin
+  order: 1
 prettify: true
 ---
 Spress can be extended by plugins located in `./src/plugins` folder.

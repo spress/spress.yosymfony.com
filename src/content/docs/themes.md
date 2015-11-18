@@ -2,7 +2,12 @@
 layout: page-doc
 title: Themes
 description: Create themes for Spress
-header: { title: Themes }
+header:
+  title: Themes
+menu:
+  id: doc 1.0
+  title: Themes
+  order: 10
 prettify: true
 ---
 **Themes are simply sites**. Spress uses the power of Twig for render templates. You can reusable parts

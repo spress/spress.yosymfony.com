@@ -1,8 +1,14 @@
 ---
 layout: page-dev
 title: Developers &#8250; Events list
-header: { title: Developers, sub: Events list }
 description: Events list of Spress livecycle
+header:
+  title: Events list
+  sub: Developers
+menu:
+  id: dev 1.0
+  title: Events list
+  order: 3
 prettify: true
 ---
 List of Spress events. All arguments are located at `Yosymfony\Spress\Plugin\Event`

@@ -2,7 +2,13 @@
 layout: page-dev
 title: Developers &#8250; Creating a plugin
 description: Getting started with Spress plugins
-header: { title: Developers, sub: Creating a plugin }
+header:
+  title: Creating a plugin
+  sub: Developers
+menu:
+  id: dev 1.0
+  title: Creating a plugin
+  order: 1
 prettify: true
 ---
 <div class="alert alert-danger" role="alert">

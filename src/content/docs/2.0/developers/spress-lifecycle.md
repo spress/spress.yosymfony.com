@@ -8,6 +8,7 @@ header:
 menu:
   id: dev 2.0
   title: Lifecycle
+  order: 2
 prettify: true
 ---
 This article describes how to Spress perform a site:

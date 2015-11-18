@@ -1,7 +1,12 @@
 ---
 layout: page-doc
 title: Creating pages
-header: { title: Creating pages   }
+header:
+  title: Creating pages
+menu:
+  id: doc 1.0
+  title: Creating pages
+  order: 7
 prettify: true
 ---
 With the below example, you can see various type of pages:

@@ -8,6 +8,7 @@ header:
 menu:
   id: dev 2.0
   title: Events lists
+  order: 3
 prettify: true
 ---
 List of Spress events. Even's arguments are located at `Yosymfony\Spress\Core\Plugin\Event`

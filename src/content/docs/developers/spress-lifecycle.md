@@ -2,7 +2,13 @@
 layout: page-dev
 title: Developers &#8250; Lifecycle
 description: How Spress generates a site 
-header: { title: Developers, sub: Lifecycle }
+header:
+  title: Lifecycle
+  sub: Developers
+menu:
+  id: dev 1.0
+  title: Lifecycle
+  order: 2
 prettify: true
 ---
 This article describes how Spress generates a site.

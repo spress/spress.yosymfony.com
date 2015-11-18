@@ -2,7 +2,13 @@
 layout: page-dev
 title: Developers &#8250; Converters
 description: How to extend Spress with a new converter
-header: { title: Developers, sub: Converters }
+header:
+  title: Converters
+  sub: Developers
+menu:
+  id: dev 1.0
+  title: Converters
+  order: 4
 prettify: true
 ---
 Converter can extend Spress to support new type of content. A converter should

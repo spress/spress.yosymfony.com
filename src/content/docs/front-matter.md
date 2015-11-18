@@ -1,7 +1,12 @@
 ---
 layout: page-doc
 title: Front-matter
-header: { title: Front-matter }
+header:
+  title: Front-matter
+menu:
+  id: doc 1.0
+  title: Front-matter
+  order: 5
 prettify: true
 ---
 Front-matter block let you specify certain attributes of the page 

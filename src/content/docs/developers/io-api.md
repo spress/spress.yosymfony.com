@@ -1,8 +1,14 @@
 ---
 layout: page-dev
 title: Developers &#8250; IO API
-description: "With the IO API your plugins can interact with the user to show messages or to ask questions"
-header: { title: Developers, sub: IO API }
+description: With the IO API your plugins can interact with the user to show messages or to ask questions
+header:
+  title: IO API
+  sub: Developers
+menu:
+  id: dev 1.0
+  title: IO API
+  order: 6
 prettify: true
 ---
 The IO API <sup><span class="label label-success">New in 1.1.0</span></sup> enables your plugins

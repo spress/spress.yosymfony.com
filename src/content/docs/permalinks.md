@@ -1,7 +1,12 @@
 ---
 layout: page-doc
 title: Permalinks
-header: { title: Permalinks }
+header:
+  title: Permalinks
+menu:
+  id: doc 1.0
+  title: Permalinks
+  order: 8
 prettify: true
 ---
 The permalinks of the posts can be customized with a template. In the `config.yml` 

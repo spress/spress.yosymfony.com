@@ -1,7 +1,12 @@
 ---
 layout: page-doc
 title: Pagination
-header: { title: Pagination }
+header:
+  title: Pagination
+menu:
+  id: doc 1.0
+  title: Pagination
+  order: 9
 prettify: true
 ---
 The posts can be organized in pages and will be access
