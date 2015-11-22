@@ -1,5 +1,3 @@
----
----
 <?xml version="1.0" encoding="utf-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
@@ -10,13 +8,10 @@
         {% for post in site.posts | slice(0, site.max_item, true) %}
             <item>
                 <title>{{ post.title }}</title>
-                {% if site.posts_excerpts[post.id].value %}
-                    <description><![CDATA[{{ site.posts_excerpts[post.id].value }}
-                        <a href="{{ site.url }}{{ post.url }}">Read more</a>]]>
-                    </description>
-                {% else %}
-                    <description><![CDATA[{{ post.content }}]]></description>
-                {% endif %}
+                <description>
+                    <![CDATA[{{ post.content | excerpt }}]]>
+                    <a href="{{ site.url }}{{ post.url }}">Read more</a>]]>
+                </description>
                 <link>{{ site.url }}{{ post.url }}</link>
                 <pubDate>{{ post.date | date("D, d M Y H:i:s O") }}</pubDate>
                 <guid>{{ site.url }}{{ post.url }}</guid>

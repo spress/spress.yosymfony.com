@@ -1,7 +1,7 @@
 ---
 layout: page-dev-2.0
 title: Developers &#8250; Events list
-description: Events list of Spress livecycle
+description: Events list of Spress 2.x livecycle
 header: 
   title: Events list
   sub: Developers
@@ -287,7 +287,7 @@ class TestPlugin implements PluginInterface
 
     public function onStart(EnvironmentEvent $event)
     {
-         $repository = $event->addConverter(new MyConverter());
+         $event->getConverterManager()->addConverter(new MyConverter());
     }
 }
 ```

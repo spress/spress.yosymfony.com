@@ -1,48 +1,47 @@
 <article class="post">
     <header>
         <h1>
-            <a href="{{ site.url }}{{ post.url }}">{{ post.title }}</a>
+            <a href="{{ post.url }}">{{ post.title }}</a>
         </h1>
     </header>
-    {% if post.excerpt %}
-        {{ post.excerpt }}
-        <a href="{{ site.url }}{{ post.url }}">{{ post.excerpt_label }}</a>
+    
+    {% if excerpt == true %}
+        {{ post.content | excerpt }}
+        {% if post.content is with_excerpt %}
+            <a href="{{ site.url }}{{ post.url }}">{{ post.content | excerpt_label }}</a>
+        {%endif%}
     {% else %}
-        {{ post.content }}
+        {{ post.content | content }}
     {% endif %}
     
     {% if isPostLayout %}
-    <footer>    
-        <p>
-        	Posted by
-        	{% if site.author.url %}
-        	    <a href="{{ site.author.url }}">{{ site.author.name }}</a>
-        	{% else %}
-        	    {{ site.author.name }}
-        	{% endif %}
-        	on <time pubdate="pubdate">{{ post.date | date('Y-m-d') }}</time>
-        </p>
-        
-        {% if post.categories | length > 0 or post.tags | length > 0 %}
-        <ul class="list-unstyled">
-            {% if post.tags | length > 0 %}
-                <li>
-                    <i class="fa fa-tags"></i>
-                    {{ post.tags | join(', ') }}
-                </li>
+        <footer>    
+            <p>
+                Posted by {{ site.author.name }} on <time pubdate="pubdate">{{ post.date | date('Y-m-d') }}</time>
+            </p>
+
+            {% if post.terms_url.tags | length > 0 or post.terms_url.categories | length > 0 %}
+            <ul class="list-unstyled">
+                {% if post.terms_url.tags | length > 0 %}
+                    <li>
+                        <i class="fa fa-tags"></i>
+                        {% for tag, url in post.terms_url.tags %}
+                            <a href="{{ site.url }}{{ url }}">{{ tag }}</a>{% if loop.last == false %},{% endif %} 
+                        {% endfor %}
+                    </li>
+                {% endif %}
+                {% if post.terms_url.categories | length > 0 %}
+                    <li>
+                        <i class="fa fa-folder"></i>
+                        {% for category, url in post.terms_url.categories %}
+                            <a href="{{ site.url }}{{ url }}">{{ category }}</a>{% if loop.last == false %},{% endif %} 
+                        {% endfor %}
+                    </li>
+                {% endif %}
+            </ul>
             {% endif %}
-            {% if post.categories | length > 0 %}
-                <li>
-                    <i class="fa fa-folder"></i>
-                    {{ post.categories | join(', ') }}
-                </li>
-            {% endif %}
-        </ul>
-        {% endif %}
-    </footer>
-    {% endif %}
-    
-    {% if isPostLayout %}
+        </footer>
+
         {% if (page.comments is defined and page.comments) or (page.comments is not defined and site.comments.enabled) %}
             <section>
                 <h3>Comments</h3>

@@ -1,5 +1,13 @@
 [
     {
+        "name": "AWS deploy",
+        "author": "Jason Marshall",
+        "url_info": "https://github.com/SeleneSoftware/spress-plugin-deploy-aws",
+        "url_author": "http://selenesoftware.us",
+        "description": "Deploy on build your site to an AWS S3 bucket.",
+        "tags": ["aws", "deploy"]
+    },
+    {
         "name": "Metadata of a Github repository",
         "author": "Yo! Symfony",
         "url_info": "https://github.com/spress/Github-metadata-plugin",

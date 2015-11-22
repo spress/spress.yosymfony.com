@@ -1,3 +1,6 @@
 build/
-src/plugins/!theme
+vendor/
+src/plugins/spress/
+src/plugins/yosymfony/
+
 composer.lock
