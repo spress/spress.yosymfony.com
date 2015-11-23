@@ -2,7 +2,7 @@
 layout: blog/post
 title: "Spress 2.0.0-beta is here"
 description: "Spress 2.0.0-beta a development preview relase with several new features like taxonomy generator or command plugins"
-categories: [releases]
+categories: [releases,releases]
 tags: [2.0.0]
 ---
 Today is a great day because [Spress 2.0.0-beta](/about/changelog/#2-0-0-beta) is here. In this release we have included

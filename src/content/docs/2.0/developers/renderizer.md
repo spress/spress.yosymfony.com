@@ -11,6 +11,8 @@ menu:
   order: 7
 prettify: true
 ---
+<span class="label label-success">Spress >= 2.0</span>
+
 Renderizer is responsible for formatting items. This can be considered as a template engine.
 [`TwigRenderizer`](https://github.com/spress/Spress/blob/master/src/Core/ContentManager/Renderizer/TwigRenderizer.php)
 is the default implementation and is based on [Twig](http://twig.sensiolabs.org/).
