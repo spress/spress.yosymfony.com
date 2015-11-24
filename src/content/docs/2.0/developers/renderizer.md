@@ -17,37 +17,11 @@ Renderizer is responsible for formatting items. This can be considered as a temp
 [`TwigRenderizer`](https://github.com/spress/Spress/blob/master/src/Core/ContentManager/Renderizer/TwigRenderizer.php)
 is the default implementation and is based on [Twig](http://twig.sensiolabs.org/).
 
-## How to set a custom renderizer?
-
 A renderizer must
 implement [`RenderizerInterface`](https://github.com/spress/Spress/blob/master/src/Core/ContentManager/Renderizer/RenderizerInterface.php).
+To change the current renderizer implementation see [EnvironmentEvent class](/docs/2.0/developers/events-list/#changing-renderizer)
+at `spress.start` event.
 
-```
-use Yosymfony\Spress\Core\Plugin\PluginInterface;
-use Yosymfony\Spress\Core\Plugin\EventSubscriber;
-use Yosymfony\Spress\Core\Plugin\Event\EnvironmentEvent;
-
-class TestPlugin implements PluginInterface
-{
-    public function getMetas()
-    {
-        return [
-            'name' => 'Test plugin',
-        ];
-    }
-
-    public function initialize(EventSubscriber $subscriber)
-    {
-        $subscriber->addEventListener('spress.start', 'onStart');
-    }
-
-    public function onStart(EnvironmentEvent $event)
-    {
-        $myRenderizer = new MyRenderizer();
-        $event->setRenderizer($myRenderizer);
-    }
-}
-```
 
 ## Extending Twig on `TwigRenderizer`
 

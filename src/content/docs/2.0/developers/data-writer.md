@@ -13,7 +13,7 @@ prettify: true
 ---
 <span class="label label-success">Spress >= 2.0</span>
 
-Data writer is responsable for persisting the content of items in filesystem, memory, database or another storage system.
+Data writer is responsible for persisting the content of items in filesystem, memory, database or another storage system.
 
 ## FilesystemDataWriter {#FilesystemDataWriter}
 

@@ -32,12 +32,12 @@ namespace. All events inherits from
                 event you can:
 
                 <ul>
-                    <li markdown="1">[modify the configuration values](#modifying-configuration).</li>
-                    <li markdown="1">managing [data sources](#managing-data-sources).</li>
+                    <li markdown="1">modify [configuration values](#modifying-configuration).</li>
+                    <li markdown="1">manage [data sources](#managing-data-sources).</li>
                     <li markdown="1">change the [data writer](#changing-data-writer).</li>
                     <li markdown="1">add [converters](#adds-new-converter).</li>
-                    <li markdown="1">managing [generators](#managing-generators).</li>
-                    <li markdown="1">change the renderizer.</li>
+                    <li markdown="1">manage [generators](#managing-generators).</li>
+                    <li markdown="1">change the [renderizer](#changing-renderizer).</li>
                     <li markdown="1">get an access to [IO API](/docs/2.0/developers/io-api).</li>
                 </ul>
 
@@ -326,6 +326,38 @@ class TestPlugin implements PluginInterface
 }
 ```
 More details about how to create a [generators](/docs/2.0/developers/generators).
+
+#### Changing the renderizer {#changing-renderizer}
+
+A renderizer can be considered as a template engine.
+
+```
+use Yosymfony\Spress\Core\Plugin\PluginInterface;
+use Yosymfony\Spress\Core\Plugin\EventSubscriber;
+use Yosymfony\Spress\Core\Plugin\Event\EnvironmentEvent;
+
+class TestPlugin implements PluginInterface
+{
+    public function getMetas()
+    {
+        return [
+            'name' => 'Test plugin',
+        ];
+    }
+
+    public function initialize(EventSubscriber $subscriber)
+    {
+        $subscriber->addEventListener('spress.start', 'onStart');
+    }
+
+    public function onStart(EnvironmentEvent $event)
+    {
+        $myRenderizer = new MyRenderizer();
+        $event->setRenderizer($myRenderizer);
+    }
+}
+```
+More details about [renderizer](/docs/2.0/developers/renderizer).
 
 ## ContentEvent {#contentevent}
 
