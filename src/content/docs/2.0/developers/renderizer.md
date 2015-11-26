@@ -23,7 +23,7 @@ To change the current renderizer implementation see [EnvironmentEvent class](/do
 at `spress.start` event.
 
 
-## Extending Twig on `TwigRenderizer`
+## Extending Twig on TwigRenderizer
 
 The `spress.start` event enable to [extend Twig with new functions, tags and tests](http://twig.sensiolabs.org/doc/advanced.html).
 
