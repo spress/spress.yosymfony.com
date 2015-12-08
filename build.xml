@@ -12,7 +12,7 @@
     
     <target name="copy-deploy-dir">
         <copy todir="${dir.deploy}" >
-            <fileset defaultexcludes="false" expandsymboliclinks="true" dir="./_site">
+            <fileset defaultexcludes="false" expandsymboliclinks="true" dir="./build">
                 <include name="**" />
             </fileset>
         </copy>
