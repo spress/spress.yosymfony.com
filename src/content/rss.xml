@@ -9,7 +9,7 @@
             <item>
                 <title>{{ post.title }}</title>
                 <description>
-                    <![CDATA[{{ post.content | excerpt }}]]>
+                    <![CDATA[{{ post.content | excerpt }}
                     <a href="{{ site.url }}{{ post.url }}">Read more</a>]]>
                 </description>
                 <link>{{ site.url }}{{ post.url }}</link>
