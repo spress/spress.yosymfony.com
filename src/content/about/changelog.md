@@ -15,6 +15,26 @@ id_content: changelog
 
 More information about the [releases](https://github.com/yosymfony/Spress/releases).
 
+# 2.0.0-rc {#2-0-0-rc}
+Date: 2015-12-07
+
+* <span class="label label-success">New</span> Added MemoryDataSource, a datasource for generating dynamic content.
+* <span class="label label-success">New</span> Support to sort items at `PaginationGenerator` with attributes `sort_by` and `sort_type. See [#61](https://github.com/spress/Spress/issues/61).
+* <span class="label label-success">New</span> Added `getGeneratorManager` method to `EnvironmentEvent` for managing generators at plugins.
+* <span class="label label-primary">Improved</span> Improved the way of generating the classname in PluginGenerator.
+* <span class="label label-primary">Improved</span> Minor changes over output styles.
+* <span class="label label-primary">Improved</span> Improved HttpServer with support to load internal resources (used with error page). Added a new hook: `handleOnAfterRequestFunction`. Bootstrap file has been included for using with internal pages like error page.
+* <span class="label label-primary">Improved</span> Minor improvements over the Spress application output.
+* <span class="label label-default">Fixed</span> Now, `slug` method transform dot characters into dash characters.
+* <span class="label label-default">Fixed</span> Fixed lifecycle: render phase starts after converter phase has been finished for all items.
+* <span class="label label-default">Fixed</span> Changed the method `remove` by `removeCollection` in CollectionManager class.
+* <span class="label label-default">Fixed</span> `PermalinkGenerator` adds an initial slash if the permalink doesn't start with it.
+* <span class="label label-default">Fixed</span> `MissingAttributeException` and `AttributeValueException` has been moved to `Core\ContentManager\Exception`.
+* <span class="label label-default">Fixed</span> `ConsoleIO` passed to `spress.io` key (DI container) when `SiteBuildCommand` builds `Spress instance`.
+* <span class="label label-default">Fixed</span> Updated `spress-installer` version to ~2.0 at `composer.json.twig`.
+* <span class="label label-default">Fixed</span> Fixed the message of the exception threw when a previous item exists.
+* <span class="label label-danger">Deleted</span> `ConfigValueException` has been deleted.
+
 # 2.0.0-beta {#2-0-0-beta}
 Date: 2015-10-15
 
