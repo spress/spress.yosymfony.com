@@ -6,6 +6,7 @@ header:
 menu:
   id: doc 2.0
   title: Creating pages
+  order: 8
 prettify: true
 ---
 Below, you can see various types of pages:

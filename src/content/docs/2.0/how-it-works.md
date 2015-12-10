@@ -7,6 +7,7 @@ header:
 menu:
   id: doc 2.0
   title: How it works?
+  order: 2
 prettify: true
 ---
 Spress is a static site generator - an application that takes your site and 

@@ -7,6 +7,7 @@ header:
 menu:
   id: doc 2.0
   title: Getting started
+  order: 1
 prettify: true
 ---
 This guide will cover topics like: 

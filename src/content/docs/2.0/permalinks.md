@@ -6,6 +6,7 @@ header:
 menu:
   id: doc 2.0
   title: Permalinks
+  order: 9
 prettify: true
 ---
 The permalinks of the posts can be customized with a template. In the `config.yml` 

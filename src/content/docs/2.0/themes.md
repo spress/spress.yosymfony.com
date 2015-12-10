@@ -7,6 +7,7 @@ header:
 menu:
   id: doc 2.0
   title: Themes
+  order: 12
 prettify: true
 ---
 **Themes are simply sites**. Spress uses the power of Twig to render templates. You can reuse parts

@@ -6,6 +6,7 @@ header:
 menu:
   id: doc 2.0
   title: Front-matter
+  order: 5
 prettify: true
 ---
 Front-matter block lets you specify certain attributes of the page 

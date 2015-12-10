@@ -9,7 +9,7 @@ use Yosymfony\Spress\Core\Plugin\Event\FinishEvent;
 use Yosymfony\Spress\Core\Plugin\Event\RenderEvent;
 use Yosymfony\Spress\Core\Support\ArrayWrapper;
 
-class YosymfonyThemeMenu implements PluginInterface
+class ThemeMenu implements PluginInterface
 {
     private $pageMenus = [];
     private $items = [];
@@ -25,7 +25,7 @@ class YosymfonyThemeMenu implements PluginInterface
     public function getMetas()
     {
         return [
-            'name' => 'yosymfony/theme-menu',
+            'name' => 'theme/menu',
             'description' => 'Theme menu',
             'author' => 'Victor Puertas',
             'license' => 'MIT',

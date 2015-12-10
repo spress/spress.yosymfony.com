@@ -6,6 +6,7 @@ header:
 menu:
   id: doc 2.0
   title: Pagination
+  order: 10
 prettify: true
 ---
 Posts can be organized in pages and will be accessible

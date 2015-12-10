@@ -7,6 +7,7 @@ header:
 menu:
   id: doc 2.0
   title: Variables
+  order: 4
 prettify: true
 ---
 Any processable file with [Front-matter](/docs/front-matter) will have access

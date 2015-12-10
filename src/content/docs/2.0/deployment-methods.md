@@ -1,12 +1,13 @@
 ---
 layout: page-doc-2.0
 title: Deployment methods
-description: How to deploy a Spress site to your web host
+description: Deploying Spress sites
 header:
   title: Deployment methods
 menu:
   id: doc 2.0
   title: Deployment methods
+  order: 13
 prettify: true
 ---
 There are several ways to deploy a site to your web host:
@@ -31,7 +32,7 @@ Once you have generated your site at `./build` folder, run the following command
 your generated site with the `httpdocs` folder at your web host:
 
 ```
-rsync -avze 'ssh -p 999' _site/ youruser@yoursite.com:httpdocs
+rsync -avze 'ssh -p 999' build/ youruser@yoursite.com:httpdocs
 ```
 
 ### Github pages {#github-pages}

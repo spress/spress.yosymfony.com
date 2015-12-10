@@ -7,6 +7,7 @@ header:
 menu:
   id: doc 2.0
   title: Configuration
+  order: 3
 prettify: true
 ---
 Your site have a `config.yml` file that lets you change the default configuration
