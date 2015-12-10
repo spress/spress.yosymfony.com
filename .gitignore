@@ -1,4 +1,6 @@
-_site/
-_plugins/
+build/
+vendor/
+src/plugins/spress/
+src/plugins/yosymfony/
+
 composer.lock
-.DS_Store
