@@ -10,11 +10,7 @@ menu:
   order: 1
 prettify: true
 ---
-This guide will cover topics like: 
-
-* creating a site.
-* writing posts and pages.
-* creating a theme.
+In this guide you will learn how Spress works and how easy is to publish a site.
 
 ### Requirements {#requirements}
 
@@ -40,12 +36,25 @@ $ sudo mv spress.phar /usr/local/bin/spress
 
 Lets create a sample site and build it. With Spress executable, you have two options:
 
-1. you can scaffold a blank site
-2. you can use a base theme
+1. To scaffold a blank site.
+2. To use a base theme.
 
 Lets create our site using [Spresso](https://github.com/yosymfony/Spress-theme-spresso/tree/2.0) theme:
 
-**Quick-start**:
+<div class="panel panel-default">
+  <div class="panel-body">
+    <div class="row">
+        <div class="col-md-1">
+            <i class="fa fa-bookmark-o fa-3x"></i>
+        </div>
+        <div class="col-md-11">
+            <p markdown="1">
+                Spresso is the theme base of Spress. See the [Add-ons](/add-ons) page for more themes and plugins.
+            </p>
+        </div>
+    </div>
+  </div>
+</div>
 
 ```
 $ spress new:site /your-site-dir spresso
@@ -61,8 +70,4 @@ you can build your site with `site:build` command. You'll get the result at
 
 The `--server` option launches a *built-in* server which lets you see your site at `http://localhost:4000`.
 `--watch` option tells Spress to watch your files for changes.
-
-### Themes {#themes}
-
-Spresso is the theme base of Spress. See the [Add-ons](/add-ons) page for more themes and plugins.
 

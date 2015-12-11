@@ -33,19 +33,19 @@ This is the typical structure. The only mandatory file is `config.yml`.
 ├── composer.json
 └── config.yml
 ```
-* **config.yml**: Stores the configuration data. You can change the behaviour of 
+* **config.yml**: Contains the configuration data. You can change the behaviour of 
 Spress or create custom variables.
-* **src/includes**: Stores partials that can be used in the layouts, pages and posts.
-* **src/layouts**: Stores layout files used to organize your content. In your post or page, 
-you can choose the layout in the [Front-matter](/docs/2.0/front-matter):
+* **./src/includes**: Contains partials that can be used in the layouts, pages and posts.
+* **./src/layouts**: Contains layout files used to organize your content. In your post or page, 
+you can choose the layout in the [Front-matter](/docs/2.0/attributes/#front-matter):
 
 ```
 ---
 layout: post
 ---
 ```
-* **src/content**: Stores the content of your site.
-* **src/content/posts**: Store the blog posts files. Files located at this folder
+* **./src/content**: Contains the content of your site.
+* **./src/content/posts**: Contains the blog posts files. Files located at this folder
 are under `posts` collection  and they have a special name format: `year-month-day-title.md`.
 The Front-matter of each file let you change these properties:
 
@@ -56,8 +56,8 @@ title: "Hello world"
 date: "2013-01-01"
 ---
 ```
-* **src/plugins**: Extends the functionality of Spress. See [developers docs](/docs/2.0/developers).
-* **build**: This is where the generated site will be placed.
+* **./src/plugins**: Extends the functionality of Spress. See [developers docs](/docs/2.0/developers).
+* **./build**: This is where the generated site will be placed.
 
 ## Page example {#page-example}
 
@@ -87,8 +87,8 @@ that are available in page content with Twig syntax:
         </div>
         <div class="col-md-11">
             <p markdown="1">
-                Spress uses [Twig](http://twig.sensiolabs.org/) as default template
-                engine. See its documentations to get more powerful
+                Spress uses [Twig](http://twig.sensiolabs.org/) as default [renderizer](/docs/2.0/developers/renderizer)
+                (template engine). See its documentations to get more powerful
                 templates.
             </p>
         </div>
@@ -97,6 +97,9 @@ that are available in page content with Twig syntax:
 </div>
 
 ## Post example
+
+This is a post with "post" layout assigned:
+
 ```
 ---
 layout: post
@@ -113,9 +116,10 @@ Hello. This is a post.
         <div class="col-md-11">
             <p markdown="1">
                 **[PHP-Markdown by Michael Fortin](http://michelf.ca/projects/php-markdown/reference/)** 
-                is the default Markdown engine. Spress uses 
-                [Markdown extra flavour](http://michelf.ca/projects/php-markdown/extra/) for 
-                more rich Markdown.
+                is the default Markdown engine. Spress comes with another Markdown engine called 
+                **[Parsedown by Emanuil Rusev](http://parsedown.org/)** that contains several optimizations
+                over Michael Fortin implementation. To enable Parsedown instead of PHP-Markdown
+                open the `config.yml` file at your site and add the following line: `parsedown_activated: true`.
             </p>
         </div>
     </div>
@@ -123,20 +127,6 @@ Hello. This is a post.
 </div>
 
 ## Spress commands {#spress-commands}
-
-### new:site {#site-new-command}
-
-Create a new site. 
-
-`new:site [path[="./"]] [template[="blank"]] [--force] [--all]`
-
-* `template` Set the template for the site. Spresso is a built-in theme.
-* `--force` Force to use the path even though it exists and it's not empty.
-* `--all` In blank template, creates the complete scaffold.
-
-E.g `$ spress new:site /your-site-dir spresso`
-
-The prior example creates a new site using [Spresso theme](https://github.com/yosymfony/Spress-theme-spresso/tree/2.0).
 
 ### site:build {#site-build-command}
 
@@ -177,3 +167,37 @@ $ spress site:build --env=prod
 # Build site with plugins disabled:
 $ spress site:build --safe
 ```
+
+### new:site {#site-new-command}
+
+Create a new site. 
+
+`new:site [path[="./"]] [template[="blank"]] [--force] [--all]`
+
+* `template` Set the template for the site. Spresso is a built-in theme.
+* `--force` Force to use the path even though it exists and it's not empty.
+* `--all` In blank template, creates the complete scaffold.
+
+E.g `$ spress new:site /your-site-dir spresso`
+
+The prior example creates a new site using [Spresso theme](https://github.com/yosymfony/Spress-theme-spresso/tree/2.0).
+
+### new:post
+
+The `new:post` command helps you generates new posts.
+By default, the command interacts with the developer to tweak the generation.
+Any passed option will be used as a default value for the interaction.
+
+```bash
+new:post  [--title="..."] [--layout="default"] [--date="..."]
+      [--tags="..."] [--categories="..."]`
+```
+* `--title`: The title of the post.
+* `--layout`: The layout of the post.
+* `--date`: The date assigned to the post.
+* `--tags`: Comma separated list of tags.
+* `--categories`: Comma separated list of categories.
+
+### self-update
+
+`self-update` or `selfupdate` command replace your `spress.phar` by the latest version.
