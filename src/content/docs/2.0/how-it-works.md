@@ -11,13 +11,14 @@ menu:
 prettify: true
 ---
 Spress is a static site generator - an application that takes your site and 
-transforms it to final HTML ready to deploy on your hosting. By default, your
-content is generated at `build` folder. You can create content using HTML or 
-Markdown syntax. Additionally with [converters](/docs/2.0/developers/converters) you 
+transforms it to final HTML ready to deploy on your hosting. Your content is
+generated at `build` folder. You can create content using HTML or 
+Markdown syntax. Additionally, with [converters](/docs/2.0/developers/converters), you 
 can add new types of content.
 
 ## Site structure {#site-structure}
-This is the typical structure. The only mandatory file is `config.yml`.
+
+This is the typical structure of a Spress site
 
 ```
 .
@@ -37,47 +38,34 @@ This is the typical structure. The only mandatory file is `config.yml`.
 Spress or create custom variables.
 * **./src/includes**: Contains partials that can be used in the layouts, pages and posts.
 * **./src/layouts**: Contains layout files used to organize your content. In your post or page, 
-you can choose the layout in the [Front-matter](/docs/2.0/attributes/#front-matter):
-
-```
----
-layout: post
----
-```
-* **./src/content**: Contains the content of your site.
+you can choose the layout in the [Front matter](/docs/2.0/attributes/#front-matter):
+* **./src/content**: The main content of your site are located in this folder.
 * **./src/content/posts**: Contains the blog posts files. Files located at this folder
-are under `posts` collection  and they have a special name format: `year-month-day-title.md`.
-The Front-matter of each file let you change these properties:
-
-```
----
-layout: post
-title: "Hello world"
-date: "2013-01-01"
----
-```
+are under `posts` [collection](docs/2.0/collections) and they have a special name format: `year-month-day-title.md`.
+The Front matter of each file let you change these properties.
 * **./src/plugins**: Extends the functionality of Spress. See [developers docs](/docs/2.0/developers).
 * **./build**: This is where the generated site will be placed.
 
-## Page example {#page-example}
+## A page example {#page-example}
 
-Below is an example of a simple HTML page:
+Below is an example of a simple page written using Markdown:
 
+{% verbatim %}
 ```
 ---
 layout: default
 name: "John"
-email: "john@example.com"
 ---
-<address>
-  <strong>{{ "{{ page.name }}" }}</strong><br/>
-  <a href="mailto:{{ "{{ page.email }}" }}">{{ "{{ page.email }}" }}</a>
-</address>
+Welcome {{ page.name }}
+-----------------------
+
+This is an example page.
 ```
-The block delimited by triple-dashed lines is the Front-matter and uses 
-[YAML](http://yaml.org) syntax. Inside it you can create a custom variables
-that are available in page content with Twig syntax: 
-`{{ "{{ page.your-variable-name }}" }}`.
+{% endverbatim %}
+
+The block delimited by triple-dashed lines is the Front matter and uses [YAML](http://yaml.org) syntax.
+Inside it you can create custom [attributes](/docs/2.0/attributes) that are available as variables in page
+content with Twig syntax: `{{ "{{ page.your-variable-name }}" }}`.
 
 <div class="panel panel-default">
   <div class="panel-body">
@@ -88,7 +76,7 @@ that are available in page content with Twig syntax:
         <div class="col-md-11">
             <p markdown="1">
                 Spress uses [Twig](http://twig.sensiolabs.org/) as default [renderizer](/docs/2.0/developers/renderizer)
-                (template engine). See its documentations to get more powerful
+                (template engine). See its documentation to get more powerful
                 templates.
             </p>
         </div>
@@ -96,35 +84,18 @@ that are available in page content with Twig syntax:
   </div>
 </div>
 
-## Post example
+### Pretty URLs
 
-This is a post with "post" layout assigned:
+Spress has the ability to generate friendly URL’s by converting files like `welcome.md` to `/welcome/index.html`.
+See [permalink](/docs/2.0/permalinks) documentation.
 
-```
----
-layout: post
----
-Hello. This is a post.
-```
+## Markdown converter {#markdown-converter}
 
-<div class="panel panel-default">
-  <div class="panel-body">
-    <div class="row">
-        <div class="col-md-1">
-            <i class="fa fa-bookmark-o fa-3x"></i>
-        </div>
-        <div class="col-md-11">
-            <p markdown="1">
-                **[PHP-Markdown by Michael Fortin](http://michelf.ca/projects/php-markdown/reference/)** 
-                is the default Markdown engine. Spress comes with another Markdown engine called 
-                **[Parsedown by Emanuil Rusev](http://parsedown.org/)** that contains several optimizations
-                over Michael Fortin implementation. To enable Parsedown instead of PHP-Markdown
-                open the `config.yml` file at your site and add the following line: `parsedown_activated: true`.
-            </p>
-        </div>
-    </div>
-  </div>
-</div>
+**[PHP-Markdown by Michael Fortin](http://michelf.ca/projects/php-markdown/reference/)** 
+is the default Markdown engine. Spress comes with another Markdown engine called 
+**[Parsedown by Emanuil Rusev](http://parsedown.org/)** that contains several optimizations
+over Michael Fortin implementation. To enable Parsedown instead of PHP-Markdown
+open the `config.yml` file at your site and add the following line: `parsedown_activated: true`.
 
 ## Spress commands {#spress-commands}
 
@@ -154,7 +125,7 @@ $ spress site:build
 $ cd /your-site-dir
 $ spress site:build --server --watch  # Go to http://localhost:4000
 
-# Build site and watch for changes (regenerated automatically into ./_site)
+# Build site and watch for changes (regenerated automatically into ./build)
 $ cd /your-site-dir
 $ spress site:build --watch
 
@@ -197,6 +168,10 @@ new:post  [--title="..."] [--layout="default"] [--date="..."]
 * `--date`: The date assigned to the post.
 * `--tags`: Comma separated list of tags.
 * `--categories`: Comma separated list of categories.
+
+### new:plugin
+
+Crate a new plugin. See the documentation at [developers doc](/docs/2.0/developers).
 
 ### self-update
 

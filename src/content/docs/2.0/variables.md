@@ -10,10 +10,9 @@ menu:
   order: 4
 prettify: true
 ---
-Any processable file with [Front-matter](/docs/front-matter) will have access
-to these variables.
+Spress exposes several variables containing site data.
 
-## Global
+## Global {#global-variables}
 
 <table class="table">
     <thead>
@@ -26,31 +25,23 @@ to these variables.
         <tr>
             <td markdown="1">[site](#site-variables)</td>
             <td markdown="1">
-                Site data with configuration variables from global and  
-                `config.yml` from your site.
+                Contains site information and site configuration read from `config.yml`.
             </td>
         </tr>
         <tr>
             <td markdown="1">[page](#page-variables)</td>
-            <td>Page specific data with Front-matter variables.</td>
-        </tr>
-        <tr>
-            <td markdown="1">[paginator](#paginator-variables)</td>
-            <td>
-                If pagination is available, contains information about pagination
-                data.
-            </td>
+            <td>Page specific data with variables declared at Front matter and metadata files.</td>
         </tr>
         <tr>
             <td markdown="1">[spress](#spress-variables)</td>
-            <td>Data about application.</td>
+            <td>Contains information about Spress itself.</td>
         </tr>
     </tbody>
 </table>
 
 ## Site variables {#site-variables}
 
-Example of access in Twig: `{{ "{{ site.posts }}" }}`.
+Example of access with Twig: `{{ "{{ site.categories }}" }}`.
 
 <table class="table">
     <thead>
@@ -62,17 +53,11 @@ Example of access in Twig: `{{ "{{ site.posts }}" }}`.
     </thead>
     <tbody>
         <tr>
-            <td>posts</td>
+            <td>collections</td>
             <td>array</td>
             <td markdown="1">
-                List of posts in reverse chronological order. Each element of this list is of type [page](#page-variables).
-            </td>
-        </tr>
-        <tr>
-            <td>pages</td>
-            <td>array</td>
-            <td markdown="1">
-                List of pages. Each element of this list is of type [page](#page-variables).
+                List of all collections. Each element of this list is of type [collection](#collection-variables).
+                The key of each element is the collection's name.
             </td>
         </tr>
         <tr>
@@ -109,9 +94,108 @@ Example of access in Twig: `{{ "{{ site.posts }}" }}`.
     </tbody>
 </table>
 
+## Collection variables {#collection-variables}
+
+Example of access with Twig: `{{ "{{ site.collections.collection-name.path }}" }}`.
+
+<table class="table">
+    <thead>
+        <tr>
+            <th class="col-sm-2">Name</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>path</td>
+            <td>string</td>
+            <td markdown="1">
+                The collection's relative path to `src` folder.
+            </td>
+        </tr>
+        <tr>
+            <td>output</td>
+            <td>boolean</td>
+            <td markdown="1">
+                With a `true` value the collection's item will be output as individual file.
+            </td>
+        </tr>
+         <tr>
+            <td>your-variable-name</td>
+            <td></td>
+            <td markdown="1">
+                Your custom variables declared at the collection definition are available here.
+                Example: `{{ "{{ site.collection-name.your-variable-name }}" }}`.
+            </td>
+        </tr>
+    </tbody>
+</table>
+
 ## Page variables {#page-variables}
 
-Example of access in Twig: `{{ "{{ page.title }}" }}`.
+Example of access with Twig: `{{ "{{ page.id }}" }}`.
+
+<table class="table">
+    <thead>
+        <tr>
+            <th class="col-sm-2">Name</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>id</td>
+            <td>string</td>
+            <td>Identifier of the item.</td>
+        </tr>
+        <tr>
+            <td>collection</td>
+            <td>string</td>
+            <td>The name of the collection assigned to item.</td>
+        </tr>
+        <tr>
+            <td>mtime</td>
+            <td>string</td>
+            <td markdown="1">
+                The modified time in [ISO 8601](http://en.wikipedia.org/wiki/ISO_8601)
+                format.
+            </td>
+        </tr>
+        <tr>
+            <td>filename</td>
+            <td>string</td>
+            <td>The name of the file.</td>
+        </tr>
+        <tr>
+            <td>extension</td>
+            <td>string</td>
+            <td>The extension of the file.</td>
+        </tr>
+        <tr>
+            <td>path</td>
+            <td>string</td>
+            <td markdown="1">
+                The path relative to `src` folder. e.g: `about/changelog.md`.
+            </td>
+        </tr>
+        <tr>
+            <td>url</td>
+            <td>string</td>
+            <td markdown="1">
+                The URL of the post. e.g: `/about/changelog/`.
+            </td>
+        </tr>
+        <tr>
+            <td>content</td>
+            <td>string</td>
+            <td>Compiled content.</td>
+        </tr>
+    </tbody>
+</table>
+
+### Additional variables for files with pattern: `yyyy-mm-dd-title`
 
 <table class="table">
     <thead>
@@ -128,9 +212,11 @@ Example of access in Twig: `{{ "{{ page.title }}" }}`.
             <td>The title of the page.</td>
         </tr>
         <tr>
-            <td>id</td>
+            <td>title_path</td>
             <td>string</td>
-            <td>Identifier of the page.</td>
+            <td markdown="1">
+                The title obtained from filename. e.g: "hola user" from `2015-12-08-hola-user.md`.
+            </td>
         </tr>
         <tr>
             <td>date</td>
@@ -141,41 +227,11 @@ Example of access in Twig: `{{ "{{ page.title }}" }}`.
                 format.
             </td>
         </tr>
-        <tr>
-            <td>path</td>
-            <td>string</td>
-            <td>The path to the raw post or page.</td>
-        </tr>
-        <tr>
-            <td>url</td>
-            <td>string</td>
-            <td markdown="1">
-                The URL of the post. E.g: `/news/what-is-new/`. If you disable
-                `relative_permalinks` option, the URL will be stored in absolute 
-                format: `site.url` + `base_url` + `page.url`.
-            </td>
-        </tr>
-        <tr>
-            <td>categories</td>
-            <td>array</td>
-            <td>List of post categories.</td>
-        </tr>
-        <tr>
-            <td>tags</td>
-            <td>array</td>
-            <td>List of post tags.</td>
-        </tr>
-        <tr>
-            <td>content</td>
-            <td>string</td>
-            <td>Rendered content.</td>
-        </tr>
     </tbody>
 </table>
 
-## Paginator variables {#paginator-variables}
 
-Example of access in Twig: `{{ "{{ paginator.total_pages }}" }}`.
+### Additional variables for Posts
 
 <table class="table">
     <thead>
@@ -187,57 +243,22 @@ Example of access in Twig: `{{ "{{ paginator.total_pages }}" }}`.
     </thead>
     <tbody>
         <tr>
-            <td>per_page</td>
-            <td>int</td>
-            <td>Number of posts per page.</td>
-        </tr>
-        <tr>
-            <td>posts</td>
+            <td>categories</td>
             <td>array</td>
-            <td>Posts included in current page.</td>
+            <td>List of post categories.</td>
         </tr>
         <tr>
-            <td>total_posts</td>
-            <td>int</td>
-            <td>Total number of posts.</td>
-        </tr>
-        <tr>
-            <td>total_pages</td>
-            <td>int</td>
-            <td>Total number of pages.</td>
-        </tr>
-        <tr>
-            <td>page</td>
-            <td>int</td>
-            <td>Current page number.</td>
-        </tr>
-        <tr>
-            <td>previous_page</td>
-            <td>int</td>
-            <td>Previous page number.</td>
-        </tr>
-        <tr>
-            <td>previous_page_path</td>
-            <td>string</td>
-            <td>Path to the previous page.</td>
-        </tr>
-        <tr>
-            <td>next_page</td>
-            <td>int</td>
-            <td>Next page number.</td>
-        </tr>
-        <tr>
-            <td>next_page_path</td>
-            <td>string</td>
-            <td>Path to the next page.</td>
+            <td>tags</td>
+            <td>array</td>
+            <td>List of post tags.</td>
         </tr>
     </tbody>
 </table>
 
+
 ## Spress variables {#spress-variables}
 
-Example of access in Twig: `{{ "{{ spress.version }}" }}` or 
-`{{ "{{ spress.paths.root }}" }}`.
+Example of access with Twig: `{{ "{{ spress.version }}" }}`.
 
 <table class="table">
     <thead>
@@ -251,21 +272,49 @@ Example of access in Twig: `{{ "{{ spress.version }}" }}` or
         <tr>
             <td>version</td>
             <td>string</td>
-            <td>Current version.</td>
+            <td>Current version. e.g: 2.0.1-rc</td>
         </tr>
         <tr>
-            <td>paths</td>
+            <td>version_id</td>
+            <td>string</td>
+            <td>
+                Version ID. e.g: 20001
+            </td>
+        </tr>
+        <tr>
+            <td>major_version</td>
+            <td>string</td>
+            <td>
+                Major version. e.g: 2.
+            </td>
+        </tr>
+        <tr>
+            <td>minor_version</td>
+            <td>string</td>
+            <td>
+                Minor version. e.g: 0.
+            </td>
+        </tr>
+        <tr>
+            <td>release_version</td>
+            <td>string</td>
+            <td>
+                Release version. e.g: 1.
+            </td>
+        </tr>
+        <tr>
+            <td>extra_version</td>
+            <td>string</td>
+            <td>
+                Extra information about the relese. e.g: rc.
+            </td>
+        </tr>
+        <tr>
+            <td>external</td>
             <td>array</td>
             <td>
-                Paths used by Spress.
+                External variables passed to Spress prior to compiling the site.
             </td>
         </tr>
     </tbody>
 </table>
-
-Inside path key:
-
-* **root**: Absolute path to root of Spress application.
-* **config**: Absolute path to global configuration directory.
-* **config.file**: Global configuration filename.
-* **templates**: Absolute path to templates directory.

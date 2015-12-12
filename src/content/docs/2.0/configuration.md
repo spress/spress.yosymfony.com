@@ -1,7 +1,7 @@
 ---
 layout: page-doc-2.0
 title: Configuration of a Spress site
-description: Each Spress site have a configuration file with information for generating the site
+description: The Spress site configuration file
 header:
   title: Configuration
 menu:
@@ -34,10 +34,10 @@ of Spress and create new variables that will be accessible in your template with
 ## Environment configuration: development and production {#environment}
 
 The environment configuration is useful for writing configuration options for development and 
-production environments. Each Spress site has a `config.yml` file (mandatory) with the options
+production environments. Each Spress site has a `config.yml` file with the options
 for the default environment (dev). If you want to set options for production environment you 
 can create a `config_prod.yml` file with the options that will override values from `config.yml`.
-The command line option `--env="prod"` lets you enable specific (prod) environment.
+The command line option `--env="prod"` lets you enable a specific environment.
 
 The pattern for environment configuration filename is `config_{environment-name}.yml`.
 
@@ -184,7 +184,7 @@ server_watch_ext: ['html', 'htm', 'xml']
             <td>boolean</td>
             <td markdown="1">
                 Set to `true` in case of you want to preserve the title extracted
-                from the filename path over the Frontmatter title attribute.
+                from the filename path over the Front matter title attribute.
                 See [issue #47](https://github.com/spress/Spress/issues/47).
             </td>
         </tr>
