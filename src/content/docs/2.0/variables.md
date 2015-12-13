@@ -1,7 +1,7 @@
 ---
 layout: page-doc-2.0
 title: Variables
-description: "Standard variables of Spress"
+description: Standard variables of Spress
 header:
   title: Variables
 menu:
@@ -195,7 +195,7 @@ Example of access with Twig: `{{ "{{ page.id }}" }}`.
     </tbody>
 </table>
 
-### Additional variables for files with pattern: `yyyy-mm-dd-title`
+### Additional variables for files with `yyyy-mm-dd-title` pattern
 
 <table class="table">
     <thead>
