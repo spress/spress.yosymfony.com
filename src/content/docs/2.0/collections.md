@@ -42,10 +42,50 @@ to `projects` collection.
 Default attributes can be set for a collection. e.g: `title`. Item's attributes overrides
 the collection's default attributes.
 
-### How to access?
+## How to access?
 
 Items of `projects` collections are available at `site.projects`. Each item has an attribute
 `collection` with the name of the collection.
 
 Data about `projects` collection at `site.collections.projects`. More information about
 [variables available for registered collection](/docs/2.0/variables/#collection-variables).
+
+### An example
+
+The example below assume that a collection `projects` exists and each item of that collection has
+`title` and `description` attributes.
+
+{% verbatim %}
+```
+---
+layout: page
+title: 'My projects'
+---
+<div class="page-header">
+    <h1>My <small>projects</small></h1>
+</div>
+<div class="row">
+	{% for project in site.projects %}
+		<div class="col-md-4 project-box">
+			<div class="panel panel-default">
+				<div class="panel-body">
+					<h2><a href="{{ project.url }}">{{ project.title }}</a></h2>
+					<p>{{ project.description }}</p>
+				</div>
+			</div>
+		</div>
+	{% endfor %}
+</div>
+```
+{% endverbatim %}
+
+Here's an example of what this structure might look like:
+
+```
+./src
+|-- /content
+|   |-- projects
+|   | |- my-awesonme-web.md
+|   | |- my-library.md
+
+```

@@ -7,7 +7,7 @@ header:
 menu:
   id: doc 2.0
   title: Writing posts
-  order: 7
+  order: 8
 prettify: true
 ---
 Posts are plain text files written using [Markdown](http://daringfireball.net/projects/markdown/syntax)

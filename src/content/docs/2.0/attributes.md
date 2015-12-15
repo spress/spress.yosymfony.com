@@ -30,7 +30,7 @@ Your attributes will be accessible for Twig: `My name is {{ "{{ page.my_name }}"
 
 There are atributes like `layout` or `permalink` that have a special meaning.
 
-## Metadata files
+## Metadata files {#metadata-files}
 
 There are situations in where a Front matter breaks syntax highlighting of your IDE. For those situations
 a metadata file lets you specify the page's attributes in a separate file. A metadata file uses YAML

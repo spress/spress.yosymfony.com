@@ -6,31 +6,53 @@ header:
 menu:
   id: doc 2.0
   title: Creating pages
-  order: 8
+  order: 7
 prettify: true
 ---
-Below, you can see various types of pages:
+The following examples assume that you are using a site with Spresso theme. If not, you
+can create one with `spress new:site example spresso`.
+
+The simple way of add a page is creating a `welcome.html` file at `./src/content`.
+
+{% verbatim %}
+```
+---
+name: "My personal site"
+---
+
+<h1>Welcome to {{ page.name }}</h1>
 
 ```
-.
-|- index.html      # http://yoursite.com/
-|- docs-site
-| |- index.html    # http://yoursite.com/docs-site
-|- about
-| |- index.md      # http://yoursite.com/about
-| |- app-list.html # http://yoursite.com/about/app-list.html
-|- my-news.html    # http://yoursite.com/my-news.html
+{% endverbatim %}
+
+Recompile your site with `spress site:build --server` and your page will be accesible
+at `http://localhost:4000/welcome/`. The physical path of that page is `./build/welcome/index.html`.
+
+The `index.html` file in a folder, by convection, is the default page unless
+your server was configured to look other default filename.
+
+If you don't like having a [Front matter block](/docs/2.0/attributes/) at the top of every page, you can put
+your attributes in a [metadata file](/docs/2.0/attributes/#metadata-files).
+
+## Customize the layout
+
+Layouts are files, tipically written using HTML & Twig syntax, that defines the look and feel of a site
+and are located at `.src/layouts/`. The layout of a page is specified by `layout` attribute:
+
+{% verbatim %}
 ```
+---
+layout: "page"
+name: "My personal site"
+---
 
-The `index.html` file in your site root, by convention, is your home page, unless
-your server was configured to look for other default file (this is a web server configuration,
-not Spress config variable).
+<h1>Welcome to {{ page.name }}</h1>
 
-Pages with [friendly-URLs](http://en.wikipedia.org/wiki/Clean_URL) (clean URL) 
-can be created by following a following pattern:
+```
+{% endverbatim %}
 
-1. create a directory with a name that represents your friendly-URL
-2. add `index.html` file inside with the page content
+## Customize the permalink
 
-In the above example `docs-site` and `about` are following this pattern
-to get this type of URLs.
+## Write pages in Markdown
+
+Spress comes with several different Markdown [converter](/docs/2.0/developers/converters).
