@@ -10,7 +10,11 @@ menu:
 prettify: true
 ---
 The following examples assume that you are using a site with Spresso theme. If not, you
-can create one with `spress new:site example spresso`.
+can create one with `new:site` command:
+
+```
+$ spress new:site example spresso
+```
 
 The simple way of add a page is creating a `welcome.html` file at `./src/content`.
 

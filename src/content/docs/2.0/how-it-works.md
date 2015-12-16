@@ -145,7 +145,7 @@ E.g `$ spress new:site /your-site-dir spresso`
 
 The prior example creates a new site using [Spresso theme](https://github.com/yosymfony/Spress-theme-spresso/tree/2.0).
 
-### new:post
+### new:post {#new-post}
 
 The `new:post` command helps you generates new posts.
 By default, the command interacts with the developer to tweak the generation.
