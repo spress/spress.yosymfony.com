@@ -89,14 +89,6 @@ content with Twig syntax: `{{ "{{ page.your-variable-name }}" }}`.
 Spress has the ability to generate friendly URL’s by converting files like `welcome.md` to `/welcome/index.html`.
 See [permalink](/docs/2.0/permalinks) documentation.
 
-## Markdown converter {#markdown-converter}
-
-**[PHP-Markdown by Michael Fortin](http://michelf.ca/projects/php-markdown/reference/)** 
-is the default Markdown engine. Spress comes with another Markdown engine called 
-**[Parsedown by Emanuil Rusev](http://parsedown.org/)** that contains several optimizations
-over Michael Fortin implementation. To enable Parsedown instead of PHP-Markdown
-open the `config.yml` file at your site and add the following line: `parsedown_activated: true`.
-
 ## Spress commands {#spress-commands}
 
 ### site:build {#site-build-command}
