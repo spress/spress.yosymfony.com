@@ -22,7 +22,7 @@ layout: default
 title: "Hello world" # Replace the posts title from the file.
 my_name: "Victor"
 ---
-This is a post body.
+This is a page body.
 ```
 
 The Front matter uses [YAML](http://yaml.org) syntax and is declared between triple-dashed lines.

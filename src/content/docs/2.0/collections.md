@@ -83,9 +83,8 @@ Here's an example of what this structure might look like:
 
 ```
 ./src
-|-- /content
-|   |-- projects
-|   | |- my-awesonme-web.md
-|   | |- my-library.md
-
+|- /content
+|  |- /projects
+|  |  |- my-awesonme-web.md
+|  |  |- my-library.md
 ```
