@@ -14,7 +14,7 @@ Prior to Spress 2, the only available types of content were `post` and `page`.
 With the second mayor version of Spress we introduce collections. Collections
 allow you to define a new type of content that behave like pages or posts.
 
-**Predefined collections** are: `post` and `pages`. The first collection is
+**Predefined collections** are: `posts` and `pages`. The first collection is
 assigned to items located at `./src/content/posts`.
 
 ## How to configure

@@ -9,28 +9,48 @@ menu:
   order: 10
 prettify: true
 ---
-Posts can be organized in pages and will be accessible
-with URLs like `http://yourdomain.com/blog/page2/`. Each page will display a set
-of posts.
+Items can be organized in pages thanks to pagination [generator](/docs/2.0/developers/generators)
+and will be accessible with URLs like `/blog/page2/`.
 
-To **enable posts pagination** add a new line to your site configuration file:
-
-```
-# config.yml
-
-paginate: 5
-```
-
-The value is the number of posts per page. You may also specify the location of
-the pages. Add a new line to your site configuration file:
+The following examples assume that you are using a site with Spresso theme. If not, you
+can create one with `new:site` command:
 
 ```
-paginate_path: 'blog/page:num'
+$ spress new:site example spresso
 ```
 
-The above code will generate each page with a URL like `http://yourdomain/blog/page2/`. 
-The `:num` placeholder will be replaced with page number starting with 2. 
-To access first page, use `http://yourdomain.com/blog/`.
+The simple way of add pagination to `posts` [collection](/docs/2.0/collections) items is creating a
+`index.html` file at `./src/content/blog` with the following content:
+
+{% verbatim %}
+```
+---
+layout: "page"
+title: "Blog posts"
+
+generator: "pagination"
+provider: "site.posts"
+max_page: 1
+sort_by: "date"
+---
+<h1>Posts</h1>
+<ul>
+    {% for post in page.pagination.items %}
+        <li><a href="{{ post.url }}">{{ post.title }}</a></li>
+    {% endfor %}
+</ul>
+
+{% include "paginator.html" %}
+```
+{% endverbatim %}
+
+* `generator`: contains the name of the generator, in this case `pagination`.
+* `provier`: The descriptor for the provider of the items (collection) to be paginated.
+`site.posts` is the default value. If you have a custom collection, for example `events`, this value
+would be`site.events`.
+* `max_page`: The maximum number of item per page. Default value is `5`.
+
+Recompile your site and your page will be accesible at `http://localhost:4000/blog/`.
 
 Files generated:
 
@@ -39,94 +59,38 @@ Files generated:
         <tr>
             <th class="col-sm-2">Page</th>
             <th>File</th>
+            <th>URL</th>
         </tr>
     </thead>
     <tbody>
         <tr>
             <td>1</td>
             <td>/blog/index.html</td>
+            <td>/blog/</td>
         </tr>
         <tr>
             <td>2</td>
             <td>/blog/page2/index.html</td>
+            <td>/blog/page2/</td>
         </tr>
         <tr>
             <td>n</td>
             <td markdown="1">/blog/page**n**/index.html</td>
+            <td markdown="1">/blog/page**n**/</td>
         </tr>
     </tbody>
 </table>
 
-<div class="panel panel-default">
-  <div class="panel-body">
-    <div class="row">
-        <div class="col-md-1">
-            <i class="fa fa-exclamation-triangle fa-3x color-red"></i>
-        </div>
-        <div class="col-md-11">
-            <p markdown="1">
-                For the moment pagination works only with posts.
-            </p>
-        </div>
-    </div>
-  </div>
-</div>
+## Sorting items
 
-## Page template {#page-template}
-Determine the content of each pagination page. This file should be located at 
-the root of `paginate_path` and its filename should be `index.html`.
+With `sort_by` and `sort_type` attributes you will be able to control how items are sorted at pagination generator.
+`sort_type` only supports `ascending` and `descending` values. `descending` is the default behavior. `sort_by` attribute
+contains the name of the attribute used as criteria to sort.
 
-Example of page template (file located at `/blog/index.html`):
+Open the `./src/content/blog/index.html` file and add `sort_type: "ascending"` attribute at Front matter block. Then, 
+recompile your site. Posts at `http://localhost:4000/blog/` should be in reverse order.
 
-{% verbatim %}
-```
----
-layout: default
----
-{% if paginator %}
-    {% for post in paginator.posts %}
-        <!--
-            Render your post data.
-            The best way is to use "include" statement
-        -->
-    {% endfor %}
-    
-    {% if paginator.total_pages > 1 %}
-    	<ul class="pagination">
-    		{% if paginator.previous_page %}
-            <li>
-                <a class="prev" href="/{%if paginator.previous_page > 1 %}page{{ paginator.previous_page }}/{% endif %}">
-                    &laquo; Newer
-                </a>
-            </li>
-    		{% endif %}
-    
-    		{% for page in (1..paginator.total_pages) %}
-    			{% if page == paginator.page %}
-    				<li>
-    				    <span class="active">{{ page }}</span>
-    				</li>
-    			{% else %}
-    				<li>
-    				    <a href="/{%if page > 1 %}page{{ page }}/{% endif %}">
-    				        {{ page }}
-    				    </a>
-    				</li>
-    			{% endif %}
-    		{% endfor %}
-    
-    		{% if paginator.next_page %}
-    			<li>
-    			    <a href="/page{{ paginator.next_page }}/">
-    			        Older &raquo;
-    			    </a>
-    			</li>
-    		{% endif %}
-    	</ul>
-    {% endif %}
-{% else %}
-    <p>No post has been written.</p>
-{% endif %}
-```
-{% endverbatim %}
-More info about [paginator variables](/docs/variables/#paginator-variables).
+## Page permalink
+
+The default permalink for each generated page is `/page:num`. The `:num` placeholder will be replaced
+with the number of page starting with 2.

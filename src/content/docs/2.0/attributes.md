@@ -18,7 +18,7 @@ of your own that will be available in the content as variables.
 
 ```
 ---
-layout: default
+layout: "default"
 title: "Hello world" # Replace the posts title from the file.
 my_name: "Victor"
 ---
