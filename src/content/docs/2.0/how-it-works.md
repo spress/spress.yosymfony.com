@@ -131,7 +131,7 @@ $ spress site:build --env=prod
 $ spress site:build --safe
 ```
 
-### new:site {#site-new-command}
+### new:site {#new-site-command}
 
 Create a new site. 
 

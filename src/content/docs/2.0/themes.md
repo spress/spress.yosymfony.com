@@ -16,7 +16,7 @@ about Twig, see the [Twig web page](http://twig.sensiolabs.org).
 
 ## Create a blank site {#blank-site}
 
-Using `spress new:site` [command](/docs/2.0/how-it-work/#site-new-command) you
+Using `spress new:site` [command](/docs/2.0/how-it-works/#new-site-command) you
 can create a blank site with the following structure:
 
 ```
@@ -31,7 +31,7 @@ can create a blank site with the following structure:
     └── layouts
 ```
 
-The [new:site command](/docs/2.0/how-is-work/#site-new-command) have an extra 
+The [new:site command](/docs/2.0/how-is-work/#new-site-command) has an extra 
 `--all` option to create a complete scaffolding of the site:
 
 ```
@@ -145,15 +145,12 @@ site `composer.json` and run `composer update` afterwards:
         {
             "require": {
                 "spress/github-metadata-plugin": "~1.0-dev"
-            },
-            "config": {
-                "vendor-dir": "_plugins/vendors"
             }
         }
     </code>
 </pre>
 
-Plugin will be available in `_plugins` folder.
+Plugin will be available in `./src/plugins` folder.
 
 
 ## Create a redistributable theme {#redistributable-themes}
@@ -165,7 +162,7 @@ using GIT for getting the repository or installed globally with Composer.
 To create a distributable package with Composer, you should create a repository
 on Github or similar site and register it in [Packagist](https://packagist.org/about) repository.
 
-Example of a [theme](github.com/yosymfony/Spress-theme-spresso/tree/2.0). 
+Example of a [theme](https://github.com/yosymfony/Spress-theme-spresso/tree/2.0). 
 You can see it in [action](http://yosymfony.github.io/Spress-example/).
 
 ## How to install a new theme? {#installing-new-theme}
