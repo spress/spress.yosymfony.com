@@ -28,7 +28,7 @@ can create a blank site with the below structure:
 |- _posts/
 ```
 
-The command have a extra `--all` option to create a complete scaffolding of the
+The command has an extra `--all` option to create a complete scaffolding of the
 site:
 
 ```
