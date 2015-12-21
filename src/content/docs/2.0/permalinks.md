@@ -30,7 +30,7 @@ permalink: "/:path/:basename.:extension"
         <tr>
             <td>:path</td>
             <td markdown="1">
-                Relatice path to content folder without filename. e.g: `posts`.
+                Relative path to content folder without filename. e.g: `posts`.
             </td>
         </tr>
         <tr>
@@ -48,7 +48,7 @@ permalink: "/:path/:basename.:extension"
         <tr>
             <td>:collection</td>
             <td markdown="1">
-                Collection name assigned to the item. e.g: `pages`.
+                Collection name assigned to an item. e.g: `posts`.
             </td>
         </tr>
         <tr>
@@ -99,7 +99,7 @@ permalink: "/:path/:basename.:extension"
 ## Predefined permalink templates {#predefined-templates}
 
 Spress have a few predefined permalink templates. If you want to configure it 
-on your site simply use its name. The default value of `permalink` attribute is `pretty`.
+on your site simply use its name:
 
 <table class="table">
     <thead>
@@ -112,31 +112,48 @@ on your site simply use its name. The default value of `permalink` attribute is 
     <tbody>
         <tr>
             <td>none</td>
-            <td>/:path/:basename.:extension</td>
+            <td markdown="1">`/:path/:basename.:extension`</td>
             <td>
                 /about/changelog.html
             </td>
         </tr>
         <tr>
             <td>pretty</td>
-            <td>/:categories/:year/:month/:day/:title/</td>
+            <td markdown="1">
+                `/:categories/:year/:month/:day/:title` or `/:path/:basename`.
+            </td>
             <td>
-                /news/2013/12/31/new-apps/
+                /news/2015/12/31/new-apps/
             </td>
         </tr>
         <tr>
             <td>ordinal</td>
-            <td>/:categories/:year/:i_day/:title.html</td>
+            <td markdown="1">
+                `/:categories/:year/:i_day/:title.:extension`
+            </td>
             <td>
-                /news/31/new-apps.html
+                /news/2015/31/new-apps.html
             </td>
         </tr>
         <tr>
             <td>date</td>
-            <td>/:year/:month/:day/:title.html</td>
+            <td markdown="1">
+                `/:categories/:year/:month/:day/:title.:extension`
+            </td>
             <td>
-                /2013/12/31/new-apps.html
+                /2015/12/31/new-apps.html
             </td>
         </tr>
     </tbody>
 </table>
+
+The default value of `permalink` attribute is `pretty`.
+All predefined permalink templates with a date component depends of `date` attribute. In case of
+missing, `none` template will be applied.
+
+### The pretty style
+
+This is a extensionless permalink that contain neither a trailing slash nor a file extension.
+If the out extension of an item is other than `html` then `none` template will be applied.
+Sometimes this configuration requires additional support from the web server.
+See [try_files on Nginx](http://nginx.org/en/docs/http/ngx_http_core_module.html#try_files) or [multiviews](https://httpd.apache.org/docs/current/content-negotiation.html#multiviews) on Apache.
