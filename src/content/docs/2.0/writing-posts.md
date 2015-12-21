@@ -126,3 +126,5 @@ Example of valid posts files:
 
 * 2013-12-01-my-first-post.md
 * 2013-11-01-what-is-new.md
+
+This pattern of filename will adds automatically the following attributes to the item: `date` and `title`.
