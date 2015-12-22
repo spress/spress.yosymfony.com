@@ -10,58 +10,25 @@ menu:
   order: 12
 prettify: true
 ---
-**Themes are simply sites**. Spress uses the power of Twig to render templates. You can reuse parts
-of your HTML and create templates with a easy language. For more information
-about Twig, see the [Twig web page](http://twig.sensiolabs.org).
+**Themes are simply sites**. Spress uses the power of [Twig](http://twig.sensiolabs.org)
+to render templates. You can reuse parts of your HTML and create templates with a easy language.
 
-## Create a blank site {#blank-site}
+## Creating a theme
 
-Using `spress new:site` [command](/docs/2.0/how-it-works/#new-site-command) you
-can create a blank site with the following structure:
-
-```
-.
-├── build
-├── composer.json
-├── config.yml
-└── src
-    ├── content
-    │   ├── index.html
-    │   └── posts
-    └── layouts
-```
-
-The [new:site command](/docs/2.0/how-is-work/#new-site-command) has an extra 
-`--all` option to create a complete scaffolding of the site:
+The [`new:site`](/docs/2.0/how-it-works/#new-site-command) command lets you create a blank site.
+`--all` option enables a [complete scaffolding of the site](/docs/2.0/how-it-works/#site-structure).
 
 ```
-.
-├── build
-├── composer.json
-├── config.yml
-└── src
-    ├── content
-    │   ├── index.html
-    │   └── posts
-    ├── includes
-    ├── layouts
-    └── plugins
+$ spress new:site my-site --all
 ```
 
-## Hierachical layouts {#layouts-inheritance}
+### Layouts {#layouts-inheritance}
 
-Your layouts can inherit from other layouts. Layouts are located at `./src/layouts`
-folder.
+Layouts describes how the content is distributed in a page. Layouts are simple HTML & Twig
+files located at `./src/layouts` and they can inherit from other layouts
 
-```
-└── layouts
-    ├── default.html
-    ├── page.html
-    └── post.html
-```
-
-The `default.html` may hold the general HTML definitions like *html* and *head* 
-tags:
+In this example, `default.html` file may hold the general HTML definitions like `html` and `head` 
+tags with metas, title and assets:
 
 {% verbatim %}
 ```
@@ -84,16 +51,19 @@ tags:
 ```
 {% endverbatim %}
 
-The `post.html` can inherit from `default.html`:
+Prior layout contains a `content` block and this will be filled out with the page content.
+
+Another layout could be added for describing how a post page is: `post.html`. This one inherited 
+from `default.html` using the `layout` attribute:
 
 {% verbatim %}
 ```
 ---
-layout: default
+layout: "default"
 ---
 {% block content %}
 
-    <p>This is the layout for posts</p>
+    <h1>{{ page.title }}</h1>
 
     {{ page.content }}
     
@@ -101,34 +71,28 @@ layout: default
 ```
 {% endverbatim %}
 
-## Reusable content {#reusable-content}
+### Reusable content {#reusable-content}
 
-Reusable layout parts are located at `./src/includes` folder.
+Reusable parts, *partials* are simples HTML & Twig files located at `./src/includes` folder.
 
-```
-├── includes
-│   ├── head.html
-│   ├── menu.html
-│   ├── nav.html
-│   ├── paginator.html
-│   ├── post.html
-│   ├── posts-list.html
-│   └── social-network.html
-```
-
-To include a reusable part use `include` Twig statement:
+To render a partial call `include` with the identifier surrounded by quotes:
 
 {% verbatim %}
-<pre>
-    <code class="twig">
-        {% include 'nav.html' %}
-        {% include 'widget/email.html' %}
-    </code>
-</pre>
+```
+{% include 'nav.html' %}
+{% include 'widget/email.html' %}
+```
 {% endverbatim %}
 
-More information about 
-[Twig include statement](http://twig.sensiolabs.org/doc/tags/include.html).
+It's also possible to pass custom variables to a patial using `with` keyword:
+
+{% verbatim %}
+```
+{% include 'nav.html' with {'menu': 'top'} %}
+```
+{% endverbatim %}
+
+More information about [Twig include statement](http://twig.sensiolabs.org/doc/tags/include.html).
 
 ## Plugin installation {#plugin-installation}
 
@@ -136,19 +100,17 @@ You can use [plugins](/add-ons) on your site. To do it, you have to create
 `composer.json` file in your site folder and add the require statement
 with the name of the plugin:
  
-We will use plugin called `spress/github-metadata-plugin` as an example.
+We will use a plugin called `spress/github-metadata-plugin` as example.
 To add it to your site, you simply have to add following changes in your
 site `composer.json` and run `composer update` afterwards:
 
-<pre>
-    <code class="json">
-        {
-            "require": {
-                "spress/github-metadata-plugin": "~1.0-dev"
-            }
-        }
-    </code>
-</pre>
+```
+{
+    "require": {
+        "spress/github-metadata-plugin": "~1.0-dev"
+    }
+}
+```
 
 Plugin will be available in `./src/plugins` folder.
 
@@ -156,8 +118,8 @@ Plugin will be available in `./src/plugins` folder.
 ## Create a redistributable theme {#redistributable-themes}
 
 Your own themes can be downloaded by other users and used for building their web pages
-or as base for new themes. A theme can be installed by downloading it manually, 
-using GIT for getting the repository or installed globally with Composer.
+or as base for new themes. A theme can be installed by downloading it manually or 
+using GIT for getting the repository.
 
 To create a distributable package with Composer, you should create a repository
 on Github or similar site and register it in [Packagist](https://packagist.org/about) repository.
@@ -182,32 +144,3 @@ There are several ways to do it.
 * Clone it: `git clone https://github.com/YOUR-USER/THEME-REPOSITORY.git folder-name-for-cloned-theme`
 * Go to `folder-name-for-cloned-theme` folder
 * Run `spress site:build --server --watch`
-
-### Globally {#install-theme-global}
-
-**This option is not available using `spress.phar`**
-
-Go to your Spress installation folder i.e ~/Spress and add the following depencency
-to your `composer.json` file
-
-<pre>
-    <code class="json">
-        "require": {
-            "spress-add-ons/about-me-theme": "1.0.*@dev"
-        }
-    </code>
-</pre>
-
-and then run the following command to install the dependency.
-
-```
-$ composer update
-```
-
-Next create your new site:
-
-```
-$ spress new:site /your-site-dir about-me
-$ cd /your-site-dir
-$ spress site:build --server --watch
-```

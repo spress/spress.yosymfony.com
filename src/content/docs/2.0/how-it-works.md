@@ -24,13 +24,14 @@ This is the typical structure of a Spress site
 .
 ├── build
 ├── src
-│   ├── includes
-│   └── layouts
 │   ├── content
 │   │   ├── posts
 │   │   │   ├── 2015-08-16-my-post.md
 │   │   ├── index.html
 │   │   ├── ...
+│   ├── includes
+│   ├── layouts
+│   ├─- plugins
 ├── composer.json
 └── config.yml
 ```
