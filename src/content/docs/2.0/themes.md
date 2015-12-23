@@ -94,6 +94,25 @@ It's also possible to pass custom variables to a patial using `with` keyword:
 
 More information about [Twig include statement](http://twig.sensiolabs.org/doc/tags/include.html).
 
+### Avoids renderizer in some files
+
+In some cases is useful avoid the [renderizer](/docs/2.0/developers/renderizer) phase in some kind of files.
+A good example of that is a minimized js file with the following content:
+
+{% verbatim %}
+```
+a = "{#modernizr{top:9px;position:absolute}}"
+```
+{% endverbatim %}
+
+The prior fragment of code throws a Twig syntax exception. To avoid the renderizer adds `avoid_renderizer` attribute to the Front matter block or metadata file of the javascript file:
+
+```
+avoid_renderizer: true
+```
+
+By default, `avoid_renderizer` is false.
+
 ## Plugin installation {#plugin-installation}
 
 [Plugins](/add-ons) extends Spress with amazing capabilities. They are located at `./src/plugins` folder.

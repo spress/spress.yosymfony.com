@@ -39,7 +39,7 @@ More details about the [site structure](/docs/2.0/how-it-works/#site-structure).
 
 ## Configuration settings
 
-List of configuration options of `config.yml` deleted because they have been marked as deprecated:
+List of configuration options of `config.yml` deleted because they was marked as deprecated:
 
 * `baseurl`: replaced by `url`.
 * `paginate` and `paginate_path`: see [pagination](/docs/2.0/pagination) for more details about how to paginate items.
