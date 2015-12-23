@@ -55,6 +55,8 @@ List of deleted events:
 
 Plugins and themes of [add-ons](/add-ons/) will be migrated progressively.
 
+See [migrating documentation](/docs/2.0/migrating-1.x-to-2.x) for more details.
+
 ## How to get this version?
 
 ```
