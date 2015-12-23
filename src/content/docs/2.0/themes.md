@@ -105,7 +105,8 @@ a = "{#modernizr{top:9px;position:absolute}}"
 ```
 {% endverbatim %}
 
-The prior fragment of code throws a Twig syntax exception. To avoid the renderizer adds `avoid_renderizer` attribute to the Front matter block or metadata file of the javascript file:
+The prior fragment of code throws a Twig syntax exception. To avoid that, adds `avoid_renderizer` attribute
+to the Front matter block or metadata file of the javascript file:
 
 ```
 avoid_renderizer: true
