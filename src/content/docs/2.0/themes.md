@@ -96,36 +96,20 @@ More information about [Twig include statement](http://twig.sensiolabs.org/doc/t
 
 ## Plugin installation {#plugin-installation}
 
-You can use [plugins](/add-ons) on your site. To do it, you have to create 
-`composer.json` file in your site folder and add the require statement
-with the name of the plugin:
- 
-We will use a plugin called `spress/github-metadata-plugin` as example.
-To add it to your site, you simply have to add following changes in your
-site `composer.json` and run `composer update` afterwards:
+[Plugins](/add-ons) extends Spress with amazing capabilities. They are located at `./src/plugins` folder.
+The easy way to install a plugin is using [Composer](https://getcomposer.org/) tool. In this example,
+We will use a plugin called `spress/github-metadata-plugin`.
+
+Create a file named `composer.json` at the root of the site and paste the following content:
 
 ```
 {
     "require": {
-        "spress/github-metadata-plugin": "~1.0-dev"
+        "spress/github-metadata-plugin": "2.0.*"
     }
 }
 ```
-
-Plugin will be available in `./src/plugins` folder.
-
-
-## Create a redistributable theme {#redistributable-themes}
-
-Your own themes can be downloaded by other users and used for building their web pages
-or as base for new themes. A theme can be installed by downloading it manually or 
-using GIT for getting the repository.
-
-To create a distributable package with Composer, you should create a repository
-on Github or similar site and register it in [Packagist](https://packagist.org/about) repository.
-
-Example of a [theme](https://github.com/yosymfony/Spress-theme-spresso/tree/2.0). 
-You can see it in [action](http://yosymfony.github.io/Spress-example/).
+To Install the plugin executes `composer install` command.
 
 ## How to install a new theme? {#installing-new-theme}
 
