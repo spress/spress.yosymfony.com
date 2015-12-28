@@ -5,7 +5,6 @@ use Yosymfony\Spress\Core\Plugin\PluginInterface;
 use Yosymfony\Spress\Core\Plugin\EventSubscriber;
 use Yosymfony\Spress\Core\Plugin\Event\EnvironmentEvent;
 use Yosymfony\Spress\Core\Plugin\Event\ContentEvent;
-use Yosymfony\Spress\Core\Plugin\Event\FinishEvent;
 use Yosymfony\Spress\Core\Plugin\Event\RenderEvent;
 use Yosymfony\Spress\Core\Support\ArrayWrapper;
 
@@ -83,7 +82,7 @@ class ThemeMenu implements PluginInterface
         }
 
         foreach ($this->pageMenus as $idMenu => $menu) {
-            $this->pageMenus[$idMenu] = (new ArrayWrapper($menu))->sortBy(function($key, $value){
+            $this->pageMenus[$idMenu] = (new ArrayWrapper($menu))->sortBy(function ($key, $value) {
                 return $value['order'];
             });
         }
