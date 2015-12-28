@@ -100,8 +100,8 @@ server_watch_ext: ['html', 'htm', 'xml']
             <td>attribute_syntax</td>
             <td>string</td>
             <td markdown="1">
-                Format for declaration of attributes at metadata file or [Front-matter](/docs/2.0/front-matter/).
-                Values: "yaml" or "json".
+                Format for declaration of [attributes](/docs/2.0/attributes).
+                Values: `yaml` or `json`.
             </td>
         </tr>
         <tr>

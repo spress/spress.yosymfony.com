@@ -23,7 +23,7 @@ Items must implements [`ItemInterface`](https://github.com/spress/Spress/blob/ma
 Items are the basic building blocks and consist of content and metadata attributes.
 Each item has an identifier and a set of attributes (metadatas). Attributes consist of
 *key-value* array. [`FilesystemDataSource`](https://github.com/spress/Spress/blob/master/src/Core/DataSource/Filesystem/FilesystemDataSource.php) implementation is able
-to load attributes located at the [front-matter](/docs/2.0/front-matter/) or in a separeted
+to load attributes located at the [Front matter](/docs/2.0/attributes/) or in a separeted
 metadata file which are stored in [YAML format](https://en.wikipedia.org/wiki/YAML).
 
 ### How to create an item?
