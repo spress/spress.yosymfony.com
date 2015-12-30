@@ -1,60 +1,34 @@
 ---
-layout: page-doc
+layout: page-doc-2.0
 title: Themes
 description: Create themes for Spress
 header:
   title: Themes
 menu:
-  id: doc 1.0
+  id: doc 2.0
   title: Themes
-  order: 10
+  order: 12
 prettify: true
 ---
-**Themes are simply sites**. Spress uses the power of Twig for render templates. You can reusable parts
-of your HTML and write your templates with a easy languaje. For more information
-about Twig, see the [Twig web page](http://twig.sensiolabs.org).
+**Themes are simply sites**. Spress uses the power of [Twig](http://twig.sensiolabs.org)
+to render templates. You can reuse parts of your HTML and create templates with a easy language.
 
-## Create a site blank
+## Creating a theme
 
-With the `spress new:site` [command](/docs/how-it-work/#site-new-command) you
-can create a blank site with the below structure:
-
-```
-.
-|- composer.json
-|- config.yml
-|- index.html
-|- _layouts/
-|- _posts/
-```
-
-The command has an extra `--all` option to create a complete scaffolding of the
-site:
+The [`new:site`](/docs/how-it-works/#new-site-command) command lets you create a blank site.
+`--all` option enables a [complete scaffolding of the site](/docs/how-it-works/#site-structure).
 
 ```
-.
-|- composer.json
-|- config.yml
-|- _includes/
-|- index.html
-|- _layouts/
-|- _posts/
-|- _plugins/
+$ spress new:site my-site --all
 ```
 
-## Hierachical layouts
+### Layouts {#layouts-inheritance}
 
-Your layouts can inherit from other layouts. Layouts are located at `_layout`
-folder.
+Layouts describes how the content is distributed in a page. Layouts are simple HTML & Twig
+files located at `./src/layouts` and they can inherit from other layouts
 
-```
-_layout/
-|- default.html
-|- post.html
-```
-
-The `default.html` may hold the general HTML definitions like *html* and *head* 
-tags:
+In this example, `default.html` file may hold the general HTML definitions like `html` and `head` 
+tags with metas, title and assets:
 
 {% verbatim %}
 ```
@@ -77,16 +51,19 @@ tags:
 ```
 {% endverbatim %}
 
-The `post.html` can to inheritance from `default.html`:
+Prior layout contains a `content` block and this will be filled out with the page content.
+
+Another layout could be added for describing how a post page is: `post.html`. This one inherited 
+from `default.html` using the `layout` attribute:
 
 {% verbatim %}
 ```
 ---
-layout: default
+layout: "default"
 ---
 {% block content %}
 
-    <p>This is the layout for posts</p>
+    <h1>{{ page.title }}</h1>
 
     {{ page.content }}
     
@@ -94,110 +71,80 @@ layout: default
 ```
 {% endverbatim %}
 
-## Reusable content
+### Reusable content {#reusable-content}
 
-The reusable parts are located at `_includes` folder.
+Reusable parts, *partials* are simples HTML & Twig files located at `./src/includes` folder.
 
-```
-_include
-|- nav.html
-|- widget
-|  |- email.html
-```
-
-To include a reusable part use `include` Twig statement:
+To render a partial call `include` with the identifier surrounded by quotes:
 
 {% verbatim %}
-<pre>
-    <code class="twig">
-        {% include 'nav.html' %}
-        {% include 'widget/email.html' %}
-    </code>
-</pre>
+```
+{% include 'nav.html' %}
+{% include 'widget/email.html' %}
+```
 {% endverbatim %}
 
-More information about 
-[include statement of Twig](http://twig.sensiolabs.org/doc/tags/include.html).
+It's also possible to pass custom variables to a patial using `with` keyword:
 
-## Plugins installation
+{% verbatim %}
+```
+{% include 'nav.html' with {'menu': 'top'} %}
+```
+{% endverbatim %}
 
-You can use [plugins](/add-ons) in your site. For to do it, go to your site folder
-and create `composer.json` file and add the following content:
+More information about [Twig include statement](http://twig.sensiolabs.org/doc/tags/include.html).
 
-<pre>
-    <code class="json">
-        {
-            "require": {
-                "spress/github-metadata-plugin": "~1.0-dev"
-            },
-            "config": {
-                "vendor-dir": "_plugins/vendors"
-            }
-        }
-    </code>
-</pre>
+### Avoids renderizer in some files
 
-Next, run `composer update` command and then you can use the plugin in your site.
-The plugins are availables in `_plugins` folder.
+In some cases is useful avoid the [renderizer](/docs/developers/renderizer) phase in some kind of files.
+A good example of that is a minimized js file with the following content:
 
-In the previous example, you declare that need the latest version of a plugin called 
-`spress/github-metadata-plugin`.
+{% verbatim %}
+```
+a = "{#modernizr{top:9px;position:absolute}}"
+```
+{% endverbatim %}
 
-## Create a redistributable theme
+The prior fragment of code throws a Twig syntax exception. To avoid that, adds `avoid_renderizer` attribute
+to the Front matter block or metadata file of the javascript file:
 
-Your own themes can be downloaded by other users and be using for building their web pages
-or as base for new themes. A theme can be installed downloading manually, using GIT for
-getting the repository or install globally with Composer.
+```
+avoid_renderizer: true
+```
 
-For create a distribuible package with Composer, you shuld create a repository
-in Github or similar and to register it in [Packagist](https://packagist.org/about) repository.
+By default, `avoid_renderizer` is false.
 
-Example of a [theme](https://github.com/yosymfony/Spress-theme-spresso). 
-You can see it in [action](http://yosymfony.github.io/Spress-example/).
+## Plugin installation {#plugin-installation}
 
-## How to install a new theme?
+[Plugins](/add-ons) extends Spress with amazing capabilities. They are located at `./src/plugins` folder.
+The easy way to install a plugin is using [Composer](https://getcomposer.org/) tool. In this example,
+We will use a plugin called `spress/github-metadata-plugin`.
 
-Several ways to do it.
+Create a file named `composer.json` at the root of the site and paste the following content:
 
-### Download a copy
+```
+{
+    "require": {
+        "spress/github-metadata-plugin": "2.0.*"
+    }
+}
+```
+To Install the plugin executes `composer install` command.
+
+## How to install a new theme? {#installing-new-theme}
+
+There are several ways to do it.
+
+### Download a copy {#install-theme-download}
 
 * Get a copy of the latest release.
 * Uncompress it.
 * Go to theme folder
-* `spress site:build --server --watch`
+* Run `spress site:build --server --watch`
 
-### With Git
+### With Git {#install-theme-git}
 
-* Fork the repository
-* Clone it: `https://github.com/YOUR-USER/THEME-REPOSITORY.git`
-* Go to `THEME-REPOSITORY` folder
-* `spress site:build --server --watch`
-
-### Globally
-
-**This option is not available using `spress.phar`**
-
-Go to your Spress installation folder i.e ~/Spress and add the following depencency
-to your `composer.json` file
-
-<pre>
-    <code class="json">
-        "require": {
-            "spress-add-ons/about-me-theme": "1.0.*@dev"
-        }
-    </code>
-</pre>
-
-and then run the following command to install the dependency.
-
-```
-$ composer update
-```
-
-Next create your new site:
-
-```
-$ spress new:site /your-site-dir about-me
-$ cd /your-site-dir
-$ spress site:build --server --watch
-```
+* Fork theme repository (so you will be able to modify it later on)
+* Clone it: `git clone https://github.com/YOUR-USER/THEME-REPOSITORY.git folder-name-for-cloned-theme`
+* Go to `folder-name-for-cloned-theme` folder
+* Run `spress site:build --server --watch`

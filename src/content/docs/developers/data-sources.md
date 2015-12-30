@@ -23,7 +23,7 @@ Items must implements [`ItemInterface`](https://github.com/spress/Spress/blob/ma
 Items are the basic building blocks and consist of content and metadata attributes.
 Each item has an identifier and a set of attributes (metadatas). Attributes consist of
 *key-value* array. [`FilesystemDataSource`](https://github.com/spress/Spress/blob/master/src/Core/DataSource/Filesystem/FilesystemDataSource.php) implementation is able
-to load attributes located at the [Front matter](/docs/2.0/attributes/) or in a separeted
+to load attributes located at the [Front matter](/docs/attributes/) or in a separeted
 metadata file which are stored in [YAML format](https://en.wikipedia.org/wiki/YAML).
 
 ### How to create an item?
@@ -54,7 +54,7 @@ $item->setAttributes($attributes);
 
 Item's paths are organized around *snapshots* that define a path at a specific point
 of compilation a site. An item without `relative` path snapshot will be compiled but not
-stored by the [data writer](/docs/2.0/developers/data-writer).
+stored by the [data writer](/docs/developers/data-writer).
 
 Predefined snapshots:
 
@@ -85,7 +85,7 @@ Predefined snapshots are defined as constants:
 ### Binary content
 
 If the extension of the item is included in the site configuration’s `text_extension` attribute, it is considered to be
-textual. Otherwise it will be considered as binary. More details about [text_extension value](/docs/2.0/configuration/#deafult-configuration).
+textual. Otherwise it will be considered as binary. More details about [text_extension value](/docs/configuration/#deafult-configuration).
 
 ```
 use Yosymfony\Spress\Core\DataSource\Item;
@@ -96,7 +96,7 @@ $item->setPath('assets/img/header.png', 'source');
 ```
 
 The last one argument of the constructor indicates that content is binary. At the prior example, the items
-has defined `relative` and `source` snapshots. This mean that [`FilesystemDataWriter`](/docs/2.0/developers/data-writer/#FilesystemDataWriter)
+has defined `relative` and `source` snapshots. This mean that [`FilesystemDataWriter`](/docs/developers/data-writer/#FilesystemDataWriter)
 will copied from `source` path to `relative` path at `./build` folder.
 
 #### Binary items without `relative` path snapshot
@@ -109,7 +109,7 @@ $binaryContent = $assetsManager->getImage('logo');
 $item = new Item($binaryContent, 'assets/img/header.png', [], true);
 $item->setPath('assets/img/header.png', 'relative');
 ```
-In this case, [`FilesystemDataWriter`](/docs/2.0/developers/data-writer/#FilesystemDataWriter)
+In this case, [`FilesystemDataWriter`](/docs/developers/data-writer/#FilesystemDataWriter)
 will dump the content from memory to the file at the moment of storing the item.
 
 ### Type of items

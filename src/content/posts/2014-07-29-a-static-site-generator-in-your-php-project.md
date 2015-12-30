@@ -24,7 +24,9 @@ the `composer update` command.
 ```
 --more Read more--
 
-After your dependencies has been updated you can to create a Spress application an parse a site:
+After your dependencies has been updated you can create a Spress application an parse a site.
+
+**The below code applies to Spress 1.x**:
 
 ```
 use Yosymfony\Spress\Core\Application;
@@ -40,7 +42,7 @@ class MyClass
 }
 ```
 
-The `/path-to-your-spress-site/` is a folder with a [Spress structure](/docs/how-it-work/).
+The `/path-to-your-spress-site/` is a folder with a [Spress structure](/docs/1.0/how-it-work/).
 You can see an [example of a Spress site](https://github.com/yosymfony/Spress-example).
 
 ## Set the environment information

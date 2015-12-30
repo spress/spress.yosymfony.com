@@ -1,91 +1,89 @@
 ---
-layout: page-dev
+layout: page-dev-2.0
 title: Developers &#8250; Converters
-description: How to extend Spress with a new converter
-header:
+description: How to extend Spress to support a new markup language
+header: 
   title: Converters
   sub: Developers
 menu:
-  id: dev 1.0
+  id: dev 2.0
   title: Converters
-  order: 4
+  order: 5
 prettify: true
 ---
-Converter can extend Spress to support new type of content. A converter should
-implement [`Yosymfony\Spress\Core\ContentManager\ConverterInterface`][ConverterInterface]:
+Converters can extend Spress to support a new markup language. Spress comes with 
+two Markdown converters: `ParsedownConverter` an implementation based on [Parsedown](http://parsedown.org/) 
+and another implementation called `MichelfMarkdownConverter` based on a [parser from Michel Fortin](https://github.com/michelf/php-markdown). Both are implemented using this method. A converter should implement
+[`ConverterInterface`](https://github.com/spress/Spress/blob/master/src/Core/ContentManager/Converter/ConverterInterface.php).
 
-## Converter example {#converter-example}
+Note that `ParsedownConverter` is not part of Spress core and only is available on CLI interface.
 
-This converter turns to uppercase all content of your 
-pages and works only for files with `.up` extension like `myPage.up` or
-`2014-01-02-my-post.up`.
+To register a new converter see [EnvironmentEvent class](/docs/developers/events-list/#adds-new-converter)
+at `spress.start` event.
+
+## Converter example
+
+This converter turn to uppercase all content of your 
+pages and only work with files which extension is `.up` like `myPage.up` or
+`2014-01-02-my-post.up`:
 
 ```
-use Yosymfony\Spress\ContentManager\ConverterInterface;
+<?php
 
-class CustomConverter implements ConverterInterface
+namespace Yosymfony\Spress\Converter;
+
+use Yosymfony\Spress\Core\ContentManager\Converter\ConverterInterface;
+
+class UpperConverter implements ConverterInterface
 {
-    private $supportExtension = ['up'];
-    
+    private $supportedExtension;
+
     /**
-     * Initialize the converter
-     * 
-     * @param array $config Configuration parameters
+     * Constructor.
      */
-    public function initialize(array $config)
+    public function __construct()
     {
+        $this->supportedExtension = ['up'];
     }
-    
+
     /**
      * Get the converter priority.
-     * Value between 0 to 10 - greater means higher priority.
-     * The converters built-in with Spress have low priority.
      * 
-     * @return int
+     * @return int Value between 0 to 10. Greater means higher priority.
+     *             Built-in converters have low priority.
      */
     public function getPriority()
     {
         return 1;
     }
-    
+
     /**
-     * Get the support extension of the converter.
-     * Add a new processable extension to Spress.
-     * 
-     * @return array
-     */
-    public function getSupportExtension()
-    {
-        return $this->supportExtension;
-    }
-    
-    /**
-     * If file's extension is supported by converter
-     * 
-     * @param string $extension Extension without dot
-     * 
-     * @return boolean
+     * If file's extension is support by converter.
+     *
+     * @param string $extension Extension without dot.
+     *
+     * @return bool
      */
     public function matches($extension)
     {
-        return in_array($extension, $this->supportExtension);
+        return in_array($extension, $this->supportedExtension);
     }
-    
+
     /**
-     * Convert the input data
-     * 
-     * @param string $input The raw content without Front-matter
-     * 
+     * Convert the input data.
+     *
+     * @param string $input The raw content without Front-matter.
+     *
      * @return string
      */
     public function convert($input)
     {
         return strtoupper($input);
     }
-    
+
     /**
-     * The extension of result filename (without dot). E.g: html.
-     * 
+     * The extension of filename result (without dot). E.g: html.
+     *
      * @return string
      */
     public function getOutExtension($extension)
@@ -94,11 +92,3 @@ class CustomConverter implements ConverterInterface
     }
 }
 ```
-
-## Register a converter {#register-converter}
-
-To register a converter see 
-[EnvironmentEvent class](/docs/developers/events-list/#add-new-converter) from
-`spress.start` event.
-
-[ConverterInterface]: https://github.com/spress/Spress/blob/1.1/src/Yosymfony/Spress/Core/ContentManager/ConverterInterface.php

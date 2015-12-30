@@ -1,27 +1,31 @@
 ---
-layout: page-dev
+layout: page-dev-2.0
 title: Developers &#8250; IO API
-description: With the IO API your plugins can interact with the user to show messages or to ask questions
-header:
+description: "With the IO API your plugins can to interact with the user to show messages or to make questions"
+header: 
   title: IO API
   sub: Developers
 menu:
-  id: dev 1.0
+  id: dev 2.0
   title: IO API
-  order: 6
 prettify: true
 ---
-The IO API <sup><span class="label label-success">New in 1.1.0</span></sup> enables your plugins
-to interact with the user to show messages or to make questions:
+<span class="label label-success">Spress >= 1.1</span>
 
-* Write messages
-* Ask for input
-* Ask for confirmation (for yes/no questions)
-* Ask with hidden answer (useful for password input)
+The IO API enables your plugins to interact with the user to show messages or to make questions:
 
-## How to use? {#howto}
+* Write messages.
+* Ask.
+* Ask confirmation (for yes/no questions).
+* Ask and hide answer (useful for get password answer).
 
-The first step is to get a IO API instance using `spress.start` [event](/docs/developers/events-list):
+IO API implements [IOInterface](https://github.com/spress/Spress/blob/master/src/Core/IO/IOInterface.php) defined
+at Spress Core.
+
+## How to use?
+
+The first step is to get a IO API instance using `spress.start` [event](/docs/developers/events-list) and
+`getIO` method. This method returns a [`Yosymfony\Spress\IO\ConsoleIO`](https://github.com/spress/Spress/blob/master/src/IO/ConsoleIO.php) instance.
 
 ```
 class SpressIOExample extends Plugin
@@ -54,23 +58,20 @@ class SpressIOExample extends Plugin
 }
 ```
 
-Before asking a question to user is recommended to know **if the interface is interactive using
+Before make a question to user is recommendable to know **if the interface is interactive using
 `isInteractive` method**.
 
-## IO API methods {#ioapi-methods}
+## IO API methods
 
-* **write**: Write a message: `$io->write('message', true)`. The second argument allows you to set a new line.
+* **write**: Write a message: `$io->write('message', true)`. The second argument let you set a new line.
 * **ask**: Ask a question: `$io->ask('question?', null)`. The second argument is the default answer if the user enters nothing.
 * **askConfirmation**: yes/no question. `$io->askConfirmation('do you want?', true)`. The second argument is the default answer if the user enters nothing.
 * **askAndValidate**: Ask a question with a *callback* function to validate the response.
-* **askAndHideAnswer**: Ask a question and hide the answer. This method is useful for password questions.
-* **askHiddenResponseAndValidate**: This method is like previous one but uses a *callback* function to validate the response.
-* **isInteractive**: Is this input interactive?: `$io->isInteractive()`.
+* **askAndHideAnswer**: Ask a question and hide the answer. This method is useful to require password.
+* **askHiddenResponseAndValidate**: This method is like before but using a *callback* function to validate the response.
+* **isInteractive**: Is this input means interactive?: `$io->isInteractive()`.
 * **isVerbose**: Is this output verbose? `$io->isVerbose()`.
 * **isDebug**: Is the output in debug verbosity?: `$io->isDebug()`.
 
 If you are using a *callback* function for validating an answer the validator receives the data to validate. 
 It must return the validated data when the data is valid and throw an exception otherwise.
-
-More information about IO API: [Spress IO interface at Github](https://github.com/spress/Spress/blob/1.1/src/Yosymfony/Spress/Core/IO/IOInterface.php).
-

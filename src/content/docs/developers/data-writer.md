@@ -22,7 +22,7 @@ is the default data writer and its responsability is to persist items to filesys
 A data writer must implement 
 [`DataWriterInterface`](https://github.com/spress/Spress/blob/master/src/Core/DataWriter/DataWriterInterface.php).
 
-To change the current data writer see [EnvironmentEvent class](/docs/2.0/developers/events-list/#changing-data-writer)
+To change the current data writer see [EnvironmentEvent class](/docs/developers/events-list/#changing-data-writer)
 at `spress.start` event.
 
 ## Data writer example

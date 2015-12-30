@@ -101,9 +101,9 @@ class ThemeBadLink implements PluginInterface
         }
 
         if ($badCounter === 0) {
-            $this->io->write(sprintf('No bad links detected!', $url));
+            $this->io->write(sprintf('No broken links detected!', $url));
         } else {
-            $this->io->write(sprintf('<error>%s bad links detected</error>', $badCounter));
+            $this->io->write(sprintf('<error>%s broken links detected</error>', $badCounter));
         }
     }
 

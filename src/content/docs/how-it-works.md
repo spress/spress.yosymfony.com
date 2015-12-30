@@ -10,10 +10,10 @@ menu:
   order: 2
 prettify: true
 ---
-Spress is a static site generator - an application that takes your site and 
+Spress is a static site generator, an application that takes your site and 
 transforms it to final HTML ready to deploy on your hosting. Your content is
-generated at `build` folder. You can create content using HTML or 
-Markdown syntax. Additionally, with [converters](/docs/2.0/developers/converters), you 
+generated at `./build` folder. You can create content using HTML or 
+Markdown syntax. Additionally, with [converters](/docs/developers/converters), you 
 can add new types of content.
 
 ## Site structure {#site-structure}
@@ -39,12 +39,12 @@ This is the typical structure of a Spress site
 Spress or create custom variables.
 * **./src/includes**: Contains partials that can be used in the layouts, pages and posts.
 * **./src/layouts**: Contains layout files used to organize your content. In your post or page, 
-you can choose the layout in the [Front matter](/docs/2.0/attributes/#front-matter):
+you can choose the layout in the [Front matter](/docs/attributes/#front-matter):
 * **./src/content**: The main content of your site are located in this folder.
 * **./src/content/posts**: Contains the blog posts files. Files located at this folder
-are under `posts` [collection](docs/2.0/collections) and they have a special name format: `year-month-day-title.md`.
+are under `posts` [collection](docs/collections) and they have a special name format: `year-month-day-title.md`.
 The Front matter of each file let you change these properties.
-* **./src/plugins**: Extends the functionality of Spress. See [developers docs](/docs/2.0/developers).
+* **./src/plugins**: Extends the functionality of Spress. See [developers docs](/docs/developers).
 * **./build**: This is where the generated site will be placed.
 
 ## A page example {#page-example}
@@ -65,7 +65,7 @@ This is an example page.
 {% endverbatim %}
 
 The block delimited by triple-dashed lines is the Front matter and uses [YAML](http://yaml.org) syntax.
-Inside it you can create custom [attributes](/docs/2.0/attributes) that are available as variables in page
+Inside it you can create custom [attributes](/docs/attributes) that are available as variables in page
 content with Twig syntax: `{{ "{{ page.your-variable-name }}" }}`.
 
 <div class="panel panel-default">
@@ -76,7 +76,7 @@ content with Twig syntax: `{{ "{{ page.your-variable-name }}" }}`.
         </div>
         <div class="col-md-11">
             <p markdown="1">
-                Spress uses [Twig](http://twig.sensiolabs.org/) as default [renderizer](/docs/2.0/developers/renderizer)
+                Spress uses [Twig](http://twig.sensiolabs.org/) as default [renderizer](/docs/developers/renderizer)
                 (template engine). See its documentation to get more powerful
                 templates.
             </p>
@@ -88,7 +88,7 @@ content with Twig syntax: `{{ "{{ page.your-variable-name }}" }}`.
 ### Pretty URLs
 
 Spress has the ability to generate friendly URL’s by converting files like `welcome.md` to `/welcome/index.html`.
-See [permalink](/docs/2.0/permalinks) documentation.
+See [permalink](/docs/permalinks) documentation.
 
 ## Spress commands {#spress-commands}
 
@@ -100,7 +100,7 @@ Build your site in your `build` folder.
 
 * `--timezone` Set the timezone. E.g: "Europe/Madrid".
 [More timezones](http://www.php.net/manual/en/timezones.php).
-* `--env` Set the environment name [More information](/docs/2.0/configuration/#environment).
+* `--env` Set the environment name [More information](/docs/configuration/#environment).
 * `--server` The built-in server will run by default at `http://localhost:4000`.
 * `--watch` Watch for changes and regenerate your site automatically.
 * `--drafts` Include the draft post in the transformation.
@@ -164,7 +164,7 @@ new:post  [--title="..."] [--layout="default"] [--date="..."]
 
 ### new:plugin
 
-Crate a new plugin. See the documentation at [developers doc](/docs/2.0/developers).
+Crate a new plugin. See the documentation at [developers doc](/docs/developers).
 
 ### self-update
 

@@ -13,7 +13,7 @@ prettify: true
 Spress is a static site generator, an application that take your site and 
 transform to final HTML ready to deploy in your hosting. By default, your
 content is generated in `_site` directory. You can create content using HTML or 
-Markdown syntax. Additionaly with [converters](/docs/developers/converters) you 
+Markdown syntax. Additionaly with [converters](/docs/1.0/developers/converters) you 
 can add new type of content.
 
 ## Site structure
@@ -36,7 +36,7 @@ This is the typical structure. The only mandatory file is `config.yml`.
 Spress or create custom variables.
 * **_includes**: There is a partials that can be used in the layouts, pages and posts.
 * **_layouts**: The layout files organize your content. In your post or page, 
-you can choose the layout in the [Front-matter](/docs/front-matter):
+you can choose the layout in the [Front-matter](/docs/1.0/front-matter):
 
 ```
 ---
@@ -54,7 +54,7 @@ title: "Hello world"
 date: "2013-01-01"
 ---
 ```
-* **_plugins**: Extends the functionality of Spress. See [developers docs](/docs/developers).
+* **_plugins**: Extends the functionality of Spress. See [developers docs](/docs/1.0/developers).
 * **_site**: This is where the generated site will be placed.
 
 The directories that start with underscore are considered special directories and
@@ -162,7 +162,7 @@ Build your site in your configured destination, typically `_site`.
 
 * `--timezone` Set the timezone. E.g: "Europe/Madrid".
 [More timezones](http://www.php.net/manual/en/timezones.php).
-* `--env` Set the environment name <sup><span class="label label-success">New in 1.1.0</span></sup> [More information](/docs/configuration/#environment).
+* `--env` Set the environment name <sup><span class="label label-success">New in 1.1.0</span></sup> [More information](/docs/1.0/configuration/#environment).
 * `--server`The built-in server <sup><span class="label label-success">New in 1.1.0</span></sup> will run by default at `http://localhost:4000`.
 * `--watch` Watch for changes and regenerate your site automatically. <sup><span class="label label-success">New in 1.1.0</span></sup>
 * `--drafts` Include the draft post in the transformation.

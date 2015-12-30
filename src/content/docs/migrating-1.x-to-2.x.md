@@ -16,13 +16,13 @@ configuration data and the output folder are located at the first level. The mai
 New **features**:
 
 * A new site structure.
-* [Data sources](/docs/2.0/developers/data-sources).
-* [Generators](/docs/2.0/developers/generators).
-* [Renderizers](/docs/2.0/developers/renderizer).
-* [The data writer](/docs/2.0/developers/data-writer).
-* [Command plugins](/docs/2.0/developers/command-plugins).
-* A new way of [paginating](/docs/2.0/pagination) items.
-* [Taxonomies](/docs/2.0/taxonomies).
+* [Data sources](/docs/developers/data-sources).
+* [Generators](/docs/developers/generators).
+* [Renderizers](/docs/developers/renderizer).
+* [The data writer](/docs/developers/data-writer).
+* [Command plugins](/docs/developers/command-plugins).
+* A new way of [paginating](/docs/pagination) items.
+* [Taxonomies](/docs/taxonomies).
 
 ## Folder mapping
 
@@ -35,14 +35,14 @@ main content (index.html, rss.xml) | `./src/content`
 `_site`                            | `./build`
 `config.yml`                       | `config.yml`
 
-More details about the [site structure](/docs/2.0/how-it-works/#site-structure).
+More details about the [site structure](/docs/how-it-works/#site-structure).
 
 ## Configuration settings
 
 List of configuration options of `config.yml` deleted because they was marked as deprecated:
 
 * `baseurl`: replaced by `url`.
-* `paginate` and `paginate_path`: see [pagination](/docs/2.0/pagination) for more details about how to paginate items.
+* `paginate` and `paginate_path`: see [pagination](/docs/pagination) for more details about how to paginate items.
 * `limit_posts`
 * `processable_ext`
 * `destination`
@@ -60,13 +60,13 @@ instead of extending `Plugin` class. Last one has been deleted.
 ### Events
 
 The `EnviromentEvent` class has definitely been deleted because contains a typo. Now, `spress.start`
-reciebes [`EnvironmentEvent`](/docs/2.0/developers/#environmentevent) class as an argument.
+reciebes [`EnvironmentEvent`](/docs/developers/#environmentevent) class as an argument.
 
 The events `spress.before_convert` and `spress.after_convert` receive a
-[ContentEvent](/docs/2.0/developers/#contentevent) object as an argument instead of ConvertEvent.
+[ContentEvent](/docs/developers/#contentevent) object as an argument instead of ConvertEvent.
 Last one has been deleted.
 
-The complete [list of events](/docs/2.0/developers/events-list) are detailed at developers doc.
+The complete [list of events](/docs/developers/events-list) are detailed at developers doc.
 
 List of new events:
 
@@ -89,4 +89,4 @@ Events                            | Replacement
 
 Methods `initialize` and `getSupportExtension` of `ConverterInterface` have been deleted. `getSupportExtension`
 method has been replaced by `matches` method. Now, `matches` method returns `true` if file's extension is support
-by a converter. More details about [converters](/docs/2.0/developers/converters).
+by a converter. More details about [converters](/docs/developers/converters).

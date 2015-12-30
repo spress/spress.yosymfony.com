@@ -10,8 +10,8 @@ menu:
   order: 11
 prettify: true
 ---
-Taxonomy is a way to group things together. The taxonomy [generator](/docs/2.0/developers/generators)
-lets you group some items around a term. This generator uses **[pagination generator](/docs/2.0/pagination)** 
+Taxonomy is a way to group things together. The taxonomy [generator](/docs/developers/generators)
+lets you group some items around a term. This generator uses **[pagination generator](/docs/pagination)** 
 for generating multiple pages for each term.
 
 The following example assume that you are using a site with Spresso theme. If not, you

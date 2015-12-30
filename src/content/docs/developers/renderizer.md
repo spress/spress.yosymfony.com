@@ -19,7 +19,7 @@ is the default implementation and is based on [Twig](http://twig.sensiolabs.org/
 
 A renderizer must
 implement [`RenderizerInterface`](https://github.com/spress/Spress/blob/master/src/Core/ContentManager/Renderizer/RenderizerInterface.php).
-To change the current renderizer implementation see [EnvironmentEvent class](/docs/2.0/developers/events-list/#changing-renderizer)
+To change the current renderizer implementation see [EnvironmentEvent class](/docs/developers/events-list/#changing-renderizer)
 at `spress.start` event.
 
 

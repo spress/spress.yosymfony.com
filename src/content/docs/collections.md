@@ -48,7 +48,7 @@ Items of `projects` collections are available at `site.projects`. Each item has 
 `collection` with the name of the collection.
 
 Data about `projects` collection at `site.collections.projects`. More information about
-[variables available for registered collection](/docs/2.0/variables/#collection-variables).
+[variables available for registered collection](/docs/variables/#collection-variables).
 
 ### An example
 
