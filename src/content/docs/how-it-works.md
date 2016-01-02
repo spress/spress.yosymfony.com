@@ -166,6 +166,6 @@ new:post  [--title="..."] [--layout="default"] [--date="..."]
 
 Crate a new plugin. See the documentation at [developers doc](/docs/developers).
 
-### self-update
+### self-update {#self-update}
 
 `self-update` or `selfupdate` command replace your `spress.phar` by the latest version.

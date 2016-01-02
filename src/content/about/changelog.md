@@ -13,9 +13,20 @@ menu:
 id_content: changelog
 changelog_support: true
 ---
-More information about the [releases](https://github.com/yosymfony/Spress/releases).
+More information about the [releases](https://github.com/spress/Spress/releases).
 
-# 2.0.0-rc {#2-0-0-rc}
+# 2.0.0 {#2-0-0}
+Date: 2016-01-02
+
+* [New] `ConsoleIO` class uses [Symfony CLI styles](http://symfony.com/blog/new-in-symfony-2-8-console-style-guide).
+* [Improved] 100% tests passed in HHVM.
+* [Fixed] Renamed the package name `yosymfony/spress-installer` to `spress/spress-installer`.
+* [Fixed] Fixed a race condition with the `url` attribute of items before dispatch `spress.before_render_blocks` event.
+* [Fixed] Questions made by commands are using `ConsoleIO` methods.
+* [Fixed] Fixed a bug with the built-in server by which a relative URL that contains a dot inside the trailing component throws a 404 not found error. e.g: `/doc/2.0`.
+* [Fixed] Added a default value for `$fallback` argument of `askHiddenResponseAndValidate` and `askAndHideAnswer` methods in `IOInterface`.
+
+## 2.0.0-rc {#2-0-0-rc}
 Date: 2015-12-07
 
 * [New] Added MemoryDataSource, a datasource for generating dynamic content.
@@ -35,7 +46,7 @@ Date: 2015-12-07
 * [Fixed] Fixed the message of the exception threw when a previous item exists.
 * [Deleted] `ConfigValueException` has been deleted.
 
-# 2.0.0-beta {#2-0-0-beta}
+## 2.0.0-beta {#2-0-0-beta}
 Date: 2015-10-15
 
 * [New] Added a new converter for Markdown: ParsedownConverter. This converter is based on [Parsedown by Emanuil Rusev](http://parsedown.org/). Deals with issue [#40](https://github.com/spress/Spress/issues/40).
@@ -50,7 +61,7 @@ Date: 2015-10-15
 * [Fixed] The `setUp` method of `FilesystemDataWriter removes the whole content of the output dir but VCS files. This means that `site:build` command doesn't remove the VCS files.
 * [Deleted] Deleted the `site:new` alias for command `new:site`.
 
-# 2.0.0-alpha {#2-0-0-alpha}
+## 2.0.0-alpha {#2-0-0-alpha}
 Date: 2015-08-12
 
 * [New] Data-sources: (issue [#46](https://github.com/spress/Spress/issues/46)) data sources can load site data from certain locations like filesystem or database.
@@ -78,7 +89,7 @@ Date: 2015-02-25
 * [Improved] [Spresso theme](https://github.com/yosymfony/Spress-theme-spresso/releases/tag/v1.1.1) updated to 1.1.1.
 * [Improved] Dependencies have been updated.
 
-## V1.1.0 {#1-1-0}
+# V1.1.0 {#1-1-0}
 Date: 2015-01-08
 
 * [Fixed] Bug [#30](https://github.com/spress/Spress/issues/30): Adding source parameter to config appears to not do anything.
@@ -126,13 +137,13 @@ Date: 2014-10-19
 * [Improved] Documentation fixes.
 * [Deprecated] The configuration options: `baseurl` and `relative_permalinks` has been declared  deprecated.
 
-## v1.0.3 {#1-0-3}
+# v1.0.3 {#1-0-3}
 Date: 2014-05-22
 
 * [Fixed] bug [#7](https://github.com/yosymfony/Spress/issues/7): Error with Site Build.
 * [Improved] Tested on PHP 5.6 (Travis CI).
 
-## v1.0.2 {#1-0-2}
+# v1.0.2 {#1-0-2}
 Date: 2014-03-30
 
 * [Fixed] bug [#6](https://github.com/yosymfony/Spress/issues/6): Twig tags not rendered in posts located at variable `site.posts`.
@@ -140,7 +151,7 @@ Date: 2014-03-30
 * [Improved] Variables site.categories and site.tags have page-identifier as index of array.
 * [Improved] Base implementation of ContentItemInterface created at ContentItem. The classes PageItem and PostItem extend from this.
 
-## v1.0.1 {#1-0-1}
+# v1.0.1 {#1-0-1}
 Date: 2014-03-08
 
 * [New] events related with pagination phase (issue [#3](https://github.com/yosymfony/Spress/issues/3)): **spress.before_render_pagination** and **spress.after_render_pagination**.
@@ -149,7 +160,7 @@ Date: 2014-03-08
 * [Fixed] bug [#4](https://github.com/yosymfony/Spress/issues/4): UrlGenerator always has ending slash.
 * [Fixed] the class loader path when Spress is installed as package.
 
-## v1.0.0
+# v1.0.0
 Date: 2014-02-05
 
 * [New] Added template manager to the API plugins for rendering Twig templates (accessible from spress.start event).

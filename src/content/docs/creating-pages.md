@@ -79,7 +79,7 @@ Recompile your site and your page will be accesible at `http://localhost:4000/we
 
 More details about [how Spress treats the permalinks](/docs/permalinks).
 
-## Write pages in Markdown
+## Write pages in Markdown {#markdown}
 
 **[PHP-Markdown by Michael Fortin](http://michelf.ca/projects/php-markdown/reference/)** 
 is the default Markdown [converter](/docs/developers/converters). Spress comes with another Markdown converter called 

@@ -10,16 +10,26 @@ copyright_url: http://yosymfony.com
 
 # Data about Spress release
 release:
-   version: "1.1.1"
-   changelog: "/about/changelog/#1-1-1"
-   github_url: https://github.com/spress/Spress/
-   url_package: https://github.com/spress/Spress/releases/download/v1.1.1/spress.zip
-   url_phar: https://github.com/spress/Spress/releases/download/v1.1.1/spress.phar
+   version: "2.0.0"
+   changelog: "/about/changelog/#2-0-0"
+   github_url: "https://github.com/spress/Spress/"
+   url_package: "https://github.com/spress/Spress/releases/download/v2.0.0/spress.zip"
+   url_phar: "https://github.com/spress/Spress/releases/download/v2.0.0/spress.phar"
 
 pre_release:
-   version: "2.0.0-rc"
-   url: /releases/2015/12/08/spress-2-0-0-rc
-   url_phar: https://github.com/spress/Spress/releases/download/v2.0.0-rc/spress.phar
+   version: 
+   url: 
+   url_phar: 
+
+spressin:
+  img_url: "/assets/img/spressin-new-year.jpg"
+  author: "Zach Frailey"
+  author_url: "https://flic.kr/p/cuhEVE"
+
+#spressin:
+#  img_url: "/assets/img/spressin.jpg"
+#  author: "Ville Säävuori"
+#  author_url: "http://www.flickr.com/photos/uninen/2589668806/"
 
 author:
     name: Victor Puertas
@@ -80,5 +90,3 @@ paginate_path: 'blog/page:num'
 
 # Github metadata plugin:
 repository: spress/Spress
-
-exclude: [README.md,"theme/", build.xml, composer.json, composer.lock, "assets/css/bootstrap-theme.css", "assets/css/bootstrap.css"]
