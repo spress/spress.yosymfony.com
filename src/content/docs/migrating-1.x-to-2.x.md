@@ -99,7 +99,7 @@ file and replace the prior package with the newest:
 ```
 {
     "require": {
-        "spress/spress-installer": "~2.0.*"
+        "spress/spress-installer": "~2.0"
     }
 }
 ```

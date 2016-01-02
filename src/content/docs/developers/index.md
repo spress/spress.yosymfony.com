@@ -88,7 +88,7 @@ entry-point class or other libraries required by this one.
         }
     ],
     "require": {
-        "spress/spress-installer": "~2.0.*"
+        "spress/spress-installer": "~2.0"
     }
 }
 ```
