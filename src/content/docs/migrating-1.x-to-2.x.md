@@ -90,3 +90,16 @@ Events                            | Replacement
 Methods `initialize` and `getSupportExtension` of `ConverterInterface` have been deleted. `getSupportExtension`
 method has been replaced by `matches` method. Now, `matches` method returns `true` if file's extension is support
 by a converter. More details about [converters](/docs/developers/converters).
+
+### Plugin installer
+
+For distributable plugins using Composer tool, the Spress add-ons installer has changed
+its package name from `yosymfony/spress-installer` to `spress/spress-installer`. Edit the `composer.json`
+file and replace the prior package with the newest:
+```
+{
+    "require": {
+        "spress/spress-installer": "~2.0.*"
+    }
+}
+```
