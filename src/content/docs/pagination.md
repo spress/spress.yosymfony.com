@@ -44,6 +44,8 @@ sort_by: "date"
 ```
 {% endverbatim %}
 
+Attributes:
+
 * `generator`: contains the name of the generator, in this case `pagination`.
 * `provier`: The descriptor for the provider of the items (collection) to be paginated.
 `site.posts` is the default value. If you have a custom collection, for example `events`, this value

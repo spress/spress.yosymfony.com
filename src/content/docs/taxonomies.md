@@ -12,7 +12,8 @@ prettify: true
 ---
 Taxonomy is a way to group things together. The taxonomy [generator](/docs/developers/generators)
 lets you group some items around a term. This generator uses **[pagination generator](/docs/pagination)** 
-for generating multiple pages for each term.
+for generating multiple pages for each term. This means that pagination generator's attributes
+are available with the taxonomy generator.
 
 The following example assume that you are using a site with Spresso theme. If not, you
 can create one with `new:site` command:
@@ -45,7 +46,9 @@ permalink: "/:name"
 ```
 {% endverbatim %}
 
+Attributes:
+
 * `taxonomy_attribute`: the name of the attribute that contains the list of terms or taxons. `categories` is the default value.
 * `permalink`: permalink style for each page of a term. `/:name` is the default value.
 
-`pagination_permalink` attribute lets you configure the permalink sytle for the multiple pages of a term. `/page:num` is the default value.
+The `pagination_permalink` attribute lets you configure the permalink sytle for the multiple pages of a term. `/page:num` is the default value.
