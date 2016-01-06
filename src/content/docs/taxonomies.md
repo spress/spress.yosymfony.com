@@ -52,3 +52,21 @@ Attributes:
 * `permalink`: permalink style for each page of a term. `/:name` is the default value.
 
 The `pagination_permalink` attribute lets you configure the permalink sytle for the multiple pages of a term. `/page:num` is the default value.
+
+## Permalinks
+
+Taxonomy generator adds an attribute `terms_url` to each item processed with the permalinks of the terms.
+The following example show you how to write the categories of a post assuming the value of `taxonomy_attribute`
+attribute is `categories`. Each element of `page.terms_url.categories` has the categorie's name as a key and the
+permalink as value:
+
+{% verbatim %}
+```
+{% if page.terms_url.categories | length > 0 %}
+	{% for category, url in page.terms_url.categories %}
+	    <a href="{{ url }}">{{ category }}</a>
+	    {% if loop.last == false %},{% endif %} 
+	{% endfor %}
+{% endif %}
+```
+{% endverbatim %}
