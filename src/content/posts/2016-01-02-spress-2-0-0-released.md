@@ -2,7 +2,7 @@
 layout: blog/post
 title: "Spress 2.0.0 released"
 categories: [releases]
-tags: [2.0.0]
+tags: [2.x]
 ---
 After ten months working on the new major version of Spress at last is out. The code of
 Spress 2.0.0 has been written from the ground up to incorporate new features like **data sources**

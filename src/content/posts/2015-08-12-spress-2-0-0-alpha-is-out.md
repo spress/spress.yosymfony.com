@@ -3,7 +3,7 @@ layout: blog/post
 title: "Spress 2.0.0-alpha is out"
 description: "The first pre-release of Spress 2.0.0 is out with many features: collections, data sources and other"
 categories: [releases]
-tags: [2.0.0]
+tags: [2.x]
 ---
 We’re super excited to announce that [Spress 2.0.0-alpha](https://github.com/spress/Spress/releases/tag/v2.0.0-alpha) is now available! This is the first and unique alpha pre-release.
 Check out the full [changelog](https://github.com/spress/Spress/releases/tag/v2.0.0-alpha) but in a nutshell, this are the
