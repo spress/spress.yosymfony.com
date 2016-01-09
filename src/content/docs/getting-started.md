@@ -22,7 +22,7 @@ In this guide you will learn how Spress works and how easy is to publish a site.
 The best way to get Spress is to download the PHAR file:
 
 ```
-$ curl -LOS {{ site.pre_release.url_phar }}
+$ curl -LOS {{ site.release.url_phar }}
 $ chmod +x spress.phar
 ```
 
