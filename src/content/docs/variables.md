@@ -111,7 +111,7 @@ Example of access with Twig: `{{ "{{ site.collections.collection-name.path }}" }
             <td>path</td>
             <td>string</td>
             <td markdown="1">
-                The collection's relative path to `src` folder.
+                The collection's relative path to `src/content` folder.
             </td>
         </tr>
         <tr>
@@ -177,7 +177,7 @@ Example of access with Twig: `{{ "{{ page.id }}" }}`.
             <td>path</td>
             <td>string</td>
             <td markdown="1">
-                The path relative to `src` folder. e.g: `about/changelog.md`.
+                The path relative to `src/content` folder. e.g: `about/changelog.md`.
             </td>
         </tr>
         <tr>
