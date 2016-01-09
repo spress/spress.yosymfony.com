@@ -15,6 +15,15 @@ changelog_support: true
 ---
 More information about the [releases](https://github.com/spress/Spress/releases).
 
+# 2.0.1 {#2-0-1}
+Date: 2016-01-09
+
+* [Improved] Normalized the directory separator to '/' irrespective of the operating system.
+* [Improved] [Spresso theme](https://github.com/spress/Spress-theme-spresso/releases/tag/v2.0.1) updated to 2.0.1.
+* [Fixed] Fixed the file's extension `twig.html` in configuration files.
+* [Fixed] Fixed the exception "A previous item exists with the same id" thrown by Taxonomy generator due to a key sensitive issue. A normalize method has been added. e.g: "news", "NEWS", " News " are the same term: "news".
+* [Fixed] Fixed the namespace of `AttributeValueException` at `PaginationGenerator` class.
+
 # 2.0.0 {#2-0-0}
 Date: 2016-01-02
 
