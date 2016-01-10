@@ -45,4 +45,4 @@ for more information about how to publish a site.
 
 [OpenShift](https://www.openshift.com/) is a cloud computing platform as a service from Red Hat.
 We have prepared a [Cartridge for running a static site or blog](https://github.com/spress/Openshift-spress-cartridge)
-in your OpenShift Gear. More information about how to use the [Spress Cartridge](/news/2015/01/17/spress-cartridge-for-openshift/). **Notice** that version used by the Cartridge is 1.1.0. We are working in a new version with Spress 2.x.
+in your OpenShift Gear. More information about how to use the [Spress Cartridge](/news/2015/01/17/spress-cartridge-for-openshift/). **Notice** that version used by the Cartridge is 1.1.0. We are working on a new version with Spress 2.x.
