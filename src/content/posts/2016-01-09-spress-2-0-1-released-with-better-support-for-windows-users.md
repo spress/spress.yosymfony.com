@@ -26,7 +26,7 @@ This release marks the beginning of supporting Windows users. We have added the
 for testing Spress on Windows. From now, every *push* or *pull-request* to the Spress repository
 will be tested on Windows.
 
-<img class="center-block" src="{{ site.url }}/assets/img/spress-on-appveyor.png">
+<img class="img-responsive" src="{{ site.url }}/assets/img/spress-on-appveyor.png">
 
 ## How to get this version?
 
