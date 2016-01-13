@@ -150,11 +150,11 @@ Following, a list of predefined content snapshots, mostly of they are generated 
 
 Predefined snapshots are defined as constants:
 
-* `ItemInterface::SNAPSHOT_RAW
+* `ItemInterface::SNAPSHOT_RAW`
 * `ItemInterface::SNAPSHOT_LAST`
 * `ItemInterface::SNAPSHOT_AFTER_CONVERT`
 * `ItemInterface::SNAPSHOT_AFTER_RENDER_BLOCKS`
-* `ItemInterface::SNAPSHOT_AFTER_PAGE`
+* `ItemInterface::SNAPSHOT_AFTER_RENDER_PAGE`
 
 Usually, binary items don't have content snapshots.
 
