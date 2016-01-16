@@ -5,17 +5,18 @@ title: 'Add-ons plugins'
 <section>
     <div class="container">
         <h2>Plugins</h2>
-        
-        <div class="row br-top-2x">
-            {% for plugin in site.data.addonsPlugins %}
-                <div class="col-md-4">
-                    {% include 'item-galery.html' with plugin only %}
+            {% for addons in site.data.addonsPlugins | paginate(3) %}
+                <div class="row br-top-2x">
+                    {% for addon in addons %}
+                        <div class=" col-md-4">
+                        {% include 'item-galery.html' with addon  %}
+                    </div>
+                    {% endfor %}
                 </div>
-                {% else %}
+            {% else %}
                 <div class="col-md-6">
                     <h4>No plugins available.</h4>
                 </div>
             {% endfor %}
-        </div>
     </div>
 </section>
