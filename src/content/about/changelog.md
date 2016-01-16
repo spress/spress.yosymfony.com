@@ -15,6 +15,13 @@ changelog_support: true
 ---
 More information about the [releases](https://github.com/spress/Spress/releases).
 
+# 2.0.2 {#2-0-2}
+Date: 2016-01-16
+
+* [New] `PluginTester` class has been added to the core for testing plugins easily.
+* [Fixed] Fixed an issue with the content retrieved by `after_render_page` event.
+* [Fixed] A constant name of `ItemInterface` has been changed: `SNAPSHOT_AFTER_PAGE` -> `SNAPSHOT_AFTER_RENDER_PAGE`.
+
 # 2.0.1 {#2-0-1}
 Date: 2016-01-09
 
