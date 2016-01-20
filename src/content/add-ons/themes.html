@@ -1,21 +1,23 @@
 ---
-layout: add-ons
-title: 'Add-ons themes'
+layout: "add-ons"
+description: "Themes for Spress"
+title: "Add-ons themes"
 ---
 <section>
     <div class="container">
-        <h2>Themes</h2>
-        
-        <div class="row br-top-2x">
-            {% for theme in site.data.addonsThemes %}
-                <div class=" col-md-4">
-                    {% include 'item-galery.html' with theme only %}
+        <h2>Plugins</h2>
+            {% for addons in site.data.addonsThemes | paginate(3) %}
+                <div class="row br-top-2x">
+                    {% for addon in addons %}
+                        <div class=" col-md-4">
+                        {% include 'item-galery.html' with addon only %}
+                    </div>
+                    {% endfor %}
                 </div>
-                {% else %}
+            {% else %}
                 <div class="col-md-6">
                     <h4>No themes available.</h4>
                 </div>
             {% endfor %}
-        </div>
     </div>
 </section>
