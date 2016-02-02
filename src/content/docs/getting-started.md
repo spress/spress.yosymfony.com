@@ -32,6 +32,31 @@ if you want use the executable globally, move it to `/usr/local/bin/`:
 $ sudo mv spress.phar /usr/local/bin/spress
 ```
 
+#### On Windows
+Globally installing of Spress involves a few steps:
+
+1. Create a directory for PHP binaries; e.g., `C:\bin`.
+2. Append `;C:\bin` to your `PATH` environment variable.
+3. Download {{ site.release.url_phar }} and save the file as `C:\bin\spress.phar`.
+4. Open a command line (e.g., press **Windows+R** &rarr; type `cmd` &rarr; **ENTER**).
+5. Create a wrapping batch script (results in `C:\bin\spress.cmd`):
+
+```
+C:\Users\username> cd C:\bin
+C:\bin> echo @php "%~dp0spress.phar" %* > spress.cmd
+C:\bin> exit
+```
+6. Open a new command line and confirm that you can execute spress from any path:
+
+```
+C:\Users\username> spress --version
+Spress - The static site generator version x.y.z
+```
+
+For [Cygwin](https://en.wikipedia.org/wiki/Cygwin) and/or [MingW32](http://mingw.org/) (e.g., TortoiseGit)
+shell environments, you may skip step 5. above, simply save the file
+as `spress` (without `.phar` extension), and make it executable via `chmod 775 spress`.
+
 ### Quick start
 
 Lets create a sample site and build it. With Spress executable, you have two options:
