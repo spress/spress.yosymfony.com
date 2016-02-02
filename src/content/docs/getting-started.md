@@ -37,7 +37,7 @@ Globally installing of Spress involves a few steps:
 
 1. Create a directory for PHP binaries; e.g., `C:\bin`.
 2. Append `;C:\bin` to your `PATH` environment variable.
-3. Download {{ site.release.url_phar }} and save the file as `C:\bin\spress.phar`.
+3. Download [{{ site.release.url_phar }}](<{{ site.release.url_phar }}>) and save the file as `C:\bin\spress.phar`.
 4. Open a command line (e.g., press **Windows+R** &rarr; type `cmd` &rarr; **ENTER**).
 5. Create a wrapping batch script (results in `C:\bin\spress.cmd`):
 
