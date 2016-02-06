@@ -28,7 +28,7 @@ Its content is simitar to below:
 ```
 ---
 layout: "page"
-
+list_mode: true
 generator: "taxonomy"
 max_page: 5
 taxonomy_attribute: "categories"
@@ -40,6 +40,10 @@ permalink: "/:name"
 
 {% if page.list_mode %}
     {% include "posts-list.html" with { posts: page.pagination.items } %}
+{% else %}
+    {% for post in page.pagination.items %}
+        {% include "post.html" %}
+    {% endfor %}
 {% endif %}
 
 {% include "paginator.html" %}
