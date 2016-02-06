@@ -53,13 +53,50 @@ permalink: "/:name"
 Attributes:
 
 * `taxonomy_attribute`: the name of the attribute that contains the list of terms or taxons. `categories` is the default value.
-* `permalink`: permalink style for each page of a term. `/:name` is the default value.
+* `permalink`: permalink style for each page of a term. `/:name` is the default value. This permalink is relative
+to the folter in where generators was defined, in this case, `categories` folder and that means URLs generated starting
+by `/categories`.
 
-The `pagination_permalink` attribute lets you configure the permalink sytle for the multiple pages of a term. `/page:num` is the default value.
+The `pagination_permalink` attribute lets you configure the permalink sytle (relative to the term's permalink)
+for the multiple pages of a term. `/page:num` is the default value.
 
-## Permalinks
+Recompile your site and your categories will be accesible at `http://localhost:4000/categories/`.
 
-Taxonomy generator adds an attribute `terms_url` to each item processed with the permalinks of the terms.
+Files generated:
+
+<table class="table">
+    <thead>
+        <tr>
+            <th class="col-sm-2">Page</th>
+            <th>File</th>
+            <th>URL</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>1</td>
+            <td>/categories/term1/index.html</td>
+            <td>/categories/term1/</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>/categories/term1/page2/index.html</td>
+            <td>/categories/term1/page2/</td>
+        </tr>
+        <tr>
+            <td>n</td>
+            <td markdown="1">/categories/term1/page**n**/index.html</td>
+            <td markdown="1">/categories/term1/page**n**/</td>
+        </tr>
+    </tbody>
+</table>
+
+**Notice:** variables `site.tags` and `site.categories` are special variables that contains items of `posts` collection
+organized by tags and categories regardless of taxonomy generator.
+
+## Permalink to terms {#permalink-to-term}
+
+**Taxonomy generator adds an attribute `terms_url` to each item processed with the permalinks of the terms**.
 The following example show you how to write the categories of a post assuming the value of `taxonomy_attribute`
 attribute is `categories`. Each element of `page.terms_url.categories` has the categorie's name as a key and the
 permalink as value:
@@ -72,5 +109,30 @@ permalink as value:
 	    {% if loop.last == false %},{% endif %} 
 	{% endfor %}
 {% endif %}
+```
+{% endverbatim %}
+
+### Example of a index category page {#index-category-page}
+
+Sometime, you could need a page for listing out all categories registered. The following snippet
+of code can be used for that purpose:
+
+{% verbatim %}
+```
+{% set categoryList = [] %}
+<ul>
+{% for category in site.categories %}
+  {% for item in category %}
+    {% for categoryName, categoryUrl in item.terms_url.categories %}
+      {% if categoryName not in categoryList | keys %}
+        {% set categoryList = categoryList | merge({ (categoryName) : categoryUrl }) %}
+
+        <li><a href="{{ categoryUrl }}">{{ categoryName }}</a></li>
+      {% endif %}
+    {% endfor %}
+  {% endfor %}
+    
+{% endfor %}
+</ul>
 ```
 {% endverbatim %}
