@@ -134,6 +134,7 @@ Example of access with Twig: `{{ "{{ site.collections.collection-name.path }}" }
 
 ## Page variables {#page-variables}
 
+Page variables point to the current item in which Spress is working on.
 Example of access with Twig: `{{ "{{ page.id }}" }}`.
 
 <table class="table">
