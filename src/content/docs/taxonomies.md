@@ -54,7 +54,7 @@ Attributes:
 
 * `taxonomy_attribute`: the name of the attribute that contains the list of terms or taxons. `categories` is the default value.
 * `permalink`: permalink style for each page of a term. `/:name` is the default value. This permalink is relative
-to the folter in where generators was defined, in this case, `categories` folder and that means URLs generated starting
+to the folter in where generator was defined, in this case, `categories` folder and that means URLs generated starting
 by `/categories`.
 
 The `pagination_permalink` attribute lets you configure the permalink sytle (relative to the term's permalink)
@@ -112,7 +112,7 @@ permalink as value:
 ```
 {% endverbatim %}
 
-### Example of a index category page {#index-category-page}
+### Example of an index category page {#index-category-page}
 
 Sometime, you could need a page for listing out all categories registered. The following snippet
 of code can be used for that purpose:

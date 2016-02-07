@@ -95,4 +95,5 @@ recompile your site. Posts at `http://localhost:4000/blog/` should be in reverse
 ## Page permalink
 
 The default permalink for each generated page is `/page:num`. The `:num` placeholder will be replaced
-with the number of page starting with 2.
+with the number of page starting with 2. This permalink is relative to the folter in where generator
+was defined, in the case of prior example, `/blog` folder and that means URLs generated starting by `/blog`.
