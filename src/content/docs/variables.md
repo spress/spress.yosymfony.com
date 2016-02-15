@@ -69,18 +69,20 @@ Example of access with Twig: `{{ "{{ site.categories }}" }}`.
             <td>categories</td>
             <td>array</td>
             <td markdown="1">
-                List of post groups by categories.
+                List of [post](/docs/writing-posts) groups by categories.
                 E.g: `site.cagetories.news` get all posts with `news`
                 category. Each element of this list is of type [page](#page-variables).
+                Posts are located at `src/content/posts`.
             </td>
         </tr>
         <tr>
             <td>tags</td>
             <td>array</td>
             <td markdown="1">
-                List of post groups by tags.
+                List of [post](/docs/writing-posts) groups by tags.
                 E.g: `site.tags.car` get all posts with `car`
                 tag. Each element of this list is of type [page](#page-variables).
+                Posts are located at `src/content/posts`.
             </td>
         </tr>
         <tr>
