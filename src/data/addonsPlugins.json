@@ -1,5 +1,13 @@
 [
     {
+        "name": "Minify HTML",
+        "author": "Anton Paramonov",
+        "url_info": "https://github.com/paramonovav/spress-html-compress",
+        "url_author": "http://paramonovav.com/",
+        "description": "Compress/minify your HTML.",
+        "tags": ["monify", "compress", "html"]
+    },
+    {
         "name": "AWS deploy",
         "author": "Jason Marshall",
         "url_info": "https://github.com/SeleneSoftware/spress-plugin-deploy-aws",
