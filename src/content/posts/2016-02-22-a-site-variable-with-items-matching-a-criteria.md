@@ -4,7 +4,7 @@ title: "A site variable with items matching a criteria"
 description: "How to expose a new site variable items that maching a criteria"
 categories: ["resources", "plugin"]
 ---
-In some situations, it is necessary to have available a site variable (those that are accessible using `site.xxx`)
+There are certain situations in which it is necessary to have available a site variable (those that are accessible using `site.xxx`)
 with the items that matching certain criteria. In this post, I will explain how to expose a new site variable with
 items that contains an `categories` attribute.
 
