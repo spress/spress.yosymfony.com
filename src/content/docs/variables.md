@@ -151,12 +151,12 @@ Example of access with Twig: `{{ "{{ page.id }}" }}`.
         <tr>
             <td>id</td>
             <td>string</td>
-            <td>Identifier of the item.</td>
+            <td>Identifier unique to the item.</td>
         </tr>
         <tr>
             <td>collection</td>
             <td>string</td>
-            <td>The name of the collection assigned to item.</td>
+            <td>The name of the collection assigned to the item.</td>
         </tr>
         <tr>
             <td>mtime</td>
@@ -180,14 +180,14 @@ Example of access with Twig: `{{ "{{ page.id }}" }}`.
             <td>path</td>
             <td>string</td>
             <td markdown="1">
-                The path relative to `src/content` folder. e.g: `about/changelog.md`.
+                The relative path to `/build` folder. e.g: `about/index.html`.
             </td>
         </tr>
         <tr>
             <td>url</td>
             <td>string</td>
             <td markdown="1">
-                The URL of the post. e.g: `/about/changelog/`.
+                The URL of the page without the domain, but with a leading slash. e.g: `/about/changelog/`.
             </td>
         </tr>
         <tr>
