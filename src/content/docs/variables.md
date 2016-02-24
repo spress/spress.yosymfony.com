@@ -180,7 +180,7 @@ Example of access with Twig: `{{ "{{ page.id }}" }}`.
             <td>path</td>
             <td>string</td>
             <td markdown="1">
-                The relative path to `/build` folder. e.g: `about/index.html`.
+                The relative path to `/src/content` folder. e.g: `about/index.html`.
             </td>
         </tr>
         <tr>
