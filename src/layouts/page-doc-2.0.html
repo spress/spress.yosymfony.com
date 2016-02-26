@@ -7,6 +7,12 @@ layout: page-header
         {% include 'page-menu.html' with { 'id': 'doc 2.0' }%}
     </div>
     <div class="col-md-9">
+    	<p class="text-right">
+    		<i class="fa fa-github"></i>
+    		<a href="{{site.docs.github_url_base}}/{{ page.path }}">
+    			Edit this page on Github
+    		</a>
+    	</p>
         {{ page.content }}
     </div>
 </div>

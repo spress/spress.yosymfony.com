@@ -26,6 +26,9 @@ spressin:
   author: "Zach Frailey"
   author_url: "https://flic.kr/p/cuhEVE"
 
+docs:
+  github_url_base: "https://github.com/yosymfony/Spress.yosymfony.com/tree/master/src/content"
+
 #spressin:
 #  img_url: "/assets/img/spressin.jpg"
 #  author: "Ville Säävuori"
