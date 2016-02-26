@@ -27,7 +27,7 @@ spressin:
   author_url: "https://flic.kr/p/cuhEVE"
 
 docs:
-  github_url_base: "https://github.com/yosymfony/Spress.yosymfony.com/tree/master/src/content"
+  github_url_base: "https://github.com/yosymfony/Spress.yosymfony.com/edit/master/src/content"
 
 #spressin:
 #  img_url: "/assets/img/spressin.jpg"
