@@ -47,7 +47,7 @@ sort_by: "date"
 Attributes:
 
 * `generator`: contains the name of the generator, in this case `pagination`.
-* `provier`: The descriptor for the provider of the items (collection) to be paginated.
+* `provider`: The descriptor for the provider of the items (collection) to be paginated.
 `site.posts` is the default value. If you have a custom collection, for example `events`, this value
 would be`site.events`.
 * `max_page`: The maximum number of item per page. Default value is `5`.
