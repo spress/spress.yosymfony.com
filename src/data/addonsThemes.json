@@ -1,5 +1,17 @@
 [
     {
+        "name": "Pure white. hopeful green",
+        "author": "Juanma cabello",
+        "pay_with_tweet": false,
+        "url_thumbnail": "/assets/img/thumbs/pure-white-theme.png",
+        "support_mobile": true, 
+        "url_info": "https://github.com/kerunaru/pure-white-hopeful-green",
+        "url_author": "http://kerunaru.github.io/",
+        "url_demo": "",
+        "description": "A minimalism theme for spress.",
+        "tags": ["minimalism"]
+    },
+    {
         "name": "Clean blog",
         "author": "Spress add-ons",
         "pay_with_tweet": false,
