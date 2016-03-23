@@ -14,15 +14,16 @@ prettify: true
 This article describes how to Spress perform a site:
 
 1. Reads the site configuration file: `config.yml`.
-2. Loads plugins at `./src/plugins` and for each calls to `initialize` method if `safe` mode is disbled.
+2. Loads plugins from `./src/plugins` folder and for each calls to `initialize` method if `safe` mode is disbled.
 3. Dispatches `spress.start` event.
-4. Invokes `setUp` method of the data writer registered. The default data writer cleans the `./build` folder.
-5. Invokes `clear` method of the Renderizer registered.
-6. Loads the data sources and for each calls to `getItems` method.
-7. Process generators.
-8. Loads layouts and includes items: invokes `getLayouts` and `getIncludes` method of each data source.
-9. For each item Spress applies a converter and dispatches the events `spress.before_convert` and `spress.after_convert`.
-10. Process permalinks of items.
-11. For each item without the attribute `avoid_renderizer` Spress applies a content renderer without layouts and dispatches the events `spress.before_render_blocks` and `spress.after_render_blocks`.
-12. For each item without the attribute `avoid_renderizer` Spress applies a content render and dispatches the events `spress.before_render` and `spress.after_render`. After a `spress.after_render` event the item is persisted using `write` method of the data writer registered.
-13. Dispathes the event `spress.finish`.
+4. Invokes `setUp` method of the [data writer](/docs/developers/data-writer) registered. The default data writer cleans the `./build` folder.
+5. Invokes `clear` method of the [Renderizer](/docs/developers/renderizer) registered.
+6. Loads the [data sources](/docs/developers/data-sources) and for each calls to `getItems` method.
+7. Process [generators](/docs/developers/generators).
+8. Sorts items. <span class="label label-success">Spress >= 2.1</span>
+9. Loads layouts and includes items: invokes `getLayouts` and `getIncludes` method of each data source.
+10. For each item Spress applies a [converter](/docs/developers/converters) and dispatches the events `spress.before_convert` and `spress.after_convert`.
+11. Process permalinks of items.
+12. For each item without an attribute `avoid_renderizer: true` Spress applies a content renderer without layouts and dispatches the events `spress.before_render_blocks` and `spress.after_render_blocks`.
+13. For each item without the attribute `avoid_renderizer` Spress applies a content render and dispatches the events `spress.before_render` and `spress.after_render`. After a `spress.after_render` event the item is persisted using `write` method of the [data writer](/docs/developers/data-writer) registered.
+14. Dispathes the event `spress.finish`.
