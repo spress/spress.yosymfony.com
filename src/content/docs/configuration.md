@@ -80,6 +80,8 @@ url: ''                                  # e.g: http://your-domain.local:4000
 collections:
   posts:
     output: true
+    sort_by: 'date'
+    sort_type: 'descending'
 
 # Serving
 host: '0.0.0.0'

@@ -23,8 +23,10 @@ Add the following to your `config.yml`:
 
 ```yaml
 collections:
-  post:
+  posts:
     output: true
+    sort_by: 'date'
+    sort_type: 'descending'
 
   projects:
     output: true
@@ -37,6 +39,22 @@ to `projects` collection.
 ### Attributes with special meaning:
 
 **output**: `true` for writing the rendered content to the output system, normally a file.
+
+#### Sort items of a collection
+
+<span class="label label-success">Spress >= 2.1</span>
+
+Items of a collection can be sorted with two new attributes with special meaning:
+
+* **sort_by**: the name of the attribute used as criteria to sort.
+* **sort_type**: values accepted: `ascending` or `descending`, last one by default.
+
+At the prior example, `posts` collection is sorted by the `date` attribute of each item
+belonging to the collection with a `descending` type. The items of `projects` collection
+aren't in any given order.
+
+Items of `posts` collection are sorted by descending using `date` attribute as criteria by default.
+Variables [`site.categories`](/docs/variables/#site-variables) and [`site.tags`](/docs/variables/#site-variables) are affected by posts sorting.
 
 ### Default attributes
 Default attributes can be set for a collection. e.g: `title`. Item's attributes overrides
