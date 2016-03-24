@@ -195,6 +195,16 @@ Example of access with Twig: `{{ "{{ page.id }}" }}`.
             <td>string</td>
             <td>Compiled content.</td>
         </tr>
+        <tr>
+            <td>relationships</td>
+            <td>array</td>
+            <td markdown="1">
+                <span class="label label-success">Spress >= 2.1</span>
+                Only available in items belonging to a sorted [collection](/docs/collections/).
+                Contains items related to the current item. Each relationship of this array
+                contains a set of items. [Here's an example](/docs/collections/#relationships).
+            </td>
+        </tr>
     </tbody>
 </table>
 

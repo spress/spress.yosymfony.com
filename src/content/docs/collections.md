@@ -17,7 +17,7 @@ allow you to define a new type of content that behave like pages or posts.
 **Predefined collections** are: `posts` and `pages`. The first collection is
 assigned to items located at `./src/content/posts`.
 
-## How to configure
+## How to configure?
 
 Add the following to your `config.yml`:
 
@@ -40,7 +40,7 @@ to `projects` collection.
 
 **output**: `true` for writing the rendered content to the output system, normally a file.
 
-#### Sort items of a collection
+#### Sort items of a collection {#sort-items}
 
 <span class="label label-success">Spress >= 2.1</span>
 
@@ -106,3 +106,29 @@ Here's an example of what this structure might look like:
 |  |  |- my-awesonme-web.md
 |  |  |- my-library.md
 ```
+
+### Relationships: Next and prior items {#relationships}
+
+<span class="label label-success">Spress >= 2.1</span>
+
+Spress adds `prior` and `next` relationships to each item belonging to a sorted collection
+referring to previous and next items in said collection.
+
+The below snippet of code could be inserted in the layout template applied to posts for exposing the prior 
+and next posts related to current post.
+
+{% verbatim %}
+```
+<ul>
+    {% for rel in page.relationships.next %}
+        <li>Next: <a href="{{ rel.url }}">{{ rel.title }}</a></li>
+    {% endfor %}
+    {% for rel in page.relationships.prior %}
+        <li>Prior: <a href="{{ rel.url }}">{{ rel.title }}</a></li>
+    {% endfor %}
+</ul>
+```
+{% endverbatim %}
+
+The attributes exposed by each item of a relationship are the same than a regular item.
+New relationships can be added by [plugins](/docs/developers/data-sources/#relationships).

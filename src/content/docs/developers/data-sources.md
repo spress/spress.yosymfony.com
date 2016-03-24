@@ -177,6 +177,32 @@ snapshots. By default `getContent` method returns the `last` snapshot.
 
 To set content uses `setContent` method. The first argument is the content and the last one is the snapshot name.
 
+### Relationships {#relationships}
+
+<span class="label label-success">Spress >= 2.1</span>
+
+The relationships between items are useful for setting a set of related items,
+such as set of related posts to a post or simply previous and next items in a sorted collection.
+
+```
+use Yosymfony\Spress\Core\DataSource\Item;
+
+$item = new Item('Test of content', 'myPage.md');
+
+$relationships = $item->getRelationshipCollection();
+$relationships->add('related', $itemPage1);
+$relationships->add('related', $itemPage2);
+
+// items of 'related' relationship:
+$items = $relationships->get('related');
+
+```
+The `getRelationshipCollection` method returns a
+[`RelationshipCollection`](https://github.com/spress/Spress/blob/master/src/Core/DataSource/RelationshipCollection.php) object.
+
+Spress adds `prior` and `next` relationships to each item belonging to a sorted collection
+referring to the previous item and next item in the collection.
+
 ## Predefined data sources
 
 ### FilesystemDataSource {#FilesystemDataSource}
@@ -234,7 +260,7 @@ class TestPlugin implements PluginInterface
 }
 ```
 
-To adds a new layout or include item uses `addLayout` and `addInclude` methods:
+To adds a new `layout` type item or `include` type item uses `addLayout` and `addInclude` methods:
 
 {% verbatim %}
 ```
