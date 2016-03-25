@@ -63,7 +63,7 @@ directory structure. In the following example, `2015-12-01-what-is-new.md` will 
 |  |  |- |- 2015-11-01-what-is-new.md
 ```
 
-### Preserve title from filename in permalinks
+### Preserve title from filename in permalinks {#preserve-title}
 
 In case of you want to preserve the title extracted from the filename over the `title` 
 attribute assigned at Front matter block  in permalinks you can use `preserve_path_title` attribute.

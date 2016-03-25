@@ -59,8 +59,12 @@ debug: false
 # Reading
 env: 'dev'
 drafts: false
-text_extensions: [ 'htm', 'html', 'html.twig', 'twig,html', 'js', 'less', 'markdown', 'md', 'mkd', 'mkdn', 'coffee', 'css', 'erb', 'haml', 'handlebars', 'hb', 'ms', 'mustache', 'php', 'rb', 'sass', 'scss', 'slim', 'txt', 'xhtml', 'xml' ]
+text_extensions: [ 'htm', 'html', 'html.twig', 'twig.html', 'js', 'less', 'markdown', 'md', 'mkd', 'mkdn', 'coffee', 'css', 'erb', 'haml', 'handlebars', 'hb', 'ms', 'mustache', 'php', 'rb', 'sass', 'scss', 'slim', 'txt', 'xhtml', 'xml' ]
 attribute_syntax: 'yaml'
+map_converter_extension:
+  'html.twig': 'html'
+  'twig.html': 'html'
+  'twig': 'html'
 
 # Markdown converters
 markdown_ext: ['markdown', 'mkd', 'mkdn', 'md']
@@ -109,7 +113,7 @@ server_watch_ext: ['html', 'htm', 'xml']
         <tr>
             <td>collections</td>
             <td>array</td>
-            <td>Defines the collections for the content.</td>
+            <td markdown="1">Defines the [collections](/docs/collections) for the content.</td>
         </tr>
         <tr>
             <td>debug</td>
@@ -141,6 +145,16 @@ server_watch_ext: ['html', 'htm', 'xml']
             <td>string</td>
             <td markdown="1">
                 Listen at the given hostname. Used with `site:build --server` command.
+            </td>
+        </tr>
+        <tr>
+            <td>map_converter_extension</td>
+            <td>array</td>
+            <td markdown="1">
+                <span class="label label-success">Spress >= 2.1</span>
+                Map filename extention to another one. e.g: `.twig` to `.html`.
+                This feature lets you work more appropriately with pages using
+                IDEs that have support for [Twig](http://twig.sensiolabs.org/) syntax.
             </td>
         </tr>
         <tr>
@@ -185,9 +199,9 @@ server_watch_ext: ['html', 'htm', 'xml']
             <td>preserve_path_title</td>
             <td>boolean</td>
             <td markdown="1">
-                Set to `true` in case of you want to preserve the title extracted
-                from the filename path over the Front matter title attribute.
-                See [issue #47](https://github.com/spress/Spress/issues/47).
+                Set to `true` in case of you want to [preserve the title extracted
+                from the filename path](/docs/writing-posts/#preserve-title)
+                over the Front matter title attribute.
             </td>
         </tr>
         <tr>
