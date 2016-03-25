@@ -84,6 +84,7 @@ class ExampleSayHello extends CommandPlugin
 }
 ```
 
+### Command's definition
 `getCommandDefinition` returns the command's definition. The name of a command is the basic definition:
 `$definition = new CommandDefinition('hello')`. Additionally you can set a description text, a help text 
 and a set of arguments and options. More details about [`CommandDefinition` object](https://github.com/spress/Spress/blob/master/src/Plugin/CommandDefinition.php).
@@ -94,7 +95,7 @@ $definition->addArgument('file', null, 'File or directory', './');
 $definition->addOption('filter', 'f', null, 'Filter expression');
 ```
 
-### addArgument method
+#### addArgument method
 
 The first argument is the name of the command argument. Second argument corresponds to the mode:
 
@@ -104,7 +105,7 @@ The first argument is the name of the command argument. Second argument correspo
 
 Third argument is the description text and the last one is de the default value.
 
-### addOption method
+#### addOption method
 
 The first argument is the name of the option. Second argument are shortcuts
 and can be null, a string of shortcuts delimited by "|" or an array of shortcuts.
@@ -121,3 +122,49 @@ This must be `null` for `CommandDefinition::VALUE_REQUIRED` or `CommandDefinitio
 **Notice** that `CommandPlugin` inherited from [`Yosymfony\Spress\Core\Plugin\PluginInterface`](https://github.com/spress/Spress/blob/master/src/Core/Plugin/PluginInterface.php)
 and therefore is a regular plugin. This mean that you can add `initialize` method.
 
+### The command body
+
+The command body is declared in `executeCommand` method. The mission of the prior example is just
+to say hello by the output. The sign of the method is the following:
+
+```
+public function executeCommand(IOInterface $io, array $arguments, array $options)
+```
+
+First argument is the access to the current [IO implementation](/docs/developers/io-api).
+Second argument contains the argument passes to the command and last one contains the options
+passed to the command (those with `--` prefix).
+
+#### Calling an existing command
+
+<span class="label label-success">Spress >= 2.1</span>
+
+If a command depends on another one being run before it, you can use the new
+[CommandEnvironment](https://github.com/spress/Spress/blob/master/src/Plugin/Environment/CommandEnvironmentInterface.php)
+to run any command registered in Spress. This is useful for creating "meta" commands.
+
+An example of executing  the `site:build` command with `--server` option:
+
+```
+public function executeCommand(IOInterface $io, array $arguments, array $options)
+{
+    $environment = $this->getCommandEnvironment();
+
+    $environment->runCommand('site:build', [
+        '--server' => true,
+    ]);
+}
+```
+
+You can also ask whether a command exists with `hasCommand` method:
+
+```
+public function executeCommand(IOInterface $io, array $arguments, array $options)
+{
+    $environment = $this->getCommandEnvironment();
+
+    if ($environment->hasCommand('acme')) {
+        $environment->runCommand('acme', []);
+    }
+}
+```
