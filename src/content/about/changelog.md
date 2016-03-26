@@ -15,6 +15,25 @@ changelog_support: true
 ---
 More information about the [releases](https://github.com/spress/Spress/releases).
 
+# 2.1.0 {#2-1-0}
+Date: 2016-03-26
+
+* [New] Support for calling to an existing command inside a command plugin. The `CommandEnvironmentInterface` interface has been added and `CommandPluginInterface` has been updated with `setCommandEnvironment` and `getCommandEnvironment` methods. See feature [#77](https://github.com/spress/Spress/issues/77).
+* [New] Sort items of a collection. See feature [#67](https://github.com/spress/Spress/issues/67).
+* [New] Support to extends TwigRenderizer with tags. See PR [#65](https://github.com/spress/Spress/issues/65).
+* [New] Each item of a sorted collection has `next` and `prior` relationships. At compile time, you have access to these through `page.relationships.next` and `page.relationships.prior` variables. See feature [#69](https://github.com/spress/Spress/issues/69).
+* [New] Relationship collection for items. A new class has been added: `RelationshipCollection`. A new method getRelationshipCollection has been added to `ItemIterface`.
+* [New] `MirrorConverter` class has been replaced by `MapConverter`. See feature [#73](https://github.com/spress/Spress/issues/73). Fixed ticket: [#28](https://github.com/spress/Spress/issues/28) "Support .twig extention". 
+* [New] Added `ItemCollection` class to Core support classes.
+* [New] Added `getCollections` method in `CollectionManager` class.
+* [New] Added `clearConverter` and `countConverter` methods in `ConverterManager` class.
+* [Improved] Improved permalinks customizations. See PR [#64](https://github.com/spress/Spress/issues/64).
+* [Improved] Eliminated unnecessary calls to `setItem` method of `SiteAttribute` class in `ContentManager` class.
+* [Improved] The methods for managing the collection of plugins in `PluginManager` class have been moved to a `Collection` class.
+* [Improved] The methods for managing the collection of collection-item in `CollectionManager` class have been moved to a `Collection` class.
+* [Improved] Clarified the error message in case of denied permissions when renaming the temporal file in `SelfUpdateCommand` class.
+* [Fixed] Fixed the path available at `page.path` variable. Prior to this version, this variable contains the relative path to `src/content/` but with the filename extension changed by the Converter. Now, the original filename extension isn't altered. A new path snapshot has been created in `ItemIterface`.
+
 # 2.0.2 {#2-0-2}
 Date: 2016-01-16
 

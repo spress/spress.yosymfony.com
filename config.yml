@@ -10,11 +10,11 @@ copyright_url: http://yosymfony.com
 
 # Data about Spress release
 release:
-   version: "2.0.2"
-   changelog: "/about/changelog/#2-0-2"
+   version: "2.1.0"
+   changelog: "/about/changelog/#2-1-0"
    github_url: "https://github.com/spress/Spress/"
-   url_package: "https://github.com/spress/Spress/releases/download/v2.0.2/spress.zip"
-   url_phar: "https://github.com/spress/Spress/releases/download/v2.0.2/spress.phar"
+   url_package: "https://github.com/spress/Spress/releases/download/v2.1.0/spress.zip"
+   url_phar: "https://github.com/spress/Spress/releases/download/v2.1.0/spress.phar"
 
 pre_release:
    version: 

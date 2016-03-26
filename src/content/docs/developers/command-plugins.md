@@ -135,7 +135,7 @@ First argument is the access to the current [IO implementation](/docs/developers
 Second argument contains the argument passes to the command and last one contains the options
 passed to the command (those with `--` prefix).
 
-#### Calling an existing command
+#### Calling an existing command {#calling-command}
 
 <span class="label label-success">Spress >= 2.1</span>
 
