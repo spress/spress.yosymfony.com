@@ -230,9 +230,12 @@ server_watch_ext: ['html', 'htm', 'xml']
         <tr>
             <td>url</td>
             <td>string</td>
-            <td>
+            <td markdown="1">
                 URL base of your site. This is useful for scenarios where a site
-                isn't available from the domain root.
+                isn't available from the domain root. Example of use in a template:
+                {% verbatim %}
+                `<link href="{{ site.url }}/css/style.css" rel="stylesheet">`
+                {% endverbatim %}
             </td>
         </tr>
     </tbody>
