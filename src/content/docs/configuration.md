@@ -230,7 +230,10 @@ server_watch_ext: ['html', 'htm', 'xml']
         <tr>
             <td>url</td>
             <td>string</td>
-            <td>URL base of your site.</td>
+            <td>
+                URL base of your site. This is useful for scenarios where a site
+                isn't available from the domain root.
+            </td>
         </tr>
     </tbody>
 </table>
