@@ -5,7 +5,7 @@
         "url_info": "https://github.com/paramonovav/spress-html-compress",
         "url_author": "http://paramonovav.com/",
         "description": "Compress/minify your HTML.",
-        "tags": ["monify", "compress", "html"]
+        "tags": ["minify", "compress", "html"]
     },
     {
         "name": "AWS deploy",
@@ -13,7 +13,7 @@
         "url_info": "https://github.com/SeleneSoftware/spress-plugin-deploy-aws",
         "url_author": "http://selenesoftware.us",
         "description": "Deploy on build your site to an AWS S3 bucket.",
-        "tags": ["aws", "deploy"]
+        "tags": ["Spress 1.x", "aws", "deploy"]
     },
     {
         "name": "Metadata of a Github repository",
