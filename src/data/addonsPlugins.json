@@ -1,9 +1,17 @@
 [
     {
+        "name": "Redirector",
+        "author": "Antonio J. García Lagar",
+        "url_info": "https://github.com/ajgarlag/AjglRedirectorSpressPlugin",
+        "url_author": "http://aj.garcialagar.es",
+        "description": "Allow to add redirects to your posts and pages.",
+        "tags": ["redirections"]
+    },
+    {
         "name": "Minify HTML",
         "author": "Anton Paramonov",
         "url_info": "https://github.com/paramonovav/spress-html-compress",
-        "url_author": "http://paramonovav.com/",
+        "url_author": "http://paramonovav.com",
         "description": "Compress/minify your HTML.",
         "tags": ["minify", "compress", "html"]
     },
@@ -37,7 +45,7 @@
         "url_info": "https://github.com/yosymfony/Spress-plugin-more-tag",
         "url_author": "http://yosymfony.com",
         "description": "You can use More Tag plugin to get a excerpt of your blog entries.",
-        "tags": ["excerpt", "more"]
+        "tags": ["excerpt"]
     },
     {
         "name": "Data loader",
