@@ -1,5 +1,21 @@
 [
     {
+        "name": "Slugify Twig filter",
+        "author": "Kris Northfield",
+        "url_info": "https://github.com/knorthfield/spress-slugify",
+        "url_author": "http://www.northfieldx.co.uk/",
+        "description": "Compile any SASS files lying around.",
+        "tags": ["slugify", "twig"]
+    },
+    {
+        "name": "SASS Compiler",
+        "author": "Kris Northfield",
+        "url_info": "https://github.com/knorthfield/spress-sass",
+        "url_author": "http://www.northfieldx.co.uk/",
+        "description": "Compile any SASS files lying around.",
+        "tags": ["sass", "css"]
+    },
+    {
         "name": "Redirector",
         "author": "Antonio J. García Lagar",
         "url_info": "https://github.com/ajgarlag/AjglRedirectorSpressPlugin",
