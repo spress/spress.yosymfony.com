@@ -4,7 +4,7 @@
         "author": "Kris Northfield",
         "url_info": "https://github.com/knorthfield/spress-slugify",
         "url_author": "http://www.northfieldx.co.uk/",
-        "description": "Compile any SASS files lying around.",
+        "description": "Add slugify Twig filter to Spress.",
         "tags": ["slugify", "twig"]
     },
     {
