@@ -1,5 +1,13 @@
 [
     {
+        "name": "Beautify HTML",
+        "author": "Leonard Mocanu",
+        "url_info": "https://github.com/rattrap/spress-html-beautifier",
+        "url_author": " http://mocanu.eu/",
+        "description": "Beautify your Spress HTML output.",
+        "tags": ["html", "beautify"]
+    },
+    {
         "name": "Slugify Twig filter",
         "author": "Kris Northfield",
         "url_info": "https://github.com/knorthfield/spress-slugify",
