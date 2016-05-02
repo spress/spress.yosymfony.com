@@ -18,7 +18,7 @@ More information about the [releases](https://github.com/spress/Spress/releases)
 # 2.1.1 {#2-1-1}
 Date: 2016-04-12
 
-* [Fixed] Bug [#78](https://github.com/spress/Spress/issues/78) has been fixed: "/:basename permalink variable contains .html when using *.html.twig". Related with feature [#73](https://github.com/spress/Spress/issues/73).
+* [Fixed] Bug [#78](https://github.com/spress/Spress/issues/78) has been fixed: "/:basename permalink variable contains `.html` when using `*.html.twig`". Related with feature [#73](https://github.com/spress/Spress/issues/73).
 * [Fixed] Bug [#79](https://github.com/spress/Spress/issues/79) has been fixed: "Error loading plugin's dependencies with -s option at site:build command".
 * [Improved] Clarified the message when `site:build` command is invoked against a non Spress site folder.
 
