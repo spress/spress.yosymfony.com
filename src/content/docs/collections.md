@@ -65,7 +65,7 @@ the collection's default attributes.
 Items of `projects` collections are available at `site.projects`. Each item has an attribute
 `collection` with the name of the collection.
 
-Data about `projects` collection at `site.collections.projects`. More information about
+Data about `projects` collection are located at `site.collections.projects`. More information about
 [variables available for registered collection](/docs/variables/#collection-variables).
 
 ### An example
