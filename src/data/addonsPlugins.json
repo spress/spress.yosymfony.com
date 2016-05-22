@@ -1,5 +1,13 @@
 [
     {
+        "name": "Twig Extensions",
+        "author": "Ghislain PHU",
+        "url_info": "https://github.com/GhislainPhu/spress-twig-extensions",
+        "url_author": "https://ghislainphu.fr",
+        "description": "Add twig/extensions to Spress.",
+        "tags": ["twig"]
+    },
+    {
         "name": "Beautify HTML",
         "author": "Leonard Mocanu",
         "url_info": "https://github.com/rattrap/spress-html-beautifier",
@@ -11,7 +19,7 @@
         "name": "Slugify Twig filter",
         "author": "Kris Northfield",
         "url_info": "https://github.com/knorthfield/spress-slugify",
-        "url_author": "http://www.northfieldx.co.uk/",
+        "url_author": "http://www.northfieldx.co.uk",
         "description": "Add slugify Twig filter to Spress.",
         "tags": ["slugify", "twig"]
     },
