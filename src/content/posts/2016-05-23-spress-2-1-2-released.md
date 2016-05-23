@@ -6,7 +6,7 @@ tags: [2.x]
 
 changelog_support: true
 ---
-Hello. A new maintenance release of Spress has been released with two bug fixes.
+Hello. A new maintenance release of Spress has been released with some bug fixes.
 
 The complete changelog:
 
