@@ -2,7 +2,7 @@
 layout: page-about
 title: Changelog
 description: The Spress changelog
-header: 
+header:
   title: Change log
   sub: Release history
 menu:
@@ -14,6 +14,15 @@ id_content: changelog
 changelog_support: true
 ---
 More information about the [releases](https://github.com/spress/Spress/releases).
+
+# 2.1.3 {#2-1-3}
+Date: 2016-07-03
+
+* [New] Class [`FileInfo`](https://github.com/spress/Spress/blob/master/src/Core/Support/FileInfo.php) has been added to the support classes set of the core.
+* [New] New configuration value aimed to plugin manager builder for excluding directories in the disconvering class phase. Useful to avoid scaning test classes.
+* [Fixed] Fixed the truncated `title_path` attribute when the filename contains dots before the extension. More details in bug [#88](https://github.com/spress/Spress/issues/88).
+* [Fixed] The value of `title_path` is not altered when it is parsed by `FilesystemDataSource` class. More details in bug [#88](https://github.com/spress/Spress/issues/88).
+* [Fixed] If you set `preserve_path_title` attribute to `true` you will get the title parsed from the filename as-is (without the date part). Only `rawurlencode` function is applied. See PR [#90](https://github.com/spress/Spress/issues/90).
 
 # 2.1.2 {#2-1-2}
 Date: 2016-05-23
@@ -38,7 +47,7 @@ Date: 2016-03-26
 * [New] Support to extends TwigRenderizer with tags. See PR [#65](https://github.com/spress/Spress/issues/65).
 * [New] Each item of a sorted collection has `next` and `prior` relationships. At compile time, you have access to these through `page.relationships.next` and `page.relationships.prior` variables. See feature [#69](https://github.com/spress/Spress/issues/69).
 * [New] Relationship collection for items. A new class has been added: `RelationshipCollection`. A new method getRelationshipCollection has been added to `ItemIterface`.
-* [New] `MirrorConverter` class has been replaced by `MapConverter`. See feature [#73](https://github.com/spress/Spress/issues/73). Fixed ticket: [#28](https://github.com/spress/Spress/issues/28) "Support .twig extention". 
+* [New] `MirrorConverter` class has been replaced by `MapConverter`. See feature [#73](https://github.com/spress/Spress/issues/73). Fixed ticket: [#28](https://github.com/spress/Spress/issues/28) "Support .twig extention".
 * [New] Added `ItemCollection` class to Core support classes.
 * [New] Added `getCollections` method in `CollectionManager` class.
 * [New] Added `clearConverter` and `countConverter` methods in `ConverterManager` class.
@@ -162,7 +171,7 @@ Date: 2014-12-21
 ## V1.1.0-beta.2 {#1-1-0-beta-2}
 Date: 2014-11-21
 
-* [New] Issue [#17](https://github.com/spress/Spress/issues/17): 
+* [New] Issue [#17](https://github.com/spress/Spress/issues/17):
 [Twig debug mode](/news/2014/10/28/new-in-spress-1-1-debug-mode/) through configuration.
 * [New] Two new scaffolding commands: `new:post` and `new:plugin`.
 * [New] Proposal [#22](https://github.com/spress/Spress/issues/22): Namespace "new" in commands for creating stuff.

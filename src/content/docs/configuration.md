@@ -12,7 +12,7 @@ prettify: true
 ---
 Your site have a `config.yml` file that lets you change the default configuration
 of Spress and create new variables that will be accessible in your template with
-`{{ "{{ site.your_variable }}" }}`. Some global variables like `timezone` or 
+`{{ "{{ site.your_variable }}" }}`. Some global variables like `timezone` or
 `safe` can be specified in the [command line options or flags](/docs/how-it-works/#site-build-command).
 
 <div class="panel panel-default">
@@ -33,9 +33,9 @@ of Spress and create new variables that will be accessible in your template with
 
 ## Environment configuration: development and production {#environment}
 
-The environment configuration is useful for writing configuration options for development and 
+The environment configuration is useful for writing configuration options for development and
 production environments. Each Spress site has a `config.yml` file with the options
-for the default environment (dev). If you want to set options for production environment you 
+for the default environment (dev). If you want to set options for production environment you
 can create a `config_prod.yml` file with the options that will override values from `config.yml`.
 The command line option `--env="prod"` lets you enable a specific environment.
 
@@ -91,6 +91,10 @@ collections:
 host: '0.0.0.0'
 port: 4000
 server_watch_ext: ['html', 'htm', 'xml']
+
+# Plugin manager
+plugin_manager_builder:
+  exclude_path: ['tests', 'Tests']
 ```
 
 <table class="table">
@@ -189,6 +193,14 @@ server_watch_ext: ['html', 'htm', 'xml']
             </td>
         </tr>
         <tr>
+            <td>plugin_manager_builder</td>
+            <td>array</td>
+            <td markdown="1">
+                <span class="label label-success">Spress >= 2.1.3</span>
+                Directives for plugin manager builder. See [more details](#plugin_manager_builder).
+            </td>
+        </tr>
+        <tr>
             <td>port</td>
             <td>integer</td>
             <td markdown="1">
@@ -218,7 +230,7 @@ server_watch_ext: ['html', 'htm', 'xml']
             <td>timezone</td>
             <td>string</td>
             <td markdown="1">
-                Set the Timezone. See 
+                Set the Timezone. See
                 [more timezones in PHP](http://www.php.net/manual/en/timezones.php).
             </td>
         </tr>
@@ -236,6 +248,29 @@ server_watch_ext: ['html', 'htm', 'xml']
                 {% verbatim %}
                 `<link href="{{ site.url }}/css/style.css" rel="stylesheet">`
                 {% endverbatim %}
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+### Options for plugin_manager_builder {#plugin_manager_builder}
+
+<table class="table">
+    <thead>
+        <tr>
+            <th class="col-sm-2">Name</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>exclude_path</td>
+            <td>array</td>
+            <td markdown="1">
+                Indicates which directories are
+                excluded of the discovering class process. Useful for excluding
+                tests directories.
             </td>
         </tr>
     </tbody>
