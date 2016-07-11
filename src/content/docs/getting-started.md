@@ -43,7 +43,7 @@ Globally installing of Spress involves a few steps:
 
 ```
 C:\Users\username> cd C:\bin
-C:\bin> echo @php "%%~dp0spress.phar" %%* > spress.cmd
+C:\bin> echo @php "%~dp0spress.phar" %* > spress.cmd
 C:\bin> exit
 ```
 6. Open a new command line and confirm that you can execute spress from any path:
