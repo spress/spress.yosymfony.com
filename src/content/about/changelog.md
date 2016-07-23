@@ -27,7 +27,7 @@ Date: 2016-07-03
 # 2.1.2 {#2-1-2}
 Date: 2016-05-23
 
-* [New] Two new methods have been added to StringWrapper class: `lower` and `upper` for cingonvert a given string to lower-case and upper-case respectively using UTF-8 as encoding.
+* [New] Two new methods have been added to `StringWrapper` class: `lower` and `upper` for converting a given string to lower-case and upper-case respectively using UTF-8 as encoding.
 * [Fixed] Bug [#80](https://github.com/spress/Spress/issues/80) has been fixed: "`Composer install` fails if no namespace is specified in new plugin". See PR [#81](https://github.com/spress/Spress/issues/81).
 * [Fixed] Bug [#82](https://github.com/spress/Spress/issues/82) has been fixed: "Substr `---` in yaml string cause builder crash".
 * [Fixed] Bug [#83](https://github.com/spress/Spress/issues/83) has been fixed: "Same tags on different languages cause builder crash".
