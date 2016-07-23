@@ -153,7 +153,21 @@ missing, `none` template will be applied.
 
 ### The pretty style
 
-This is a extensionless permalink that contain neither a trailing slash nor a file extension.
+This is a "extensionless" permalink that contain neither a trailing slash nor a file extension.
 If the out extension of an item is other than `html` then `none` template will be applied.
 Sometimes this configuration requires additional support from the web server.
 See [try_files on Nginx](http://nginx.org/en/docs/http/ngx_http_core_module.html#try_files) or [multiviews](https://httpd.apache.org/docs/current/content-negotiation.html#multiviews) on Apache.
+
+#### Forcing the "extensionless" mode with custom permalinks {#forcing-extensionless}
+
+<span class="label label-success">Spress >= 2.1.0</span> In case of you want to
+force the extensionless mode from pretty style with the custom pernalink of an
+item, you can add this attribute at the front matter block: `no_html_extension: true`.
+
+For example: an item with path `content/foo.html` and permalink attribute:
+`amazing-foo` will generate a page with a path: `build/amazing-foo` which has
+`/amazing-foo` as relative URL. If you set `no_html_extension` to `true`, the
+result will be a page with a path: `build/amazing-foo/index.html` which has
+`amazing-foo` as relative URL.
+
+To enable this feature globally, set `no_html_extension` to `true` in the `config.yml` file.

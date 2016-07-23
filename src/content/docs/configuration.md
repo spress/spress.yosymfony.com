@@ -77,6 +77,7 @@ timezone: 'UTC'                          # e.g. Europe/Madrid
 safe: false
 permalink: 'pretty'
 preserve_path_title: false
+no_html_extension: false
 layout_ext: ['html.twig', 'twig', 'html']
 url: ''                                  # e.g: http://your-domain.local:4000
 
@@ -211,9 +212,20 @@ plugin_manager_builder:
             <td>preserve_path_title</td>
             <td>boolean</td>
             <td markdown="1">
-                Set to `true` in case of you want to [preserve the title extracted
+                Set to `true` in case of you want to
+                [preserve the title extracted
                 from the filename path](/docs/writing-posts/#preserve-title)
                 over the Front matter title attribute.
+            </td>
+        </tr>
+        <tr>
+            <td>no_html_extension</td>
+            <td>boolean</td>
+            <td markdown="1">
+                <span class="label label-success">Spress >= 2.1.0</span>
+                Set to `true` in case of you want to
+                [force the "extensionless" mode](/docs/permalinks/#forcing-extensionless)
+                from `pretty` permalink style with custom permalinks.
             </td>
         </tr>
         <tr>
