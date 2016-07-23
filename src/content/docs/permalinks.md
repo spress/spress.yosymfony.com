@@ -10,7 +10,7 @@ menu:
 prettify: true
 ---
 Permalinks of items can be customized with a template through the `config.yml` file
-of your site or as an attribute for each page. Permlinks lets you specify where compiled
+of your site or as an attribute for each page. Permlinks let's specify where compiled
 items should be written.
 
 ```
@@ -98,7 +98,7 @@ permalink: "/:path/:basename.:extension"
 
 ## Predefined permalink templates {#predefined-templates}
 
-Spress have a few predefined permalink templates. If you want to configure it 
+Spress have a few predefined permalink templates. If you want to configure it
 on your site simply use its name:
 
 <table class="table">
