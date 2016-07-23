@@ -1,11 +1,19 @@
 [
     {
+        "name": "Remote JSON",
+        "author": "Kris Northfield",
+        "url_info": "https://github.com/knorthfield/spress-remote-json",
+        "url_author": "http://www.northfieldx.co.uk/",
+        "description": "Get JSON data from URL, like an API.",
+        "tags": ["twig", "api", "json"]
+    },
+    {
         "name": "Twig Extensions",
         "author": "Ghislain PHU",
         "url_info": "https://github.com/GhislainPhu/spress-twig-extensions",
         "url_author": "https://ghislainphu.fr",
         "description": "Add twig/extensions to Spress.",
-        "tags": ["twig"]
+        "tags": ["twig", "intl"]
     },
     {
         "name": "Beautify HTML",
