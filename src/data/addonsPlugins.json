@@ -1,5 +1,13 @@
 [
     {
+        "name": "Spress Import",
+        "author": "Yo! Symfony",
+        "url_info": "https://github.com/spress/Spress-import",
+        "url_author": "http://yosymfony.com/",
+        "description": "A plugin for importing from various blog platform to Spress.",
+        "tags": ["wordpress", "csv"]
+    },
+    {
         "name": "Remote JSON",
         "author": "Kris Northfield",
         "url_info": "https://github.com/knorthfield/spress-remote-json",
