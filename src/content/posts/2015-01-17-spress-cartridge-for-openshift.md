@@ -5,16 +5,16 @@ description: "An OpenShift cartridge to run a static blog or website using Spres
 categories: [news]
 tags: [openshift,cartridge,deploy,cloud]
 ---
-<img class="center-block" src="{{ site.url }}/assets/img/openshift-logo.svg">
+<img class="center-block" src="/assets/img/openshift-logo.svg">
 
 Logo owned by Red Hat for [OpenShift](http://openshift.com).
 
 OpenShift is a cloud computing platform as a service from Red Hat for running applications in several
-platform like NodeJs, Java or PHP. Openshift is a one of the most common PaaS because has a 
-competitive prices for computing with free and premium plans. The free plan is a good starting 
+platform like NodeJs, Java or PHP. Openshift is a one of the most common PaaS because has a
+competitive prices for computing with free and premium plans. The free plan is a good starting
 point for creating static blogs and web pages. Openshift is organized in Gears and inside of each
 Gears we have one or more cartridges. OpenShift has a few prepared carteridges for PHP, Java, MySQL
-and other applications. Today we are proudly to present a 
+and other applications. Today we are proudly to present a
 [Cartridge for running a static site or blog](https://github.com/spress/Openshift-spress-cartridge)
 using Spress.
 
