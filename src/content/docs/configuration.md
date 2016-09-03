@@ -138,12 +138,18 @@ plugin_manager_builder:
         <tr>
             <td>exclude</td>
             <td>array</td>
-            <td>Force to exclude files or directories.</td>
+            <td markdown="1">
+                Force to exclude files or directories from `src/content` folder.
+                e.g: `['posts']`.
+            </td>
         </tr>
         <tr>
             <td>include</td>
             <td>array</td>
-            <td>Force to include files or directories.</td>
+            <td markdown="1">
+                Force to include files or directories.
+                e.g: `['/home/static/pages']`.
+            </td>
         </tr>
         <tr>
             <td>host</td>
