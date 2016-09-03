@@ -27,7 +27,7 @@ $ spress new:site my-site --all
 Layouts describes how the content is distributed in a page. Layouts are simple HTML & Twig
 files located at `./src/layouts` and they can inherit from other layouts
 
-In this example, `default.html` file may hold the general HTML definitions like `html` and `head` 
+In this example, `default.html` file may hold the general HTML definitions like `html` and `head`
 tags with metas, title and assets:
 
 {% verbatim %}
@@ -53,7 +53,7 @@ tags with metas, title and assets:
 
 Prior layout contains a `content` block and this will be filled out with the page content.
 
-Another layout could be added for describing how a post page is: `post.html`. This one inherited 
+Another layout could be added for describing how a post page is: `post.html`. This one inherited
 from `default.html` using the `layout` attribute:
 
 {% verbatim %}
@@ -66,7 +66,7 @@ layout: "default"
     <h1>{{ page.title }}</h1>
 
     {{ page.content }}
-    
+
 {% endblock %}
 ```
 {% endverbatim %}
@@ -94,7 +94,7 @@ It's also possible to pass custom variables to a patial using `with` keyword:
 
 More information about [Twig include statement](http://twig.sensiolabs.org/doc/tags/include.html).
 
-### Avoids renderizer in some files
+### Avoids renderizer in some files {#avoid-renderizer}
 
 In some cases is useful avoid the [renderizer](/docs/developers/renderizer) phase in some kind of files.
 A good example of that is a minimized js file with the following content:
