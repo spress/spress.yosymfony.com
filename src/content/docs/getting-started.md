@@ -64,7 +64,7 @@ Lets create a sample site and build it. With Spress executable, you have two opt
 1. To scaffold a blank site.
 2. To use a base theme.
 
-Lets create our site using [Spresso](https://github.com/yosymfony/Spress-theme-spresso/tree/2.0) theme:
+Lets create our site using [Spresso](https://github.com/spress/Spress-theme-spresso) theme:
 
 <div class="panel panel-default">
   <div class="panel-body">
@@ -90,7 +90,7 @@ $ spress site:build --server --watch
 ```
 
 With `new:site` command Spress creates a new site using Spresso theme. Next,
-you can build your site with `site:build` command. You'll get the result at 
+you can build your site with `site:build` command. You'll get the result at
 `build` folder.
 
 The `--server` option launches a *built-in* server which lets you see your site at `http://localhost:4000`.
