@@ -79,7 +79,7 @@ has been added:
 * **new:theme**: Creates a new theme (blank or based on another pre-existent).
 * **add:plugin**: Adds a new plugin or theme and resolves its dependencies.
 * **remove:plugin**: Removes a plugin or theme previously intalled.
-* **update:plugin**: Update plugins and themes on which your site depend on.
+* **update:plugin**: Updates plugins and themes on which your site depend on.
 
 Additionally, `new:site` command has been modified and the `--all` option has been
 declared as deprecated.
