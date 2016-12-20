@@ -69,7 +69,7 @@
         "url_info": "https://github.com/SeleneSoftware/spress-plugin-deploy-aws",
         "url_author": "http://selenesoftware.us",
         "description": "Deploy on build your site to an AWS S3 bucket.",
-        "tags": ["Spress 1.x", "aws", "deploy"]
+        "tags": ["aws", "s3", "deploy"]
     },
     {
         "name": "Metadata of a Github repository",
