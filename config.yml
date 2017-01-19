@@ -17,9 +17,9 @@ release:
    url_phar: "https://github.com/spress/Spress/releases/download/v2.1.3/spress.phar"
 
 pre_release:
-   version:
-   url:
-   url_phar:
+   version: 2.2.0
+   url: https://github.com/spress/Spress/releases/tag/v2.2.0-rc
+   url_phar: https://github.com/spress/Spress/releases/download/v2.2.0-rc/spress.phar
 
 spressin:
   img_url: "/assets/img/spressin-new-year.jpg"
