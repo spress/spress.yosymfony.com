@@ -1,3 +1,6 @@
+---
+avoid_renderizer: false
+---
 html,
 body {
     font-family: 'Open Sans', sans-serif;
@@ -178,7 +181,7 @@ h6 {
     height: 400px;
     width: 100%;
     position: relative;
-    background: #19242f url({{ site.spressin.img_url }}) no-repeat center center fixed; 
+    background: #19242f url({{ site.spressin.img_url }}) no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;

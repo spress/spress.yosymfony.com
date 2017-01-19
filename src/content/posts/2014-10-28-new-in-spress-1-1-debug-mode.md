@@ -1,7 +1,7 @@
 ---
 layout: blog/post
-title: New in Spress 1.1: debug mode
-description: With debug mode activated you can dump information about a template variable in your Spress site. 
+title: 'New in Spress 1.1: debug mode'
+description: With debug mode activated you can dump information about a template variable in your Spress site.
 categories: [news]
 tags: ['1.1', 'debug', 'twig', 'dump']
 ---

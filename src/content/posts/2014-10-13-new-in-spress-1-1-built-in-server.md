@@ -1,12 +1,12 @@
 ---
 layout: blog/post
-title: New in Spress 1.1: built-in server and watch for changes.
+title: 'New in Spress 1.1: built-in server and watch for changes'
 description: Spress 1.1 came with a built-in server and a resource-watcher
 categories: [news]
 tags: ['1.1', 'server', 'resource-watcher']
 ---
 Spress 1.1.0 is coming and this time we want to show you two new features:
-the **built-in server and the resource watcher**. With the built-in server you 
+the **built-in server and the resource watcher**. With the built-in server you
 have a simple web server for viewing your site without any extra requirement.
 To enable this server you can use `--server` option with `spress site:build` command.
 The other feature included in this version is a resource watcher for watching for

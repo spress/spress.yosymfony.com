@@ -1,11 +1,11 @@
 ---
 layout: blog/post
-title: New in Spress 1.1: Plugins manager improved
+title: 'New in Spress 1.1: Plugins manager improved'
 description: The plugins manager has been improved for Spress 1.1.0
 categories: [news]
 tags: ['1.1', 'plugins']
 ---
-The plugins manager has been [improved](https://github.com/yosymfony/Spress/issues/11) for the next 
+The plugins manager has been [improved](https://github.com/yosymfony/Spress/issues/11) for the next
 Spress 1.1.0. Prior to version 1.1.0 for each Plugin was necessary a `composer.json` file. Now this file is optional
 and you can use it for distributable plugins with [Packagist](https://packagist.org/) or for plugins
 with namespace.
@@ -38,7 +38,7 @@ class YourPlugin extends Plugin
 
     public function onStart(Event\EnvironmentEvent $event)
     {
-        
+
     }
 }
 ```

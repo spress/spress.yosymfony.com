@@ -1,12 +1,12 @@
 ---
 layout: blog/post
-title: New in Spress 1.1: Environment configurations
+title: 'New in Spress 1.1: Environment configurations'
 description: How to load configurations for different environments?
 categories: [news]
 tags: ['1.1', 'configuration','environment']
 ---
 The development of Spress 1.1.0 continues with new features like support to load configurations for
-different environments. This is **useful for writing configuration options for development 
+different environments. This is **useful for writing configuration options for development
 and production environments**. Each Spress site has a `config.yml` file (mandatory) with the options
 for the default environment (dev). If you want set options for production environment you can
 to create a `config_prod.yml` file with the options that will be overrided in `config.yml`.
@@ -45,7 +45,7 @@ Now you can build your site with development options: `$ spress site:build` or u
 ### How to get the environment's name in your templates or plugins?
 
 In your templates the environment's name is located at `site.env`. If you are a plugin developer you can
-get this value in `spress.start`, `spress.before_render`, `spress.after_render`, `spress.before_render_pagination` 
+get this value in `spress.start`, `spress.before_render`, `spress.after_render`, `spress.before_render_pagination`
 or `spress.after_render_pagination` [events](/docs/developers/events-list).
 
 

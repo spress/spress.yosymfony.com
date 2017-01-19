@@ -1,6 +1,6 @@
 # Site configuration
 
-debug: true
+debug: false
 
 title: "The static site generator in PHP"
 description: "Spress is a blog-aware application that transform your plain text files in static sites."

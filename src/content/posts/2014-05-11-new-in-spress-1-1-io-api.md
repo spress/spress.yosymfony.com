@@ -1,6 +1,6 @@
 ---
 layout: blog/post
-title: New in Spress 1.1: IO API
+title: 'New in Spress 1.1: IO API'
 description: With the IO API your plugins can to interact with users
 categories: [news]
 tags: ['1.1', 'io api']
@@ -22,23 +22,23 @@ This is a example of how to use the new IO API:
 class SpressIOExample extends Plugin
 {
     private $io;
-    
+
     public function initialize(EventSubscriber $subscriber)
     {
         $subscriber->addEventListener('spress.start', 'onStart');
     }
-    
+
     public function onStart(EnviromentEvent $event)
     {
         $this->io = $event->getIO();
-        
+
         if($this->io->isInteractive())
         {
             $this->io->write('Welcome to Github plugin for Spress.', true);
             $answer = $this->io->askConfirmation(
-                "Do you want to connect to your Github account? ", 
+                "Do you want to connect to your Github account? ",
                 false);
-            
+
             if($answer)
             {
                 $this->io->ask('username: ');
