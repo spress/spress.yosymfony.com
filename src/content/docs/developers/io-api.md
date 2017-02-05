@@ -65,11 +65,11 @@ Before make a question to user is recommendable to know **if the interface is in
 ## IO API methods
 
 * **write**: Write a message: `$io->write('message', true)`. The second argument
-let you set a new line. <span class="label label-success">Spress >= 2.2.0</span> There is a third
+let you set a new line. <span class="label label-success">Spress >= 2.2</span> There is a third
 optional argument for setting the verbosity level. `VERBOSITY_NORMAL` by default. e.g:
 `$io->write('message', true, IOInterface::VERBOSITY_NORMAL)`.
 
-* **overwrite**: <span class="label label-success">Spress >= 2.2.0</span>
+* **overwrite**: <span class="label label-success">Spress >= 2.2</span>
 Overwrites a previous message to the output: `$io->overwrite('message')`. This method
 has the same sign that `write` method.
 * **ask**: Ask a question: `$io->ask('question?', null)`. The second argument is the default answer if the user enters nothing.
@@ -77,7 +77,7 @@ has the same sign that `write` method.
 * **askAndValidate**: Ask a question with a *callback* function to validate the response.
 * **askAndHideAnswer**: Ask a question and hide the answer. This method is useful to require password.
 * **askHiddenResponseAndValidate**: This method is like before but using a *callback* function to validate the response.
-* **askChoice**: <span class="label label-success">Spress >= 2.2.0</span>
+* **askChoice**: <span class="label label-success">Spress >= 2.2</span>
 Asks the user to select a value:
 `$io->askChoice('Select a color', ['blue', 'green'], 'green')`.
 The first argument corresponds to the question. Second argument is for available
