@@ -67,10 +67,11 @@ Before make a question to user is recommendable to know **if the interface is in
 * **write**: Write a message: `$io->write('message', true)`. The second argument
 let you set a new line. <span class="label label-success">Spress >= 2.2.0</span> There is a third
 optional argument for setting the verbosity level. `VERBOSITY_NORMAL` by default. e.g:
-`$io->write('message', true, IOInterface::VERBOSITY_NORMAL)`
+`$io->write('message', true, IOInterface::VERBOSITY_NORMAL)`.
 
 * **overwrite**: <span class="label label-success">Spress >= 2.2.0</span>
-Overwrites a previous message to the output: `$io->messages('message')`.
+Overwrites a previous message to the output: `$io->overwrite('message')`. This method
+has the same sign that `write` method.
 * **ask**: Ask a question: `$io->ask('question?', null)`. The second argument is the default answer if the user enters nothing.
 * **askConfirmation**: yes/no question. `$io->askConfirmation('do you want?', true)`. The second argument is the default answer if the user enters nothing.
 * **askAndValidate**: Ask a question with a *callback* function to validate the response.
@@ -88,7 +89,9 @@ options and the last one indicates the default value.
 If you are using a *callback* function for validating an answer the validator receives the data to validate.
 It must return the validated data when the data is valid and throw an exception otherwise.
 
-### Verbosity levels
+### Verbosity levels {#verbosity-levels}
+
+In the CLI tool, the verbosity level could be change using the options `-vv`, `-vvv`.
 
 [Verbosity levels available](https://github.com/spress/Spress/blob/master/src/Core/IO/IOInterface.php#L27):
 
