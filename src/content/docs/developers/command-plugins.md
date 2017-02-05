@@ -2,7 +2,7 @@
 layout: page-dev-2.0
 title: Developers &#8250; Command plugins
 description: Create a subcommand for Spress executable.
-header: 
+header:
   title: Command plugins
   sub: Developers
 menu:
@@ -63,13 +63,13 @@ class ExampleSayHello extends CommandPlugin
 
     /**
      * Gets the metas of a plugin.
-     * 
+     *
      * Standard metas:
      *   - name: (string) The name of plugin.
      *   - description: (string) A short description of the plugin.
      *   - author: (string) The author of the plugin.
      *   - license: (string) The license of the plugin.
-     * 
+     *
      * @return array
      */
     public function getMetas()
@@ -86,7 +86,7 @@ class ExampleSayHello extends CommandPlugin
 
 ### Command's definition
 `getCommandDefinition` returns the command's definition. The name of a command is the basic definition:
-`$definition = new CommandDefinition('hello')`. Additionally you can set a description text, a help text 
+`$definition = new CommandDefinition('hello')`. Additionally you can set a description text, a help text
 and a set of arguments and options. More details about [`CommandDefinition` object](https://github.com/spress/Spress/blob/master/src/Plugin/CommandDefinition.php).
 
 ```
@@ -166,5 +166,35 @@ public function executeCommand(IOInterface $io, array $arguments, array $options
     if ($environment->hasCommand('acme')) {
         $environment->runCommand('acme', []);
     }
+}
+```
+
+#### Get an Spress instance {#get-spress}
+
+<span class="label label-success">Spress >= 2.2</span>
+
+In certain situation is useful to get an instance of Spress, for example,
+to build a site. In the following example, you can get an Spress instance pointing
+to the current directory:
+
+```
+public function executeCommand(IOInterface $io, array $arguments, array $options)
+{
+    $environment = $this->getCommandEnvironment();
+
+    $spress = $environment->getSpress();
+    $spress->parse();
+}
+```
+
+To set another location:
+
+```
+public function executeCommand(IOInterface $io, array $arguments, array $options)
+{
+    $environment = $this->getCommandEnvironment();
+
+    $spress = $environment->getSpress('/my-site-folder');
+    $spress->parse();
 }
 ```
