@@ -202,6 +202,24 @@ $ spress new:theme mysite
 
 ### add:plugin {#add-plugin}
 <span class="label label-success">Spress >= 2.2</span>
+Add a new plugin or theme and resolve its dependencies. This is equivalent
+to run `composer require`.
+
+```bash
+add:plugin [--prefer-source] [--dry-run] [--dev] [--no-scripts] [--] [<packages>]
+```
+
+* `--prefer-source`: Forces installation of the plugin from package sources when possible, including VCS information.
+* `--dry-run`: Outputs the operations but will not execute anything.
+* `--dev`: Enables installation of dev-require packages of the plugin.
+* `--no-scripts`: Skips the execution of all scripts defined in `composer.json` file.
+* `packages`: List of packages that should be added.
+
+e.g:
+
+```
+$ spress add:plugin spress/github-metadata-plugin
+```
 
 ### remove:plugin
 <span class="label label-success">Spress >= 2.2</span>
