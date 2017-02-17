@@ -2,7 +2,7 @@
 layout: page-dev-2.0
 title: Developers &#8250; Create a plugin
 description: Getting started with Spress plugins
-header: 
+header:
   title: Creating a plugin
   sub: Developers
 menu:
@@ -20,7 +20,7 @@ It’s easy to manually create plugins but Spress provides a `new:plugin` genera
 $ spress new:plugin
 ```
 
-By default, the command is interactive - you'll have to answer few questions 
+By default, the command is interactive. You will have to answer few questions
 to tweak the generation.
 
 The complete syntax of the command is:
@@ -44,10 +44,12 @@ Note that if you want to create a [command plugin](#command-plugin), `--command-
 
 ## Create a plugin manually {#manual-plugins}
 
-We recommend to use `new:plugin` command but if you want... you can do it by hand. 
-It's recommended to create each plugin in a separate folder and with a 
-`composer.json` file. With [Composer](https://getcomposer.org), you can create reusable plugins available to 
+We recommend to use `new:plugin` command but if you want... you can do it by hand.
+It's recommended to create each plugin in a separate folder and with a
+`composer.json` file. With [Composer](https://getcomposer.org), you can create reusable plugins available to
 others using [packagist.org](https://packagist.org/) and [Github](https://github.com/).
+Any file ending in `.php` inside `plugins` directory will be loaded before Spress
+generates your site.
 
 Here you can see an [example](https://github.com/spress/Github-metadata-plugin) of a plugin.
 
@@ -56,7 +58,7 @@ Here you can see an [example](https://github.com/spress/Github-metadata-plugin) 
 This is the typical structure of a plugin:
 
 ```
-.
+site
 ├── src
 └── plugins
     ├── YourPluginName
@@ -71,7 +73,7 @@ In your new plugin PHP file you need to create a **class with the same name** as
 
 #### composer.json {#composer-json}
 
-The `composer.json` file contains information about your plugin like name, 
+The `composer.json` file contains information about your plugin like name,
 entry-point class or other libraries required by this one.
 
 ```
@@ -88,7 +90,7 @@ entry-point class or other libraries required by this one.
         }
     ],
     "require": {
-        "spress/spress-installer": "~2.0"
+        "spress/spress-installer": "~2.1"
     }
 }
 ```
@@ -105,10 +107,10 @@ Go to your site folder and run `composer update` command.
 
 ## The plugin {#plugin}
 
-A plugin class must implement `PluginInterface`. 
+A plugin class must implement `PluginInterface`.
 Required methods are:
 
-* `initialize` method where you add your events to event listener. 
+* `initialize` method where you add your events to event listener.
 * `getMetas` method returns an array with the plugins's metadata.
 
 ### initialize method {#initialize-method}
@@ -127,13 +129,13 @@ class YourPluginName implements PluginInterface
 {
     public function initialize(EventSubscriber $subscriber)
     {
-        $subscriber->addEventListener('spress.start', 
+        $subscriber->addEventListener('spress.start',
             function(EnvironmentEvent $event)
             {
                 // Event's code
             });
     }
-    
+
     public function getMetas()
     {
         return [ "name" => "YourPluginName", ];
@@ -164,7 +166,7 @@ The `addEventListener($eventName, $listener)` method adds a new listener to an e
             <td>$listener</td>
             <td>callable</td>
             <td>
-                The listener of the event. It may be a closure function or a 
+                The listener of the event. It may be a closure function or a
                 function name.
             </td>
         </tr>
@@ -231,12 +233,12 @@ class YourPluginName implements PluginInterface
     {
         $subscriber->addEventListener('spress.start', 'onStart');
     }
-    
+
     public function onStart(EnvironmentEvent $event)
     {
         // Code for handle event.
     }    
-    
+
     public function getMetas()
      {
          return [ "name" => "YourPluginName", ];
@@ -294,7 +296,7 @@ class Yosymfonytestplugin extends CommandPlugin
 
     /**
      * Gets the metas of a plugin.
-     * 
+     *
      * @return array
      */
     public function getMetas()
