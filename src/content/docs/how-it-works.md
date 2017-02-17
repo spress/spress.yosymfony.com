@@ -10,10 +10,10 @@ menu:
   order: 2
 prettify: true
 ---
-Spress is a static site generator, an application that takes your site and 
+Spress is a static site generator, an application that takes your site and
 transforms it to final HTML ready to deploy on your hosting. Your content is
-generated at `./build` folder. You can create content using HTML or 
-Markdown syntax. Additionally, with [converters](/docs/developers/converters), you 
+generated at `./build` folder. You can create content using HTML or
+Markdown syntax. Additionally, with [converters](/docs/developers/converters), you
 can add new types of content.
 
 ## Site structure {#site-structure}
@@ -35,10 +35,10 @@ This is the typical structure of a Spress site
 ├── composer.json
 └── config.yml
 ```
-* **config.yml**: Contains the configuration data. You can change the behaviour of 
+* **config.yml**: Contains the configuration data. You can change the behaviour of
 Spress or create custom variables.
 * **./src/includes**: Contains partials that can be used in the layouts, pages and posts.
-* **./src/layouts**: Contains layout files used to organize your content. In your post or page, 
+* **./src/layouts**: Contains layout files used to organize your content. In your post or page,
 you can choose the layout in the [Front matter](/docs/attributes/#front-matter):
 * **./src/content**: The main content of your site are located in this folder.
 * **./src/content/posts**: Contains the blog posts files. Files located at this folder
@@ -94,7 +94,7 @@ See [permalink](/docs/permalinks) documentation.
 
 ### site:build {#site-build-command}
 
-Build your site in your `build` folder. 
+Build your site in your `build` folder.
 
 `site:build [-s|--source="./"] [--timezone="..."] [--env="dev"] [--server] [--watch] [--drafts] [--safe]`
 
@@ -134,7 +134,7 @@ $ spress site:build --safe
 
 ### new:site {#new-site-command}
 
-Create a new site. 
+Create a new site.
 
 `new:site [path[="./"]] [template[="blank"]] [--force] [--all]`
 
@@ -142,7 +142,11 @@ Create a new site.
 * `--force` Force to use the path even though it exists and it's not empty.
 * `--all` In blank template, creates the complete scaffold.
 
-E.g `$ spress new:site /your-site-dir spresso`
+E.g `$ spress new:site /your-site-dir spress/spress-theme-spresso`
+
+Additionally, a concrete version of the theme can be set:
+
+`$ spress new:site /your-site-dir spress/spress-theme-spresso:2.1.0`
 
 The prior example creates a new site using [Spresso theme](https://github.com/yosymfony/Spress-theme-spresso/tree/2.0).
 
@@ -162,9 +166,48 @@ new:post  [--title="..."] [--layout="default"] [--date="..."]
 * `--tags`: Comma separated list of tags.
 * `--categories`: Comma separated list of categories.
 
-### new:plugin
+### new:plugin {#new-plugin}
 
 Crate a new plugin. See the documentation at [developers doc](/docs/developers).
+
+### new:theme {#new-theme}
+<span class="label label-success">Spress >= 2.2</span>
+Create a new theme that could be based on another one preexists.
+
+```bash
+new:theme [--repository] [--prefer-source] [--dev] [--no-scripts]
+    [--prefer-lock] [--force] [--] [<path>] [<package>]
+```
+
+* `--repository`: Pick a different repository (as url or json config) to look for the package.
+* `--prefer-source`: Forces installation of the theme from package sources when possible, including VCS information.
+* `--dev`: Enables installation of dev-require packages of the theme.
+* `--no-scripts`: Skips the execution of all scripts defined in composer.json file.
+* `--prefer-lock`: If there is a `composer.lock` file in the theme, Spress will use the exact version declared in that.
+* `--force`: Force creation even if path already exists.
+* `path`: Path of the new site. Current folder by default.
+* `package`: Package's name of the theme. `blank` by default.
+
+e.g: creating a theme based on Spresso
+
+```bash
+$ spress new:theme mysite spress/spress-theme-spresso:
+```
+
+e.g: creating a blank theme:
+
+```bash
+$ spress new:theme mysite
+```
+
+### add:plugin {#add-plugin}
+<span class="label label-success">Spress >= 2.2</span>
+
+### remove:plugin
+<span class="label label-success">Spress >= 2.2</span>
+
+### update:plugin {#update-plugin}
+<span class="label label-success">Spress >= 2.2</span>
 
 ### self-update {#self-update}
 
