@@ -71,7 +71,7 @@ site
 
 In your new plugin PHP file you need to create a **class with the same name** as the file.
 
-#### composer.json {#composer-json}
+#### The *composer.json* file {#composer-json}
 
 The `composer.json` file contains information about your plugin like name,
 entry-point class or other libraries required by this one.
@@ -113,7 +113,7 @@ Required methods are:
 * `initialize` method where you add your events to event listener.
 * `getMetas` method returns an array with the plugins's metadata.
 
-### initialize method {#initialize-method}
+### The *initialize* method {#initialize-method}
 
 This method will be invoked at the beginning of the plugin's life cycle.
 You can use it like a plugin constructor to initialize internal variables.
@@ -173,7 +173,7 @@ The `addEventListener($eventName, $listener)` method adds a new listener to an e
     </tbody>
 </table>
 
-### getMetas method {#getMetas method}
+### The *getMetas* method {#getMetas method}
 
 This method returns an array with the plugins's metadata. List of the standard metas:
 
