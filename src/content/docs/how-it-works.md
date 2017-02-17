@@ -179,14 +179,14 @@ new:theme [--repository] [--prefer-source] [--dev] [--no-scripts]
     [--prefer-lock] [--force] [--] [<path>] [<package>]
 ```
 
-* `--repository`: Pick a different repository (as url or json config) to look for the package.
+* `--repository`: Pick a different repository (as url or json config) to look for the theme package.
 * `--prefer-source`: Forces installation of the theme from package sources when possible, including VCS information.
 * `--dev`: Enables installation of dev-require packages of the theme.
-* `--no-scripts`: Skips the execution of all scripts defined in composer.json file.
+* `--no-scripts`: Skips the execution of all scripts defined in `composer.json` file.
 * `--prefer-lock`: If there is a `composer.lock` file in the theme, Spress will use the exact version declared in that.
 * `--force`: Force creation even if path already exists.
-* `path`: Path of the new site. Current folder by default.
-* `package`: Package's name of the theme. `blank` by default.
+* `path`: Path of the new theme. Current folder by default.
+* `package`: The name of the theme package. `blank` by default.
 
 e.g: creating a theme based on Spresso
 
