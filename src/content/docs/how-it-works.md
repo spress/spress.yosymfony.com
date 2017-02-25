@@ -52,7 +52,7 @@ you can choose the layout in the [Front matter](/docs/attributes/#front-matter):
 * **./src/content/assets**: Contains the assets of your site: `css`, `js` files for instance.
 are under `posts` [collection](docs/collections) and they have a special name format: `year-month-day-title.md`.
 The Front matter of each file let you change these properties.
-* **./src/plugins**: Extends the functionality of Spress. See [developers docs](/docs/developers).
+* **./src/plugins**: Extends the functionality of Spress. See [developer docs](/docs/developers).
 * **./src/themes**: Themes of the site. See [themes](docs/themes).
 * **./build**: This is where the generated site will be placed.
 
