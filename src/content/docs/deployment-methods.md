@@ -7,7 +7,7 @@ header:
 menu:
   id: doc 2.0
   title: Deployment methods
-  order: 13
+  order: 14
 prettify: true
 ---
 There are several ways to deploy a site to your web host:

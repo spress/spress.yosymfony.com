@@ -10,10 +10,11 @@ menu:
   order: 12
 prettify: true
 ---
-Themes brings to Spress the mechanic to create sites based on community-maintained
-templates. Typically, themes package layouts, includes and assets in a way that
-can be overridden by your site content. Themes are located in `src/themes/`.
-Spress relies on [Packgist](https://packagist.org/) as themes repository.
+Themes brings to Spress the mechanic to create sites based on
+[community-maintained templates](/add-ons/themes/). Typically, themes package
+layouts, includes and assets in a way that can be overridden by your site
+content. Themes are located in `src/themes/`. Spress relies on
+[Packgist](https://packagist.org/) as themes repository.
 
 The structure of directories for themes are the following:
 
@@ -207,41 +208,26 @@ avoid_renderizer: true
 
 By default, `avoid_renderizer` is false.
 
+#### Avoids renderizer for type of files
+
+There is a way to avoid the renderizer action over entire directories
+as well as file types using the `avoid_renderizer` option in `config.yml` file.
+Spress come with the follow default configuration:
+
+```yaml
+avoid_renderizer:
+  filename_extensions: ['css', 'js']
+  paths: ['assets', 'bower_components', 'node_modules']
+```
+
+* **filename_extensions**: list of filename's extension in which the renderizer
+will not act.
+* **paths**: list of path relatives to `content` folder in which the renderizer
+will not act.
+
+If you want to change the default configuration, open your `config.yml` file
+and copy the previous block into this one and modify it with your own values.
+
 ## How to create a site based on a theme?
 
 ### Creating a theme vs creating a site based on a theme
-
-## Plugin installation {#plugin-installation}
-
-[Plugins](/add-ons) extends Spress with amazing capabilities. They are located at `./src/plugins` folder.
-The easy way to install a plugin is using [Composer](https://getcomposer.org/) tool. In this example,
-We will use a plugin called `spress/github-metadata-plugin`.
-
-Create a file named `composer.json` at the root of the site and paste the following content:
-
-```
-{
-    "require": {
-        "spress/github-metadata-plugin": "2.0.*"
-    }
-}
-```
-To Install the plugin executes `composer install` command.
-
-## How to install a new theme? {#installing-new-theme}
-
-There are several ways to do it.
-
-### Download a copy {#install-theme-download}
-
-* Get a copy of the latest release.
-* Uncompress it.
-* Go to theme folder
-* Run `spress site:build --server --watch`
-
-### With Git {#install-theme-git}
-
-* Fork theme repository (so you will be able to modify it later on)
-* Clone it: `git clone https://github.com/YOUR-USER/THEME-REPOSITORY.git folder-name-for-cloned-theme`
-* Go to `folder-name-for-cloned-theme` folder
-* Run `spress site:build --server --watch`
