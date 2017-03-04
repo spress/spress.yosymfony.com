@@ -10,25 +10,118 @@ menu:
   order: 12
 prettify: true
 ---
-**Themes are simply sites**. Spress uses the power of [Twig](http://twig.sensiolabs.org)
-to render templates. You can reuse parts of your HTML and create templates with a easy language.
+Themes brings to Spress the mechanic to create sites based on community-maintained
+templates. Typically, themes package layouts, includes and assets in a way that
+can be overridden by your site content. Themes are located in `src/themes/`.
+Spress relies on [Packgist](https://packagist.org/) as themes repository.
 
-## Creating a theme
-
-The [`new:site`](/docs/how-it-works/#new-site-command) command lets you create a blank site.
-`--all` option enables a [complete scaffolding of the site](/docs/how-it-works/#site-structure).
+The structure of directories for themes are the following:
 
 ```
-$ spress new:site my-site --all
+|- src/
+|  |- themes
+|  |  |- theme01/
+|  |  |- theme02/
 ```
+
+A site could contains at least one theme. **A theme is basically a site**:
+
+```
+|- themes/
+|  |- theme01
+|  |  |- src/
+|  |  |  |- layouts/
+|  |  |  |- includes/
+|  |  |  |- content/
+|  |  |  |  |- assets/
+|  |  |- config.yml
+|  |  |- README.md
+|  |  |- screenshot.png
+```
+The `README.md` and `screenshot.png` files are optionals but it's recommendable
+those one are present. The former contains information of the theme such as
+a briefly description, how to use... etc. The latter provides an idea about the
+look of the theme.
+
+## How to install a theme?
+
+There are two ways to install themes on your site: adds the theme manually to
+the `composer.json` and then performs an `update:plugin` command or uses the
+all-in-one `add:plugin` command:
+
+```bash
+$ cd your-site-directory
+$ spress add:plugin spress-add-ons/clean-blog-theme
+```
+
+After installing a theme, it's necessary to enable this one in the
+`config.yml` file: add or edit the file with the following:
+
+```yaml
+themes:
+  name: 'spress-add-ons/clean-blog-theme'
+```
+
+## Creating a new theme
+
+The [new:theme](/docs/how-it-works/#new-theme) command let you create a blank
+theme or one based on a preexisting theme.
+
+Creating a blank theme at `my-theme` folder:
+
+```
+$ spress new:theme my-theme
+```
+
+Creating a theme based on the latest version of
+[Clean blog theme](https://github.com/spress-add-ons/Clean-blog-theme):
+
+```
+$ spress new:theme my-theme spress-add-ons/clean-blog-theme
+```
+## How the themes work?
+
+Spress will look first to your site’s content, before looking to the theme’s
+defaults for any requested file in the following folders:
+
+* layouts
+* includes
+* content/assets
+
+An example using layouts. suppose the following scenario:
+
+```
+src
+|- themes/
+|  |- theme01
+|  |  |- src/
+|  |  |  |- layouts/
+|  |  |  |  |- default.html
+|- layouts
+|- ...
+|- content
+|  |- index.html
+```
+
+The front matter block of the `index.html` is:
+
+```yaml
+layout: default
+```
+
+In this case, when the renderizer finds out the layout, first looks for
+`default.html` file in the `layouts` folder of your site. As in this example there is
+not a `default.html` file in that place, the renderizer will looks for
+the file at `theme01/src/layouts`.
 
 ### Layouts {#layouts-inheritance}
 
-Layouts describes how the content is distributed in a page. Layouts are simple HTML & Twig
-files located at `./src/layouts` and they can inherit from other layouts
+Layouts describes how the content is distributed in a page. Layouts are simple
+HTML & Twig files located at `layouts` folder and they can inherit from other
+layouts
 
-In this example, `default.html` file may hold the general HTML definitions like `html` and `head`
-tags with metas, title and assets:
+In this example, `default.html` file may hold the general HTML definitions
+like `html` and `head` tags with metas, title and assets:
 
 {% verbatim %}
 ```
@@ -113,6 +206,10 @@ avoid_renderizer: true
 ```
 
 By default, `avoid_renderizer` is false.
+
+## How to create a site based on a theme?
+
+### Creating a theme vs creating a site based on a theme
 
 ## Plugin installation {#plugin-installation}
 
