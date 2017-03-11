@@ -222,7 +222,7 @@ avoid_renderizer:
 
 * **filename_extensions**: list of filename's extension in which the renderizer
 will not act.
-* **paths**: list of path relatives to `content` folder in which the renderizer
+* **paths**: list of paths relatives to `content` folder in which the renderizer
 will not act.
 
 If you want to change the default configuration, open your `config.yml` file
@@ -230,4 +230,12 @@ and copy the previous block into this one and modify it with your own values.
 
 ## How to create a site based on a theme?
 
+To create a site based on a theme you just need to perform a `new:site` command.
+See [Create a new site](/docs/how-it-works/#new-site-command) section of
+[how it work](/docs/how-it-works/) page.
+
 ### Creating a theme vs creating a site based on a theme
+
+When you create a theme, you are scaffolding a new blank site. But if you create
+a new site you are scaffolding a new blank site and set the theme package as a
+requirement of your site in `composer.json` file.
