@@ -165,7 +165,7 @@ layout: "default"
 ```
 {% endverbatim %}
 
-### Reusable content {#reusable-content}
+### Reusable content (partials) {#reusable-content}
 
 Reusable parts, *partials* are simples HTML & Twig files located at `./src/includes` folder.
 
@@ -187,6 +187,33 @@ It's also possible to pass custom variables to a patial using `with` keyword:
 {% endverbatim %}
 
 More information about [Twig include statement](http://twig.sensiolabs.org/doc/tags/include.html).
+
+### Stylesheets
+
+Your theme’s styles can be included in the site stylesheet using the  CSS `@import` directive.
+
+An example. Suppose the following scenario:
+
+```
+|- src/
+|  |- themes
+|  |  |- theme01
+|  |  |  |- src
+|  |  |  |  |- content
+|  |  |  |  |  |- assets
+|  |  |  |  |  |  |- bootstrap.min.css
+```
+
+You can create your site CSS style in `src/content/assets/style.css` based on
+the `bootstrap.min.css` file from the current theme:
+
+```
+@import "bootstrap.min.css";
+
+#my-style {
+    background-color: #eee;
+}
+```
 
 ### Avoids renderizer in some files {#avoid-renderizer}
 
@@ -239,3 +266,26 @@ See [Create a new site](/docs/how-it-works/#new-site-command) section of
 When you create a theme, you are scaffolding a new blank site. But if you create
 a new site you are scaffolding a new blank site and set the theme package as a
 requirement of your site in `composer.json` file.
+
+## Publishing your theme
+
+Themes are published via [Packagist.org](https://packagist.org/). It is a repository of
+packages for PHP. In order to publish a theme, you will need an account which you can
+create for free using a Github's account or filling out a form. Additionally, you
+need a Git repository of your theme.
+
+1. Modify the `composer.json` with the metadata of your theme:
+```
+{
+    "name": "vendor/the-name-of-my-theme",
+    "description": "The description of my theme",
+    "keywords": ["spress", "theme"]
+}
+```
+2. Create a Git repository:
+```
+git init # Only the first time
+git add -A
+git commit -m "Init commit"
+```
+3. [Submit your theme to Packagist](https://packagist.org/packages/submit).
