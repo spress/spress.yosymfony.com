@@ -235,7 +235,7 @@ avoid_renderizer: true
 
 By default, `avoid_renderizer` is false.
 
-#### Avoids renderizer for type of files
+#### Avoids renderizer for type of files {#avoid-renderizer-type}
 
 There is a way to avoid the renderizer action over entire directories
 as well as file types using the `avoid_renderizer` option in `config.yml` file.
@@ -274,14 +274,18 @@ packages for PHP. In order to publish a theme, you will need an account which yo
 create for free using a Github's account or filling out a form. Additionally, you
 need a Git repository of your theme.
 
-1. Modify the `composer.json` with the metadata of your theme:
+1. Modify the `composer.json` with the metadata of your theme. An example:
 ```
 {
     "name": "vendor/the-name-of-my-theme",
     "description": "The description of my theme",
-    "keywords": ["spress", "theme"]
+    "keywords": ["spress", "theme"],
+    "license": "MIT"
 }
 ```
+There is more metadata for describing your theme such as author information. See
+[Composer docs](https://getcomposer.org/doc/04-schema.md).
+
 2. Create a Git repository:
 ```
 git init # Only the first time
@@ -289,3 +293,5 @@ git add -A
 git commit -m "Init commit"
 ```
 3. [Submit your theme to Packagist](https://packagist.org/packages/submit).
+You can generate new versions of your theme using GIT command such as `git tag`
+or `git checkout`.
