@@ -14,8 +14,8 @@ In this guide you will learn how Spress works and how easy is to publish a site.
 
 ### Requirements {#requirements}
 
-* PHP 5.5 or greater.
-* [Composer](https://getcomposer.org/).
+* GNU/Linux, Unix, or macOS.
+* PHP 5.6 or greater.
 
 ### Installation {#installation}
 

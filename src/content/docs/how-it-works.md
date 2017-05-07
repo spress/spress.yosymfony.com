@@ -10,15 +10,15 @@ menu:
   order: 2
 prettify: true
 ---
-Spress is a static site generator, an application that takes your site and 
+Spress is a static site generator, an application that takes your site and
 transforms it to final HTML ready to deploy on your hosting. Your content is
-generated at `./build` folder. You can create content using HTML or 
-Markdown syntax. Additionally, with [converters](/docs/developers/converters), you 
+generated at `./build` folder. You can create content using HTML or
+Markdown syntax. Additionally, with [converters](/docs/developers/converters), you
 can add new types of content.
 
 ## Site structure {#site-structure}
 
-This is the typical structure of a Spress site
+This is the typical structure of a Spress site:
 
 ```
 .
@@ -26,25 +26,34 @@ This is the typical structure of a Spress site
 ├── src
 │   ├── content
 │   │   ├── posts
-│   │   │   ├── 2015-08-16-my-post.md
+│   │   │   ├── 2017-01-01-welcome-new-year.md
+|   |   ├── assets
+|   |   |   ├── mystyles.css
 │   │   ├── index.html
 │   │   ├── ...
 │   ├── includes
 │   ├── layouts
-│   ├─- plugins
+│   ├── plugins
+|   ├── themes
+|   |   ├── theme01
 ├── composer.json
 └── config.yml
 ```
-* **config.yml**: Contains the configuration data. You can change the behaviour of 
+* **config.yml**: Contains the configuration data. You can change the behaviour of
 Spress or create custom variables.
+* **composer.json**: Contains information about plugins and themes required by your site.
+See **[add:plugin](#add-plugin)**, **[remove:plugin](#remove-plugin)**,
+**[update:plugin](#update-plugin)** commands.
 * **./src/includes**: Contains partials that can be used in the layouts, pages and posts.
-* **./src/layouts**: Contains layout files used to organize your content. In your post or page, 
+* **./src/layouts**: Contains layout files used to organize your content. In your post or page,
 you can choose the layout in the [Front matter](/docs/attributes/#front-matter):
 * **./src/content**: The main content of your site are located in this folder.
 * **./src/content/posts**: Contains the blog posts files. Files located at this folder
+* **./src/content/assets**: Contains the assets of your site: `css`, `js` files for instance.
 are under `posts` [collection](docs/collections) and they have a special name format: `year-month-day-title.md`.
 The Front matter of each file let you change these properties.
-* **./src/plugins**: Extends the functionality of Spress. See [developers docs](/docs/developers).
+* **./src/plugins**: Extends the functionality of Spress. See [developer docs](/docs/developers).
+* **./src/themes**: Themes of the site. See [themes](docs/themes).
 * **./build**: This is where the generated site will be placed.
 
 ## A page example {#page-example}
@@ -94,19 +103,21 @@ See [permalink](/docs/permalinks) documentation.
 
 ### site:build {#site-build-command}
 
-Build your site in your `build` folder. 
+Build your site in your `build` folder.
 
-`site:build [-s|--source="./"] [--timezone="..."] [--env="dev"] [--server] [--watch] [--drafts] [--safe]`
+```bash
+site:build [-s|--source="./"] [--timezone="..."] [--env="dev"] [--server] [--watch] [--drafts] [--safe]
+```
 
 * `--timezone` Set the timezone. E.g: "Europe/Madrid".
 [More timezones](http://www.php.net/manual/en/timezones.php).
-* `--env` Set the environment name [More information](/docs/configuration/#environment).
+* `--env` Set the environment name. [More information](/docs/configuration/#environment).
 * `--server` The built-in server will run by default at `http://localhost:4000`.
 * `--watch` Watch for changes and regenerate your site automatically.
 * `--drafts` Include the draft post in the transformation.
 * `--safe` Disable all plugins.
 
-```
+```bash
 # Build site with source path defined:
 $ spress site:build -s /your-site-dir
 
@@ -134,17 +145,23 @@ $ spress site:build --safe
 
 ### new:site {#new-site-command}
 
-Create a new site. 
+Create a new site.
 
-`new:site [path[="./"]] [template[="blank"]] [--force] [--all]`
+```bash
+new:site [path[="./"]] [template[="blank"]] [--force] [--all]
+```
 
 * `template` Set the template for the site. Spresso is a built-in theme.
 * `--force` Force to use the path even though it exists and it's not empty.
 * `--all` In blank template, creates the complete scaffold.
 
-E.g `$ spress new:site /your-site-dir spresso`
+E.g `$ spress new:site /your-site-dir spress/spress-theme-spresso`
 
-The prior example creates a new site using [Spresso theme](https://github.com/yosymfony/Spress-theme-spresso/tree/2.0).
+Additionally, a concrete version of the theme can be set:
+
+`$ spress new:site /your-site-dir spress/spress-theme-spresso:2.1.0`
+
+The prior example creates a new site using [Spresso theme](https://github.com/spress/Spress-theme-spresso).
 
 ### new:post {#new-post}
 
@@ -153,7 +170,7 @@ By default, the command interacts with the developer to tweak the generation.
 Any passed option will be used as a default value for the interaction.
 
 ```bash
-new:post  [--title="..."] [--layout="default"] [--date="..."]
+new:post [--title="..."] [--layout="default"] [--date="..."]
       [--tags="..."] [--categories="..."]`
 ```
 * `--title`: The title of the post.
@@ -162,9 +179,96 @@ new:post  [--title="..."] [--layout="default"] [--date="..."]
 * `--tags`: Comma separated list of tags.
 * `--categories`: Comma separated list of categories.
 
-### new:plugin
+### new:plugin {#new-plugin}
 
 Crate a new plugin. See the documentation at [developers doc](/docs/developers).
+
+### new:theme {#new-theme}
+<span class="label label-success">Spress >= 2.2</span>
+Create a new theme that could be based on another one preexists.
+
+```bash
+new:theme [--repository] [--prefer-source] [--dev] [--no-scripts]
+    [--prefer-lock] [--force] [--] [<path>] [<package>]
+```
+
+* `--repository`: Pick a different repository (as url or json config) to look for the theme package.
+* `--prefer-source`: Forces installation of the theme from package sources when possible, including VCS information.
+* `--dev`: Enables installation of dev-require packages of the theme.
+* `--no-scripts`: Skips the execution of all scripts defined in `composer.json` file.
+* `--prefer-lock`: If there is a `composer.lock` file in the theme, Spress will use the exact version declared in that.
+* `--force`: Force creation even if path already exists.
+* `path`: Path of the new theme. Current folder by default.
+* `package`: The name of the theme package. `blank` by default.
+
+e.g: creating a theme based on Spresso
+
+```bash
+$ spress new:theme mysite spress/spress-theme-spresso
+```
+
+e.g: creating a blank theme:
+
+```bash
+$ spress new:theme mysite
+```
+
+### add:plugin {#add-plugin}
+<span class="label label-success">Spress >= 2.2</span>
+Adds plugins and themes to the `composer.json` file of the current directory and
+installs them.
+
+```bash
+add:plugin [--prefer-source] [--dry-run] [--dev] [--no-scripts] [--] <packages>
+```
+
+* `--prefer-source`: Forces installation of the plugins from package sources when possible, including VCS information.
+* `--dry-run`: Outputs the operations but will not execute anything.
+* `--dev`: Enables installation of dev-require packages of the plugin.
+* `--no-scripts`: Skips the execution of all scripts defined in `composer.json` file.
+* `packages`: List of packages that should be added.
+
+e.g:
+
+```
+$ spress add:plugin spress/github-metadata-plugin
+```
+
+### remove:plugin {#remove-plugin}
+<span class="label label-success">Spress >= 2.2</span>
+Removes plugins and themes from the `composer.json` file of the current directory.
+
+```bash
+remove:plugin [--dev] [--no-scripts] [--] <packages>
+```
+
+* `--dev`: Remove packages from `require-dev` section.
+* `--no-scripts`: Skips the execution of all scripts defined in `composer.json` file.
+* `packages`: List of packages that should be removed.
+
+e.g:
+
+```
+$ spress remove:plugin spress/github-metadata-plugin
+```
+
+### update:plugin {#update-plugin}
+<span class="label label-success">Spress >= 2.2</span>
+Update plugins and themes by the latest version.
+
+```bash
+update:plugin [--prefer-source] [--dry-run] [--dev] [--no-scripts] [--prefer-lock] [--] [<packages>]
+```
+
+* `--prefer-source`: Forces installation of the plugins from package sources when possible, including VCS information.
+* `--dry-run`: Outputs the operations but will not execute anything.
+* `--dev`: Enables installation of dev-require packages of the plugin.
+* `--no-scripts`: Skips the execution of all scripts defined in `composer.json` file.
+* `packages`: List of packages that should be updated.
+
+```
+$ spress remove:plugin spress/github-metadata-plugin "spress/spress-theme-spresso:>=2.1"
+```
 
 ### self-update {#self-update}
 

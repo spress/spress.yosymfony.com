@@ -32,8 +32,8 @@ collections:
     output: true
     title: "A project of my company"
 ```
-The prior example adds a new collections called projects. Next add a new folder with the same name 
-at your content folder: `./src/content/projects`. The items located at the `project` folder belong 
+The prior example adds a new collections called projects. Next add a new folder with the same name
+at your content folder: `./src/content/projects`. The items located at the `project` folder belong
 to `projects` collection.
 
 ### Attributes with special meaning:
@@ -57,8 +57,26 @@ Items of `posts` collection are sorted by descending using `date` attribute as c
 Variables [`site.categories`](/docs/variables/#site-variables) and [`site.tags`](/docs/variables/#site-variables) are affected by posts sorting.
 
 ### Default attributes
+
 Default attributes can be set for a collection. e.g: `title`. Item's attributes overrides
 the collection's default attributes.
+
+#### How to default the layout attribute for pages?
+Let's go to set the default layout for pages to `page`:
+
+```
+collections:
+  posts:
+    output: true
+    sort_by: 'date'
+    sort_type: 'descending'
+  pages:
+    layout: 'page'
+```
+
+**Notices** that asset files such as `CSS` or `Javascript` belong to `pages` collection
+and they receive the `layout` attribute though it does not take affect thanks to
+[avoid-renderizer](/docs/themes/#avoid-renderizer-type) option.
 
 ## How to access?
 
@@ -114,7 +132,7 @@ Here's an example of what this structure might look like:
 Spress adds `prior` and `next` relationships to each item belonging to a sorted collection
 referring to previous and next items in said collection.
 
-The below snippet of code could be inserted in the layout template applied to posts for exposing the prior 
+The below snippet of code could be inserted in the layout template applied to posts for exposing the prior
 and next posts related to current post.
 
 {% verbatim %}

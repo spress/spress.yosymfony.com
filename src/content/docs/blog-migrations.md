@@ -8,7 +8,7 @@ header:
 menu:
   id: doc 2.0
   title: Blog migrations
-  order: 14
+  order: 15
 prettify: true
 ---
 [Import plugin](https://github.com/spress/Spress-import) let you import posts and pages from others platforms to a Spress site.

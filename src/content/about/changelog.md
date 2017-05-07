@@ -15,7 +15,23 @@ changelog_support: true
 ---
 More information about the [releases](https://github.com/spress/Spress/releases).
 
-## 2.2.0-rc {#2-2-0-rc}
+## 2.2.0 {#2-2-0}
+Date: 2017-05-30
+
+* [New] Dropped the support for PHP 5.5. The minimum version is 5.6.
+* [Fixed] The `Spress-installer` plugin is included in the `composer.json` file when a new blank theme is created.
+* [Fixed] Fixed an issue when loading layouts and includes of the current theme.
+* [Fixed] Fixed an issue related with the presedence between the theme's assets and the site's assets.
+* [Fixed] Bug [#107](https://github.com/spress/Spress/issues/107) fixed: ".htaccess not being included in build".
+* [Fixed] Fixed an issue related to the convertion to array of a `Finder` class in `FilesystemDataSource` class.
+* [Improved] Updated `PluginManagerBuilder` class with support for loading several plugins
+from extra->spress_class attribute of a plugin's `composer.json` file.
+* [Improved] Renamed some tests with a more descritive name.
+* [Improved] Fixed some descriptions in commands.
+* [Improved] Replaced the use of PHPUnit_Framework_TestCase class by TestCase.
+* [Improved] Deleted the `.htaccess` value from `include` key of configuration files due to the fix [#107](https://github.com/spress/Spress/issues/107).
+
+### 2.2.0-rc {#2-2-0-rc}
 Date: 2017-01-15
 
 * [New] Support for themes. See the new feature [#98](https://github.com/spress/Spress/issues/98).
@@ -34,7 +50,7 @@ Date: 2017-01-15
 * [Fixed] Fixed a bug related with the "pagination generator" and the draft posts. See bug #101.
 * [Fixed] Fixed the `askAndHideAnswer` method of `ConsoleIO` class to use the fallback argument.
 
-# 2.1.3 {#2-1-3}
+## 2.1.3 {#2-1-3}
 Date: 2016-07-03
 
 * [New] Class [`FileInfo`](https://github.com/spress/Spress/blob/master/src/Core/Support/FileInfo.php) has been added to the support classes set of the core.
@@ -43,7 +59,7 @@ Date: 2016-07-03
 * [Fixed] The value of `title_path` is not altered when it is parsed by `FilesystemDataSource` class. More details in bug [#88](https://github.com/spress/Spress/issues/88).
 * [Fixed] If you set `preserve_path_title` attribute to `true` you will get the title parsed from the filename as-is (without the date part). Only `rawurlencode` function is applied. See PR [#90](https://github.com/spress/Spress/issues/90).
 
-# 2.1.2 {#2-1-2}
+## 2.1.2 {#2-1-2}
 Date: 2016-05-23
 
 * [New] Two new methods have been added to `StringWrapper` class: `lower` and `upper` for converting a given string to lower-case and upper-case respectively using UTF-8 as encoding.
@@ -51,14 +67,14 @@ Date: 2016-05-23
 * [Fixed] Bug [#82](https://github.com/spress/Spress/issues/82) has been fixed: "Substr `---` in yaml string cause builder crash".
 * [Fixed] Bug [#83](https://github.com/spress/Spress/issues/83) has been fixed: "Same tags on different languages cause builder crash".
 
-# 2.1.1 {#2-1-1}
+## 2.1.1 {#2-1-1}
 Date: 2016-04-12
 
 * [Fixed] Bug [#78](https://github.com/spress/Spress/issues/78) has been fixed: "/:basename permalink variable contains `.html` when using `*.html.twig`". Related with feature [#73](https://github.com/spress/Spress/issues/73).
 * [Fixed] Bug [#79](https://github.com/spress/Spress/issues/79) has been fixed: "Error loading plugin's dependencies with -s option at site:build command".
 * [Improved] Clarified the message when `site:build` command is invoked against a non Spress site folder.
 
-# 2.1.0 {#2-1-0}
+## 2.1.0 {#2-1-0}
 Date: 2016-03-26
 
 * [New] Support for calling to an existing command inside a command plugin. The `CommandEnvironmentInterface` interface has been added and `CommandPluginInterface` has been updated with `setCommandEnvironment` and `getCommandEnvironment` methods. See feature [#77](https://github.com/spress/Spress/issues/77).
@@ -77,14 +93,14 @@ Date: 2016-03-26
 * [Improved] Clarified the error message in case of denied permissions when renaming the temporal file in `SelfUpdateCommand` class.
 * [Fixed] Fixed the path available at `page.path` variable. Prior to this version, this variable contains the relative path to `src/content/` but with the filename extension changed by the Converter. Now, the original filename extension isn't altered. A new path snapshot has been created in `ItemIterface`.
 
-# 2.0.2 {#2-0-2}
+## 2.0.2 {#2-0-2}
 Date: 2016-01-16
 
 * [New] `PluginTester` class has been added to the core for testing plugins easily.
 * [Fixed] Fixed an issue with the content retrieved by `after_render_page` event.
 * [Fixed] A constant name of `ItemInterface` has been changed: `SNAPSHOT_AFTER_PAGE` -> `SNAPSHOT_AFTER_RENDER_PAGE`.
 
-# 2.0.1 {#2-0-1}
+## 2.0.1 {#2-0-1}
 Date: 2016-01-09
 
 * [Improved] Normalized the directory separator to '/' irrespective of the operating system.
@@ -93,7 +109,7 @@ Date: 2016-01-09
 * [Fixed] Fixed the exception "A previous item exists with the same id" thrown by Taxonomy generator due to a key sensitive issue. A normalize method has been added. e.g: "news", "NEWS", " News " are the same term: "news".
 * [Fixed] Fixed the namespace of `AttributeValueException` at `PaginationGenerator` class.
 
-# 2.0.0 {#2-0-0}
+## 2.0.0 {#2-0-0}
 Date: 2016-01-02
 
 * [New] `ConsoleIO` class uses [Symfony CLI styles](http://symfony.com/blog/new-in-symfony-2-8-console-style-guide).
@@ -104,7 +120,7 @@ Date: 2016-01-02
 * [Fixed] Fixed a bug with the built-in server by which a relative URL that contains a dot inside the trailing component throws a 404 not found error. e.g: `/doc/2.0`.
 * [Fixed] Added a default value for `$fallback` argument of `askHiddenResponseAndValidate` and `askAndHideAnswer` methods in `IOInterface`.
 
-## 2.0.0-rc {#2-0-0-rc}
+### 2.0.0-rc {#2-0-0-rc}
 Date: 2015-12-07
 
 * [New] Added MemoryDataSource, a datasource for generating dynamic content.
@@ -124,7 +140,7 @@ Date: 2015-12-07
 * [Fixed] Fixed the message of the exception threw when a previous item exists.
 * [Deleted] `ConfigValueException` has been deleted.
 
-## 2.0.0-beta {#2-0-0-beta}
+### 2.0.0-beta {#2-0-0-beta}
 Date: 2015-10-15
 
 * [New] Added a new converter for Markdown: ParsedownConverter. This converter is based on [Parsedown by Emanuil Rusev](http://parsedown.org/). Deals with issue [#40](https://github.com/spress/Spress/issues/40).
@@ -139,7 +155,7 @@ Date: 2015-10-15
 * [Fixed] The `setUp` method of `FilesystemDataWriter removes the whole content of the output dir but VCS files. This means that `site:build` command doesn't remove the VCS files.
 * [Deleted] Deleted the `site:new` alias for command `new:site`.
 
-## 2.0.0-alpha {#2-0-0-alpha}
+### 2.0.0-alpha {#2-0-0-alpha}
 Date: 2015-08-12
 
 * [New] Data-sources: (issue [#46](https://github.com/spress/Spress/issues/46)) data sources can load site data from certain locations like filesystem or database.
@@ -161,13 +177,13 @@ Date: 2015-08-12
 * [Deleted] List of deleted events: `spress.after_convert_posts`, `spress.before_render_pagination`, `spress.after_render_pagination `, `spress.before_render`, `spress.after_render`. See [#49](https://github.com/spress/Spress/issues/49).
 * [Deleted] List of configuration attributes (config.yml) deleted because they have been marked as deprecated: `baseurl`, `paginate`, `paginate_path`, `limit_posts`, `processable_ext`, `destination`, `posts`, `includes`, `layouts`, `plugins`.
 
-# V1.1.1 {#1-1-1}
+## 1.1.1 {#1-1-1}
 Date: 2015-02-25
 
 * [Improved] [Spresso theme](https://github.com/yosymfony/Spress-theme-spresso/releases/tag/v1.1.1) updated to 1.1.1.
 * [Improved] Dependencies have been updated.
 
-# V1.1.0 {#1-1-0}
+## 1.1.0 {#1-1-0}
 Date: 2015-01-08
 
 * [Fixed] Bug [#30](https://github.com/spress/Spress/issues/30): Adding source parameter to config appears to not do anything.
@@ -176,7 +192,7 @@ Date: 2015-01-08
 * [Improved] Spresso theme updated to 1.1.
 * [Improved] Symfony components updated to 2.6.
 
-## V1.1.0-rc {#1-1-0-rc-1}
+### 1.1.0-rc {#1-1-0-rc-1}
 Date: 2014-12-21
 
 * [New] variable: `server_watch_ext` at global configuration.
@@ -187,7 +203,7 @@ Date: 2014-12-21
 * [Improved] Performance of combination --server and --watch options improved.
 * [Improved] Deleted unused variables.
 
-## V1.1.0-beta.2 {#1-1-0-beta-2}
+### 1.1.0-beta.2 {#1-1-0-beta-2}
 Date: 2014-11-21
 
 * [New] Issue [#17](https://github.com/spress/Spress/issues/17):
@@ -196,7 +212,7 @@ Date: 2014-11-21
 * [New] Proposal [#22](https://github.com/spress/Spress/issues/22): Namespace "new" in commands for creating stuff.
 * [Deprecated] The command `site:new` has been declared deprecated and replaced by `new:site`.
 
-## V1.1.0-beta.1 {#1-1-0-beta-1}
+### 1.1.0-beta.1 {#1-1-0-beta-1}
 Date: 2014-10-19
 
 * [New] [IO API](/news/2014/05/11/new-in-spress-1-1-io-api/) useful for interacting with the users.
@@ -215,13 +231,13 @@ Date: 2014-10-19
 * [Improved] Documentation fixes.
 * [Deprecated] The configuration options: `baseurl` and `relative_permalinks` has been declared  deprecated.
 
-# v1.0.3 {#1-0-3}
+## 1.0.3 {#1-0-3}
 Date: 2014-05-22
 
 * [Fixed] bug [#7](https://github.com/yosymfony/Spress/issues/7): Error with Site Build.
 * [Improved] Tested on PHP 5.6 (Travis CI).
 
-# v1.0.2 {#1-0-2}
+## 1.0.2 {#1-0-2}
 Date: 2014-03-30
 
 * [Fixed] bug [#6](https://github.com/yosymfony/Spress/issues/6): Twig tags not rendered in posts located at variable `site.posts`.
@@ -229,7 +245,7 @@ Date: 2014-03-30
 * [Improved] Variables site.categories and site.tags have page-identifier as index of array.
 * [Improved] Base implementation of ContentItemInterface created at ContentItem. The classes PageItem and PostItem extend from this.
 
-# v1.0.1 {#1-0-1}
+## 1.0.1 {#1-0-1}
 Date: 2014-03-08
 
 * [New] events related with pagination phase (issue [#3](https://github.com/yosymfony/Spress/issues/3)): **spress.before_render_pagination** and **spress.after_render_pagination**.
@@ -238,14 +254,14 @@ Date: 2014-03-08
 * [Fixed] bug [#4](https://github.com/yosymfony/Spress/issues/4): UrlGenerator always has ending slash.
 * [Fixed] the class loader path when Spress is installed as package.
 
-# v1.0.0
+## 1.0.0 {#1-0-0}
 Date: 2014-02-05
 
 * [New] Added template manager to the API plugins for rendering Twig templates (accessible from spress.start event).
 * [Improved] the class loader of the site plugins.
 * [Fixed] documentation
 
-## v1.0.0-rc.3
+### 1.0.0-rc.3
 Date: 2014-01-12
 
 * [New] Support to [Composer](https://getcomposer.org/) for spress site plugins.

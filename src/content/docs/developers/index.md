@@ -12,7 +12,7 @@ menu:
 prettify: true
 ---
 Spress can be extended by plugins located in `./src/plugins` folder.
-As of version 2.0.0 Spress can be extended with [command plugin](#command-plugin).
+As of version 2.0.0 Spress can be extended with [command plugins](#command-plugin).
 Spress uses a events mechanic to dispatch events and plugins can add event listeners.
 It’s easy to manually create plugins but Spress provides a `new:plugin` generator command:
 
@@ -103,7 +103,7 @@ a public plugin then you must add the `spress-installer` to the required list**.
 
 **Get your plugin requirements and generate class-loader**
 
-Go to your site folder and run `composer update` command.
+Go to your site folder and run `spress update:plugin` command.
 
 ## The plugin {#plugin}
 
