@@ -63,7 +63,7 @@ themes:
   name: 'spress-add-ons/clean-blog-theme'
 ```
 
-## Creating a new theme
+## Creating a new theme {#creating-a-new-theme}
 
 The [new:theme](/docs/how-it-works/#new-theme) command let you create a blank
 theme or one based on a preexisting theme.
@@ -75,12 +75,12 @@ $ spress new:theme my-theme
 ```
 
 Creating a theme based on the latest version of
-[Clean blog theme](https://github.com/spress-add-ons/Clean-blog-theme):
+[Spresso theme](https://github.com/spress/Spress-theme-spresso):
 
 ```
-$ spress new:theme my-theme spress-add-ons/clean-blog-theme
+$ spress new:theme mysite spress/spress-theme-spresso
 ```
-## How the themes work?
+## How the themes work? {#how-themes-work}
 
 Spress will look first to your site’s content, before looking to the theme’s
 defaults for any requested file in the following folders:

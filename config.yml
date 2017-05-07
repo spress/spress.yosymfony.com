@@ -10,16 +10,16 @@ copyright_url: http://yosymfony.com
 
 # Data about Spress release
 release:
-   version: "2.1.3"
-   changelog: "/about/changelog/#2-1-3"
+   version: "2.2.0"
+   changelog: "/about/changelog/#2-2-0"
    github_url: "https://github.com/spress/Spress/"
-   url_package: "https://github.com/spress/Spress/releases/download/v2.1.3/spress.zip"
-   url_phar: "https://github.com/spress/Spress/releases/download/v2.1.3/spress.phar"
+   url_package: "https://github.com/spress/Spress/releases/download/v2.2.0/spress.zip"
+   url_phar: "https://github.com/spress/Spress/releases/download/v2.2.0/spress.phar"
 
-pre_release:
-   version: 2.2.0
-   url: https://github.com/spress/Spress/releases/tag/v2.2.0-rc
-   url_phar: https://github.com/spress/Spress/releases/download/v2.2.0-rc/spress.phar
+#pre_release:
+#   version: 2.2.0
+#   url: https://github.com/spress/Spress/releases/tag/v2.2.0-rc
+#   url_phar: https://github.com/spress/Spress/releases/download/v2.2.0-rc/spress.phar
 
 spressin:
   img_url: "/assets/img/spressin-new-year.jpg"

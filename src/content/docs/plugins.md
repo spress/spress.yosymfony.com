@@ -13,16 +13,10 @@ prettify: true
 ## Plugin installation {#plugin-installation}
 
 [Plugins](/add-ons) extends Spress with amazing capabilities. They are located at `./src/plugins` folder.
-The easy way to install a plugin is using [Composer](https://getcomposer.org/) tool. In this example,
+The easy way to install a plugin is using the `add:plugin` command. In this example,
 We will use a plugin called `spress/github-metadata-plugin`.
 
-Create a file named `composer.json` at the root of the site and paste the following content:
-
 ```
-{
-    "require": {
-        "spress/github-metadata-plugin": "2.0.*"
-    }
-}
+$ cd your-site-folder
+$ spress add:plugin spress/github-metadata-plugin
 ```
-To Install the plugin executes `composer install` command.
