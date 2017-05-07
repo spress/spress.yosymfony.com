@@ -4,7 +4,7 @@ This is the git repo of Spress site: <http://spress.yosymfony.com>
 
 ## How to build?
 
-This site requires Spress 2.0:
+This site requires Spress >= 2.2:
 
 ```bash
 $ git clone https://github.com/yosymfony/Spress.yosymfony.com.git
@@ -12,9 +12,8 @@ $ git clone https://github.com/yosymfony/Spress.yosymfony.com.git
 $ cd Spress.yosymfony.com/
 
 # Get plugins
-$ composer.phar update
+$ spress.phar update:plugin
 
-# Build with Spress
+# Build the site
 $ spress.phar site:build --server --watch
-
 ```
