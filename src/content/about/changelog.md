@@ -16,7 +16,7 @@ changelog_support: true
 More information about the [releases](https://github.com/spress/Spress/releases).
 
 ## 2.2.0 {#2-2-0}
-Date: 2017-05-30
+Date: 2017-05-07
 
 * [New] Dropped the support for PHP 5.5. The minimum version is 5.6.
 * [Fixed] The `Spress-installer` plugin is included in the `composer.json` file when a new blank theme is created.
