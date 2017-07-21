@@ -12,8 +12,8 @@ $ git clone https://github.com/yosymfony/Spress.yosymfony.com.git
 $ cd Spress.yosymfony.com/
 
 # Get plugins
-$ spress.phar update:plugin
+$ spress update:plugin
 
 # Build the site
-$ spress.phar site:build --server --watch
+$ spress site:build --server --watch
 ```
