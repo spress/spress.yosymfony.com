@@ -37,3 +37,13 @@ an argument:
 $ cd your-site-folder
 $ spress update:plugin vendor1/plugin1 vendor2/plugin2
 ```
+
+### How to install plugins from composer.lock?
+
+The command `update:plugin` with the option `--prefer-lock` install all plugin with the version written in `composer.lock`:
+
+```
+$ cd your-site-folder
+$ spress update:plugin --prefer-lock
+```
+
