@@ -1,5 +1,13 @@
 [
     {
+        "name": "Spress assets",
+        "author": "Sebastian Holtz",
+        "url_info": "https://github.com/shdev/spress-plugin-assets",
+        "url_author": "https://github.com/shdev",
+        "description": "It allows to asset boost your site and you can manipulate your images so that they fit best.",
+        "tags": ["assets"]
+    },
+    {
         "name": "Spress Import",
         "author": "Yo! Symfony",
         "url_info": "https://github.com/spress/Spress-import",
