@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project name="Spress" default="build">
-    <property name="dir.deploy" value="../Spress.yosymfony.com-rhcloud/php" />
+    <property name="dir.deploy" value="../spress.github.io" />
     <property name="cmd.spress" value="spress" />
     <property name="cmd.git" value="git" />
 
