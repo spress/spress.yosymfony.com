@@ -29,6 +29,8 @@
     </target>
 
     <target name="clean-dir-deploy">
-        <delete dir="${dir.deploy}"/>
+        <delete>
+            <fileset dir="${dir.deploy}"/>
+        </delete>
     </target>
 </project>
