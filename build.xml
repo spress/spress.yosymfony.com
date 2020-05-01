@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project name="Spress" default="build">
     <property name="dir.deploy" value="../spress.github.io" />
-    <property name="cmd.spress" value="spress" />
+    <property name="cmd.spress" value="../spress/bin/spress" />
     <property name="cmd.git" value="git" />
 
     <target name="build">

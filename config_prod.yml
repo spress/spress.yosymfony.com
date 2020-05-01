@@ -1,6 +1,6 @@
 # Site configuration of production environment
 
-url: "http://spress.yosymfony.com" # Without end slash
+url: "https://spress.yosymfony.com" # Without end slash
 
 # Google Analytics
 google_analytics:
