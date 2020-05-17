@@ -48,10 +48,9 @@ See **[add:plugin](#add-plugin)**, **[remove:plugin](#remove-plugin)**,
 * **./src/layouts**: Contains layout files used to organize your content. In your post or page,
 you can choose the layout in the [Front matter](/docs/attributes/#front-matter):
 * **./src/content**: The main content of your site are located in this folder.
-* **./src/content/posts**: Contains the blog posts files. Files located at this folder
-* **./src/content/assets**: Contains the assets of your site: `css`, `js` files for instance.
-are under `posts` [collection](docs/collections) and they have a special name format: `year-month-day-title.md`.
+* **./src/content/posts**: Contains the blog posts files. Files located at this folder are under `posts` [collection](docs/collections) and they have a special name format: `year-month-day-title.md`.
 The Front matter of each file let you change these properties.
+* **./src/content/assets**: Contains the assets of your site: `css`, `js` files for instance.
 * **./src/plugins**: Extends the functionality of Spress. See [developer docs](/docs/developers).
 * **./src/themes**: Themes of the site. See [themes](docs/themes).
 * **./build**: This is where the generated site will be placed.
