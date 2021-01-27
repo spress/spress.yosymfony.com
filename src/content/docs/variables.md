@@ -86,6 +86,16 @@ Example of access with Twig: `{{ "{{ site.categories }}" }}`.
             </td>
         </tr>
         <tr>
+            <td>drafts</td>
+            <td>boolean</td>
+            <td markdown="1">
+                Global flag that indicates if pages in draft state are rendered or not.
+                Can be used to generate additional HTML.
+                This is *not* to be confused with the individual `page.draft` property
+                of the [page variables](#page-variables).
+            </td>
+        </tr>
+        <tr>
             <td>your-variable-name</td>
             <td></td>
             <td markdown="1">
